@@ -39,3 +39,20 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# server logs
+*.log
+
+# Local AI/development tool files
+.agents/
+.claude/
+.codex/
+.copilot/
+.cursor/
+.devin/
+.gemini/
+.opencode/.mcp.json
+opencode.jsonc
+
+.mcp.json
+.opencode/

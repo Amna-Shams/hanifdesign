@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { prisma } from "@/lib/prisma";
 import { Resend } from "resend";
 import { CONTACT_INFO } from "@/lib/constants";
 
@@ -34,38 +33,46 @@ export async function POST(request: NextRequest) {
 
     const data = validation.data;
 
-    await prisma.contactSubmission.create({
-      data: {
-        name: data.name,
-        email: data.email,
-        phone: data.phone || null,
-        subject: data.subject,
-        message: data.message,
-      },
-    });
-
-    // Best-effort: the submission is already stored, so a mail outage must not
-    // surface as a failed submission to the visitor.
+    // Email is now the only delivery route: there is no database behind this
+    // endpoint, so a failed send means the enquiry genuinely did not arrive.
+    // Reporting success anyway would lose enquiries silently, so a failure is
+    // surfaced to the visitor and they are invited to try again.
     const resend = getResend();
-    if (resend) {
-      try {
-        await resend.emails.send({
-          from: "Hanif Design <noreply@hanifplanning.co.uk>",
-          to: CONTACT_INFO.email,
-          // Replies go straight to the sender rather than to the no-reply address.
-          replyTo: data.email,
-          subject: `New contact: ${data.subject}`,
-          text: [
-            `Name: ${data.name}`,
-            `Email: ${data.email}`,
-            `Phone: ${data.phone || "N/A"}`,
-            "",
-            data.message,
-          ].join("\n"),
-        });
-      } catch (emailError) {
-        console.error("Failed to send contact email:", emailError);
-      }
+    if (!resend) {
+      console.error("RESEND_API_KEY is not set — contact enquiry not delivered:", data.subject);
+      return NextResponse.json(
+        {
+          success: false,
+          message: "We could not send your message. Please email us directly.",
+        },
+        { status: 503 }
+      );
+    }
+
+    try {
+      await resend.emails.send({
+        from: "Hanif Design <noreply@hanifplanning.co.uk>",
+        to: CONTACT_INFO.email,
+        // Replies go straight to the sender rather than to the no-reply address.
+        replyTo: data.email,
+        subject: `New contact: ${data.subject}`,
+        text: [
+          `Name: ${data.name}`,
+          `Email: ${data.email}`,
+          `Phone: ${data.phone || "N/A"}`,
+          "",
+          data.message,
+        ].join("\n"),
+      });
+    } catch (emailError) {
+      console.error("Failed to send contact email:", emailError);
+      return NextResponse.json(
+        {
+          success: false,
+          message: "We could not send your message. Please email us directly.",
+        },
+        { status: 502 }
+      );
     }
 
     return NextResponse.json(

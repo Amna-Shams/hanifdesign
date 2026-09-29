@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { prisma } from "@/lib/prisma";
+import { Resend } from "resend";
+import { CONTACT_INFO } from "@/lib/constants";
 import { NEWSLETTER_MESSAGES, NEWSLETTER_STATUS_PARAM, type NewsletterStatus } from "@/lib/newsletter";
 
 const newsletterSchema = z.object({
@@ -9,6 +10,10 @@ const newsletterSchema = z.object({
 
 /** Statuses that represent a failure rather than a successful subscription. */
 const ERROR_STATES: NewsletterStatus[] = ["invalid", "error"];
+
+function getResend() {
+  return process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
+}
 
 /**
  * Reads the submitted email from either a JSON body or a native form post.
@@ -77,24 +82,40 @@ export async function POST(request: NextRequest) {
 
     const email = validation.data.email.toLowerCase();
 
-    const existing = await prisma.newsletterSubscriber.findUnique({
-      where: { email },
-    });
-
-    if (existing) {
-      // Re-subscribing reactivates a previously opted-out address rather than
-      // reporting a misleading "already subscribed".
-      if (!existing.active) {
-        await prisma.newsletterSubscriber.update({
-          where: { email },
-          data: { active: true, subscribedAt: new Date() },
-        });
-        return respond("resubscribed", 200);
-      }
-      return respond("already", 200);
+    /**
+     * There is no database behind this endpoint any more, so the address is
+     * delivered by email rather than stored. That has one visible consequence:
+     * duplicates cannot be detected, so every submission is forwarded and the
+     * `already` / `resubscribed` statuses are no longer emitted. They stay in
+     * `NEWSLETTER_MESSAGES` because the client renders whatever status it is
+     * given, and keeping the union intact avoids touching that contract.
+     */
+    const resend = getResend();
+    if (!resend) {
+      console.error("RESEND_API_KEY is not set — newsletter signup not delivered:", email);
+      return respond("error", 503);
     }
 
-    await prisma.newsletterSubscriber.create({ data: { email } });
+    try {
+      await resend.emails.send({
+        from: "Hanif Design <noreply@hanifplanning.co.uk>",
+        to: CONTACT_INFO.email,
+        replyTo: email,
+        subject: "Newsletter signup",
+        text: [
+          "A visitor asked to receive the newsletter:",
+          "",
+          email,
+          "",
+          "Add them to your mailing list. Note that this address is not stored",
+          "anywhere on the site, so it only exists in this email.",
+        ].join("\n"),
+      });
+    } catch (emailError) {
+      console.error("Failed to send newsletter signup email:", emailError);
+      return respond("error", 502);
+    }
+
     return respond("subscribed", 201);
   } catch (error) {
     console.error("Newsletter API error:", error);

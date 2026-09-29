@@ -3,7 +3,7 @@
  *
  * Attachments are delivered by email (see the Resend call in the quote route),
  * which avoids standing up object storage for a handful of drawings per enquiry.
- * The Prisma `files` column therefore stores metadata only — never file bytes.
+ * The bytes are streamed straight into that email; nothing is stored on the site.
  */
 
 export const MAX_FILE_BYTES = 10 * 1024 * 1024; // 10MB per file

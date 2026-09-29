@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { prisma } from "@/lib/prisma";
 import { Resend } from "resend";
 import { collectUploads, toMeta, type AttachmentMeta } from "@/lib/uploads";
 import {
@@ -39,9 +38,6 @@ function getResend() {
   return process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 }
 
-/** Written to the non-nullable `timeline` column when the form omits it. */
-const TIMELINE_NOT_SPECIFIED = "Not specified";
-
 function fail(message: string, status: number, errors?: Record<string, string[]>) {
   return NextResponse.json({ success: false, message, ...(errors ? { errors } : {}) }, { status });
 }
@@ -79,64 +75,53 @@ export async function POST(request: NextRequest) {
     );
     const attachments: AttachmentMeta[] = accepted.map(toMeta);
 
-    await prisma.quoteRequest.create({
-      data: {
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        projectType: data.projectType,
-        budget: data.budget,
-        // The form no longer asks for a timeline, but the column is NOT NULL.
-        // Making it nullable needs a migration, so the gap is recorded
-        // explicitly rather than with an empty string.
-        timeline: TIMELINE_NOT_SPECIFIED,
-        description: data.message,
-        // Metadata only — the bytes travel by email, not the database.
-        files: attachments.length > 0 ? (attachments as unknown as object) : undefined,
-      },
-    });
-
-    // Email is best-effort: the enquiry is already saved, so a Resend outage
-    // must not turn a successful submission into an error for the visitor.
+    // Email is the only delivery route now that there is no database behind
+    // this endpoint, so a failed send means the enquiry and any attached
+    // drawings genuinely did not arrive. Reporting success anyway would lose
+    // them silently, so failure is surfaced to the visitor.
     const resend = getResend();
-    if (resend) {
-      try {
-        const bufferAttachments = await Promise.all(
-          accepted.map(async (file) => ({
-            filename: file.name,
-            content: Buffer.from(await file.arrayBuffer()),
-          })),
-        );
+    if (!resend) {
+      console.error("RESEND_API_KEY is not set — quote request not delivered:", data.email);
+      return fail("We could not send your request. Please email us directly.", 503);
+    }
 
-        await resend.emails.send({
-          from: "Hanif Design <noreply@hanifplanning.co.uk>",
-          to: CONTACT_INFO.email,
-          replyTo: data.email,
-          subject: `New quote request: ${labelForOption(QUOTE_PROJECT_TYPES, data.projectType)}`,
-          text: [
-            `Name: ${data.name}`,
-            `Email: ${data.email}`,
-            `Phone: ${data.phone}`,
-            `Project type: ${labelForOption(QUOTE_PROJECT_TYPES, data.projectType)}`,
-            `Budget: ${labelForOption(QUOTE_BUDGET_RANGES, data.budget)}`,
-            "",
-            "Message:",
-            data.message,
-            "",
-            attachments.length > 0
-              ? `Attachments: ${attachments.map((a) => `${a.filename} (${a.size} bytes)`).join(", ")}`
-              : "Attachments: none",
-            rejected.length > 0
-              ? `Rejected: ${rejected.map((r) => `${r.filename} — ${r.reason}`).join(", ")}`
-              : "",
-          ]
-            .filter(Boolean)
-            .join("\n"),
-          ...(bufferAttachments.length > 0 ? { attachments: bufferAttachments } : {}),
-        });
-      } catch (emailError) {
-        console.error("Failed to send quote email:", emailError);
-      }
+    try {
+      const bufferAttachments = await Promise.all(
+        accepted.map(async (file) => ({
+          filename: file.name,
+          content: Buffer.from(await file.arrayBuffer()),
+        })),
+      );
+
+      await resend.emails.send({
+        from: "Hanif Design <noreply@hanifplanning.co.uk>",
+        to: CONTACT_INFO.email,
+        replyTo: data.email,
+        subject: `New quote request: ${labelForOption(QUOTE_PROJECT_TYPES, data.projectType)}`,
+        text: [
+          `Name: ${data.name}`,
+          `Email: ${data.email}`,
+          `Phone: ${data.phone}`,
+          `Project type: ${labelForOption(QUOTE_PROJECT_TYPES, data.projectType)}`,
+          `Budget: ${labelForOption(QUOTE_BUDGET_RANGES, data.budget)}`,
+          "",
+          "Message:",
+          data.message,
+          "",
+          attachments.length > 0
+            ? `Attachments: ${attachments.map((a) => `${a.filename} (${a.size} bytes)`).join(", ")}`
+            : "Attachments: none",
+          rejected.length > 0
+            ? `Rejected: ${rejected.map((r) => `${r.filename} — ${r.reason}`).join(", ")}`
+            : "",
+        ]
+          .filter(Boolean)
+          .join("\n"),
+        ...(bufferAttachments.length > 0 ? { attachments: bufferAttachments } : {}),
+      });
+    } catch (emailError) {
+      console.error("Failed to send quote email:", emailError);
+      return fail("We could not send your request. Please email us directly.", 502);
     }
 
     return NextResponse.json({

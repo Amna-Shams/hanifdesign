@@ -58,7 +58,7 @@ const LEGAL_LINKS = [
   { label: "Privacy policy", href: "/privacy" },
   { label: "Terms of service", href: "/terms" },
   { label: "Cookie policy", href: "/cookies" },
-  { label: "Site map", href: "/sitemap" },
+  { label: "Sitemap", href: "/sitemap" },
 ] as const;
 
 export function Footer() {

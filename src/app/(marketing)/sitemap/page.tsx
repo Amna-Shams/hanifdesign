@@ -72,7 +72,7 @@ const categories: readonly SitemapCategory[] = [
       { label: "Privacy policy", href: "/privacy" },
       { label: "Terms of service", href: "/terms" },
       { label: "Cookie policy", href: "/cookies" },
-      { label: "Site map", href: "/sitemap", disabled: true },
+      { label: "Sitemap", href: "/sitemap", disabled: true },
     ],
   },
   {
@@ -114,7 +114,7 @@ export default function SitemapPage() {
                 /
               </li>
               <li aria-current="page" className="text-secondary">
-                Site map
+                Sitemap
               </li>
             </ol>
           </nav>

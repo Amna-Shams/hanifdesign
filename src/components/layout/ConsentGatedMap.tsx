@@ -16,7 +16,18 @@ import { Button } from "@/components/ui/Button";
  *
  * Nothing here contacts Google until one of those two things has happened.
  */
-export function ConsentGatedMap({ title, src }: { title: string; src: string }) {
+/**
+ * Builds the embed URL from a plain-text location.
+ *
+ * Done here rather than at each call site so the query is always encoded
+ * correctly — a raw address with spaces and commas produces a malformed URL
+ * that renders a blank frame.
+ */
+function embedUrl(query: string): string {
+  return `https://maps.google.com/maps?q=${encodeURIComponent(query)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+}
+
+export function ConsentGatedMap({ title, query }: { title: string; query: string }) {
   const { hasAccepted, hasDecided, hasMapConsent } = useCookieConsent();
 
   // Global consent covers every optional third party, so it loads the map
@@ -26,7 +37,7 @@ export function ConsentGatedMap({ title, src }: { title: string; src: string }) 
       <div>
         <iframe
           title={title}
-          src={src}
+          src={embedUrl(query)}
           className="aspect-video w-full"
           style={{ border: 0 }}
           loading="lazy"

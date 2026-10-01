@@ -56,3 +56,6 @@ opencode.jsonc
 
 .mcp.json
 .opencode/
+
+# Cached fonts for scripts/generate-og.mts (fetched on demand)
+.og-fonts/

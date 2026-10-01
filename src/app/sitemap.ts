@@ -3,8 +3,12 @@ import { SERVICES } from "@/lib/constants";
 import { PROJECTS } from "@/lib/projects";
 import { SITE_URL as BASE_URL } from "@/lib/site";
 
-/** Routes that change rarely, so they get a lower priority / yearly cadence. */
-const LOW_FREQUENCY = new Set(["/privacy", "/terms", "/cookies", "/sitemap"]);
+/**
+ * Routes that change rarely get a lower priority / yearly cadence. The legal
+ * pages (/privacy, /terms, /cookies) are deliberately noindex, so they are left
+ * out of the sitemap rather than listed and then refused.
+ */
+const LOW_FREQUENCY = new Set(["/sitemap"]);
 
 const STATIC_ROUTES = [
   "",
@@ -14,9 +18,6 @@ const STATIC_ROUTES = [
   "/faq",
   "/contact",
   "/quote",
-  "/privacy",
-  "/terms",
-  "/cookies",
   "/sitemap",
 ] as const;
 

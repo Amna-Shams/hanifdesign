@@ -45,7 +45,7 @@ export function AboutSnapshot() {
                 in the corners, a sheet reference in the margin. */}
             <figure className="crop relative aspect-[4/5] overflow-hidden rounded-2xl border border-subtle bg-gradient-to-br from-primary/25 via-surface-elevated to-black">
               <Image
-                src="/work-04.jpeg"
+                src="/spacious-loft-conversion-harborne-2.webp"
                 alt="Residential project photography by Hanif Design & Consultancy"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
@@ -82,7 +82,7 @@ export function AboutSnapshot() {
               <p>
                 Hanif Design & Consultancy has been guiding homeowners, developers,
                 and architects through the UK planning system for over three decades.
-                Based in Perry Barr, Birmingham, we combine deep local authority knowledge with
+                Based in Quinton, Birmingham, we combine deep local authority knowledge with
                 practical design expertise to guide clients through every stage of
                 the planning process.
               </p>
@@ -105,10 +105,10 @@ export function AboutSnapshot() {
                   transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                   className="p-4 bg-lightgray rounded-xl"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gold mb-3">
+                  <div className="w-10 h-10 rounded-lg bg-overlay-faint border border-hairline-tint flex items-center justify-center text-gold mb-3">
                     <card.icon className="w-5 h-5" aria-hidden="true" />
                   </div>
-                  <h4 className="font-heading font-semibold text-primary mb-1">{card.title}</h4>
+                  <h3 className="font-heading font-semibold text-primary mb-1">{card.title}</h3>
                   <p className="text-textmuted text-sm">{card.description}</p>
                 </motion.div>
               ))}
@@ -121,7 +121,7 @@ export function AboutSnapshot() {
               transition={{ duration: 0.5, delay: 0.5 }}
             >
               <Button variant="primary" size="lg" asChild>
-                <Link href="/contact">Schedule a Free Consultation</Link>
+                <Link href="/contact">Book a free consultation</Link>
               </Button>
             </motion.div>
           </motion.div>

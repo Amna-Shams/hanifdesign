@@ -105,8 +105,8 @@ export function ProcessSection() {
                   <step.icon className="w-6 h-6" aria-hidden="true" />
                 </div>
 
-                <h3 className="font-heading font-semibold text-xl text-white mb-3">{step.title}</h3>
-                <p className="text-white/70 leading-relaxed">{step.description}</p>
+                <h3 className="font-heading font-semibold text-xl text-primary mb-3">{step.title}</h3>
+                <p className="text-secondary leading-relaxed">{step.description}</p>
               </motion.article>
             ))}
           </div>

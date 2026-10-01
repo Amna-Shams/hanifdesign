@@ -45,7 +45,9 @@ export function BlockTextReveal({
       <span className="sr-only">{text}</span>
       <motion.span
         aria-hidden="true"
-        initial="hidden"
+        // Painted in its final state so the headline (usually the LCP element)
+        // is visible in the server HTML instead of waiting for hydration.
+        initial={false}
         animate="visible"
         variants={{ visible: { transition: { staggerChildren: stagger } } }}
         className="inline"

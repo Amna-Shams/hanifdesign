@@ -2,13 +2,21 @@ import type { Metadata, Viewport } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
+import { FloatingActions } from "@/components/layout/FloatingActions";
 import { PageTransition } from "@/components/ui/PageTransition";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import { OrganisationSchema } from "@/components/ui/JsonLd";
 import { SITE_URL } from "@/lib/site";
+import { COMPANY_NAME } from "@/lib/constants";
 
 export const viewport: Viewport = {
   themeColor: "#101113",
   colorScheme: "dark",
+  // `viewport-fit=cover` lets the fixed cookie banner and the floating
+  // WhatsApp/theme buttons sit flush to the edge, then opt back in via
+  // `env(safe-area-inset-*)` padding so they clear the iPhone home indicator
+  // and notch. Without it iOS insets the whole viewport, which looks broken.
+  viewportFit: "cover",
 };
 
 export const metadata: Metadata = {
@@ -19,9 +27,9 @@ export const metadata: Metadata = {
   },
   description: "Expert planning consultancy for residential projects in Birmingham. Planning applications, permitted development, appeals, and pre-application advice.",
   keywords: ["planning consultant", "Birmingham", "planning applications", "permitted development", "planning appeals", "residential planning"],
-  authors: [{ name: "Hanif Design & Consultancy Limited" }],
-  creator: "Hanif Design & Consultancy Limited",
-  publisher: "Hanif Design & Consultancy Limited",
+  authors: [{ name: COMPANY_NAME }],
+  creator: COMPANY_NAME,
+  publisher: COMPANY_NAME,
   robots: "index, follow",
   openGraph: {
     type: "website",
@@ -61,12 +69,17 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
        comes from the body background, which propagates to the canvas. */
     <div className="flex flex-col min-h-screen">
       <ScrollToTop />
+      {/* Emitted once here rather than per page: every route shares the same
+          business identity, and repeating identical markup on 26 URLs is
+          noise. */}
+      <OrganisationSchema />
       <Header />
       <main className="flex-1">
         <PageTransition>{children}</PageTransition>
       </main>
       <Footer />
       <CookieBanner />
+      <FloatingActions />
     </div>
   );
 }

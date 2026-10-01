@@ -34,7 +34,9 @@ export function CookieBanner() {
           transition={{ type: "spring", damping: 30, stiffness: 260 }}
           className="fixed inset-x-0 bottom-0 z-[70] border-t border-subtle bg-surface-elevated shadow-[0_-8px_30px_rgba(0,0,0,0.6)]"
         >
-          <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+          {/* Bottom padding clears the iPhone home indicator, since this is a fixed
+              bar pinned to the bottom of the viewport. */}
+            <div className="mx-auto max-w-7xl px-4 pb-[max(1rem,env(safe-area-inset-bottom))] pt-4 sm:px-6 lg:px-8">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <p
                 id="cookie-banner-text"

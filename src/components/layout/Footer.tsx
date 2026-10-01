@@ -1,11 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  ArrowRight,
-} from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import {
   InstagramIcon,
   FacebookIcon,
@@ -15,11 +10,12 @@ import {
 import {
   CONTACT_INFO,
   REGISTERED_OFFICE,
+  COMPANY_NUMBER,
   QUICK_LINKS,
+  COMPANY_NAME,
   SERVICES,
 } from "@/lib/constants";
 import { toTelHref, toWhatsappHref } from "@/lib/utils";
-import { NewsletterForm } from "./NewsletterForm";
 import { CookieSettingsButton } from "./CookieSettingsButton";
 
 /**
@@ -55,9 +51,9 @@ const SOCIAL_LINKS = [
 ] as const;
 
 const LEGAL_LINKS = [
-  { label: "Privacy policy", href: "/privacy" },
-  { label: "Terms of service", href: "/terms" },
-  { label: "Cookie policy", href: "/cookies" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms of Service", href: "/terms" },
+  { label: "Cookie Policy", href: "/cookies" },
   { label: "Sitemap", href: "/sitemap" },
 ] as const;
 
@@ -65,24 +61,106 @@ export function Footer() {
   return (
     <footer className="border-t border-subtle bg-surface-translucent">
       <div className="mx-auto w-full max-w-[100rem] px-4 py-16 sm:px-6 lg:px-10 lg:py-20 xl:px-12">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
-          {/* Brand + contact */}
-          <div className="space-y-5">
-            <Link href="/" className="inline-block" aria-label="Hanif Design and Consultancy — home">
+        {/* Five equal-width columns. The previous 6-track grid gave the brand
+            column two tracks, which made it visibly wider than its neighbours
+            and left the row reading as ragged rather than justified.
+            `sm:grid-cols-6` with three half-spans keeps every row exactly full
+            at the 2-up breakpoint too, so there is no orphan gap. */}
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-6 lg:grid-cols-5 lg:gap-8">
+          {/* 1 — Brand */}
+          <div className="space-y-5 sm:col-span-3 lg:col-span-1">
+            <Link
+              href="/"
+              className="inline-block"
+              aria-label="Hanif Design and Consultancy — home"
+            >
               {/* The source art is a white sheet, so it is mounted like one: a
-                  white card with a hairline and a soft shadow. The link carries
+                  white plate with a hairline and a soft shadow. The link carries
                   the accessible name, so the image itself is decorative. */}
-              {/* Sized on the same breakpoints as the header plate, so the brand
-                  mark scales with the viewport instead of sitting oversized on a
-                  phone. The ratio is the source art's own 1.54:1. */}
               <span className="relative grid h-11 w-[4.25rem] place-items-center bg-white p-1 shadow-sm ring-1 ring-black/30 transition-shadow duration-300 hover:shadow-glow sm:h-12 sm:w-[4.75rem] lg:h-14 lg:w-[5.5rem]">
-                <Image src="/logo.png" alt="" fill sizes="88px" className="object-contain" />
+                <Image src="/logo.webp" alt="" fill sizes="88px" className="object-contain" />
               </span>
             </Link>
 
             <p className="max-w-xs text-sm leading-relaxed text-secondary">
               Hanif Design &amp; Consultancy Ltd provides planning consultancy and design support.
             </p>
+          </div>
+
+          {/* 2 — Services */}
+          <nav aria-labelledby="footer-services" className="sm:col-span-3 lg:col-span-1">
+            <h2
+              id="footer-services"
+              className="mb-4 font-heading text-base font-semibold text-primary"
+            >
+              Services
+            </h2>
+            <ul className="space-y-1">
+              {SERVICES.map((service) => (
+                <li key={service.slug}>
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="-mx-2 inline-flex min-h-11 items-center rounded-md px-2 py-1.5 text-sm text-secondary transition-colors hover:text-gold"
+                  >
+                    {service.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* 3 — Company */}
+          <nav aria-labelledby="footer-company" className="sm:col-span-3 lg:col-span-1">
+            <h2
+              id="footer-company"
+              className="mb-4 font-heading text-base font-semibold text-primary"
+            >
+              Company
+            </h2>
+            <ul className="space-y-1">
+              {QUICK_LINKS.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="-mx-2 inline-flex min-h-11 items-center rounded-md px-2 py-1.5 text-sm text-secondary transition-colors hover:text-gold"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* 4 — Legal */}
+          <nav aria-labelledby="footer-legal" className="sm:col-span-3 lg:col-span-1">
+            <h2
+              id="footer-legal"
+              className="mb-4 font-heading text-base font-semibold text-primary"
+            >
+              Legal
+            </h2>
+            <ul className="space-y-1">
+              {LEGAL_LINKS.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="-mx-2 inline-flex min-h-11 items-center rounded-md px-2 py-1.5 text-sm text-secondary transition-colors hover:text-gold"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* 5 — Contact + social */}
+          <div className="sm:col-span-6 lg:col-span-1">
+            <h2
+              id="footer-contact"
+              className="mb-4 font-heading text-base font-semibold text-primary"
+            >
+              Contact
+            </h2>
 
             <address className="not-italic">
               <ul className="space-y-3 text-sm">
@@ -110,117 +188,44 @@ export function Footer() {
                 </li>
               </ul>
             </address>
-          </div>
 
-          {/* Quick links */}
-          <nav aria-labelledby="footer-quicklinks">
-            <h2 id="footer-quicklinks" className="mb-4 font-heading text-base font-semibold text-primary">
-              Quick links
-            </h2>
-            <ul className="space-y-1">
-              {QUICK_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                        className="group -mx-2 inline-flex min-h-11 items-center gap-1 rounded-md px-2 py-1.5 text-sm text-secondary transition-colors hover:text-gold"
-                      >
-                        {link.label}
-                    <ArrowRight
-                      className="h-3 w-3 -translate-x-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100"
-                      aria-hidden="true"
-                    />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Services */}
-          <nav aria-labelledby="footer-services">
-            <h2 id="footer-services" className="mb-4 font-heading text-base font-semibold text-primary">
-              Services
-            </h2>
-            <ul className="space-y-1">
-              {SERVICES.map((service) => (
-                <li key={service.slug}>
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="group inline-flex items-center gap-1 py-1.5 text-sm text-secondary transition-colors hover:text-gold"
+            <ul className="mt-6 flex items-center gap-3">
+              {SOCIAL_LINKS.map((social) => (
+                <li key={social.label}>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className={[
+                      "flex h-11 w-11 items-center justify-center rounded-full border border-subtle",
+                      "bg-surface-elevated text-secondary transition-colors duration-200",
+                      "hover:-translate-y-0.5",
+                      social.hoverClass,
+                    ].join(" ")}
                   >
-                    {service.label}
-                    <ArrowRight
-                      className="h-3 w-3 -translate-x-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100"
-                      aria-hidden="true"
-                    />
-                  </Link>
+                    <social.Icon className="h-[1.15rem] w-[1.15rem]" />
+                  </a>
                 </li>
               ))}
             </ul>
-          </nav>
-
-          {/* Newsletter + social */}
-          <div className="space-y-6">
-            <div>
-              <h2 className="mb-2 font-heading text-base font-semibold text-primary">Newsletter</h2>
-              <p className="mb-4 text-sm text-secondary">
-                Occasional planning tips and regulatory updates. No spam.
-              </p>
-              <NewsletterForm />
-            </div>
-
-            {/* Referenced by the cookie policy: the only way to revisit the
-                consent choice after the banner has been dismissed. */}
-            <CookieSettingsButton />
-            <div>
-              <h2 className="mb-3 font-heading text-base font-semibold text-primary">Follow us</h2>
-              <ul className="flex items-center gap-3">
-                {SOCIAL_LINKS.map((social) => (
-                  <li key={social.label}>
-                    <a
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={social.label}
-                      className={[
-                        "flex h-10 w-10 items-center justify-center rounded-full border border-subtle",
-                        "bg-surface-elevated text-secondary transition-colors duration-200",
-                        "hover:-translate-y-0.5",
-                        social.hoverClass,
-                      ].join(" ")}
-                    >
-                      <social.Icon className="h-[1.15rem] w-[1.15rem]" />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </div>
 
-        {/* Legal bar — centred under the columns, as a colophon. */}
-        <div className="mt-14 space-y-4 border-t border-subtle pt-8 text-center">
-          <p className="text-sm text-secondary">
-            &copy; {new Date().getFullYear()} Hanif Design &amp; Consultancy Limited. All rights
-            reserved.
+        {/* Colophon */}
+        <div className="mt-14 space-y-2 border-t border-subtle pt-8 text-sm">
+          <p className="text-secondary">
+            {/* Literal character rather than the `&copy;` entity: React decodes
+                JSX entities as text, which rendered a bare "c" instead of "©". */}
+            © 2026 {COMPANY_NAME}. All rights reserved.
+          </p>
+          <p className="text-muted">
+            Registered in England &amp; Wales | Company No. {COMPANY_NUMBER} | Registered Office:{" "}
+            {REGISTERED_OFFICE}
           </p>
 
-          {/* Separators carry their own horizontal padding (`px-3`) instead of
-              relying on a list gap, so the pipe sits the same distance from
-              the link on its left as from the one on its right. */}
-          <ul className="flex flex-wrap items-center justify-center gap-y-2 text-sm">
-            {LEGAL_LINKS.map((link, index) => (
-              <li key={link.href} className="flex items-center">
-                {index > 0 ? (
-                  <span aria-hidden="true" className="px-3 text-muted">
-                    |
-                  </span>
-                ) : null}
-                <Link href={link.href} className="-mx-2 inline-flex min-h-11 items-center rounded-md px-2 py-1.5 text-muted transition-colors hover:text-gold">
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          {/* The cookie policy promises a way to revisit the consent choice. */}
+          <CookieSettingsButton />
         </div>
       </div>
     </footer>

@@ -8,6 +8,10 @@ import {
   QUOTE_PROJECT_TYPES,
   labelForOption,
 } from "@/lib/constants";
+import { checkSpam, honeypotTripped } from "@/lib/spam";
+
+/** Four quote requests an hour from one address; covers genuine follow-ups. */
+const RATE_LIMIT = { limit: 4, windowMs: 3_600_000 };
 
 /**
  * Enforces a body limit that comfortably covers `MAX_FILES * 10MB` plus form
@@ -44,6 +48,17 @@ function fail(message: string, status: number, errors?: Record<string, string[]>
 
 export async function POST(request: NextRequest) {
   try {
+    const spam = checkSpam(request, RATE_LIMIT);
+    if (!spam.ok) {
+      if (spam.reason === "rate_limited") {
+        return NextResponse.json(
+          { success: false, message: "Too many requests. Please try again shortly." },
+          { status: 429, headers: { "Retry-After": String(spam.retryAfter) } }
+        );
+      }
+      return fail("Submission rejected.", 413);
+    }
+
     const contentType = request.headers.get("content-type") ?? "";
     const isMultipart = contentType.includes("multipart/form-data");
 
@@ -55,6 +70,13 @@ export async function POST(request: NextRequest) {
 
     if (!raw || typeof raw !== "object") {
       return fail("Invalid request body", 400);
+    }
+
+    // A bot that filled the hidden field is answered as though it succeeded, so
+    // it learns nothing. Nothing is stored or emailed, so the send quota and
+    // any attached uploads cost us nothing.
+    if (honeypotTripped(raw)) {
+      return NextResponse.json({ success: true, message: "Quote request received" });
     }
 
     // `files` is handled separately below; the text fields are validated here.

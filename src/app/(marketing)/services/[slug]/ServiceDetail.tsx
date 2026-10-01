@@ -11,6 +11,7 @@ import {
   Check,
   Phone,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -25,7 +26,16 @@ interface ServiceDetailProps {
 /** Content for each service, keyed by the canonical slug from lib/constants. */
 const serviceData: Record<
   string,
-  { icon: LucideIcon; intro: string; process: string[]; benefits: string[] }
+  {
+    icon: LucideIcon;
+    intro: string;
+    process: string[];
+    benefits: string[];
+    /** Heading line for the gallery under the hero. */
+    galleryCaption: string;
+    /** Three images matched to this service. */
+    gallery: { src: string; alt: string }[];
+  }
 > = {
   "planning-applications": {
     icon: FileCheck,
@@ -44,6 +54,13 @@ const serviceData: Record<
       "A named consultant handles your file end to end",
       "Fixed fees agreed before we start",
       "Condition discharge support included",
+    ],
+    galleryCaption:
+      "The kinds of residential schemes we take through planning to a decision.",
+    gallery: [
+      { src: "/garden-office-studio-bournville-1.webp", alt: "Contemporary single-storey rear extension with bi-fold doors opening onto a timber deck" },
+      { src: "/garden-office-studio-bournville-2.webp", alt: "Modern flat-roofed glazed rear extension added to a brick family home" },
+      { src: "/garage-conversion-kings-heath-2.webp", alt: "Two-storey rendered family home with an integral garage and landscaped frontage" },
     ],
   },
   "building-regulations-support": {
@@ -64,6 +81,13 @@ const serviceData: Record<
       "Avoids the common causes of build-control rejection",
       "Completion certificate handled for you",
     ],
+    galleryCaption:
+      "From structure to specification, compliance is documented at every stage of the build.",
+    gallery: [
+      { src: "/office-to-residential-conversion-city-centre-2.webp", alt: "Building site with a concrete frame and blockwork beside rolled construction drawings and a hard hat" },
+      { src: "/single-storey-rear-extension-moseley-1.webp", alt: "Contemporary house under construction with scaffolding, above the same house completed" },
+      { src: "/office-to-residential-conversion-city-centre-1.webp", alt: "Split view of a concrete building frame beside the finished contemporary home" },
+    ],
   },
   "design-drawings": {
     icon: Ruler,
@@ -82,6 +106,13 @@ const serviceData: Record<
       "Coordinated so builders can price from them",
       "Revisions included until approval",
       "Issued as an organised PDF pack",
+    ],
+    galleryCaption:
+      "Coordinated plans, elevations and sections that planners can approve and builders can price.",
+    gallery: [
+      { src: "/spacious-loft-conversion-harborne-2.webp", alt: "Concept sheet combining elevation, section, plan and detail drawings of a modern two-storey house" },
+      { src: "/spacious-loft-conversion-harborne-1.webp", alt: "Interior design drawing with floor plan, section and dimensions overlaid on a double-height living space" },
+      { src: "/rear-home-extension-edgbaston-2.webp", alt: "Dimensioned ground floor plan of a family home with courtyard and parking" },
     ],
   },
   "feasibility-layouts": {
@@ -102,6 +133,13 @@ const serviceData: Record<
       "Evidence you can share with funders and buyers",
       "Typically resolved within two weeks",
     ],
+    galleryCaption:
+      "Testing what a site can deliver before you commit to design or purchase.",
+    gallery: [
+      { src: "/hmo-development-selly-oak-1.webp", alt: "Colour floor plan laying out kitchen, dining, lounge, bedrooms and bathrooms" },
+      { src: "/rear-home-extension-edgbaston-1.webp", alt: "Architectural scale model of a house held up in front of a building site" },
+      { src: "/new-build-family-home-sutton-coldfield-2.webp", alt: "Before and after view of a plot, from groundworks and frame to the completed contemporary house" },
+    ],
   },
   "3d-visualisation": {
     icon: Box,
@@ -121,6 +159,13 @@ const serviceData: Record<
       "Accurate to the drawings, not aspirational",
       "Suitable for planning committee submission",
     ],
+    galleryCaption:
+      "Photorealistic visuals that show decision-makers exactly what will be built.",
+    gallery: [
+      { src: "/single-storey-rear-extension-moseley-2.webp", alt: "Architectural plan dissolving into a photorealistic 3D render of a modern house" },
+      { src: "/hmo-development-selly-oak-2.webp", alt: "Rendered traditional house exterior above an exploded axonometric view of its floors" },
+      { src: "/two-storey-side-extension-four-oaks-2.webp", alt: "3D render of a modern single-storey home above a cutaway view of its interior layout" },
+    ],
   },
   "development-guidance": {
     icon: Compass,
@@ -139,6 +184,13 @@ const serviceData: Record<
       "Independent of any development interest",
       "Practical, decision-focused advice",
       "Ongoing support as the scheme evolves",
+    ],
+    galleryCaption:
+      "Policy-led advice that supports confident decisions on site, design and programme.",
+    gallery: [
+      { src: "/two-storey-side-extension-four-oaks-1.webp", alt: "Detached house with a pitched roof and dormer window set in landscaped grounds" },
+      { src: "/garage-conversion-kings-heath-1.webp", alt: "Brick family home with a dark pitched roof and paved approach" },
+      { src: "/new-build-family-home-sutton-coldfield-1.webp", alt: "Split view of a bare concrete interior beside the same space finished as a living room" },
     ],
   },
 };
@@ -189,7 +241,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
           </nav>
 
           <div className="flex items-start gap-5">
-            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-gold">
+            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-hairline-tint bg-overlay-faint text-gold">
               <Icon className="h-7 w-7" aria-hidden="true" />
             </span>
             <div>
@@ -201,6 +253,33 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
           </div>
         </div>
       </header>
+
+      {/* Gallery. Images are portrait, so each sits in a fixed 4:5 box with
+          object-cover: the layout can never shift while they load. */}
+      <section aria-labelledby="service-gallery-heading" className="pt-16 sm:pt-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 id="service-gallery-heading" className="sr-only">
+            {service.label} in pictures
+          </h2>
+          <p className="mb-6 max-w-2xl text-secondary">{data.galleryCaption}</p>
+          <ul className="grid gap-4 sm:grid-cols-3 sm:gap-6">
+            {data.gallery.map((img) => (
+              <li
+                key={img.src}
+                className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-xl border border-subtle bg-surface-elevated sm:max-w-none"
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="(min-width: 1280px) 400px, (min-width: 640px) 33vw, 90vw"
+                  className="object-cover"
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       {/* Process + benefits */}
       <section className="py-16 sm:py-20 lg:py-24">
@@ -222,7 +301,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
                     <li key={step} className="flex gap-4">
                       <span
                         aria-hidden="true"
-                        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold font-heading text-sm font-bold text-navy"
+                        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold font-heading text-sm font-bold text-on-accent"
                       >
                         {index + 1}
                       </span>
@@ -266,7 +345,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
                   </p>
                   <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                     <Button variant="gold" asChild>
-                      <Link href="/quote">Request a quote</Link>
+                      <Link href="/quote">Request a Quote</Link>
                     </Button>
                     <Button variant="secondary" asChild>
                       <a href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}>

@@ -11,9 +11,11 @@ import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { TestimonialsExpanded } from "@/components/home/TestimonialsExpanded";
 import { FAQPreview } from "@/components/home/FAQPreview";
 import { CTABanner } from "@/components/home/CTABanner";
-import { NewsletterStrip } from "@/components/home/NewsletterStrip";
+import { ConsultationStrip } from "@/components/home/ConsultationStrip";
+import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
+  alternates: { canonical: canonical("/") },
   title: "Hanif Design & Consultancy — Design Consultancy in Birmingham",
   description: "Trusted planning and design support for residential projects in Birmingham. Planning applications, building regulations support, design drawings, and development guidance.",
   openGraph: {
@@ -45,7 +47,7 @@ export default function HomePage() {
       <TestimonialsExpanded />
       <FAQPreview />
       <CTABanner />
-      <NewsletterStrip />
+      <ConsultationStrip />
     </>
   );
 }

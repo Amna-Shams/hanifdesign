@@ -6,6 +6,7 @@ import { RevealItem, RevealStagger } from "@/components/ui/Reveal";
 import { CONTACT_INFO, SERVICES } from "@/lib/constants";
 import { toTelHref } from "@/lib/utils";
 
+
 interface SitemapLink {
   label: string;
   href: string;
@@ -35,7 +36,7 @@ const categories: readonly SitemapCategory[] = [
       { label: "Services", href: "/services" },
       { label: "Projects", href: "/projects" },
       { label: "Frequently asked questions", href: "/faq" },
-      { label: "Request a quote", href: "/quote" },
+      { label: "Request a Quote", href: "/quote" },
       { label: "Contact", href: "/contact" },
     ],
   },
@@ -80,7 +81,7 @@ const categories: readonly SitemapCategory[] = [
     title: "Contact",
     links: [
       { label: "Contact form", href: "/contact" },
-      { label: "Request a quote", href: "/quote" },
+      { label: "Request a Quote", href: "/quote" },
       { label: `Call ${CONTACT_INFO.phone}`, href: toTelHref(CONTACT_INFO.phone), external: true },
       { label: "WhatsApp us", href: "https://wa.me/447901646719", external: true },
       { label: "Email us", href: `mailto:${CONTACT_INFO.email}`, external: true },

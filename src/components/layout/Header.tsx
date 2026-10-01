@@ -68,14 +68,14 @@ export function Header() {
           <Link
             href="/"
             className="group flex min-w-0 shrink items-center gap-3 sm:gap-4"
-            aria-label="Hanif Design and Consultancy Ltd — home"
+            aria-label="Hanif Design & Consultancy Ltd — home"
           >
             {/* Logo plate. The source art is a white sheet, so it is mounted
                 like one: a white card with a hairline and a soft shadow, sized
                 on its own 1.54:1 ratio. */}
             <span className="relative grid h-11 w-[4.25rem] shrink-0 place-items-center bg-white p-1 shadow-sm ring-1 ring-black/30 transition-shadow duration-300 group-hover:shadow-glow sm:h-12 sm:w-[4.75rem] lg:h-14 lg:w-[5.5rem]">
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 alt=""
                 fill
                 priority
@@ -132,7 +132,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setIsMobileOpen(true)}
-              className="flex h-10 w-10 items-center justify-center rounded-md border border-subtle text-primary transition-colors hover:border-primary hover:bg-surface-elevated"
+              className="flex h-11 w-11 items-center justify-center rounded-md border border-subtle text-primary transition-colors hover:border-primary hover:bg-surface-elevated"
               aria-label="Open menu"
               aria-expanded={isMobileOpen}
             >

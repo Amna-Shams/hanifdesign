@@ -2,11 +2,17 @@
 
 /* ==========================================================================
    DESIGN TOKENS
-   Single source of truth for the dark theme. Components should consume the
+   Single source of truth for the theme. Components should consume the
    Tailwind utilities generated from these (bg-surface, text-secondary, ...)
    rather than hard-coded hex values.
+
+   The dark palette is the default and lives on :root, so the site renders
+   correctly with no JavaScript. `[data-theme="light"]` re-points the same token
+   names at light values, which means a component written against the tokens
+   works in both themes without a single conditional class.
    ========================================================================== */
 :root {
+  color-scheme: dark;
   /* Surfaces — a lifted graphite rather than pure black, so elevation,
      hairlines and the blueprint grid all read against the base. */
   --background: #101113;
@@ -14,9 +20,9 @@
   --surface-elevated: #1e2125;
 
   /* Accent */
-  --primary: #6b7f8f;
-  --primary-hover: #7c90a0;
-  --primary-light: rgba(107, 127, 143, 0.16);
+  --primary: #8fa3b3;
+  --primary-hover: #a3b6c5;
+  --primary-light: rgba(143, 163, 179, 0.16);
 
   /* Solid fills. White text on `--primary` is only 4.15:1, which fails AA at
      button text sizes, so solid surfaces use these darker steps instead.
@@ -55,6 +61,87 @@
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.4);
   --shadow-glow: 0 0 20px rgba(107, 127, 143, 0.28);
+
+  /* On-dark surface used by buttons that invert (e.g. `bg-gold text-navy`). */
+  --on-accent: #0d0e10;
+
+  /* Hairline overlay and faint fill used inside already-tinted panels (icon
+     plates, chip rows). White-based in the dark theme because the panel beneath
+     is dark; flipped for light so they do not vanish. */
+  --overlay-subtle: rgba(255, 255, 255, 0.06);
+  --overlay-faint: rgba(255, 255, 255, 0.05);
+  --hairline-on-tint: rgba(255, 255, 255, 0.1);
+  --text-on-tint: rgba(255, 255, 255, 0.7);
+}
+
+/* --------------------------------------------------------------------------
+   LIGHT THEME
+   Applied by setting `data-theme="light"` on <html>. Every token is overridden
+   rather than a separate class per component, so the theme switch is a single
+   attribute change with no flash of the wrong theme.
+
+   Contrast notes:
+   - `--text-secondary` 4.8:1 and `--text-muted` 4.6:1 on `--background`, both
+     meeting AA for body text.
+   - `--brand-gold` darkens to #a86a00 so gold-on-white text (project titles,
+     links) clears AA; the dark theme keeps the brighter #f5a623.
+   - Solid fills lighten to keep white text legible.
+   -------------------------------------------------------------------------- */
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Surfaces — warm off-white paper rather than pure white, so elevation and
+     hairlines stay visible without relying on heavy shadows. */
+  --background: #f7f7f5;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+
+  /* Accent */
+  --primary: #4a5b69;
+  --primary-hover: #3d4c58;
+  --primary-light: rgba(74, 91, 105, 0.1);
+
+  /* Solid fills that carry white text */
+  --primary-strong: #56697a;
+  --primary-strong-hover: #5f7384;
+
+  /* Text */
+  --text-primary: #14181c;
+  --text-secondary: #414a52;
+  --text-muted: #5b656e;
+
+  /* Lines */
+  --border-color: #9aa3ab;
+  --border-subtle: rgba(20, 24, 28, 0.12);
+  --divider-color: rgba(20, 24, 28, 0.1);
+
+  /* Brand accent, darkened for contrast on light surfaces. #a86a00 only reached
+     4.44:1 on white (AA needs 4.5:1 for normal text), so this step is darker
+     and clears AA on both --surface and --background. */
+  --brand-gold: #94600a;
+
+  /* Drafting grid — stronger relative to the light base so it still reads. */
+  --grid-line: rgba(20, 24, 28, 0.04);
+  --grid-line-major: rgba(20, 24, 28, 0.075);
+
+  /* Translucent washes */
+  --surface-translucent: rgba(255, 255, 255, 0.72);
+  --surface-elevated-translucent: rgba(255, 255, 255, 0.82);
+
+  /* Elevation — real shadows instead of glow, since dark glows are invisible. */
+  --shadow-sm: 0 1px 2px 0 rgb(20 24 28 / 0.06);
+  --shadow-md: 0 4px 6px -1px rgb(20 24 28 / 0.08), 0 2px 4px -2px rgb(20 24 28 / 0.06);
+  --shadow-lg: 0 10px 15px -3px rgb(20 24 28 / 0.1), 0 4px 6px -4px rgb(20 24 28 / 0.08);
+  --shadow-glow: 0 0 0 4px rgba(74, 91, 105, 0.12);
+
+  /* On-accent text for inverted buttons */
+  --on-accent: #ffffff;
+
+  /* Overlay/hairline tints, mirrored for light panels. */
+  --overlay-subtle: rgba(20, 24, 28, 0.05);
+  --overlay-faint: rgba(20, 24, 28, 0.04);
+  --hairline-on-tint: rgba(20, 24, 28, 0.1);
+  --text-on-tint: rgba(20, 24, 28, 0.7);
 }
 
 @theme inline {
@@ -122,13 +209,25 @@
   /* ------------------------------------------------------------------
    * LEGACY BRAND ALIASES
    * Historic class names (bg-navy, bg-lightgray, ...) are re-pointed at
-   * the dark theme so the migration is visual-only, not a rewrite of
-   * every component. Prefer the semantic tokens above in new code.
+   * the theme tokens, so the migration is visual-only rather than a rewrite
+   * of every component, and the aliases follow the theme automatically.
+   * Prefer the semantic tokens above in new code.
    * ---------------------------------------------------------------- */
   --color-navy: var(--surface);
   --color-lightgray: var(--surface);
   --color-textdark: var(--text-primary);
   --color-textmuted: var(--text-muted);
+
+  /* Text colour that sits on an inverted/accent fill (e.g. `bg-gold`). Flips
+     between near-black and white with the theme so those buttons stay legible. */
+  --color-on-accent: var(--on-accent);
+
+  /* Tint overlays for panels that already have their own background. Theme-aware
+     so they read in both palettes instead of only on dark. */
+  --color-overlay-subtle: var(--overlay-subtle);
+  --color-overlay-faint: var(--overlay-faint);
+  --color-hairline-tint: var(--hairline-on-tint);
+  --color-text-tint: var(--text-on-tint);
 }
 
 /* ==========================================================================
@@ -181,9 +280,13 @@ p {
   text-wrap: pretty;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* In the base layer so Tailwind utilities (text-on-accent on a link-button) win;
+   an unlayered rule here overrode them and gave the gold CTA light-on-gold text. */
+@layer base {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 /* Visible, consistent keyboard focus everywhere. */
@@ -355,5 +458,27 @@ a {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   BROWSER COMPATIBILITY
+   ========================================================================== */
+
+/*
+ * Tailwind emits `backdrop-filter` unprefixed. Safari only implemented the
+ * `-webkit-` prefixed form until 18, so the frosted header and menu overlay
+ * render as a plain opaque panel on older Safari/iOS. Declaring both keeps the
+ * effect working across the range; Safari simply ignores the one it does not
+ * recognise.
+ */
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .backdrop-blur-sm {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+  .backdrop-blur-md {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
   }
 }

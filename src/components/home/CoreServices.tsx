@@ -140,7 +140,7 @@ export function CoreServices() {
                   >
                     {service.number}
                   </span>
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-gold transition-transform duration-300 group-hover:scale-110">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-hairline-tint bg-overlay-faint text-gold transition-transform duration-300 group-hover:scale-110">
                     <Icon className="h-6 w-6" />
                   </span>
                 </div>

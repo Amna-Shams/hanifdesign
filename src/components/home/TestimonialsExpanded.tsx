@@ -83,13 +83,13 @@ export function TestimonialsExpanded() {
                     <p className="text-primary text-lg italic leading-relaxed flex-1 mb-6">
                       &ldquo;{testimonial.quote}&rdquo;
                     </p>
-                    <div className="flex items-center gap-1 mb-4" aria-label={`${testimonial.rating} out of 5 stars`}>
+                    <div className="flex items-center gap-1 mb-4" role="img" aria-label={`${testimonial.rating} out of 5 stars`}>
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <Star key={i} className="w-5 h-5 text-gold fill-current" aria-hidden="true" />
                       ))}
                     </div>
                     <div className="flex items-center gap-4 mt-auto">
-                      <div className="w-12 h-12 rounded-full bg-gold text-primary font-heading font-semibold flex items-center justify-center shrink-0">
+                      <div className="w-12 h-12 rounded-full bg-gold text-on-accent font-heading font-semibold flex items-center justify-center shrink-0">
                         {testimonial.initial}
                       </div>
                       <div className="min-w-0">

@@ -5,13 +5,12 @@ import { motion } from "motion/react";
 import { Button } from "@/components/ui/Button";
 import { BlockTextReveal } from "@/components/ui/BlockTextReveal";
 
-const EASE = [0.16, 1, 0.3, 1] as const;
 
 const trustItems = [
   "30+ Years Experience",
   "500+ Projects Delivered",
   "100% Client Satisfaction",
-  "Perry Barr, Birmingham",
+  "Quinton, Birmingham",
 ] as const;
 
 export function Hero() {
@@ -21,16 +20,13 @@ export function Hero() {
        stack two grids on the one page that already shows the global one. */
     <section className="relative isolate flex min-h-[70vh] items-center justify-center overflow-hidden py-20">
       <div className="relative mx-auto w-full max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: EASE }}
+        <p
           className="mb-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-gold"
         >
           <span aria-hidden="true" className="h-px w-6 shrink-0 bg-gold/60 sm:w-10" />
-          <span className="annotation">Planning Consultancy &middot; Perry Barr</span>
+          <span className="annotation">Planning Consultancy &middot; Quinton</span>
           <span aria-hidden="true" className="h-px w-6 shrink-0 bg-gold/60 sm:w-10" />
-        </motion.p>
+        </p>
 
         <BlockTextReveal
           as="h1"
@@ -38,20 +34,14 @@ export function Hero() {
           className="mb-6 font-heading text-4xl font-bold leading-[1.12] tracking-[-0.02em] text-primary sm:text-5xl lg:text-6xl"
         />
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5, ease: EASE }}
+        <p
           className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-secondary sm:text-xl"
         >
           Trusted planning consultancy helping homeowners and developers turn their ideas into
           approved projects.
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.62, ease: EASE }}
+        <div
           className="mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <Button variant="gold" size="lg" asChild>
@@ -60,7 +50,7 @@ export function Hero() {
           <Button variant="secondary" size="lg" asChild>
             <Link href="/contact">Book a free consultation</Link>
           </Button>
-        </motion.div>
+        </div>
 
         <motion.dl
           initial={{ opacity: 0 }}

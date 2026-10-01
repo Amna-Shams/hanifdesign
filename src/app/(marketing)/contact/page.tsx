@@ -1,5 +1,6 @@
 "use client";
 
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -12,6 +13,7 @@ import { WhatsAppIcon } from "@/components/ui/BrandIcons";
 import { Reveal } from "@/components/ui/Reveal";
 import { CONTACT_INFO, REGISTERED_OFFICE, OFFICE_MAP_QUERY } from "@/lib/constants";
 import { toTelHref, toWhatsappHref } from "@/lib/utils";
+import { HONEYPOT_FIELD, HONEYPOT_FIELD_PROPS, readHoneypot } from "@/lib/spam";
 import { ConsentGatedMap } from "@/components/layout/ConsentGatedMap";
 
 /** Directions link, built from the same query the map uses so both agree. */
@@ -39,13 +41,19 @@ export default function ContactPage() {
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit = async (data: ContactFormData) => {
+  const onSubmit = async (data: ContactFormData, event?: React.BaseSyntheticEvent) => {
     setSubmitStatus("idle");
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+        ...data,
+        // Read off the form element rather than the RHF values: `zodResolver`
+        // returns the parsed object, which has unknown keys stripped, so an
+        // unregistered honeypot would never reach the endpoint.
+        [HONEYPOT_FIELD]: readHoneypot(event),
+      }),
       });
 
       const result = await response.json();
@@ -68,7 +76,7 @@ export default function ContactPage() {
           <SectionHeading
             as="h1"
             eyebrow="Contact"
-            title="Get in Touch"
+            title="Get in touch"
             subtitle="Have a project in mind? We'd love to hear from you. Fill out the form or use the details below."
             align="center"
           />
@@ -82,41 +90,41 @@ export default function ContactPage() {
             <Reveal direction="left" duration={0.7} className="h-full">
             <div className="flex h-full flex-col gap-8">
               <Card className="flex-1 p-6">
-                <h3 className="font-heading font-semibold text-xl text-primary mb-6">Contact Information</h3>
+                <h2 className="font-heading font-semibold text-xl text-primary mb-6">Contact Information</h2>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-overlay-faint border border-hairline-tint flex items-center justify-center shrink-0">
                       <MapPin className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-primary">Office Address</h4>
+                      <h3 className="font-medium text-primary">Office Address</h3>
                       <address className="text-textmuted not-italic mt-1">{REGISTERED_OFFICE}</address>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-overlay-faint border border-hairline-tint flex items-center justify-center shrink-0">
                       <Phone className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-primary">Phone</h4>
-                      <a href={`tel:${CONTACT_INFO.phone}`} className="text-textmuted hover:text-gold transition-colors mt-1 block">{CONTACT_INFO.phone}</a>
+                      <h3 className="font-medium text-primary">Phone</h3>
+                      <a href={toTelHref(CONTACT_INFO.phone)} className="text-textmuted hover:text-gold transition-colors mt-1 block">{CONTACT_INFO.phone}</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-overlay-faint border border-hairline-tint flex items-center justify-center shrink-0">
                       <Mail className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-primary">Email</h4>
+                      <h3 className="font-medium text-primary">Email</h3>
                       <a href={`mailto:${CONTACT_INFO.email}`} className="text-textmuted hover:text-gold transition-colors mt-1 block">{CONTACT_INFO.email}</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-overlay-faint border border-hairline-tint flex items-center justify-center shrink-0">
                       <Clock className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-primary">Office Hours</h4>
+                      <h3 className="font-medium text-primary">Office Hours</h3>
                       <p className="text-textmuted mt-1">Mon–Fri: 9:00 AM – 5:30 PM</p>
                       <p className="text-textmuted">Sat–Sun: Closed</p>
                     </div>
@@ -125,9 +133,9 @@ export default function ContactPage() {
               </Card>
 
               <Card className="p-6">
-                <h3 className="mb-4 font-heading text-xl font-semibold text-primary">
+                <h2 className="mb-4 font-heading text-xl font-semibold text-primary">
                   Quick Message
-                </h3>
+                </h2>
 
                 {/* WhatsApp's own mark on its own green, rather than a generic
                     speech bubble on a stock green button. */}
@@ -167,7 +175,7 @@ export default function ContactPage() {
 
             <Reveal direction="right" duration={0.7} delay={0.15} className="h-full">
               <Card className="p-6 sm:p-8 h-full">
-                <h3 className="font-heading font-semibold text-xl text-primary mb-6">Send us a Message</h3>
+                <h2 className="font-heading font-semibold text-xl text-primary mb-6">Send us a Message</h2>
 
                 {submitStatus === "success" && (
                   <div className="mb-6 p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl flex items-start gap-3">
@@ -192,11 +200,15 @@ export default function ContactPage() {
                 )}
 
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
+                  {/* Honeypot: a real visitor never sees or fills this. */}
+                  <input {...HONEYPOT_FIELD_PROPS} />
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-primary mb-1.5">Name *</label>
                       <input
                         {...register("name")}
+                        required
+                        aria-required="true"
                         id="name"
                         aria-invalid={!!errors.name}
                         aria-describedby={errors.name ? "name-error" : undefined}
@@ -213,6 +225,8 @@ export default function ContactPage() {
                       <label htmlFor="email" className="block text-sm font-medium text-primary mb-1.5">Email *</label>
                       <input
                         {...register("email")}
+                        required
+                        aria-required="true"
                         id="email"
                         aria-invalid={!!errors.email}
                         aria-describedby={errors.email ? "email-error" : undefined}
@@ -248,6 +262,8 @@ export default function ContactPage() {
                     <label htmlFor="subject" className="block text-sm font-medium text-primary mb-1.5">Subject *</label>
                     <input
                       {...register("subject")}
+                      required
+                      aria-required="true"
                       id="subject"
                         aria-invalid={!!errors.subject}
                         aria-describedby={errors.subject ? "subject-error" : undefined}
@@ -265,6 +281,8 @@ export default function ContactPage() {
                     <label htmlFor="message" className="block text-sm font-medium text-primary mb-1.5">Message *</label>
                     <textarea
                       {...register("message")}
+                      required
+                      aria-required="true"
                       id="message"
                         aria-invalid={!!errors.message}
                         aria-describedby={errors.message ? "message-error" : undefined}
@@ -310,7 +328,7 @@ export default function ContactPage() {
 
           <Card className="overflow-hidden p-0">
             <ConsentGatedMap
-              title={`Map showing the Hanif Planning &amp; Design office in ${REGISTERED_OFFICE}`}
+              title={`Map showing the Hanif Design &amp; Consultancy office in ${REGISTERED_OFFICE}`}
               query={OFFICE_MAP_QUERY}
             />
             <div className="flex flex-col gap-3 border-t border-subtle px-5 py-4 sm:flex-row sm:items-center sm:justify-between">

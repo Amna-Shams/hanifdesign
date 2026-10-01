@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Poppins, IBM_Plex_Mono } from "next/font/google";
+import { IBM_Plex_Mono, Inter, Poppins } from "next/font/google";
 import { GridBackground } from "@/components/layout/GridBackground";
+import { ThemeProvider, themeInitScript } from "@/components/providers/ThemeProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -47,15 +48,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en-GB"
       className={`${inter.variable} ${poppins.variable} ${plexMono.variable} h-full antialiased`}
     >
+      <head>
+        {/* Applies the stored theme before first paint, so switching never
+            flashes the dark palette first. */}
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="min-h-full flex flex-col font-sans antialiased">
-        {/* Site-wide blueprint wallpaper. Lives in the root layout so every
-            route inherits it; `isolation: isolate` gives the negative-z child a
-            stacking context to sit in, which is what keeps it from being
-            painted over by the route content below. */}
-        <div className="isolate">
-          <GridBackground />
-          {children}
-        </div>
+        <ThemeProvider>
+          {/* Site-wide blueprint wallpaper. Lives in the root layout so every
+              route inherits it; `isolation: isolate` gives the negative-z child a
+              stacking context to sit in, which is what keeps it from being
+              painted over by the route content below. */}
+          <div className="isolate">
+            <GridBackground />
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

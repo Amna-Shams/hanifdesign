@@ -77,7 +77,7 @@ export function WhyChooseUs() {
                 className="p-6 lg:p-8 bg-lightgray rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gold">
+                  <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-overlay-faint border border-hairline-tint flex items-center justify-center text-gold">
                     <reason.icon className="w-7 h-7" aria-hidden="true" />
                   </div>
                   <div className="min-w-0">

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
+import { FloatingActions } from "@/components/layout/FloatingActions";
 import { Reveal } from "@/components/ui/Reveal";
 
 /**
@@ -103,6 +104,7 @@ export default function NotFound() {
 
       <Footer />
       <CookieBanner />
+      <FloatingActions />
     </div>
   );
 }

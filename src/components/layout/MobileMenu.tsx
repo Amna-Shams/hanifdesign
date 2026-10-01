@@ -125,7 +125,7 @@ export function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                           "block rounded-lg px-3 py-3 font-heading text-lg transition-colors duration-200",
                           active
                             ? "bg-primary/15 text-primary"
-                            : "text-secondary hover:bg-white/5 hover:text-primary",
+                            : "text-secondary hover:bg-overlay-faint hover:text-primary",
                         ].join(" ")}
                       >
                         {link.label}

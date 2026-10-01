@@ -13,10 +13,29 @@ export const CONTACT_INFO = {
   email: "hanif.ghumra@yahoo.com",
 } as const;
 
-export const REGISTERED_OFFICE = "Perry Barr, Birmingham, UK";
+export const REGISTERED_OFFICE =
+  "369 Hagley Road West Quinton, Birmingham, England, B32 2AL";
 
-/** Google Maps search target for {@link REGISTERED_OFFICE}. */
-export const OFFICE_MAP_QUERY = "Perry Barr, Birmingham, UK";
+/**
+ * Google Maps search target for {@link REGISTERED_OFFICE}. Kept separate so the
+ * embed can target a latitude/longitude pair later without touching the postal
+ * address shown to visitors.
+ */
+export const OFFICE_MAP_QUERY = "369 Hagley Road West Quinton, Birmingham, B32 2AL";
+
+/**
+ * Registered company name.
+ *
+ * Single source of truth for the legal entity name, used by the footer colophon,
+ * the privacy/terms/cookies pages and the page metadata. Centralised because
+ * "Ltd" and "Limited" had already drifted apart across eight call sites, and the
+ * branding carries the authority here — the registered logo artwork reads
+ * "HANIF DESIGN & CONSULTANCY LTD".
+ *
+ * "Ltd" and "Limited" are legally interchangeable, but only one of them is the
+ * registered name, and mixing them on the same site undermines credibility.
+ */
+export const COMPANY_NAME = "Hanif Design & Consultancy Ltd";
 
 export const COMPANY_NUMBER = "14139690";
 

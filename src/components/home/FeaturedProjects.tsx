@@ -79,7 +79,7 @@ export function FeaturedProjects() {
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     ) : null}
-                    <span className="absolute left-4 top-4 rounded bg-gold px-3 py-1 text-xs font-medium text-navy">
+                    <span className="absolute left-4 top-4 rounded bg-gold px-3 py-1 text-xs font-medium text-on-accent">
                       {project.category}
                     </span>
                   </div>

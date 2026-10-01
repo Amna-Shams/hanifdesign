@@ -11,7 +11,7 @@ const credentials = [
   },
   {
     icon: MapPin,
-    title: "Perry Barr-Based",
+    title: "Quinton-Based",
     description: "Serving the West Midlands",
   },
   {
@@ -46,7 +46,7 @@ export function CredentialsBar() {
               transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94], delay: index * 0.1 }}
               className="flex items-center gap-4"
             >
-              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gold">
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-overlay-faint border border-hairline-tint flex items-center justify-center text-gold">
                 <cred.icon className="w-6 h-6" aria-hidden="true" />
               </div>
               <div className="min-w-0">

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
-import { REGISTERED_OFFICE, COMPANY_NUMBER } from "@/lib/constants";
+import { COMPANY_NAME, REGISTERED_OFFICE, COMPANY_NUMBER, CONTACT_INFO } from "@/lib/constants";
+import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
+  alternates: { canonical: canonical("/cookies") },
   title: "Cookie Policy — Hanif Design & Consultancy",
   description: "Learn how Hanif Design & Consultancy uses cookies and similar technologies on our website, in line with UK GDPR and PECR.",
   robots: "noindex, follow",
@@ -45,10 +47,10 @@ export default function CookiesPage() {
                 <Link href="/" className="text-gold hover:underline font-medium" aria-label="Home">
                   HOME
                 </Link>
-                <span className="w-4 h-4 text-white/30" aria-hidden="true">›</span>
+                <span className="w-4 h-4 text-text-tint/60" aria-hidden="true">›</span>
               </li>
               <li>
-                <span className="text-white/50" aria-current="page">COOKIE POLICY</span>
+                <span className="text-text-tint" aria-current="page">COOKIE POLICY</span>
               </li>
             </ol>
           </nav>
@@ -56,7 +58,7 @@ export default function CookiesPage() {
           {/* The title block is deliberately static: it is the first viewport and
               the h1 is the LCP element, so a `whileInView` reveal would ship
               `opacity: 0` in the server HTML and hold it back until hydration. */}
-          <h1 id="cookies-heading" className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-4">
+          <h1 id="cookies-heading" className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl text-primary leading-tight mb-4">
             Cookie Policy
           </h1>
           <p className="text-secondary text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
@@ -75,7 +77,7 @@ export default function CookiesPage() {
           <Reveal>
             <h2 className="font-heading text-2xl text-primary mt-12 mb-4">1. Introduction</h2>
             <p>
-                            Hanif Design &amp; Consultancy Limited (&ldquo;we&rdquo;, &ldquo;us&rdquo;,
+                            {COMPANY_NAME} (&ldquo;we&rdquo;, &ldquo;us&rdquo;,
                 &ldquo;our&rdquo;) uses cookies and similar tracking technologies on our website to
                 ensure the site functions properly, to understand how visitors use our services, and to provide a better user experience. This Cookie Policy explains what cookies are, which cookies we use, why we use them, and how you can control them.
             </p>
@@ -111,7 +113,7 @@ export default function CookiesPage() {
             <div className="-mx-4 my-6 overflow-x-auto px-4 sm:mx-0 sm:px-0">
               <table className="w-full min-w-[36rem] border-collapse">
               <thead>
-                <tr className="bg-navy text-white">
+                <tr className="bg-surface-elevated text-primary">
                   <th className="border border-subtle px-4 py-2 text-left">Name</th>
                   <th className="border border-subtle px-4 py-2 text-left">Purpose</th>
                   <th className="border border-subtle px-4 py-2 text-left">Duration</th>
@@ -235,10 +237,14 @@ export default function CookiesPage() {
           </Reveal>
 
           <Reveal>
-            <h2 className="font-heading text-2xl text-primary mt-12 mb-4">7. Contact Us</h2>
+            <h2 className="font-heading text-2xl text-primary mt-12 mb-4">7. Contact us</h2>
             <p>If you have any questions about our use of cookies or this Cookie Policy, please contact us:</p>
             <address className="not-italic my-4 space-y-1">
-              <p><strong>Email:</strong> <a href="mailto:info@hanifplanningdesignltd.co.uk" className="text-gold hover:underline">info@hanifplanningdesignltd.co.uk</a></p>
+              {/* Sourced from CONTACT_INFO so the address a visitor is given here
+                  cannot drift from the one shown in the header, footer and on
+                  the contact page. This page previously hard-coded a second
+                  address, which made two different emails public at once. */}
+              <p><strong>Email:</strong> <a href={`mailto:${CONTACT_INFO.email}`} className="text-gold hover:underline">{CONTACT_INFO.email}</a></p>
               <p><strong>Address:</strong> {REGISTERED_OFFICE}</p>
               <p><strong>Company No:</strong> {COMPANY_NUMBER}</p>
             </address>

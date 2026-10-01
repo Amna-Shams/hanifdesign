@@ -14,8 +14,10 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
+  alternates: { canonical: canonical("/services") },
   title: "Our Services",
   description:
     "Planning applications, building regulations support, design drawings, feasibility layouts, 3D visualisation and development guidance for residential projects in Birmingham and the West Midlands.",
@@ -60,7 +62,7 @@ export default function ServicesPage() {
                 return (
                   <li key={service.slug} className="h-full">
                     <Card hover className="flex h-full flex-col p-6">
-                      <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-gold">
+                      <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl border border-hairline-tint bg-overlay-faint text-gold">
                         <Icon className="h-6 w-6" aria-hidden="true" />
                       </span>
                       <h2 className="mb-2 font-heading text-xl font-semibold text-primary">

@@ -9,6 +9,8 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
+import { HONEYPOT_FIELD, HONEYPOT_FIELD_PROPS, readHoneypot } from "@/lib/spam";
+
 import {
   CONTACT_INFO,
   QUOTE_BUDGET_RANGES,
@@ -53,7 +55,7 @@ export default function QuotePage() {
     defaultValues: { projectType: "", budget: "" },
   });
 
-  const onSubmit = async (data: QuoteFormData) => {
+  const onSubmit = async (data: QuoteFormData, event?: React.BaseSyntheticEvent) => {
     setStatus("idle");
     setFeedback("");
 
@@ -61,7 +63,13 @@ export default function QuotePage() {
       const response = await fetch("/api/quote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+        ...data,
+        // Read off the form element rather than the RHF values: `zodResolver`
+        // returns the parsed object, which has unknown keys stripped, so an
+        // unregistered honeypot would never reach the endpoint.
+        [HONEYPOT_FIELD]: readHoneypot(event),
+      }),
       });
 
       const result = await response.json().catch(() => null);
@@ -125,6 +133,8 @@ export default function QuotePage() {
             </div>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
+              {/* Honeypot: a real visitor never sees or fills this. */}
+              <input {...HONEYPOT_FIELD_PROPS} />
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
                   <label htmlFor="name" className={labelClass}>
@@ -132,6 +142,8 @@ export default function QuotePage() {
                   </label>
                   <input
                     {...register("name")}
+                    required
+                    aria-required="true"
                     id="name"
                     type="text"
                     autoComplete="name"
@@ -153,6 +165,8 @@ export default function QuotePage() {
                   </label>
                   <input
                     {...register("email")}
+                    required
+                    aria-required="true"
                     id="email"
                     type="email"
                     autoComplete="email"
@@ -176,6 +190,8 @@ export default function QuotePage() {
                   </label>
                   <input
                     {...register("phone")}
+                    required
+                    aria-required="true"
                     id="phone"
                     type="tel"
                     autoComplete="tel"

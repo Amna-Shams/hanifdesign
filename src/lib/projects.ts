@@ -43,7 +43,7 @@ export const PROJECTS: readonly Project[] = [
     year: "2024",
     description:
       "Planning drawings and visualisation for a substantial rear home extension to a Victorian terrace property, including a kitchen-diner opening onto the garden.",
-    images: ["/work-01.jpeg", "/work-02.jpeg"],
+    images: ["/rear-home-extension-edgbaston-1.webp", "/rear-home-extension-edgbaston-2.webp"],
     gradient: "from-navy/10 to-gold/10",
     specs: [
       { label: "Project type", value: "Single-storey rear extension" },
@@ -63,7 +63,7 @@ export const PROJECTS: readonly Project[] = [
     year: "2024",
     description:
       "Feasibility study and planning support for a dormer loft conversion creating a master bedroom suite with en-suite bathroom.",
-    images: ["/work-03.jpeg", "/work-04.jpeg"],
+    images: ["/spacious-loft-conversion-harborne-1.webp", "/spacious-loft-conversion-harborne-2.webp"],
     gradient: "from-gold/10 to-navy/10",
     specs: [
       { label: "Project type", value: "Dormer loft conversion" },
@@ -83,7 +83,7 @@ export const PROJECTS: readonly Project[] = [
     year: "2023",
     description:
       "Design drawings and planning submission for a wraparound single-storey extension creating an open-plan living space with rooflights.",
-    images: ["/work-05.jpeg", "/work-06.jpeg"],
+    images: ["/single-storey-rear-extension-moseley-1.webp", "/single-storey-rear-extension-moseley-2.webp"],
     gradient: "from-navy/10 to-blue-500/10",
     specs: [
       { label: "Project type", value: "Wraparound extension" },
@@ -103,7 +103,7 @@ export const PROJECTS: readonly Project[] = [
     year: "2023",
     description:
       "Full planning package for a replacement dwelling — a contemporary four-bedroom detached home on a mature suburban plot.",
-    images: ["/work-07.jpeg", "/work-08.jpeg"],
+    images: ["/new-build-family-home-sutton-coldfield-1.webp", "/new-build-family-home-sutton-coldfield-2.webp"],
     gradient: "from-emerald/10 to-navy/10",
     specs: [
       { label: "Project type", value: "New build replacement dwelling" },
@@ -123,7 +123,7 @@ export const PROJECTS: readonly Project[] = [
     year: "2024",
     description:
       "Prior approval and planning consent for the conversion of a vacant office building into eight residential units under Class MA rights.",
-    images: ["/work-09.jpeg", "/work-10.jpeg"],
+    images: ["/office-to-residential-conversion-city-centre-1.webp", "/office-to-residential-conversion-city-centre-2.webp"],
     gradient: "from-amber/10 to-navy/10",
     specs: [
       { label: "Project type", value: "Class MA prior approval" },
@@ -143,7 +143,7 @@ export const PROJECTS: readonly Project[] = [
     year: "2023",
     description:
       "Planning application for a six-bedroom house in multiple occupation with communal facilities, targeting the student rental market.",
-    images: ["/work-11.jpeg", "/work-12.jpeg"],
+    images: ["/hmo-development-selly-oak-1.webp", "/hmo-development-selly-oak-2.webp"],
     gradient: "from-rose/10 to-navy/10",
     specs: [
       { label: "Project type", value: "HMO (sui generis)" },
@@ -163,7 +163,7 @@ export const PROJECTS: readonly Project[] = [
     year: "2023",
     description:
       "Lawful development certification for the conversion of an integral garage to a habitable room with a new window to the front elevation.",
-    images: ["/work-13.jpeg", "/work-14.jpeg"],
+    images: ["/garage-conversion-kings-heath-1.webp", "/garage-conversion-kings-heath-2.webp"],
     gradient: "from-cyan/10 to-navy/10",
     specs: [
       { label: "Project type", value: "Integral garage conversion" },
@@ -183,7 +183,7 @@ export const PROJECTS: readonly Project[] = [
     year: "2024",
     description:
       "Planning submission for a substantial two-storey side and rear extension to a detached property, adding four bedrooms and two bathrooms.",
-    images: ["/work-15.jpeg", "/work-16.jpeg"],
+    images: ["/two-storey-side-extension-four-oaks-1.webp", "/two-storey-side-extension-four-oaks-2.webp"],
     gradient: "from-violet/10 to-navy/10",
     specs: [
       { label: "Project type", value: "Two-storey side & rear extension" },
@@ -203,7 +203,7 @@ export const PROJECTS: readonly Project[] = [
     year: "2023",
     description:
       "Confirmation that an ancillary garden building used as a home office and creative studio is permitted development, including electrical and insulation provisions.",
-    images: ["/work-17.jpeg", "/work-18.jpeg"],
+    images: ["/garden-office-studio-bournville-1.webp", "/garden-office-studio-bournville-2.webp"],
     gradient: "from-indigo/10 to-navy/10",
     specs: [
       { label: "Project type", value: "Garden outbuilding" },

@@ -37,7 +37,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <Reveal direction="left">
               <div className="space-y-4">
-                <span className="inline-block px-3 py-1 text-xs font-medium bg-gold text-primary rounded">
+                <span className="inline-block px-3 py-1 text-xs font-medium bg-gold text-on-accent rounded">
                   {project.category}
                 </span>
                 <h1 className="font-heading font-bold text-4xl sm:text-5xl text-primary">
@@ -114,22 +114,22 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
                 <div className="mt-6 grid sm:grid-cols-2 gap-4">
                   <Card className="p-4">
                     <CheckCircle className="w-5 h-5 text-gold mb-2" />
-                    <h4 className="font-semibold text-primary mb-1">Pre-application advice</h4>
+                    <h3 className="font-semibold text-primary mb-1">Pre-application advice</h3>
                     <p className="text-textmuted text-sm">Early engagement with planning officers identified key constraints.</p>
                   </Card>
                   <Card className="p-4">
                     <CheckCircle className="w-5 h-5 text-gold mb-2" />
-                    <h4 className="font-semibold text-primary mb-1">Design & Access Statement</h4>
+                    <h3 className="font-semibold text-primary mb-1">Design & Access Statement</h3>
                     <p className="text-textmuted text-sm">Comprehensive statement addressing all relevant local plan policies.</p>
                   </Card>
                   <Card className="p-4">
                     <CheckCircle className="w-5 h-5 text-gold mb-2" />
-                    <h4 className="font-semibold text-primary mb-1">High-quality drawings</h4>
+                    <h3 className="font-semibold text-primary mb-1">High-quality drawings</h3>
                     <p className="text-textmuted text-sm">Scaled plans, elevations, and 3D visualisations for clear communication.</p>
                   </Card>
                   <Card className="p-4">
                     <CheckCircle className="w-5 h-5 text-gold mb-2" />
-                    <h4 className="font-semibold text-primary mb-1">Condition discharge</h4>
+                    <h3 className="font-semibold text-primary mb-1">Condition discharge</h3>
                     <p className="text-textmuted text-sm">Post-approval support to discharge all planning conditions.</p>
                   </Card>
                 </div>
@@ -202,7 +202,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
       <section className="py-16 sm:py-20 lg:py-28 bg-surface-translucent">
 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <Reveal>
-            <h2 className="font-heading font-bold text-3xl sm:text-4xl text-white mb-6">
+            <h2 className="font-heading font-bold text-3xl sm:text-4xl text-primary mb-6">
               Have a Similar Project?
             </h2>
             <p className="text-secondary text-lg mb-10 max-w-2xl mx-auto">
@@ -214,9 +214,9 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
           <Reveal delay={0.1}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="primary" size="lg" asChild>
-                <Link href="/contact">Book Free Consultation</Link>
+                <Link href="/contact">Book a free consultation</Link>
               </Button>
-              <Button variant="secondary" size="lg" className="border-white text-white hover:bg-surface-elevated hover:text-primary" asChild>
+              <Button variant="secondary" size="lg" className="border-hairline-tint text-primary hover:bg-surface-elevated hover:text-primary" asChild>
                 <Link href="/quote">Request a Quote</Link>
               </Button>
             </div>

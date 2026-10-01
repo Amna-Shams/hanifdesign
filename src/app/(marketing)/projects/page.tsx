@@ -3,8 +3,10 @@ import { Suspense } from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProjectsClient } from "./ProjectsClient";
 import { PROJECTS, PROJECT_CATEGORIES } from "@/lib/projects";
+import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
+  alternates: { canonical: canonical("/projects") },
   title: "Our Projects",
   description:
     "Recent planning and design projects across Birmingham and the West Midlands, including rear extensions, side extensions, loft conversions and new builds.",

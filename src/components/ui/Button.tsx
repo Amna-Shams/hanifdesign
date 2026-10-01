@@ -32,12 +32,15 @@ const variantStyles: Record<ButtonVariant, string> = {
   primary:
     "bg-primary-strong text-white hover:bg-primary-strong-hover border border-primary-strong hover:border-primary-strong-hover shadow-sm hover:shadow-glow",
   gold:
-    "bg-gold text-navy hover:bg-gold/90 border border-gold hover:border-gold/90 shadow-sm hover:shadow-glow",
+    "bg-gold text-on-accent hover:bg-gold/90 border border-gold hover:border-gold/90 shadow-sm hover:shadow-glow",
+  // `secondary`/`outline` sit on the page surface, so their text follows
+  // `--text-primary` rather than a fixed white — white would be invisible on the
+  // light theme's white surface.
   secondary:
-    "bg-transparent text-white border border-border hover:bg-surface-elevated hover:border-primary hover:text-primary",
+    "bg-transparent text-primary border border-border hover:bg-surface-elevated hover:border-primary hover:text-primary",
   outline:
-    "bg-transparent text-white border border-border hover:bg-surface-elevated hover:border-primary hover:text-primary",
-  ghost: "bg-transparent text-secondary hover:bg-surface-elevated hover:text-white border border-transparent",
+    "bg-transparent text-primary border border-border hover:bg-surface-elevated hover:border-primary hover:text-primary",
+  ghost: "bg-transparent text-secondary hover:bg-surface-elevated hover:text-primary border border-transparent",
 };
 
 /*

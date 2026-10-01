@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
-import { CONTACT_INFO, REGISTERED_OFFICE, COMPANY_NUMBER } from "@/lib/constants";
+import { COMPANY_NAME, CONTACT_INFO, REGISTERED_OFFICE, COMPANY_NUMBER } from "@/lib/constants";
+import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
+  alternates: { canonical: canonical("/terms") },
   title: "Terms of Service",
-  description: "Hanif Design & Consultancy Limited terms and conditions of service. Governing law: England & Wales.",
+  description: `${COMPANY_NAME} terms and conditions of service. Governing law: England & Wales`,
   robots: "noindex, follow",
 };
 
@@ -31,7 +33,7 @@ export default function TermsPage() {
             <Reveal>
               <h2 className="font-heading font-semibold text-xl text-primary mb-4">1. Acceptance of Terms</h2>
               <p>
-                By engaging Hanif Design &amp; Consultancy Limited (&ldquo;we&rdquo;, &ldquo;us&rdquo;,
+                By engaging {COMPANY_NAME} (&ldquo;we&rdquo;, &ldquo;us&rdquo;,
                 &ldquo;our&rdquo;) for planning consultancy services, you
                 (&ldquo;the Client&rdquo;) agree to these terms. These terms,
                 together with any written proposal or engagement letter, constitute the entire
@@ -117,7 +119,7 @@ export default function TermsPage() {
             <Reveal>
               <h2 className="font-heading font-semibold text-xl text-primary mb-4">11. Company Information</h2>
               <address className="not-italic mt-2 space-y-1">
-                <p>Hanif Design & Consultancy Limited</p>
+              <p>{COMPANY_NAME}</p>
                 <p>Registered in England & Wales | Company No. {COMPANY_NUMBER}</p>
                 <p>Registered Office: {REGISTERED_OFFICE}</p>
               </address>

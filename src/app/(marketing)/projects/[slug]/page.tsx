@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ProjectDetail } from "./ProjectDetail";
 import { PROJECTS, type Project } from "@/lib/projects";
+import { canonical } from "@/lib/site";
+import { BreadcrumbSchema } from "@/components/ui/JsonLd";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -25,7 +27,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: project.title,
-    description: project.summary,
+    description: `${project.summary} A ${project.category.toLowerCase()} planning and design project in ${project.location}, delivered by Hanif Design & Consultancy.`,
+    alternates: { canonical: canonical(`/projects/${project.slug}`) },
   };
 }
 
@@ -37,5 +40,16 @@ export default async function ProjectPage({ params }: PageProps) {
     notFound();
   }
 
-  return <ProjectDetail project={project} />;
+  return (
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Projects", path: "/projects" },
+          { name: project.title, path: `/projects/${project.slug}` },
+        ]}
+      />
+      <ProjectDetail project={project} />
+    </>
+  );
 }

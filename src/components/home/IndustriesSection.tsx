@@ -76,7 +76,7 @@ export function IndustriesSection() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Card hover className="h-full p-6 text-center">
-                  <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mx-auto mb-4 text-gold">
+                  <div className="w-16 h-16 rounded-2xl bg-overlay-faint border border-hairline-tint flex items-center justify-center mx-auto mb-4 text-gold">
                     <industry.icon className="w-8 h-8" aria-hidden="true" />
                   </div>
                   <h3 className="font-heading font-semibold text-xl text-primary mb-2">{industry.title}</h3>

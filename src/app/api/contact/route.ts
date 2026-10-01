@@ -2,6 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { Resend } from "resend";
 import { CONTACT_INFO } from "@/lib/constants";
+import { checkSpam, honeypotTripped } from "@/lib/spam";
+
+/** Five enquiries a minute from one address; a person cannot exceed this. */
+const RATE_LIMIT = { limit: 5, windowMs: 60_000 };
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters"),
@@ -17,7 +21,28 @@ function getResend() {
 
 export async function POST(request: NextRequest) {
   try {
+    const spam = checkSpam(request, RATE_LIMIT);
+    if (!spam.ok) {
+      if (spam.reason === "rate_limited") {
+        return NextResponse.json(
+          { success: false, message: "Too many messages sent. Please try again shortly." },
+          { status: 429, headers: { "Retry-After": String(spam.retryAfter) } }
+        );
+      }
+      return NextResponse.json(
+        { success: false, message: "Submission rejected." },
+        { status: 413 }
+      );
+    }
+
     const body = await request.json().catch(() => null);
+
+    // A bot that filled the hidden field gets a success response it cannot tell
+    // apart from a real send, so it learns nothing and moves on. Nothing is
+    // emailed, so the Resend quota is untouched.
+    if (honeypotTripped(body)) {
+      return NextResponse.json({ success: true, message: "Message sent successfully" });
+    }
 
     const validation = contactSchema.safeParse(body);
     if (!validation.success) {

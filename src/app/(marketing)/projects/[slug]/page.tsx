@@ -1,16 +1,12 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ProjectDetail } from "./ProjectDetail";
-import { PROJECTS, type Project } from "@/lib/projects";
+import { PROJECTS, getProject } from "@/lib/projects";
 import { canonical } from "@/lib/site";
 import { BreadcrumbSchema } from "@/components/ui/JsonLd";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
-}
-
-function findProject(slug: string): Project | undefined {
-  return PROJECTS.find((project) => project.slug === slug);
 }
 
 export function generateStaticParams() {
@@ -19,7 +15,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const project = findProject(slug);
+  const project = getProject(slug);
 
   if (!project) {
     return { title: "Project not found" };
@@ -34,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ProjectPage({ params }: PageProps) {
   const { slug } = await params;
-  const project = findProject(slug);
+  const project = getProject(slug);
 
   if (!project) {
     notFound();

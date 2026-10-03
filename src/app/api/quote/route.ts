@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { Resend } from "resend";
-import { collectUploads, toMeta, type AttachmentMeta } from "@/lib/uploads";
+import { MAIL_FROM, fail, getResend, spamResponse } from "@/lib/api";
 import {
   CONTACT_INFO,
   QUOTE_BUDGET_RANGES,
@@ -12,12 +11,6 @@ import { checkSpam, honeypotTripped } from "@/lib/spam";
 
 /** Four quote requests an hour from one address; covers genuine follow-ups. */
 const RATE_LIMIT = { limit: 4, windowMs: 3_600_000 };
-
-/**
- * Enforces a body limit that comfortably covers `MAX_FILES * 10MB` plus form
- * fields, so a huge upload is rejected by the platform before we buffer it.
- */
-export const maxDuration = 30;
 
 const quoteSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters"),
@@ -38,69 +31,36 @@ const quoteSchema = z.object({
   message: z.string().trim().min(20, "Message must be at least 20 characters"),
 });
 
-function getResend() {
-  return process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
-}
-
-function fail(message: string, status: number, errors?: Record<string, string[]>) {
-  return NextResponse.json({ success: false, message, ...(errors ? { errors } : {}) }, { status });
-}
-
 export async function POST(request: NextRequest) {
   try {
-    const spam = checkSpam(request, RATE_LIMIT);
-    if (!spam.ok) {
-      if (spam.reason === "rate_limited") {
-        return NextResponse.json(
-          { success: false, message: "Too many requests. Please try again shortly." },
-          { status: 429, headers: { "Retry-After": String(spam.retryAfter) } }
-        );
-      }
-      return fail("Submission rejected.", 413);
-    }
+    const rejection = spamResponse(
+      checkSpam(request, RATE_LIMIT),
+      "Too many requests. Please try again shortly.",
+    );
+    if (rejection) return rejection;
 
-    const contentType = request.headers.get("content-type") ?? "";
-    const isMultipart = contentType.includes("multipart/form-data");
-
-    // The form posts JSON; multipart is still accepted so an endpoint caller
-    // can attach drawings without going through the browser form.
-    const raw = isMultipart
-      ? Object.fromEntries((await request.formData()).entries())
-      : await request.json().catch(() => null);
-
+    const raw = await request.json().catch(() => null);
     if (!raw || typeof raw !== "object") {
       return fail("Invalid request body", 400);
     }
 
     // A bot that filled the hidden field is answered as though it succeeded, so
-    // it learns nothing. Nothing is stored or emailed, so the send quota and
-    // any attached uploads cost us nothing.
+    // it learns nothing. Nothing is emailed, so the send quota is untouched.
     if (honeypotTripped(raw)) {
       return NextResponse.json({ success: true, message: "Quote request received" });
     }
 
-    // `files` is handled separately below; the text fields are validated here.
-    const fields: Record<string, unknown> = { ...(raw as Record<string, unknown>) };
-    delete fields.files;
-
-    const validation = quoteSchema.safeParse(fields);
+    const validation = quoteSchema.safeParse(raw);
     if (!validation.success) {
       return fail("Validation failed", 400, validation.error.flatten().fieldErrors);
     }
 
     const data = validation.data;
 
-    // `raw.files` holds one entry per selected file because the client appends
-    // them all under the same field name.
-    const { accepted, rejected } = collectUploads(
-      isMultipart && Array.isArray(raw.files) ? raw.files : []
-    );
-    const attachments: AttachmentMeta[] = accepted.map(toMeta);
-
-    // Email is the only delivery route now that there is no database behind
-    // this endpoint, so a failed send means the enquiry and any attached
-    // drawings genuinely did not arrive. Reporting success anyway would lose
-    // them silently, so failure is surfaced to the visitor.
+    // Email is the only delivery route (there is no database behind this
+    // endpoint), so a failed send means the enquiry genuinely did not
+    // arrive. Reporting success anyway would lose it silently, so failure is
+    // surfaced to the visitor.
     const resend = getResend();
     if (!resend) {
       console.error("RESEND_API_KEY is not set — quote request not delivered:", data.email);
@@ -108,15 +68,8 @@ export async function POST(request: NextRequest) {
     }
 
     try {
-      const bufferAttachments = await Promise.all(
-        accepted.map(async (file) => ({
-          filename: file.name,
-          content: Buffer.from(await file.arrayBuffer()),
-        })),
-      );
-
       await resend.emails.send({
-        from: "Hanif Design <noreply@hanifplanning.co.uk>",
+        from: MAIL_FROM,
         to: CONTACT_INFO.email,
         replyTo: data.email,
         subject: `New quote request: ${labelForOption(QUOTE_PROJECT_TYPES, data.projectType)}`,
@@ -129,28 +82,14 @@ export async function POST(request: NextRequest) {
           "",
           "Message:",
           data.message,
-          "",
-          attachments.length > 0
-            ? `Attachments: ${attachments.map((a) => `${a.filename} (${a.size} bytes)`).join(", ")}`
-            : "Attachments: none",
-          rejected.length > 0
-            ? `Rejected: ${rejected.map((r) => `${r.filename} — ${r.reason}`).join(", ")}`
-            : "",
-        ]
-          .filter(Boolean)
-          .join("\n"),
-        ...(bufferAttachments.length > 0 ? { attachments: bufferAttachments } : {}),
+        ].join("\n"),
       });
     } catch (emailError) {
       console.error("Failed to send quote email:", emailError);
       return fail("We could not send your request. Please email us directly.", 502);
     }
 
-    return NextResponse.json({
-      success: true,
-      message: "Quote request submitted successfully",
-      ...(rejected.length > 0 ? { rejected } : {}),
-    });
+    return NextResponse.json({ success: true, message: "Quote request submitted successfully" });
   } catch (error) {
     console.error("Quote API error:", error);
     return fail("Internal server error", 500);

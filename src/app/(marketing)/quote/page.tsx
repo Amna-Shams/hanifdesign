@@ -64,12 +64,12 @@ export default function QuotePage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-        ...data,
-        // Read off the form element rather than the RHF values: `zodResolver`
-        // returns the parsed object, which has unknown keys stripped, so an
-        // unregistered honeypot would never reach the endpoint.
-        [HONEYPOT_FIELD]: readHoneypot(event),
-      }),
+          ...data,
+          // Read off the form element rather than the RHF values: `zodResolver`
+          // returns the parsed object, which has unknown keys stripped, so an
+          // unregistered honeypot would never reach the endpoint.
+          [HONEYPOT_FIELD]: readHoneypot(event),
+        }),
       });
 
       const result = await response.json().catch(() => null);

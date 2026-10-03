@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useSyncExternalStore } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
@@ -15,41 +15,37 @@ function isCategory(value: string | null): value is ProjectCategory {
 }
 
 function readCategoryFromUrl(): ProjectCategory {
-  if (typeof window === "undefined") return "All";
   const raw = new URLSearchParams(window.location.search).get("category");
   return isCategory(raw) ? raw : "All";
 }
 
+/** `replaceState` fires no event, so the filter setter notifies subscribers itself. */
+const listeners = new Set<() => void>();
+
+function subscribeToUrl(onStoreChange: () => void) {
+  listeners.add(onStoreChange);
+  window.addEventListener("popstate", onStoreChange);
+  return () => {
+    listeners.delete(onStoreChange);
+    window.removeEventListener("popstate", onStoreChange);
+  };
+}
+
 export function ProjectsClient() {
-  // Starts as "All" so the full grid is server-rendered and indexable, then
-  // narrows to the requested category once the client takes over. Reading
-  // `useSearchParams()` here instead would bail the whole section out of static
-  // prerendering, which left the page shipping "Loading projects..." to
-  // crawlers and no-JS visitors.
-  const [activeFilter, setActiveFilter] = useState<ProjectCategory>("All");
-
-  // Adjust during render rather than in an effect: the first client render
-  // (hydration) reconciles with the URL, so a shared ?category= link shows the
-  // right subset immediately with no intermediate flash of the full grid.
-  const [urlCategory, setUrlCategory] = useState<ProjectCategory | null>(null);
-  if (urlCategory === null) {
-    const fromUrl = readCategoryFromUrl();
-    if (fromUrl !== activeFilter) setActiveFilter(fromUrl);
-    setUrlCategory(fromUrl);
-  }
-
-  useEffect(() => {
-    // Only back/forward navigation changes the URL after mount, so this stays a
-    // pure external-system subscription.
-    const onPopState = () => setActiveFilter(readCategoryFromUrl());
-    window.addEventListener("popstate", onPopState);
-    return () => window.removeEventListener("popstate", onPopState);
-  }, []);
+  // The URL is an external store. The server snapshot is "All", so the full grid
+  // is server-rendered and indexable, and hydration agrees with it; React then
+  // re-renders with the real ?category= value. Reading the URL during the first
+  // client render instead made the filter buttons and the list differ from the
+  // server HTML. (`useSearchParams()` would bail the section out of static
+  // prerendering, which is why it is not used here.)
+  const activeFilter = useSyncExternalStore<ProjectCategory>(
+    subscribeToUrl,
+    readCategoryFromUrl,
+    () => "All",
+  );
 
   // Keep the filter in the URL so links are shareable and the back button works.
   const setFilter = useCallback((next: ProjectCategory) => {
-    setActiveFilter(next);
-
     const params = new URLSearchParams(window.location.search);
     if (next === "All") params.delete("category");
     else params.set("category", next);
@@ -57,6 +53,7 @@ export function ProjectsClient() {
     const query = params.toString();
     const url = query ? `/projects?${query}` : "/projects";
     window.history.replaceState(window.history.state, "", url);
+    for (const listener of listeners) listener();
   }, []);
 
   const visible = PROJECTS.filter(

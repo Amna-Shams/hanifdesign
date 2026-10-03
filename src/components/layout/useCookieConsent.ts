@@ -118,9 +118,4 @@ export function useCookieConsent() {
   };
 }
 
-/** Imperative reader for non-React callers. */
-export function hasAcceptedCookies(): boolean {
-  return readStoredConsent() === "accepted";
-}
-
 export { STORAGE_KEY as COOKIE_CONSENT_KEY, MAP_STORAGE_KEY as MAP_CONSENT_KEY };

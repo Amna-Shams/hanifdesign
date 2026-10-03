@@ -1,11 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { Resend } from "resend";
+import { MAIL_FROM, fail, getResend, spamResponse } from "@/lib/api";
 import { CONTACT_INFO } from "@/lib/constants";
 import { checkSpam, honeypotTripped } from "@/lib/spam";
 
 /** Five enquiries a minute from one address; a person cannot exceed this. */
 const RATE_LIMIT = { limit: 5, windowMs: 60_000 };
+
+const SEND_FAILED = "We could not send your message. Please email us directly.";
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters"),
@@ -15,25 +17,13 @@ const contactSchema = z.object({
   message: z.string().trim().min(10, "Message must be at least 10 characters"),
 });
 
-function getResend() {
-  return process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
-}
-
 export async function POST(request: NextRequest) {
   try {
-    const spam = checkSpam(request, RATE_LIMIT);
-    if (!spam.ok) {
-      if (spam.reason === "rate_limited") {
-        return NextResponse.json(
-          { success: false, message: "Too many messages sent. Please try again shortly." },
-          { status: 429, headers: { "Retry-After": String(spam.retryAfter) } }
-        );
-      }
-      return NextResponse.json(
-        { success: false, message: "Submission rejected." },
-        { status: 413 }
-      );
-    }
+    const rejection = spamResponse(
+      checkSpam(request, RATE_LIMIT),
+      "Too many messages sent. Please try again shortly.",
+    );
+    if (rejection) return rejection;
 
     const body = await request.json().catch(() => null);
 
@@ -46,14 +36,7 @@ export async function POST(request: NextRequest) {
 
     const validation = contactSchema.safeParse(body);
     if (!validation.success) {
-      return NextResponse.json(
-        {
-          success: false,
-          message: "Validation failed",
-          errors: validation.error.flatten().fieldErrors,
-        },
-        { status: 400 }
-      );
+      return fail("Validation failed", 400, validation.error.flatten().fieldErrors);
     }
 
     const data = validation.data;
@@ -65,18 +48,12 @@ export async function POST(request: NextRequest) {
     const resend = getResend();
     if (!resend) {
       console.error("RESEND_API_KEY is not set — contact enquiry not delivered:", data.subject);
-      return NextResponse.json(
-        {
-          success: false,
-          message: "We could not send your message. Please email us directly.",
-        },
-        { status: 503 }
-      );
+      return fail(SEND_FAILED, 503);
     }
 
     try {
       await resend.emails.send({
-        from: "Hanif Design <noreply@hanifplanning.co.uk>",
+        from: MAIL_FROM,
         to: CONTACT_INFO.email,
         // Replies go straight to the sender rather than to the no-reply address.
         replyTo: data.email,
@@ -91,24 +68,12 @@ export async function POST(request: NextRequest) {
       });
     } catch (emailError) {
       console.error("Failed to send contact email:", emailError);
-      return NextResponse.json(
-        {
-          success: false,
-          message: "We could not send your message. Please email us directly.",
-        },
-        { status: 502 }
-      );
+      return fail(SEND_FAILED, 502);
     }
 
-    return NextResponse.json(
-      { success: true, message: "Message sent successfully" },
-      { status: 200 }
-    );
+    return NextResponse.json({ success: true, message: "Message sent successfully" });
   } catch (error) {
     console.error("Contact API error:", error);
-    return NextResponse.json(
-      { success: false, message: "Internal server error" },
-      { status: 500 }
-    );
+    return fail("Internal server error", 500);
   }
 }

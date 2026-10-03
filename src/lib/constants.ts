@@ -39,8 +39,6 @@ export const COMPANY_NAME = "Hanif Design & Consultancy Ltd";
 
 export const COMPANY_NUMBER = "14139690";
 
-export const DISCLAIMER = "The information on this website is for general guidance only and does not constitute professional planning advice. Always consult a qualified planning consultant for site-specific matters.";
-
 export const QUICK_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },

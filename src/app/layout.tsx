@@ -46,6 +46,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en-GB"
+      // The inline theme script sets `data-theme` on <html> before React
+      // hydrates, so this one element is expected to differ from the server HTML.
+      suppressHydrationWarning
       className={`${inter.variable} ${poppins.variable} ${plexMono.variable} h-full antialiased`}
     >
       <head>

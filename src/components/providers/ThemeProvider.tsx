@@ -4,8 +4,8 @@ import {
   createContext,
   useCallback,
   useContext,
-  useEffect,
-  useState,
+  useMemo,
+  useSyncExternalStore,
 } from "react";
 
 /**
@@ -47,67 +47,67 @@ export const themeInitScript = `
 })();
 `;
 
-function readStoredTheme(): Theme {
+function readStoredTheme(): string | null {
   try {
-    const value = localStorage.getItem(STORAGE_KEY);
-    return value === "light" ? "light" : "dark";
+    return localStorage.getItem(STORAGE_KEY);
   } catch {
-    return "dark";
+    return null;
   }
 }
 
+/**
+ * The theme lives on <html data-theme>, which the inline <head> script sets
+ * before first paint. That attribute is the single source of truth, so React
+ * subscribes to it with `useSyncExternalStore` rather than copying it into
+ * state: the server snapshot is "dark" (what the server rendered), React
+ * hydrates against that, and only then re-renders with the real value. Reading
+ * storage during the first client render instead made the toggle's
+ * aria-label / title / aria-pressed disagree with the server HTML.
+ */
+function readTheme(): Theme {
+  return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+}
+
+function applyTheme(theme: Theme) {
+  const root = document.documentElement;
+  if (theme === "light") root.setAttribute("data-theme", "light");
+  else root.removeAttribute("data-theme");
+}
+
+function subscribe(onStoreChange: () => void) {
+  const observer = new MutationObserver(onStoreChange);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+
+  // Follow the OS only while the visitor has not made an explicit choice.
+  const query = window.matchMedia ? window.matchMedia("(prefers-color-scheme: light)") : null;
+  const onSystemChange = (event: MediaQueryListEvent) => {
+    if (readStoredTheme()) return;
+    applyTheme(event.matches ? "light" : "dark");
+  };
+  query?.addEventListener("change", onSystemChange);
+
+  return () => {
+    observer.disconnect();
+    query?.removeEventListener("change", onSystemChange);
+  };
+}
+
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  // Starts dark to match the server-rendered CSS. The inline <head> script has
-  // already set `data-theme` before paint, so the very first client render reads
-  // the same stored value and React never shows the wrong palette.
-  const [theme, setTheme] = useState<Theme>("dark");
+  const theme = useSyncExternalStore<Theme>(subscribe, readTheme, () => "dark");
 
-  // Adjust during render rather than in an effect: reading storage synchronises
-  // an external system, and doing it here avoids a cascading re-render.
-  const [initialised, setInitialised] = useState(false);
-  if (!initialised) {
-    setInitialised(true);
-    const stored = readStoredTheme();
-    if (stored !== theme) setTheme(stored);
-  }
-
-  useEffect(() => {
-    const root = document.documentElement;
-    if (theme === "light") root.setAttribute("data-theme", "light");
-    else root.removeAttribute("data-theme");
-
+  const toggleTheme = useCallback(() => {
+    const next: Theme = readTheme() === "dark" ? "light" : "dark";
+    applyTheme(next);
     try {
-      localStorage.setItem(STORAGE_KEY, theme);
+      localStorage.setItem(STORAGE_KEY, next);
     } catch {
       /* storage unavailable — the choice lasts for this page view only */
     }
-  }, [theme]);
-
-  // Follow the OS only while the visitor has not made an explicit choice.
-  useEffect(() => {
-    if (!window.matchMedia) return;
-
-    const query = window.matchMedia("(prefers-color-scheme: light)");
-    const onChange = (event: MediaQueryListEvent) => {
-      let stored: string | null = null;
-      try {
-        stored = localStorage.getItem(STORAGE_KEY);
-      } catch {
-        stored = null;
-      }
-      if (stored) return;
-      setTheme(event.matches ? "light" : "dark");
-    };
-
-    query.addEventListener("change", onChange);
-    return () => query.removeEventListener("change", onChange);
   }, []);
 
-  const toggleTheme = useCallback(() => {
-    setTheme((current) => (current === "dark" ? "light" : "dark"));
-  }, []);
+  const value = useMemo(() => ({ theme, toggleTheme }), [theme, toggleTheme]);
 
-  return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 }
 
 export function useTheme() {

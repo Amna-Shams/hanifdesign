@@ -1,6 +1,5 @@
 "use client";
 
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -20,11 +19,11 @@ import { ConsentGatedMap } from "@/components/layout/ConsentGatedMap";
 const officeDirectionsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(OFFICE_MAP_QUERY)}`;
 
 const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
+  name: z.string().trim().min(2, "Name must be at least 2 characters"),
+  email: z.string().trim().email("Please enter a valid email address"),
   phone: z.string().optional(),
-  subject: z.string().min(5, "Subject must be at least 5 characters"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
+  subject: z.string().trim().min(5, "Subject must be at least 5 characters"),
+  message: z.string().trim().min(10, "Message must be at least 10 characters"),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -48,18 +47,18 @@ export default function ContactPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-        ...data,
-        // Read off the form element rather than the RHF values: `zodResolver`
-        // returns the parsed object, which has unknown keys stripped, so an
-        // unregistered honeypot would never reach the endpoint.
-        [HONEYPOT_FIELD]: readHoneypot(event),
-      }),
+          ...data,
+          // Read off the form element rather than the RHF values: `zodResolver`
+          // returns the parsed object, which has unknown keys stripped, so an
+          // unregistered honeypot would never reach the endpoint.
+          [HONEYPOT_FIELD]: readHoneypot(event),
+        }),
       });
 
-      const result = await response.json();
+      const result = await response.json().catch(() => null);
 
       if (!response.ok) {
-        throw new Error(result.message || "Something went wrong");
+        throw new Error(result?.message || "Something went wrong");
       }
 
       setSubmitStatus("success");

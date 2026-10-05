@@ -52,6 +52,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${inter.variable} ${poppins.variable} ${plexMono.variable} h-full antialiased`}
     >
       <head>
+        {/* Favicon set (RealFaviconGenerator). Declared here, in the one root
+            <head>, so every route inherits it exactly once. This replaces the
+            `icons`/`manifest` metadata that used to live in the (marketing)
+            layout — running both would emit duplicate <link> tags. */}
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         {/* Applies the stored theme before first paint, so switching never
             flashes the dark palette first. */}
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />

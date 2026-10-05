@@ -31,6 +31,26 @@ const serviceData: Record<
     intro: string;
     process: string[];
     benefits: string[];
+    /** Lead image in the header. Kept out of `gallery` so a page never repeats itself. */
+    hero: {
+      src: string;
+      alt: string;
+      /**
+       * Set when the source artwork sits on a white drawing sheet rather than
+       * being a full-bleed photo. Those are mounted on a white plate and fitted
+       * with `contain` — a white crop of a sheet reads as a sheet, where
+       * `cover` on the dark hero would just glare, and `contain` keeps the
+       * drawing whole instead of clipping it.
+       */
+      sheet?: boolean;
+    };
+    /** Supporting image under the process list, in the two-column section. */
+    aside: {
+      src: string;
+      alt: string;
+      /** Tailwind object-position class, for sources that need a different crop anchor. */
+      position?: string;
+    };
     /** Heading line for the gallery under the hero. */
     galleryCaption: string;
     /** Three images matched to this service. */
@@ -55,6 +75,14 @@ const serviceData: Record<
       "Fixed fees agreed before we start",
       "Condition discharge support included",
     ],
+    hero: {
+      src: "/two-storey-side-extension-four-oaks-1.webp",
+      alt: "Detached house with a pitched roof and dormer window set in landscaped grounds, approved following a householder application",
+    },
+    aside: {
+      src: "/planning application.webp",
+      alt: "Planning application form stamped approved, lying on architectural floor plans beside glasses, a pen and a compass",
+    },
     galleryCaption:
       "The kinds of residential schemes we take through planning to a decision.",
     gallery: [
@@ -81,6 +109,14 @@ const serviceData: Record<
       "Avoids the common causes of build-control rejection",
       "Completion certificate handled for you",
     ],
+    hero: {
+      src: "/new-build-family-home-sutton-coldfield-1.webp",
+      alt: "Split view of a bare concrete interior beside the same space finished as a living room",
+    },
+    aside: {
+      src: "/building regulation support.webp",
+      alt: "Consultants around a table reviewing a lit architectural model of a building set on drawings",
+    },
     galleryCaption:
       "From structure to specification, compliance is documented at every stage of the build.",
     gallery: [
@@ -107,6 +143,14 @@ const serviceData: Record<
       "Revisions included until approval",
       "Issued as an organised PDF pack",
     ],
+    hero: {
+      src: "/rear-home-extension-edgbaston-1.webp",
+      alt: "Architectural scale model of a house held up in front of a building site",
+    },
+    aside: {
+      src: "/design drawings.webp",
+      alt: "Isometric line drawing of a framed building with a crane, dimension lines and a hard hat on a dark blueprint",
+    },
     galleryCaption:
       "Coordinated plans, elevations and sections that planners can approve and builders can price.",
     gallery: [
@@ -133,6 +177,14 @@ const serviceData: Record<
       "Evidence you can share with funders and buyers",
       "Typically resolved within two weeks",
     ],
+    hero: {
+      src: "/hmo-development-selly-oak-2.webp",
+      alt: "Rendered traditional house exterior above an exploded axonometric view of its floors",
+    },
+    aside: {
+      src: "/feasibility layouts.webp",
+      alt: "Translucent wireframe massing model of a multi-storey building over site plans",
+    },
     galleryCaption:
       "Testing what a site can deliver before you commit to design or purchase.",
     gallery: [
@@ -159,6 +211,15 @@ const serviceData: Record<
       "Accurate to the drawings, not aspirational",
       "Suitable for planning committee submission",
     ],
+    hero: {
+        src: "/3d.webp",
+        alt: "Exploded axonometric 3D render of a modern house, with each floor separated vertically to reveal the interior layout, surrounded by faint elevation and section line drawings",
+        sheet: true,
+      },
+    aside: {
+      src: "/feasibility layouts.webp",
+      alt: "Translucent 3D model of a multi-storey building rising from technical site drawings",
+    },
     galleryCaption:
       "Photorealistic visuals that show decision-makers exactly what will be built.",
     gallery: [
@@ -185,6 +246,15 @@ const serviceData: Record<
       "Practical, decision-focused advice",
       "Ongoing support as the scheme evolves",
     ],
+    hero: {
+      src: "/spacious-loft-conversion-harborne-1.webp",
+      alt: "Interior design drawing with floor plan, section and dimensions overlaid on a double-height living space",
+    },
+    aside: {
+      src: "/development guidance.webp",
+      alt: "Architectural model, hard hat, rolled plans and a calculator on a desk with a floor plan",
+      position: "object-top",
+    },
     galleryCaption:
       "Policy-led advice that supports confident decisions on site, design and programme.",
     gallery: [
@@ -240,16 +310,41 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
             </ol>
           </nav>
 
-          <div className="flex items-start gap-5">
-            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-hairline-tint bg-overlay-faint text-gold">
-              <Icon className="h-7 w-7" aria-hidden="true" />
-            </span>
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_420px] lg:gap-16">
             <div>
-              <h1 className="font-heading text-4xl font-bold leading-tight text-primary sm:text-5xl">
-                {service.label}
-              </h1>
-              <p className="mt-4 max-w-3xl text-lg leading-relaxed text-secondary">{data.intro}</p>
+              <div className="flex items-start gap-5">
+                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-hairline-tint bg-overlay-faint text-gold">
+                  <Icon className="h-7 w-7" aria-hidden="true" />
+                </span>
+                <h1 className="font-heading text-4xl font-bold leading-tight text-primary sm:text-5xl">
+                  {service.label}
+                </h1>
+              </div>
+              <p className="mt-6 text-lg leading-relaxed text-secondary">{data.intro}</p>
             </div>
+
+            {/* Lead image for this service. Static and `priority` because it sits in
+                the first viewport alongside the h1, for the same LCP reason as the
+                heading above. It holds a fixed 4:5 box either way, so the layout can
+                never shift while it loads. `crop` adds the drawing-sheet corner marks
+                used on the other figures. White sheet artwork gets a white plate and
+                `contain` — the same treatment the logo gets in the header — so it
+                reads as a mounted sheet instead of a white glare on the dark hero. */}
+            <figure
+              className={[
+                "crop relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl border lg:mx-0 lg:max-w-none",
+                data.hero.sheet ? "border-subtle bg-white" : "border-subtle bg-surface-elevated",
+              ].join(" ")}
+            >
+              <Image
+                src={data.hero.src}
+                alt={data.hero.alt}
+                fill
+                priority
+                sizes="(min-width: 1024px) 420px, (min-width: 640px) 384px, 90vw"
+                className={data.hero.sheet ? "object-contain" : "object-cover"}
+              />
+            </figure>
           </div>
         </div>
       </header>
@@ -309,6 +404,18 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
                     </li>
                   ))}
                 </ol>
+              </Reveal>
+
+              <Reveal delay={0.25} amount={0.15}>
+                <figure className="crop relative mt-10 aspect-[4/3] w-full overflow-hidden rounded-2xl border border-subtle bg-surface-elevated">
+                  <Image
+                    src={data.aside.src}
+                    alt={data.aside.alt}
+                    fill
+                    sizes="(min-width: 1280px) 560px, (min-width: 1024px) 45vw, 90vw"
+                    className={["object-cover", data.aside.position].filter(Boolean).join(" ")}
+                  />
+                </figure>
               </Reveal>
             </Reveal>
 

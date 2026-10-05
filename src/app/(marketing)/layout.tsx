@@ -53,12 +53,9 @@ export const metadata: Metadata = {
     description: "Expert planning consultancy for residential projects in Birmingham.",
     images: ["/og-image.jpg"],
   },
-  icons: {
-    icon: [{ url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" }],
-    shortcut: ["/favicon-16x16.png"],
-    apple: "/apple-touch-icon.png",
-  },
-  manifest: "/site.webmanifest",
+  // `icons` and `manifest` are intentionally absent: they are declared as raw
+  // <link> tags in the root layout's <head>, which covers every route from one
+  // place. Setting them here too would emit each tag twice.
 };
 
 export default function MarketingLayout({ children }: { children: React.ReactNode }) {

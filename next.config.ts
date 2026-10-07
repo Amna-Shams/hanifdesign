@@ -147,15 +147,26 @@ const nextConfig: NextConfig = {
       },
       // Fingerprinted build output is immutable by definition, so it can be
       // cached for a year instead of revalidated on every navigation.
-      {
-        source: "/_next/static/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
+      //
+      // Production only. Dev chunks are NOT fingerprinted — Turbopack reuses a
+      // stable name like `src_1db86up._.js` across recompiles — so a browser
+      // that has cached one keeps serving the stale chunk after an edit. The
+      // fresh server HTML then disagrees with the stale client bundle, React
+      // throws a hydration mismatch, and it re-renders the whole tree from the
+      // old bundle: edits appear on reload and then silently revert.
+      ...(isDev
+        ? []
+        : [
+            {
+              source: "/_next/static/:path*",
+              headers: [
+                {
+                  key: "Cache-Control",
+                  value: "public, max-age=31536000, immutable",
+                },
+              ],
+            },
+          ]),
     ];
   },
 };

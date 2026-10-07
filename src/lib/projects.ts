@@ -123,7 +123,7 @@ export const PROJECTS: readonly Project[] = [
     year: "2024",
     description:
       "Prior approval and planning consent for the conversion of a vacant office building into eight residential units under Class MA rights.",
-    images: ["/office-to-residential-conversion-city-centre-1.webp", "/office-to-residential-conversion-city-centre-2.webp"],
+    images: ["/commercial-conversion-city-centre-1.webp"],
     gradient: "from-amber/10 to-navy/10",
     specs: [
       { label: "Project type", value: "Class MA prior approval" },
@@ -143,7 +143,7 @@ export const PROJECTS: readonly Project[] = [
     year: "2023",
     description:
       "Planning application for a six-bedroom house in multiple occupation with communal facilities, targeting the student rental market.",
-    images: ["/hmo-development-selly-oak-1.webp", "/hmo-development-selly-oak-2.webp"],
+    images: ["/commercial-unit-selly-oak-1.webp"],
     gradient: "from-rose/10 to-navy/10",
     specs: [
       { label: "Project type", value: "HMO (sui generis)" },

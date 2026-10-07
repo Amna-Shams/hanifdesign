@@ -70,10 +70,10 @@ export function Header() {
             className="group flex min-w-0 shrink items-center gap-3 sm:gap-4"
             aria-label="Hanif Design & Consultancy Ltd — home"
           >
-            {/* Logo plate. The source art is a white sheet, so it is mounted
-                like one: a white card with a hairline and a soft shadow, sized
-                on its own 1.54:1 ratio. */}
-            <span className="relative grid h-11 w-[4.25rem] shrink-0 place-items-center bg-white p-1 shadow-sm ring-1 ring-black/30 transition-shadow duration-300 group-hover:shadow-glow sm:h-12 sm:w-[4.75rem] lg:h-14 lg:w-[5.5rem]">
+            {/* Logo plate. The artwork is transparent, so it is mounted on a
+                white card with a hairline and a soft shadow, sized on its own
+                1.75:1 ratio so the mark fills the plate. */}
+            <span className="relative grid h-10 w-[4.38rem] shrink-0 place-items-center bg-white p-1 shadow-sm ring-1 ring-black/30 transition-shadow duration-300 group-hover:shadow-glow sm:h-11 sm:w-[4.8rem] lg:h-12 lg:w-[5.25rem]">
               <Image
                 src="/logo.webp"
                 alt=""

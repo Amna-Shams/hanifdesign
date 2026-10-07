@@ -83,9 +83,24 @@ const nextConfig: NextConfig = {
    * this applies.
    */
   async redirects() {
-    if (isDev) return [];
+    /**
+     * Legacy project slugs. A commercial project was rewritten, so the old slug
+     * has to keep resolving rather than 404 for anything already linking to it
+     * or indexed. Applied in development too, so the old URL can be exercised
+     * locally instead of only appearing to work once deployed.
+     */
+    const slugRedirects = [
+      {
+        source: "/projects/hmo-development",
+        destination: "/projects/retail-office-unit",
+        permanent: true,
+      },
+    ];
+
+    if (isDev) return slugRedirects;
 
     return [
+      ...slugRedirects,
       // Any http:// request -> https, preserving path and query.
       {
         source: "/:path*",

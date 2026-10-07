@@ -74,10 +74,10 @@ export function Footer() {
               className="inline-block"
               aria-label="Hanif Design and Consultancy — home"
             >
-              {/* The source art is a white sheet, so it is mounted like one: a
-                  white plate with a hairline and a soft shadow. The link carries
-                  the accessible name, so the image itself is decorative. */}
-              <span className="relative grid h-11 w-[4.25rem] place-items-center bg-white p-1 shadow-sm ring-1 ring-black/30 transition-shadow duration-300 hover:shadow-glow sm:h-12 sm:w-[4.75rem] lg:h-14 lg:w-[5.5rem]">
+              {/* The artwork is transparent, so it is mounted on a white plate with
+                  a hairline and a soft shadow, on its own 1.75:1 ratio. The link
+                  carries the accessible name, so the image is decorative. */}
+              <span className="relative grid h-10 w-[4.38rem] place-items-center bg-white p-1 shadow-sm ring-1 ring-black/30 transition-shadow duration-300 hover:shadow-glow sm:h-11 sm:w-[4.8rem] lg:h-12 lg:w-[5.25rem]">
                 <Image src="/logo.webp" alt="" fill sizes="88px" className="object-contain" />
               </span>
             </Link>

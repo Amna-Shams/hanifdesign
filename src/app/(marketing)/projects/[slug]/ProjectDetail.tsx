@@ -52,14 +52,17 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
             </Reveal>
 
             <Reveal direction="right" delay={0.1}>
-              <div className="relative aspect-video overflow-hidden rounded-2xl border border-subtle bg-surface-elevated hidden lg:block">
+              {/* Not desktop-only: below `lg` this is the only project photo on
+                  the page, and the second-view figure further down needs a first
+                  image to have anything to follow. */}
+              <div className="relative aspect-video overflow-hidden rounded-2xl border border-subtle bg-surface-elevated">
                 {project.images[0] ? (
                   <Image
                     src={project.images[0]}
                     alt={`${project.title} — ${project.location}`}
                     fill
                     priority
-                    sizes="50vw"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
                     className="object-cover"
                   />
                 ) : (

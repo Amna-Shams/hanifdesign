@@ -29,8 +29,9 @@ export const OFFICE_MAP_QUERY = "369 Hagley Road West Quinton, Birmingham, B32 2
  * Single source of truth for the legal entity name, used by the footer colophon,
  * the privacy/terms/cookies pages and the page metadata. Centralised because
  * "Ltd" and "Limited" had already drifted apart across eight call sites, and the
- * branding carries the authority here — the registered logo artwork reads
- * "HANIF DESIGN & CONSULTANCY LTD".
+ * branding carries the authority here: the mark reads "HANIF DESIGN", so the
+ * "& Consultancy Ltd" that completes the registered name has to be set in type
+ * alongside it rather than left to the artwork.
  *
  * "Ltd" and "Limited" are legally interchangeable, but only one of them is the
  * registered name, and mixing them on the same site undermines credibility.

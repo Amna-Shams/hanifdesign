@@ -85,9 +85,8 @@ export function Header() {
             </span>
 
             <span className="flex min-w-0 flex-col leading-none">
-              <span className="truncate font-heading text-[0.8rem] font-bold tracking-tight text-primary sm:text-sm lg:text-base">
-                Hanif Design &amp; Consultancy{" "}
-                <span className="text-gold">Ltd</span>
+              <span className="truncate font-heading text-[0.8rem] font-bold tracking-tight text-gold sm:text-sm lg:text-base">
+                Hanif Design &amp; Consultancy Ltd
               </span>
             </span>
           </Link>

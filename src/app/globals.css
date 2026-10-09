@@ -1,6 +1,21 @@
 @import "tailwindcss";
 
 /* ==========================================================================
+   THEME VARIANT
+   The theme is an attribute on <html> (`data-theme="light"`), not a class, so
+   Tailwind's stock `dark:` variant — which keys off a class or the media query
+   — cannot express it. This defines `light:` as "anywhere inside the light
+   theme" and lets `light:hidden`, `light:block`, `light:bg-white` and friends
+   work like any other variant.
+
+   Attribute-based rather than a media query so it follows the visitor's
+   explicit choice (the toggle in FloatingActions) instead of their OS setting,
+   and it resolves in CSS with no JavaScript — so there is no flash of the
+   wrong logo before hydration.
+   ========================================================================== */
+@custom-variant light (&:where([data-theme="light"] *));
+
+/* ==========================================================================
    DESIGN TOKENS
    Single source of truth for the theme. Components should consume the
    Tailwind utilities generated from these (bg-surface, text-secondary, ...)

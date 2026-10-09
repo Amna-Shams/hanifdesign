@@ -84,11 +84,28 @@ export function Footer() {
               className="inline-block"
               aria-label="Hanif Design and Consultancy — home"
             >
-              {/* The artwork is transparent, so it is mounted on a white plate with
-                  a hairline and a soft shadow, on its own 1.75:1 ratio. The link
-                  carries the accessible name, so the image is decorative. */}
-              <span className="relative grid h-10 w-[4.38rem] place-items-center bg-white p-1 shadow-sm ring-1 ring-black/30 transition-shadow duration-300 hover:shadow-glow sm:h-11 sm:w-[4.8rem] lg:h-12 lg:w-[5.25rem]">
-                <Image src="/hanif-design-logo.webp" alt="" fill sizes="88px" className="object-contain" />
+              {/* Theme-swapped lockups, matching the header. Dark theme uses the
+                  light-ink artwork with no plate behind it; the light theme
+                  uses the dark-ink artwork on a white plate with a hairline and
+                  a soft shadow. `light:` is a CSS custom variant (see
+                  globals.css), so this works in a server component with no
+                  client state. The link carries the accessible name, so both
+                  images are decorative. */}
+              <span className="relative grid h-10 w-[4.38rem] place-items-center light:bg-white light:p-1 light:shadow-sm light:ring-1 light:ring-black/30 light:transition-shadow light:duration-300 light:hover:shadow-glow sm:h-11 sm:w-[4.8rem] lg:h-12 lg:w-[5.25rem]">
+                <Image
+                  src="/hanif-design-logo.webp"
+                  alt=""
+                  fill
+                  sizes="88px"
+                  className="hidden object-contain light:block"
+                />
+                <Image
+                  src="/hanif-design-logo-light.webp"
+                  alt=""
+                  fill
+                  sizes="88px"
+                  className="object-contain light:hidden"
+                />
               </span>
             </Link>
 

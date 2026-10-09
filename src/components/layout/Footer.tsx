@@ -60,15 +60,25 @@ const LEGAL_LINKS = [
 export function Footer() {
   return (
     <footer className="border-t border-subtle bg-surface-translucent">
-      <div className="mx-auto w-full max-w-[100rem] px-4 py-16 sm:px-6 lg:px-10 lg:py-20 xl:px-12">
-        {/* Five equal-width columns. The previous 6-track grid gave the brand
-            column two tracks, which made it visibly wider than its neighbours
-            and left the row reading as ragged rather than justified.
-            `sm:grid-cols-6` with three half-spans keeps every row exactly full
-            at the 2-up breakpoint too, so there is no orphan gap. */}
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-6 lg:grid-cols-5 lg:gap-8">
+      <div className="mx-auto w-full max-w-[100rem] px-4 py-10 sm:px-6 sm:py-14 lg:px-10 lg:py-20 xl:px-12">
+        {/* Five equal-width columns from `sm` up. The previous 6-track grid
+            gave the brand column two tracks, which made it visibly wider than
+            its neighbours and left the row reading as ragged rather than
+            justified. `sm:grid-cols-6` with three half-spans keeps every row
+            exactly full at the 2-up breakpoint too, so there is no orphan gap.
+
+            Below `sm` it is a 2-up grid rather than a single stack — a
+            full-height stack of five sections left a lot of dead vertical
+            space on a phone. The brand, services and contact blocks span both
+            tracks; Legal and Company share the middle row.
+
+            DOM order is kept logical for screen readers, and `order-*` moves
+            the visual arrangement only below `sm` — Legal is ordered ahead of
+            Company there so it lands in the column to its left, and every
+            `order` is reset at `sm` so the desktop order stays as authored. */}
+        <div className="grid grid-cols-2 gap-x-5 gap-y-7 sm:grid-cols-6 sm:gap-10 lg:grid-cols-5 lg:gap-8">
           {/* 1 — Brand */}
-          <div className="space-y-5 sm:col-span-3 lg:col-span-1">
+          <div className="col-span-2 order-1 space-y-4 sm:col-span-3 sm:order-none lg:col-span-1">
             <Link
               href="/"
               className="inline-block"
@@ -78,7 +88,7 @@ export function Footer() {
                   a hairline and a soft shadow, on its own 1.75:1 ratio. The link
                   carries the accessible name, so the image is decorative. */}
               <span className="relative grid h-10 w-[4.38rem] place-items-center bg-white p-1 shadow-sm ring-1 ring-black/30 transition-shadow duration-300 hover:shadow-glow sm:h-11 sm:w-[4.8rem] lg:h-12 lg:w-[5.25rem]">
-                <Image src="/logo.webp" alt="" fill sizes="88px" className="object-contain" />
+                <Image src="/hanif-design-logo.webp" alt="" fill sizes="88px" className="object-contain" />
               </span>
             </Link>
 
@@ -88,14 +98,17 @@ export function Footer() {
           </div>
 
           {/* 2 — Services */}
-          <nav aria-labelledby="footer-services" className="sm:col-span-3 lg:col-span-1">
+          <nav
+            aria-labelledby="footer-services"
+            className="order-2 col-span-2 sm:order-none sm:col-span-3 lg:col-span-1"
+          >
             <h2
               id="footer-services"
-              className="mb-4 font-heading text-base font-semibold text-primary"
+              className="mb-3 font-heading text-base font-semibold text-primary sm:mb-4"
             >
               Services
             </h2>
-            <ul className="space-y-1">
+            <ul className="space-y-0.5 sm:space-y-1">
               {SERVICES.map((service) => (
                 <li key={service.slug}>
                   <Link
@@ -110,10 +123,13 @@ export function Footer() {
           </nav>
 
           {/* 3 — Company */}
-          <nav aria-labelledby="footer-company" className="sm:col-span-3 lg:col-span-1">
+          <nav
+            aria-labelledby="footer-company"
+            className="order-4 sm:order-none sm:col-span-3 lg:col-span-1"
+          >
             <h2
               id="footer-company"
-              className="mb-4 font-heading text-base font-semibold text-primary"
+              className="mb-3 font-heading text-base font-semibold text-primary sm:mb-4"
             >
               Company
             </h2>
@@ -131,11 +147,15 @@ export function Footer() {
             </ul>
           </nav>
 
-          {/* 4 — Legal */}
-          <nav aria-labelledby="footer-legal" className="sm:col-span-3 lg:col-span-1">
+          {/* 4 — Legal. Ordered ahead of Company below `sm` so it takes the left
+                column of the middle row. */}
+          <nav
+            aria-labelledby="footer-legal"
+            className="order-3 sm:order-none sm:col-span-3 lg:col-span-1"
+          >
             <h2
               id="footer-legal"
-              className="mb-4 font-heading text-base font-semibold text-primary"
+              className="mb-3 font-heading text-base font-semibold text-primary sm:mb-4"
             >
               Legal
             </h2>
@@ -154,10 +174,10 @@ export function Footer() {
           </nav>
 
           {/* 5 — Contact + social */}
-          <div className="sm:col-span-6 lg:col-span-1">
+          <div className="order-5 col-span-2 sm:order-none sm:col-span-6 lg:col-span-1">
             <h2
               id="footer-contact"
-              className="mb-4 font-heading text-base font-semibold text-primary"
+              className="mb-3 font-heading text-base font-semibold text-primary sm:mb-4"
             >
               Contact
             </h2>
@@ -189,7 +209,7 @@ export function Footer() {
               </ul>
             </address>
 
-            <ul className="mt-6 flex items-center gap-3">
+            <ul className="mt-5 flex flex-wrap items-center gap-3 sm:mt-6">
               {SOCIAL_LINKS.map((social) => (
                 <li key={social.label}>
                   <a
@@ -213,7 +233,7 @@ export function Footer() {
         </div>
 
         {/* Colophon */}
-        <div className="mt-14 space-y-2 border-t border-subtle pt-8 text-sm">
+        <div className="mt-8 space-y-2 border-t border-subtle pt-6 text-sm sm:mt-10 sm:pt-8 lg:mt-14">
           <p className="text-secondary">
             {/* Literal character rather than the `&copy;` entity: React decodes
                 JSX entities as text, which rendered a bare "c" instead of "©". */}

@@ -67,7 +67,7 @@ const face = (b64: string, family: string, weight: number) => `
  * cannot decode inside `<image>`. Re-encode to PNG first — PNG is lossless from
  * this source, so the plate still shows the exact registered artwork.
  */
-const logoPng = await sharp("public/logo.webp").png().toBuffer();
+const logoPng = await sharp("public/hanif-design-logo.webp").png().toBuffer();
 const logoB64 = logoPng.toString("base64");
 
 /** Faint blueprint grid, matching the site-wide wallpaper. */

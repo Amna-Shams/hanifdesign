@@ -75,7 +75,7 @@ export function Header() {
                 1.75:1 ratio so the mark fills the plate. */}
             <span className="relative grid h-10 w-[4.38rem] shrink-0 place-items-center bg-white p-1 shadow-sm ring-1 ring-black/30 transition-shadow duration-300 group-hover:shadow-glow sm:h-11 sm:w-[4.8rem] lg:h-12 lg:w-[5.25rem]">
               <Image
-                src="/logo.webp"
+                src="/hanif-design-logo.webp"
                 alt=""
                 fill
                 priority

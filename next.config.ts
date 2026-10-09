@@ -182,6 +182,36 @@ const nextConfig: NextConfig = {
               ],
             },
           ]),
+      /**
+       * HTML documents.
+       *
+       * Next.js serves every prerendered page with `Cache-Control:
+       * s-maxage=31536000`, i.e. a shared cache is told to keep the document
+       * for a year and never revalidate it. Browsers ignore `s-maxage`, so this
+       * is invisible in local development — but behind a CDN or reverse proxy
+       * that honours it, a page is cached once and then every later deploy is
+       * invisible: the site keeps serving the HTML from the first request that
+       * ever hit it. Committing changes appears to do nothing.
+       *
+       * Short shared TTL plus `must-revalidate` keeps CDN caching (most of the
+       * time served from the edge) while guaranteeing a deploy is picked up.
+       * `/_next` is excluded by the lookahead so the immutable, fingerprinted
+       * asset rule above still applies to JS and CSS.
+       */
+      ...(isDev
+        ? []
+        : [
+            {
+              source: "/:path((?!_next/).*)",
+              headers: [
+                {
+                  key: "Cache-Control",
+                  value:
+                    "public, max-age=0, s-maxage=60, stale-while-revalidate=300, must-revalidate",
+                },
+              ],
+            },
+          ]),
     ];
   },
 };

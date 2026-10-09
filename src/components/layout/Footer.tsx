@@ -84,14 +84,13 @@ export function Footer() {
               className="inline-block"
               aria-label="Hanif Design and Consultancy — home"
             >
-              {/* Theme-swapped lockups, matching the header. Dark theme uses the
-                  light-ink artwork with no plate behind it; the light theme
-                  uses the dark-ink artwork on a white plate with a hairline and
-                  a soft shadow. `light:` is a CSS custom variant (see
-                  globals.css), so this works in a server component with no
-                  client state. The link carries the accessible name, so both
-                  images are decorative. */}
-              <span className="relative grid h-10 w-[4.38rem] place-items-center light:bg-white light:p-1 light:shadow-sm light:ring-1 light:ring-black/30 light:transition-shadow light:duration-300 light:hover:shadow-glow sm:h-11 sm:w-[4.8rem] lg:h-12 lg:w-[5.25rem]">
+              {/* Theme-swapped lockups, matching the header. Neither theme puts a plate
+                  behind the logo — the artwork is transparent, and on the light
+                  surface a card read as a border around it. `light:` is a CSS
+                  custom variant (see globals.css), so this works in a server
+                  component with no client state. The link carries the
+                  accessible name, so both images are decorative. */}
+              <span className="relative grid h-10 w-[4.38rem] place-items-center sm:h-11 sm:w-[4.8rem] lg:h-12 lg:w-[5.25rem]">
                 <Image
                   src="/hanif-design-logo.webp"
                   alt=""

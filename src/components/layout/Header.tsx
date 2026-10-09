@@ -70,16 +70,16 @@ export function Header() {
             className="group flex min-w-0 shrink items-center gap-3 sm:gap-4"
             aria-label="Hanif Design & Consultancy Ltd — home"
           >
-            {/* Two lockups of identical 1.75:1 geometry, swapped by theme. On the
-                light theme the dark-ink artwork is mounted on a white plate
-                with a hairline and a soft shadow; on the dark theme the plate
-                is dropped and the light-ink artwork sits directly against the
-                background. `light:` is a CSS custom variant (see globals.css),
-                so this resolves with no client state and cannot flash the wrong
-                logo. Only the dark-theme copy is `priority`: dark is what the
-                server renders, and the light-theme copy stays lazy so it is not
-                fetched until it is shown. */}
-            <span className="relative grid h-10 w-[4.38rem] shrink-0 place-items-center light:bg-white light:p-1 light:shadow-sm light:ring-1 light:ring-black/30 light:transition-shadow light:duration-300 light:group-hover:shadow-glow sm:h-11 sm:w-[4.8rem] lg:h-12 lg:w-[5.25rem]">
+            {/* Two lockups of identical 1.75:1 geometry, swapped by theme. The
+                light-theme copy is dark ink, the dark-theme copy light ink, and
+                neither sits on a plate: the artwork is transparent and the light
+                surface is already near-white, so a card just read as a border
+                around the logo. `light:` is a CSS custom variant (see
+                globals.css), so this resolves with no client state and cannot
+                flash the wrong logo. Only the dark-theme copy is `priority`:
+                dark is what the server renders, and the light-theme copy stays
+                lazy so it is not fetched until it is shown. */}
+            <span className="relative grid h-10 w-[4.38rem] shrink-0 place-items-center sm:h-11 sm:w-[4.8rem] lg:h-12 lg:w-[5.25rem]">
               <Image
                 src="/hanif-design-logo.webp"
                 alt=""

@@ -76,7 +76,7 @@ export function Footer() {
             the visual arrangement only below `sm` — Legal is ordered ahead of
             Company there so it lands in the column to its left, and every
             `order` is reset at `sm` so the desktop order stays as authored. */}
-        <div className="grid grid-cols-2 gap-x-5 gap-y-7 sm:grid-cols-6 sm:gap-10 lg:grid-cols-5 lg:gap-8">
+        <div className="grid grid-cols-2 gap-x-5 gap-y-7 sm:grid-cols-6 sm:gap-10 lg:grid-cols-[repeat(4,minmax(0,1fr))_minmax(18.5rem,1.5fr)] lg:gap-8">
           {/* 1 — Brand */}
           <div className="col-span-2 order-1 space-y-4 sm:col-span-3 sm:order-none lg:col-span-1">
             <Link
@@ -216,7 +216,7 @@ export function Footer() {
                 <li>
                   <a
                     href={`mailto:${CONTACT_INFO.email}`}
-                    className="flex items-center gap-3 break-all text-secondary transition-colors hover:text-gold"
+                    className="flex items-center gap-3 whitespace-nowrap text-secondary transition-colors hover:text-gold"
                   >
                     <Mail className="h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
                     {CONTACT_INFO.email}
@@ -225,7 +225,7 @@ export function Footer() {
               </ul>
             </address>
 
-            <ul className="mt-5 flex flex-wrap items-center gap-3 sm:mt-6">
+            <ul className="mt-5 flex flex-nowrap items-center gap-2.5 sm:mt-6">
               {SOCIAL_LINKS.map((social) => (
                 <li key={social.label}>
                   <a

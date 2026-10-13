@@ -10,7 +10,7 @@ export const CONTACT_INFO = {
   phone: "+44 7901 646 719",
   /** Same line as `phone`; kept separate so intent is explicit at call sites. */
   whatsappPhone: "+44 7901 646 719",
-  email: "hanif.ghumra@yahoo.com",
+  email: "info@hanifdesignconsultancyltd.co.uk",
 } as const;
 
 export const REGISTERED_OFFICE =

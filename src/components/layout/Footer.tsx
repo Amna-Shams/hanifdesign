@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import {
   InstagramIcon,
   FacebookIcon,
@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/BrandIcons";
 import {
   CONTACT_INFO,
-  REGISTERED_OFFICE,
   COMPANY_NUMBER,
   QUICK_LINKS,
   COMPANY_NAME,
@@ -200,10 +199,6 @@ export function Footer() {
 
             <address className="not-italic">
               <ul className="space-y-3 text-sm">
-                <li className="flex items-start gap-3 text-secondary">
-                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
-                  <span>{REGISTERED_OFFICE}</span>
-                </li>
                 <li>
                   <a
                     href={toTelHref(CONTACT_INFO.phone)}
@@ -256,8 +251,7 @@ export function Footer() {
             © 2026 {COMPANY_NAME}. All rights reserved.
           </p>
           <p className="text-muted">
-            Registered in England &amp; Wales | Company No. {COMPANY_NUMBER} | Registered Office:{" "}
-            {REGISTERED_OFFICE}
+            Registered in England &amp; Wales | Company No. {COMPANY_NUMBER}
           </p>
 
           {/* The cookie policy promises a way to revisit the consent choice. */}

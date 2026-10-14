@@ -42,9 +42,7 @@ export function CookieBanner() {
                 id="cookie-banner-text"
                 className="max-w-3xl text-sm leading-relaxed text-secondary"
               >
-                We use essential cookies to make this website work. If you accept, we will also
-                load Google Maps on our contact page. If you would rather not, the map stays off
-                and you can still load it on that page with a single click. Read our{" "}
+                We use essential cookies to make this website work. Read our{" "}
                 <Link
                   href="/cookies"
                   className="font-medium text-gold underline underline-offset-2 hover:text-primary"

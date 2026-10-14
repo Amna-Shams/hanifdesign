@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reveal, RevealStagger, RevealItem } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
-import { COMPANY_NAME, COMPANY_NUMBER, CONTACT_INFO, REGISTERED_OFFICE } from "@/lib/constants";
+import { COMPANY_NAME, COMPANY_NUMBER, CONTACT_INFO } from "@/lib/constants";
 import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -260,7 +260,6 @@ export default function PrivacyPage() {
             <address className="not-italic space-y-1 rounded-md border border-subtle bg-surface-elevated p-5">
               <p className="font-heading font-semibold text-primary">{CONTROLLER}</p>
               <p>Company No. {COMPANY_NUMBER}</p>
-              <p>{REGISTERED_OFFICE}</p>
               <p>
                 Email:{" "}
                 <a

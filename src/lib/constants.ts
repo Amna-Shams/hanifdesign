@@ -7,21 +7,11 @@ export const NAV_LINKS = [
 ] as const;
 
 export const CONTACT_INFO = {
-  phone: "+44 7901 646 719",
+  phone: "+44 7813 706185",
   /** Same line as `phone`; kept separate so intent is explicit at call sites. */
-  whatsappPhone: "+44 7901 646 719",
+  whatsappPhone: "+44 7813 706185",
   email: "info@hanifdesignconsultancyltd.co.uk",
 } as const;
-
-export const REGISTERED_OFFICE =
-  "369 Hagley Road West Quinton, Birmingham, England, B32 2AL";
-
-/**
- * Google Maps search target for {@link REGISTERED_OFFICE}. Kept separate so the
- * embed can target a latitude/longitude pair later without touching the postal
- * address shown to visitors.
- */
-export const OFFICE_MAP_QUERY = "369 Hagley Road West Quinton, Birmingham, B32 2AL";
 
 /**
  * Registered company name.

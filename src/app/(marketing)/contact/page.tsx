@@ -4,19 +4,15 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle, AlertCircle, ArrowRight } from "lucide-react";
+import { Phone, Mail, Clock, Send, CheckCircle, AlertCircle, ArrowRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { WhatsAppIcon } from "@/components/ui/BrandIcons";
 import { Reveal } from "@/components/ui/Reveal";
-import { CONTACT_INFO, REGISTERED_OFFICE, OFFICE_MAP_QUERY } from "@/lib/constants";
+import { CONTACT_INFO } from "@/lib/constants";
 import { toTelHref, toWhatsappHref } from "@/lib/utils";
 import { HONEYPOT_FIELD, HONEYPOT_FIELD_PROPS, readHoneypot } from "@/lib/spam";
-import { ConsentGatedMap } from "@/components/layout/ConsentGatedMap";
-
-/** Directions link, built from the same query the map uses so both agree. */
-const officeDirectionsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(OFFICE_MAP_QUERY)}`;
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters"),
@@ -91,15 +87,6 @@ export default function ContactPage() {
               <Card className="flex-1 p-6">
                 <h2 className="font-heading font-semibold text-xl text-primary mb-6">Contact Information</h2>
                 <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-overlay-faint border border-hairline-tint flex items-center justify-center shrink-0">
-                      <MapPin className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-primary">Office Address</h3>
-                      <address className="text-textmuted not-italic mt-1">{REGISTERED_OFFICE}</address>
-                    </div>
-                  </div>
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-overlay-faint border border-hairline-tint flex items-center justify-center shrink-0">
                       <Phone className="w-5 h-5 text-primary" />
@@ -309,43 +296,6 @@ export default function ContactPage() {
               </Card>
             </Reveal>
           </div>
-        </div>
-      </section>
-
-      {/* Office location — last section before the footer. */}
-      <section className="bg-lightgray py-16 sm:py-20 lg:py-24" aria-labelledby="office-map-heading">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            as="h2"
-            id="office-map-heading"
-            eyebrow="Find us"
-            title="Our location"
-            subtitle={`We are based in ${REGISTERED_OFFICE}. Get in touch to arrange a visit.`}
-            align="center"
-            className="mb-10"
-          />
-
-          <Card className="overflow-hidden p-0">
-            <ConsentGatedMap
-              title={`Map showing the Hanif Design &amp; Consultancy office in ${REGISTERED_OFFICE}`}
-              query={OFFICE_MAP_QUERY}
-            />
-            <div className="flex flex-col gap-3 border-t border-subtle px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
-              <p className="flex items-start gap-2 text-sm text-secondary">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
-                <span>{REGISTERED_OFFICE}</span>
-              </p>
-              <a
-                href={officeDirectionsHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex shrink-0 items-center gap-1.5 self-start text-sm font-medium text-gold underline underline-offset-4 transition-colors hover:text-gold/80 sm:self-auto"
-              >
-                Get directions
-                <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-              </a>
-            </div>
-          </Card>
         </div>
       </section>
     </div>

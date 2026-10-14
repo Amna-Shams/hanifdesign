@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
-import { COMPANY_NAME, REGISTERED_OFFICE, COMPANY_NUMBER, CONTACT_INFO } from "@/lib/constants";
+import { COMPANY_NAME, COMPANY_NUMBER, CONTACT_INFO } from "@/lib/constants";
 import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -127,14 +127,6 @@ export default function CookiesPage() {
                   <td className="border border-subtle px-4 py-2">1 year</td>
                   <td className="border border-subtle px-4 py-2">Strictly Necessary</td>
                 </tr>
-                <tr className="border-b border-subtle">
-                  <td className="border border-subtle px-4 py-2">cookie-consent-map</td>
-                  <td className="border border-subtle px-4 py-2">
-                    Records that you chose to load the Google Maps embed on our Contact page
-                  </td>
-                  <td className="border border-subtle px-4 py-2">1 year</td>
-                  <td className="border border-subtle px-4 py-2">Strictly Necessary</td>
-                </tr>
               </tbody>
             </table>
             </div>
@@ -169,30 +161,8 @@ export default function CookiesPage() {
           <Reveal>
             <h2 className="font-heading text-2xl text-primary mt-12 mb-4">4. Third-Party Cookies</h2>
             <p>
-              Some features on our website may use third-party services that set their own cookies. We do not control these cookies. The following third parties may set cookies on your device when you use our website:
-            </p>
-            <ul className="list-disc list-inside space-y-2 my-4">
-              <li>
-                <strong>Google Maps</strong> &mdash; the map embedded on our Contact page. It is
-                loaded from Google, so Google may set cookies in your browser.{" "}
-                <a
-                  href="https://policies.google.com/privacy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gold hover:underline"
-                >
-                  Google&rsquo;s Privacy Policy
-                </a>
-              </li>
-            </ul>
-            <p>
-              The map is not loaded until you allow it. If you reject non-essential cookies on the
-              banner, the map stays off &mdash; but the Contact page then offers a{" "}
-              <strong>Load map</strong> button, and choosing it counts as your consent for that
-              embed only, immediately before the request is made. Once loaded, a{" "}
-              <strong>Hide map</strong> control appears so you can withdraw that consent just as
-              easily. The office address and a link to Google Maps are shown either way, and neither
-              requires the embed to load.
+              We do not currently use any third-party services that set cookies on our website. If
+              this changes, we will update this policy accordingly.
             </p>
           </Reveal>
 
@@ -245,7 +215,6 @@ export default function CookiesPage() {
                   the contact page. This page previously hard-coded a second
                   address, which made two different emails public at once. */}
               <p><strong>Email:</strong> <a href={`mailto:${CONTACT_INFO.email}`} className="text-gold hover:underline">{CONTACT_INFO.email}</a></p>
-              <p><strong>Address:</strong> {REGISTERED_OFFICE}</p>
               <p><strong>Company No:</strong> {COMPANY_NUMBER}</p>
             </address>
           </Reveal>

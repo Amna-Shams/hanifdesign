@@ -32,7 +32,7 @@ export function toTelHref(phone: string): string {
 
 /**
  * A `wa.me` deep link, which wants the number in international form with no
- * punctuation: "+44 7901 646 719" -> "https://wa.me/447901646719".
+ * punctuation: "+44 7813 706185" -> "https://wa.me/447813706185".
  *
  * Kept next to `toTelHref` because the two always need to agree: a WhatsApp
  * link pointed at a number other than the one published on the page is worse

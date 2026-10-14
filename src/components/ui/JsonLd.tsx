@@ -25,14 +25,6 @@ function organisation(): Json {
     email: CONTACT_INFO.email,
     description:
       "Planning consultancy and design support for residential projects across Birmingham and the West Midlands.",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "369 Hagley Road West",
-      addressLocality: "Quinton, Birmingham",
-      addressRegion: "West Midlands",
-      postalCode: "B32 2AL",
-      addressCountry: "GB",
-    },
     areaServed: [
       { "@type": "City", name: "Birmingham" },
       { "@type": "AdministrativeArea", name: "West Midlands" },

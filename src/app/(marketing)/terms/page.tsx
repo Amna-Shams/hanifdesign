@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
-import { COMPANY_NAME, CONTACT_INFO, REGISTERED_OFFICE, COMPANY_NUMBER } from "@/lib/constants";
+import { COMPANY_NAME, CONTACT_INFO, COMPANY_NUMBER } from "@/lib/constants";
 import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -121,7 +121,6 @@ export default function TermsPage() {
               <address className="not-italic mt-2 space-y-1">
               <p>{COMPANY_NAME}</p>
                 <p>Registered in England & Wales | Company No. {COMPANY_NUMBER}</p>
-                <p>Registered Office: {REGISTERED_OFFICE}</p>
               </address>
             </Reveal>
 

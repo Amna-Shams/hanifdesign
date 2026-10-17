@@ -72,6 +72,7 @@ const serviceLines: Record<(typeof SERVICES)[number]["slug"], string> = {
   "building-regulations-support": "Drawings and information for building control.",
   "design-drawings": "Clear drawing packages for planning and construction.",
   "feasibility-layouts": "Layout studies that show what the site can take.",
+  "interior-design": "Room layouts, materials and finishes for a coherent interior.",
   "3d-visualisation": "Visuals that help officers and neighbours understand the scheme.",
   "development-guidance": "Policy advice for larger and multi-unit schemes.",
 };

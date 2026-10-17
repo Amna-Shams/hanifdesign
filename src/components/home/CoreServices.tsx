@@ -7,6 +7,7 @@ import {
   Ruler,
   LayoutGrid,
   Box,
+  Sofa,
   Compass,
   Check,
   ArrowRight,
@@ -71,6 +72,19 @@ const COPY: Record<Slug, { icon: LucideIcon; description: string; bullets: reado
       "Constraint mapping",
       "Cost-benefit snapshots",
       "Recommendation reports",
+    ],
+  },
+  "interior-design": {
+    icon: Sofa,
+    description:
+      "Considered interior schemes that make the most of the space and suit how you live.",
+    bullets: [
+      "Space planning and room layouts",
+      "Material and finish selection",
+      "Lighting and electrical layouts",
+      "Kitchen and bathroom design",
+      "Furniture and fittings guidance",
+      "Mood boards and design concepts",
     ],
   },
   "3d-visualisation": {

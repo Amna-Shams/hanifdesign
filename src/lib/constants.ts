@@ -99,6 +99,11 @@ export const SERVICES = [
     short: "Capacity studies and constraint mapping before you commit.",
   },
   {
+    slug: "interior-design",
+    label: "Interior Design",
+    short: "Layouts, finishes and styling that make the space work.",
+  },
+  {
     slug: "3d-visualisation",
     label: "3D Visualisation",
     short: "Photorealistic renders for committees and sales.",

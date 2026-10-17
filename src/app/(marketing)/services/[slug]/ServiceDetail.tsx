@@ -7,6 +7,7 @@ import {
   Ruler,
   LayoutGrid,
   Box,
+  Sofa,
   Compass,
   Check,
   Phone,
@@ -191,6 +192,40 @@ const serviceData: Record<
       { src: "/hmo-development-selly-oak-1.webp", alt: "Colour floor plan laying out kitchen, dining, lounge, bedrooms and bathrooms" },
       { src: "/rear-home-extension-edgbaston-1.webp", alt: "Architectural scale model of a house held up in front of a building site" },
       { src: "/new-build-family-home-sutton-coldfield-2.webp", alt: "Before and after view of a plot, from groundworks and frame to the completed contemporary house" },
+    ],
+  },
+  "interior-design": {
+    icon: Sofa,
+    intro:
+      "A well-planned interior makes a home feel right as well as look right. We design layouts, specify materials and finishes, and prepare the information your builder needs, so the finished rooms match the plan.",
+    process: [
+      "Brief, site visit and measured survey",
+      "Space planning and room layout options",
+      "Mood boards and design concepts",
+      "Material, finish and fittings specification",
+      "Lighting, kitchen and bathroom layouts",
+      "Drawing pack and support through the build",
+    ],
+    benefits: [
+      "Layouts that work with the planning drawings",
+      "Clear specifications builders can price from",
+      "Concepts shown in 3D before you commit",
+      "One team from planning through to finishes",
+    ],
+    hero: {
+      src: "/new-build-family-home-sutton-coldfield-1.webp",
+      alt: "Split view of a bare concrete interior beside the same space finished as a living room",
+    },
+    aside: {
+      src: "/spacious-loft-conversion-harborne-1.webp",
+      alt: "Interior design drawing with floor plan, section and dimensions overlaid on a double-height living space",
+    },
+    galleryCaption:
+      "Interior layouts and finishes planned together with the building work.",
+    gallery: [
+      { src: "/hmo-development-selly-oak-1.webp", alt: "Colour floor plan laying out kitchen, dining, lounge, bedrooms and bathrooms" },
+      { src: "/spacious-loft-conversion-harborne-2.webp", alt: "Concept sheet combining elevation, section, plan and detail drawings of a modern two-storey house" },
+      { src: "/rear-home-extension-edgbaston-2.webp", alt: "Dimensioned ground floor plan of a family home with courtyard and parking" },
     ],
   },
   "3d-visualisation": {

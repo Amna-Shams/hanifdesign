@@ -6,6 +6,7 @@ import {
   Ruler,
   LayoutGrid,
   Box,
+  Sofa,
   Compass,
   ArrowRight,
 } from "lucide-react";
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   alternates: { canonical: canonical("/services") },
   title: "Our Services",
   description:
-    "Planning applications, building regulations support, design drawings, feasibility layouts, 3D visualisation and development guidance for residential projects in Birmingham and the West Midlands.",
+    "Planning applications, building regulations support, design drawings, feasibility layouts, interior design, 3D visualisation and development guidance for residential projects in Birmingham and the West Midlands.",
 };
 
 /** Icon per service slug. Kept beside the list so it stays easy to audit. */
@@ -29,6 +30,7 @@ const ICONS = {
   "building-regulations-support": ShieldCheck,
   "design-drawings": Ruler,
   "feasibility-layouts": LayoutGrid,
+  "interior-design": Sofa,
   "3d-visualisation": Box,
   "development-guidance": Compass,
 } as const;

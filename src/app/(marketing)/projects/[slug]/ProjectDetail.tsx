@@ -1,61 +1,59 @@
 "use client";
 
-import { ArrowLeft, MapPin, CheckCircle } from "lucide-react";
+import { ArrowLeft, MapPin, CheckCircle, Building2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
-import { Reveal, RevealStagger, RevealItem } from "@/components/ui/Reveal";
+import { Reveal } from "@/components/ui/Reveal";
+import type { Project } from "@/lib/projects";
 
 interface ProjectDetailProps {
-  project: {
-    title: string;
-    category: string;
-    location: string;
-    summary: string;
-    images: readonly string[];
-    specs: readonly { label: string; value: string }[];
-  };
+  project: Project;
 }
 
 export function ProjectDetail({ project }: ProjectDetailProps) {
   return (
     <div className="min-h-screen bg-surface-elevated-translucent">
-      <section className="py-16 sm:py-20 lg:py-28 bg-surface-translucent">
+      <section className="bg-surface-translucent py-16 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal amount={0.3}>
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 text-textmuted hover:text-gold transition-colors mb-8"
+              className="mb-8 inline-flex items-center gap-2 text-textmuted transition-colors hover:text-gold"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <ArrowLeft className="h-4 w-4" />
               Back to Projects
             </Link>
           </Reveal>
 
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
             <Reveal direction="left">
               <div className="space-y-4">
-                <span className="inline-block px-3 py-1 text-xs font-medium bg-gold text-on-accent rounded">
+                <span className="inline-block rounded bg-gold px-3 py-1 text-xs font-medium text-on-accent">
                   {project.category}
                 </span>
-                <h1 className="font-heading font-bold text-4xl sm:text-5xl text-primary">
+                <h1 className="font-heading text-4xl font-bold text-primary sm:text-5xl">
                   {project.title}
                 </h1>
+                <p className="text-sm font-medium uppercase tracking-wide text-gold">
+                  {project.sector}
+                </p>
                 <div className="flex items-center gap-4 text-textmuted">
-                  <MapPin className="w-5 h-5 shrink-0" />
+                  <MapPin className="h-5 w-5 shrink-0" />
                   <span>{project.location}</span>
                 </div>
-                <p className="text-textmuted text-lg leading-relaxed">{project.summary}</p>
+                <p className="text-lg leading-relaxed text-textmuted">{project.summary}</p>
               </div>
             </Reveal>
 
             <Reveal direction="right" delay={0.1}>
-              {/* Not desktop-only: below `lg` this is the only project photo on
-                  the page, and the second-view figure further down needs a first
-                  image to have anything to follow. */}
               <div className="relative aspect-video overflow-hidden rounded-2xl border border-subtle bg-surface-elevated">
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`}
+                  aria-hidden="true"
+                />
                 {project.images[0] ? (
                   <Image
                     src={project.images[0]}
@@ -66,8 +64,11 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
                     className="object-cover"
                   />
                 ) : (
-                  <div className="flex h-full items-center justify-center" aria-hidden="true">
-                    <span className="text-primary/20 text-6xl">📷</span>
+                  <div
+                    className="absolute inset-0 flex items-center justify-center text-gold/60"
+                    aria-hidden="true"
+                  >
+                    <Building2 className="h-16 w-16" />
                   </div>
                 )}
               </div>
@@ -76,71 +77,64 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-28 bg-surface-elevated-translucent">
+      <section className="bg-surface-elevated-translucent py-16 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
-            <div className="lg:col-span-2 space-y-8">
-              <Reveal>
-                <SectionHeading
-                  eyebrow="Project Details"
-                  title="Specifications"
-                  subtitle="Key project metrics and planning information."
-                  align="left"
-                />
-              </Reveal>
+          <div className="grid gap-8 lg:grid-cols-3 lg:gap-12">
+            <div className="space-y-12 lg:col-span-2">
+              {/* The Brief */}
+              <div>
+                <Reveal>
+                  <SectionHeading eyebrow="Case study" title="The Brief" align="left" />
+                </Reveal>
+                <Reveal>
+                  <div className="mt-6 space-y-4 text-lg leading-relaxed text-secondary">
+                    {project.brief.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
+                </Reveal>
+              </div>
 
-              <RevealStagger className="space-y-4" stagger={0.06}>
-                {project.specs.map((spec, index) => (
-                  <RevealItem
-                    key={index}
-                    className="flex items-center justify-between p-4 bg-lightgray rounded-xl"
-                  >
-                    <span className="text-textmuted">{spec.label}</span>
-                    <span className="font-medium text-primary">{spec.value}</span>
-                  </RevealItem>
-                ))}
-              </RevealStagger>
+              {/* Services & Drawings Delivered */}
+              <div>
+                <Reveal>
+                  <SectionHeading
+                    eyebrow="What we did"
+                    title="Services & Drawings Delivered"
+                    align="left"
+                  />
+                </Reveal>
+                <Reveal>
+                  <ul className="mt-6 grid gap-4 sm:grid-cols-2">
+                    {project.services.map((service) => (
+                      <li key={service}>
+                        <Card className="h-full p-4">
+                          <CheckCircle className="mb-2 h-5 w-5 text-gold" aria-hidden="true" />
+                          <p className="text-sm leading-relaxed text-secondary">{service}</p>
+                        </Card>
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
+              </div>
 
-              <Reveal>
-                <SectionHeading
-                  eyebrow="Our Approach"
-                  title="How We Delivered"
-                  subtitle="The strategy and services that secured approval."
-                  align="left"
-                />
-              </Reveal>
-
-              {/* One reveal for the whole grid rather than a staggered item per
-                  card: each card is a direct grid child today, and a wrapping
-                  div would take over that stretch instead of the card. */}
-              <Reveal>
-                <div className="mt-6 grid sm:grid-cols-2 gap-4">
-                  <Card className="p-4">
-                    <CheckCircle className="w-5 h-5 text-gold mb-2" />
-                    <h3 className="font-semibold text-primary mb-1">Pre-application advice</h3>
-                    <p className="text-textmuted text-sm">Early engagement with planning officers identified key constraints.</p>
-                  </Card>
-                  <Card className="p-4">
-                    <CheckCircle className="w-5 h-5 text-gold mb-2" />
-                    <h3 className="font-semibold text-primary mb-1">Design & Access Statement</h3>
-                    <p className="text-textmuted text-sm">Comprehensive statement addressing all relevant local plan policies.</p>
-                  </Card>
-                  <Card className="p-4">
-                    <CheckCircle className="w-5 h-5 text-gold mb-2" />
-                    <h3 className="font-semibold text-primary mb-1">High-quality drawings</h3>
-                    <p className="text-textmuted text-sm">Scaled plans, elevations, and 3D visualisations for clear communication.</p>
-                  </Card>
-                  <Card className="p-4">
-                    <CheckCircle className="w-5 h-5 text-gold mb-2" />
-                    <h3 className="font-semibold text-primary mb-1">Condition discharge</h3>
-                    <p className="text-textmuted text-sm">Post-approval support to discharge all planning conditions.</p>
-                  </Card>
-                </div>
-              </Reveal>
+              {/* The Outcome */}
+              <div>
+                <Reveal>
+                  <SectionHeading eyebrow="The result" title="The Outcome" align="left" />
+                </Reveal>
+                <Reveal>
+                  <div className="mt-6 space-y-4 text-lg leading-relaxed text-secondary">
+                    {project.outcome.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
+                </Reveal>
+              </div>
 
               {project.images.length > 1 && (
                 <Reveal>
-                  <figure className="mt-10">
+                  <figure>
                     <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-subtle">
                       <Image
                         src={project.images[1]}
@@ -151,7 +145,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
                       />
                     </div>
                     <figcaption className="mt-3 text-sm text-muted">
-                      {project.title} — completed work in {project.location}.
+                      {project.title} — {project.location}.
                     </figcaption>
                   </figure>
                 </Reveal>
@@ -160,66 +154,76 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
 
             <Reveal direction="right" delay={0.1}>
               <div>
-              <Card className="p-6 h-fit sticky top-24">
-                <h3 className="font-heading font-semibold text-xl text-primary mb-4">Project Summary</h3>
-                <dl className="space-y-4 text-sm">
-                  <div className="flex justify-between">
-                    <dt className="text-textmuted">Category</dt>
-                    <dd className="font-medium text-primary">{project.category}</dd>
+                <Card className="sticky top-24 h-fit p-6">
+                  <h3 className="mb-4 font-heading text-xl font-semibold text-primary">
+                    Project Summary
+                  </h3>
+                  <dl className="space-y-4 text-sm">
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-textmuted">Category</dt>
+                      <dd className="text-right font-medium text-primary">{project.category}</dd>
+                    </div>
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-textmuted">Sector</dt>
+                      <dd className="text-right font-medium text-primary">{project.sector}</dd>
+                    </div>
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-textmuted">Location</dt>
+                      <dd className="text-right font-medium text-primary">{project.location}</dd>
+                    </div>
+                  </dl>
+
+                  <div className="mt-6 border-t border-subtle pt-6">
+                    <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">
+                      Project types &amp; services
+                    </h4>
+                    <ul className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <li
+                          key={tag}
+                          className="rounded-full border border-subtle px-3 py-1 text-xs text-secondary"
+                        >
+                          {tag}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <div className="flex justify-between">
-                    <dt className="text-textmuted">Location</dt>
-                    <dd className="font-medium text-primary">{project.location}</dd>
+
+                  <div className="mt-6 border-t border-subtle pt-6">
+                    <Button variant="primary" size="lg" className="w-full" asChild>
+                      <Link href="/quote">Start Similar Project</Link>
+                    </Button>
                   </div>
-                  <div className="flex justify-between">
-                    <dt className="text-textmuted">Planning Route</dt>
-                    <dd className="font-medium text-primary">
-                      {project.specs.find(s => s.label === "Planning Route")?.value}
-                    </dd>
-                  </div>
-                  <div className="flex justify-between">
-                    <dt className="text-textmuted">Decision Time</dt>
-                    <dd className="font-medium text-primary">
-                      {project.specs.find(s => s.label === "Decision Time")?.value}
-                    </dd>
-                  </div>
-                  <div className="flex justify-between">
-                    <dt className="text-textmuted">Outcome</dt>
-                    <dd className="font-medium text-gold">
-                      {project.specs.find(s => s.label === "Outcome")?.value}
-                    </dd>
-                  </div>
-                </dl>
-                <div className="mt-6 pt-6 border-t border-subtle">
-                  <Button variant="primary" size="lg" className="w-full" asChild>
-                    <Link href="/quote">Start Similar Project</Link>
-                  </Button>
-                </div>
-              </Card>
+                </Card>
               </div>
             </Reveal>
           </div>
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-28 bg-surface-translucent">
-<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+      <section className="bg-surface-translucent py-16 sm:py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <Reveal>
-            <h2 className="font-heading font-bold text-3xl sm:text-4xl text-primary mb-6">
+            <h2 className="mb-6 font-heading text-3xl font-bold text-primary sm:text-4xl">
               Have a Similar Project?
             </h2>
-            <p className="text-secondary text-lg mb-10 max-w-2xl mx-auto">
+            <p className="mx-auto mb-10 max-w-2xl text-lg text-secondary">
               We&rsquo;d love to hear about your project. Get in touch for a free initial
               consultation.
             </p>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button variant="primary" size="lg" asChild>
                 <Link href="/contact">Book a free consultation</Link>
               </Button>
-              <Button variant="secondary" size="lg" className="border-hairline-tint text-primary hover:bg-surface-elevated hover:text-primary" asChild>
+              <Button
+                variant="secondary"
+                size="lg"
+                className="border-hairline-tint text-primary hover:bg-surface-elevated hover:text-primary"
+                asChild
+              >
                 <Link href="/quote">Request a Quote</Link>
               </Button>
             </div>

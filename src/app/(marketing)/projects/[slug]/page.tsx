@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: project.title,
-    description: `${project.summary} A ${project.category.toLowerCase()} planning and design project in ${project.location}, delivered by Hanif Design & Consultancy.`,
+    description: `${project.summary} ${project.sector} project in ${project.location}, delivered by Hanif Design & Consultancy.`,
     alternates: { canonical: canonical(`/projects/${project.slug}`) },
   };
 }

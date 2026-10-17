@@ -8,6 +8,7 @@ import { Menu } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { MobileMenu } from "./MobileMenu";
+import { HomeHeader } from "./HomeHeader";
 
 export function Header() {
   const pathname = usePathname();
@@ -32,6 +33,9 @@ export function Header() {
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
+
+  // The homepage has its own floating header over the full-bleed hero.
+  if (pathname === "/") return <HomeHeader />;
 
   return (
     <header

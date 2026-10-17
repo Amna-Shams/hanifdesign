@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Mono, Inter, Poppins } from "next/font/google";
+import { IBM_Plex_Mono, Inter, Newsreader, Poppins } from "next/font/google";
 import { GridBackground } from "@/components/layout/GridBackground";
 import { ThemeProvider, themeInitScript } from "@/components/providers/ThemeProvider";
 import "./globals.css";
@@ -14,6 +14,13 @@ const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["600", "700"],
+});
+
+/* Serif for the homepage hero headline and the slide-in menu. */
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
+  subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 /* Used for drafting annotations — kickers, sheet references, figure labels. */
@@ -49,7 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       // The inline theme script sets `data-theme` on <html> before React
       // hydrates, so this one element is expected to differ from the server HTML.
       suppressHydrationWarning
-      className={`${inter.variable} ${poppins.variable} ${plexMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${poppins.variable} ${newsreader.variable} ${plexMono.variable} h-full antialiased`}
     >
       <head>
         {/* Favicon set (RealFaviconGenerator). Declared here, in the one root

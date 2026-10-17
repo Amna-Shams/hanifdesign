@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: canonical("/projects") },
   title: "Our Projects",
   description:
-    "Recent planning and design projects across Birmingham and the West Midlands, including rear extensions, side extensions, loft conversions and new builds.",
+    "Case studies from a multi-disciplinary design and planning consultancy in Birmingham: residential extensions and new builds, HMOs, commercial fit-outs, mixed-use regeneration, education and healthcare buildings, industrial schemes and heritage conversions.",
 };
 
 /** Links matching the in-page filter, so the full list is reachable without JS. */
@@ -31,7 +31,7 @@ export default function ProjectsPage() {
             as="h1"
             eyebrow="Our work"
             title="Our projects"
-            subtitle="A selection of planning and design projects across the West Midlands."
+            subtitle="Case studies across residential, commercial, mixed-use, industrial and heritage work in Birmingham and the West Midlands."
             align="center"
             className="mb-10"
           />

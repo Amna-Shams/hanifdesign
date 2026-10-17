@@ -175,6 +175,7 @@
 
   --font-sans: var(--font-inter);
   --font-heading: var(--font-poppins);
+  --font-serif: var(--font-newsreader);
   --font-mono: var(--font-plex-mono);
 
   --shadow-sm: var(--shadow-sm);

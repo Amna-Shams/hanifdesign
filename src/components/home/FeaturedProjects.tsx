@@ -3,16 +3,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { ArrowRight, MapPin, Calendar } from "lucide-react";
+import { ArrowRight, MapPin, Building2 } from "lucide-react";
 import { PROJECTS } from "@/lib/projects";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 
-/** The four most recent projects, straight from the canonical catalogue. */
-const FEATURED = [...PROJECTS]
-  .sort((a, b) => b.year.localeCompare(a.year))
-  .slice(0, 4);
+/** The first four projects in the canonical catalogue. */
+const FEATURED = PROJECTS.slice(0, 4);
 
 export function FeaturedProjects() {
   return (
@@ -78,7 +76,11 @@ export function FeaturedProjects() {
                         sizes="(min-width: 1024px) 50vw, 100vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                    ) : null}
+                    ) : (
+                      <span className="absolute inset-0 flex items-center justify-center text-gold/60">
+                        <Building2 className="h-12 w-12" aria-hidden="true" />
+                      </span>
+                    )}
                     <span className="absolute left-4 top-4 rounded bg-gold px-3 py-1 text-xs font-medium text-on-accent">
                       {project.category}
                     </span>
@@ -94,10 +96,6 @@ export function FeaturedProjects() {
                       <span className="inline-flex min-w-0 items-center gap-1">
                         <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
                         {project.location}
-                      </span>
-                      <span className="inline-flex min-w-0 items-center gap-1">
-                        <Calendar className="h-3.5 w-3.5" aria-hidden="true" />
-                        {project.year}
                       </span>
                     </div>
 

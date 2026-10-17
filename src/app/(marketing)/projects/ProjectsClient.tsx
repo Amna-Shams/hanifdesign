@@ -4,7 +4,7 @@ import { useCallback, useSyncExternalStore } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Building2 } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
@@ -122,7 +122,11 @@ export function ProjectsClient() {
                         sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                    ) : null}
+                    ) : (
+                      <span className="absolute inset-0 flex items-center justify-center text-gold/60">
+                        <Building2 className="h-12 w-12" aria-hidden="true" />
+                      </span>
+                    )}
                     <span className="absolute left-4 top-4 z-10 rounded bg-gold px-3 py-1 text-xs font-medium text-on-accent">
                       {project.category}
                     </span>
@@ -131,6 +135,9 @@ export function ProjectsClient() {
                     <h2 className="font-heading text-xl font-semibold text-primary transition-colors group-hover:text-gold">
                       {project.title}
                     </h2>
+                    <p className="text-xs font-medium uppercase tracking-wide text-muted">
+                      {project.location}
+                    </p>
                     <p className="text-sm leading-relaxed text-secondary">{project.summary}</p>
                     <span className="inline-flex items-center gap-1 text-sm font-medium text-gold">
                       Read case study

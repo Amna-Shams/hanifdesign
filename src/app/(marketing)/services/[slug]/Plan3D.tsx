@@ -30,7 +30,7 @@ const CONTENT: PlanContent = {
       { id: "virtual-renovation", label: "Virtual Renovation", icon: "hammer", kind: "slider", title: "Virtual Renovation", text: "We show how a tired interior could look with new finishes, floors and fittings before any work begins.", image: "/office-to-residential-conversion-city-centre-1.webp", alt: "Dated interior beside the same interior renovated" },
       { id: "exterior-renovation", label: "Exterior Renovation", icon: "house", kind: "slider", title: "Exterior Renovation", text: "We refresh the outside of a property, from the front elevation to the garden and drive.", image: "/two-storey-side-extension-four-oaks-1.webp", alt: "House exterior beside the same exterior renovated" },
       { id: "360-view", label: "360° View", icon: "rotate", kind: "tour", title: "360° View", text: "Let buyers look around a staged room in every direction.", image: "/hmo-development-selly-oak-2.webp", alt: "Panoramic view of a staged room" },
-      { id: "3d-plan", label: "3D Plan", icon: "grid", kind: "plan", title: "3D Plan", text: "A furnished 3D floor plan shows the whole layout at a glance, so buyers understand how the home works.", image: "/3d.webp", alt: "Furnished 3D floor plan of a home" },
+      { id: "3d-plan", label: "3D Plan", icon: "grid", kind: "plan", title: "3D Plan", text: "A furnished 3D floor plan shows the whole layout at a glance, so buyers understand how the home works.", image: "/floorplan-hero.webp", alt: "Furnished 3D floor plan of a home" },
     ],
   },
   solutions: {

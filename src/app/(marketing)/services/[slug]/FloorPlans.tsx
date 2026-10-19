@@ -17,14 +17,14 @@ import { PROJECTS } from "@/lib/projects";
  * renders — nothing on this page is a stand-in for work we have not done.
  */
 const IMG = {
-  hero: "/3d.webp",
+  hero: "/floorplan-hero.webp",
   wide: "/hmo-development-selly-oak-1.webp",
   eyeCatching: "/two-storey-side-extension-four-oaks-2.webp",
-  styled: "/3d.webp",
+  styled: "/interior-vis-warm-modern.webp",
   informative: "/rear-home-extension-edgbaston-2.webp",
   distinct: "/hmo-development-selly-oak-1.webp",
   strip: [
-    "/3d.webp",
+    "/floorplan-hero.webp",
     "/hmo-development-selly-oak-1.webp",
     "/rear-home-extension-edgbaston-2.webp",
   ],
@@ -217,7 +217,7 @@ export function FloorPlans() {
               sizes="(min-width: 1024px) 55vw, 100vw"
               fit="contain"
               priority
-              className="aspect-[4/3] !bg-white"
+              className="aspect-square !bg-white"
             />
             <div>
               <h1 className="font-heading text-[2.25rem] font-bold leading-[1.15] sm:text-[2.6rem]">

@@ -26,20 +26,20 @@ import { PROJECTS } from "@/lib/projects";
  * a slot with no file falls back to a tinted tile.
  */
 const IMG = {
-  hero: "/two-storey-side-extension-four-oaks-2.webp",
-  mosaicLarge: "/two-storey-side-extension-four-oaks-2.webp",
-  mosaicA: "/new-build-family-home-sutton-coldfield-1.webp",
-  mosaicB: "/spacious-loft-conversion-harborne-1.webp",
+  hero: "/interior-vis-hero.webp",
+  mosaicLarge: "/interior-vis-suite.webp",
+  mosaicA: "/interior-vis-mosaic-a.webp",
+  mosaicB: "/interior-vis-mosaic-b.webp",
   drawing: "/design drawings.webp",
-  render: "/3d.webp",
-  residential: "/spacious-loft-conversion-harborne-1.webp",
+  render: "/interior-vis-render.webp",
+  residential: "/interior-vis-residential.webp",
   commercial: "/interior-vis-commercial.webp",
-  retail: "/commercial-unit-selly-oak-1.webp",
+  retail: "/interior-vis-retail.webp",
   hospitality: "/interior-vis-hospitality.webp",
-  still: "/two-storey-side-extension-four-oaks-2.webp",
-  animation: "/single-storey-rear-extension-moseley-2.webp",
-  tour: "/hmo-development-selly-oak-2.webp",
-  cta: "/home-hero.webp",
+  still: "/interior-vis-still.webp",
+  animation: "/interior-vis-animation.webp",
+  tour: "/interior-vis-tour.webp",
+  cta: "/interior-vis-cta.webp",
 } as const;
 
 const STATS = [
@@ -89,11 +89,12 @@ const TYPES = [
 ] as const;
 
 const STYLES = [
-  { label: "Classic", img: IMG.residential },
-  { label: "Coastal", img: IMG.mosaicA },
-  { label: "Contemporary", img: IMG.still },
-  { label: "Minimalist", img: IMG.render },
-  { label: "Industrial", img: IMG.commercial },
+  { label: "Classic", img: "/interior-vis-classic.webp" },
+  { label: "Warm Modern", img: "/interior-vis-warm-modern.webp" },
+  { label: "Contemporary", img: "/interior-vis-contemporary.webp" },
+  { label: "Minimalist", img: "/interior-vis-minimalist.webp" },
+  { label: "Hotel Suite", img: "/interior-vis-suite.webp" },
+  { label: "Sculptural", img: "/interior-vis-sculptural.webp" },
 ] as const;
 
 const WORKFLOW = [

@@ -70,7 +70,7 @@ export default function AboutPage() {
               </p>
               <p>
                 Founded in Quinton, Birmingham, over three decades ago, Hanif Design &amp; Consultancy
-                has grown from a small architectural practice into one of the West
+                has grown from a small graphic design studio into one of the West
                 Midlands&rsquo; most respected planning consultancies. Our team combines
                 deep local authority knowledge with practical design expertise to
                 guide clients through every stage of the planning process.
@@ -83,7 +83,7 @@ export default function AboutPage() {
                 project in the best possible light.
               </p>
               <p>
-                Today, we work with homeowners, developers, architects, and
+                Today, we work with homeowners, developers, designers, and
                 housing associations across Birmingham, Solihull, and the wider
                 West Midlands. Whether it&rsquo;s a householder extension, a complex
                 appeal, or a multi-unit new build, we bring the same rigour and

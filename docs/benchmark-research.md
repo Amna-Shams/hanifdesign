@@ -13,7 +13,7 @@
 | [WPS Planning](https://www.wpsplanning.co.uk/) | Independent planning consultants | Horsham, West Sussex | **Closest analogue.** Solo-practitioner tone, 19+ years, "will it get approved?" hook, case studies |
 | [Base Planning Consultants](https://baseplanning.uk/) | RTPI chartered member | Exeter + London | **Closest on rigour.** Lists every application type and publishes statutory fees |
 | [Polden Planning](https://www.poldenplanning.co.uk/services) | Specialist consultancy | Somerset / South West | Deep technical service list incl. S.73, S.96a, lawful use certificates |
-| [Hua Yu Planning](https://huayuplanning.co.uk/) | Planning + architecture | North London | Same dual discipline as us; in-house planners *and* architects |
+| [Hua Yu Planning](https://huayuplanning.co.uk/) | Planning + design | North London | Same dual discipline as us; in-house planners *and* designers |
 | [Rodway Planning](https://www.rodwayplanning.co.uk/) | Town planning practice | Shoreham-by-Sea | Segment-led IA: Householder / Commercial / Rural. Very old site (2018 copyright) |
 | [planning-consultants.uk](https://planning-consultants.uk/) | National | UK-wide | Publishes an indicative fee range (£500–£10,000+). SEO-led, location pages |
 | [Planning Services UK](https://www.planning-services.co.uk/) | National | Glasgow + London | Multi-region variant pages; weak on detail |

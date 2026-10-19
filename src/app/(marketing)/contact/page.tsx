@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Phone, Mail, Clock, Send, CheckCircle, AlertCircle, ArrowRight } from "lucide-react";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PageHero } from "@/components/ui/PageHero";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { WhatsAppIcon } from "@/components/ui/BrandIcons";
@@ -66,22 +66,20 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-surface-elevated-translucent">
+      <PageHero
+        image="/contact.webp"
+        alt="Victoria Square in Birmingham at dusk, with the fountain in front of the Council House"
+        title="Get in touch"
+        subtitle="Have a project in mind? We'd love to hear from you. Fill out the form or use the details below."
+      />
       <section className="py-16 sm:py-20 lg:py-28 bg-surface-translucent">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            as="h1"
-            eyebrow="Contact"
-            title="Get in touch"
-            subtitle="Have a project in mind? We'd love to hear from you. Fill out the form or use the details below."
-            align="center"
-          />
-
           {/* Grid items stretch to the tallest of the two, so the shorter
               column must fill that height rather than leaving a hole: the
               details card grows (`flex-1`) and the form card is `h-full`. The
               reveal wrappers are what actually become the grid items now, so
               they carry the `h-full` and their children inherit it. */}
-          <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <Reveal direction="left" duration={0.7} className="h-full">
             <div className="flex h-full flex-col gap-8">
               <Card className="flex-1 p-6">

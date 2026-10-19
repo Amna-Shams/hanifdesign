@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Check, Clock, Mail, MapPin, Phone } from "lucide-react";
+import { PageHero } from "@/components/ui/PageHero";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Reveal, RevealItem, RevealStagger } from "@/components/ui/Reveal";
@@ -71,10 +72,9 @@ const serviceLines: Record<(typeof SERVICES)[number]["slug"], string> = {
   "planning-applications": "Householder and larger applications, from first advice to decision.",
   "building-regulations-support": "Drawings and information for building control.",
   "feasibility-layouts": "Layout studies that show what the site can take.",
-  "interior-design": "Room layouts, materials and finishes for a coherent interior.",
   "interior-visualisation": "Photorealistic interior renders that show a room before it is built.",
   "3d-floor-plans": "Furnished 3D floor plans that buyers can read at a glance.",
-  "3d-plan": "Virtual staging and furnished 3D plans that help properties sell.",
+  "virtual-staging": "Virtual staging that helps vacant and dated properties sell.",
   drawings: "Planning, building regulations and technical drawing sets.",
   "exterior-rendering": "Exterior renders that show a building in its setting before it is built.",
   "3d-visualisation": "Visuals that help officers and neighbours understand the scheme.",
@@ -177,24 +177,17 @@ export default function AboutPage() {
         ]}
       />
 
-      {/* 1. H1 + summary + CTA. Static on purpose: the h1 is the LCP element and
-          a `whileInView` reveal would ship it at `opacity: 0`. */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-surface-translucent">
-        <div className={containerClass}>
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="font-heading font-bold text-primary text-balance text-3xl sm:text-4xl lg:text-[2.75rem] leading-[1.15] mb-5">
-              About Hanif Design &amp; Consultancy
-            </h1>
-            <p className="text-lg sm:text-xl text-secondary leading-relaxed mb-8">
-              A multidisciplinary planning and design practice in Birmingham, supporting
-              homeowners and developers across the West Midlands.
-            </p>
-            <Button variant="primary" size="lg" asChild>
-              <Link href="/contact">Book a free consultation</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* 1. Photo hero with the h1, summary and CTA. */}
+      <PageHero
+        image="/about.webp"
+        alt="The Birmingham sign on the front of a brick and steel stadium on a sunny day"
+        title="About Hanif Design & Consultancy"
+        subtitle="A multidisciplinary planning and design practice in Birmingham, supporting homeowners and developers across the West Midlands."
+      >
+        <Button variant="gold" size="lg" asChild>
+          <Link href="/contact">Book a free consultation</Link>
+        </Button>
+      </PageHero>
 
       {/* 2. Who we are */}
       <section className={`${sectionClass} bg-surface-elevated-translucent`} aria-labelledby="who-we-are">
@@ -211,7 +204,7 @@ export default function AboutPage() {
               </p>
               <p>
                 Founded in Quinton, Birmingham, over three decades ago, Hanif Design &amp; Consultancy
-                has grown from a small architectural practice into one of the West
+                has grown from a small design practice into one of the West
                 Midlands&rsquo; most respected planning consultancies. Our team combines
                 deep local authority knowledge with practical design expertise to
                 guide clients through every stage of the planning process.
@@ -224,7 +217,7 @@ export default function AboutPage() {
                 project in the best possible light.
               </p>
               <p>
-                Today, we work with homeowners, developers, architects, and
+                Today, we work with homeowners, developers, designers, and
                 housing associations across Birmingham, Solihull, and the wider
                 West Midlands. Whether it&rsquo;s a householder extension, a complex
                 appeal, or a multi-unit new build, we bring the same rigour and

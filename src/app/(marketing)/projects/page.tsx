@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PageHero } from "@/components/ui/PageHero";
 import { ProjectsClient } from "./ProjectsClient";
 import { PROJECTS, PROJECT_CATEGORIES } from "@/lib/projects";
 import { canonical } from "@/lib/site";
@@ -21,21 +21,15 @@ const QUICK_FILTER_LINKS = PROJECT_CATEGORIES.map((category) => ({
 export default function ProjectsPage() {
   return (
     <>
+      <PageHero
+        image="/projects.webp"
+        alt="Narrowboats moored along a canal lined with brick buildings in central Birmingham"
+        title="Our projects"
+        subtitle="Case studies across residential, commercial, mixed-use, industrial and heritage work in Birmingham and the West Midlands."
+      />
+
       <section className="bg-surface-translucent py-16 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* The title block is deliberately static: it is the first viewport and
-              the h1 is the LCP element, so a `whileInView` reveal would ship
-              `opacity: 0` in the server HTML and hold it back until hydration. */}
-          <SectionHeading
-            id="projects-heading"
-            as="h1"
-            eyebrow="Our work"
-            title="Our projects"
-            subtitle="Case studies across residential, commercial, mixed-use, industrial and heritage work in Birmingham and the West Midlands."
-            align="center"
-            className="mb-10"
-          />
-
           {/* ProjectsClient reads the URL for the active filter, so it needs a
               Suspense boundary. The boundary is scoped to the interactive
               filter + grid only — the heading above stays server-rendered. */}

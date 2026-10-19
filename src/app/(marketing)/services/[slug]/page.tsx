@@ -6,7 +6,7 @@ import { BreadcrumbSchema } from "@/components/ui/JsonLd";
 import { ServiceDetail } from "./ServiceDetail";
 import { InteriorVisualisation } from "./InteriorVisualisation";
 import { FloorPlans } from "./FloorPlans";
-import { Plan3D } from "./Plan3D";
+import { VirtualStaging } from "./VirtualStaging";
 import { Drawings } from "./Drawings";
 import { ExteriorRendering } from "./ExteriorRendering";
 
@@ -52,8 +52,8 @@ export default async function ServicePage({ params }: PageProps) {
         <InteriorVisualisation />
       ) : service.slug === "3d-floor-plans" ? (
         <FloorPlans />
-      ) : service.slug === "3d-plan" ? (
-        <Plan3D />
+      ) : service.slug === "virtual-staging" ? (
+        <VirtualStaging />
       ) : service.slug === "drawings" ? (
         <Drawings />
       ) : service.slug === "exterior-rendering" ? (

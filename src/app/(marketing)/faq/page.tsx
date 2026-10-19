@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PageHero } from "@/components/ui/PageHero";
 import { Button } from "@/components/ui/Button";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { Reveal } from "@/components/ui/Reveal";
@@ -17,42 +17,42 @@ export const metadata: Metadata = {
 
 export default function FAQPage() {
   return (
-    <section className="bg-surface-translucent py-16 sm:py-20 lg:py-28" aria-labelledby="faq-heading">
-      {/* Sourced from the same FAQS array the accordion renders, so the
+    <>
+      <PageHero
+        image="/faq.webp"
+        alt="Birmingham Town Hall and Chamberlain Memorial at golden hour"
+        title="Frequently asked questions"
+        subtitle="Common questions about planning applications, timelines, fees, and our services."
+      />
+      <section
+        className="bg-surface-translucent py-16 sm:py-20 lg:py-28"
+        aria-label="Questions and answers"
+      >
+        {/* Sourced from the same FAQS array the accordion renders, so the
           structured data can never claim a question the page does not show. */}
-      <FaqSchema faqs={FAQS.map((f) => ({ q: f.q, a: f.a }))} />
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* The title block is deliberately static: it is the first viewport and
-            the h1 is the LCP element, so a `whileInView` reveal would ship
-            `opacity: 0` in the server HTML and hold it back until hydration. */}
-        <SectionHeading
-          id="faq-heading"
-          as="h1"
-          eyebrow="FAQ"
-          title="Frequently asked questions"
-          subtitle="Common questions about planning applications, timelines, fees, and our services."
-          align="center"
-          className="mb-12"
-        />
+        <FaqSchema faqs={FAQS.map((f) => ({ q: f.q, a: f.a }))} />
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl">
+            <Reveal amount={0.1}>
+              <FAQAccordion items={FAQS} defaultOpen={0} idPrefix="faq-page" />
+            </Reveal>
 
-        <div className="mx-auto max-w-3xl">
-          <Reveal amount={0.1}>
-            <FAQAccordion items={FAQS} defaultOpen={0} idPrefix="faq-page" />
-          </Reveal>
-
-          <Reveal className="mt-12 text-center">
-            <p className="mb-6 text-secondary">Still have questions? We&rsquo;re happy to help.</p>
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button variant="gold" size="lg" asChild>
-                <Link href="/contact">Contact us</Link>
-              </Button>
-              <Button variant="secondary" size="lg" asChild>
-                <Link href="/quote">Request a Quote</Link>
-              </Button>
-            </div>
-          </Reveal>
+            <Reveal className="mt-12 text-center">
+              <p className="mb-6 text-secondary">
+                Still have questions? We&rsquo;re happy to help.
+              </p>
+              <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <Button variant="gold" size="lg" asChild>
+                  <Link href="/contact">Contact us</Link>
+                </Button>
+                <Button variant="secondary" size="lg" asChild>
+                  <Link href="/quote">Request a Quote</Link>
+                </Button>
+              </div>
+            </Reveal>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

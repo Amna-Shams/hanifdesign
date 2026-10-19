@@ -10,6 +10,9 @@ import { Button } from "@/components/ui/Button";
 import { MobileMenu } from "./MobileMenu";
 import { HomeHeader } from "./HomeHeader";
 
+/** Pages that open with a full-bleed photo hero and use the floating header. */
+const HERO_PATHS = new Set(["/", "/about", "/services", "/projects", "/faq", "/contact"]);
+
 export function Header() {
   const pathname = usePathname();
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -35,7 +38,7 @@ export function Header() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   // The homepage has its own floating header over the full-bleed hero.
-  if (pathname === "/") return <HomeHeader />;
+  if (HERO_PATHS.has(pathname)) return <HomeHeader />;
 
   return (
     <header

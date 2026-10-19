@@ -12,6 +12,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { SERVICES } from "@/lib/constants";
+import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   alternates: { canonical: canonical("/services") },
   title: "Our Services",
   description:
-    "Planning applications, building regulations support, design drawings, feasibility layouts, interior design, interior visualisation, 3D floor plans, 3D plans, drawings, exterior rendering, 3D visualisation and development guidance for residential projects in Birmingham and the West Midlands.",
+    "Planning applications, building regulations support, design drawings, feasibility layouts, interior design, interior visualisation, 3D floor plans, virtual staging, drawings, exterior rendering, 3D visualisation and development guidance for residential projects in Birmingham and the West Midlands.",
 };
 
 /** Icon per service slug. Kept beside the list so it stays easy to audit. */
@@ -30,10 +31,9 @@ const ICONS = {
   "planning-applications": FileCheck,
   "building-regulations-support": ShieldCheck,
   "feasibility-layouts": LayoutGrid,
-  "interior-design": Sofa,
   "interior-visualisation": Sofa,
   "3d-floor-plans": Building,
-  "3d-plan": LayoutGrid,
+  "virtual-staging": Sofa,
   drawings: Ruler,
   "exterior-rendering": Building,
   "3d-visualisation": Box,
@@ -43,6 +43,13 @@ const ICONS = {
 export default function ServicesPage() {
   return (
     <>
+      <PageHero
+        image="/services.webp"
+        alt="Red brick university buildings with domed towers beyond a green lawn"
+        title="Our services"
+        subtitle="Planning, design and visualisation support for residential projects across Birmingham and the West Midlands."
+      />
+
       <section className="bg-surface-translucent py-16 sm:py-20 lg:py-28" aria-labelledby="services-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* The h1 sits in the first viewport, so it stays static: a
@@ -51,7 +58,7 @@ export default function ServicesPage() {
               no-op PageTransition. */}
           <SectionHeading
             id="services-heading"
-            as="h1"
+            as="h2"
             eyebrow="Our services"
             title="What we do"
             subtitle="Comprehensive planning and design support tailored to your project."

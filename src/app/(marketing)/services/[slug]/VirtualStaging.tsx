@@ -2,7 +2,7 @@ import { BadgeCheck, Clock, RefreshCw } from "lucide-react";
 import { PlanLayout, type PlanContent } from "./PlanLayout";
 
 /**
- * 3D Plan service page content. Image paths are placeholders from `public/` —
+ * Virtual Staging service page content. Image paths are placeholders from `public/` —
  * replace them with the real before/after pairs, the 360° panorama and the
  * 3D plan render.
  */
@@ -23,7 +23,7 @@ const CONTENT: PlanContent = {
   },
   tabs: {
     ariaLabel: "Virtual staging services",
-    defaultId: "3d-plan",
+    defaultId: "virtual-staging",
     items: [
       { id: "virtual-staging", label: "Virtual Staging", icon: "sofa", kind: "slider", title: "Virtual Staging", text: "We take a vacant property photo and virtually furnish it, adding warmth and style.", image: "/spacious-loft-conversion-harborne-1.webp", alt: "Empty room beside the same room virtually furnished" },
       { id: "virtual-styling", label: "Virtual Styling", icon: "palette", kind: "slider", title: "Virtual Styling", text: "We restyle a furnished room with new décor, colour and accessories, so it appeals to more buyers.", image: "/new-build-family-home-sutton-coldfield-1.webp", alt: "Furnished room beside the same room restyled" },
@@ -95,9 +95,9 @@ const CONTENT: PlanContent = {
       ["Should buyers be told the photos are staged?", "Yes. We recommend labelling staged images clearly, so buyers know what they are looking at. It is also good practice and helps build trust."],
     ],
   },
-  contactSubject: "3D Plan enquiry",
+  contactSubject: "Virtual staging enquiry",
 };
 
-export function Plan3D() {
+export function VirtualStaging() {
   return <PlanLayout content={CONTENT} />;
 }

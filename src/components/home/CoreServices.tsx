@@ -7,7 +7,6 @@ import {
   Ruler,
   LayoutGrid,
   Box,
-  LayoutGrid as PlanIcon,
   Building,
   Sofa,
   Compass,
@@ -64,19 +63,6 @@ const COPY: Record<Slug, { icon: LucideIcon; description: string; bullets: reado
       "Recommendation reports",
     ],
   },
-  "interior-design": {
-    icon: Sofa,
-    description:
-      "Considered interior schemes that make the most of the space and suit how you live.",
-    bullets: [
-      "Space planning and room layouts",
-      "Material and finish selection",
-      "Lighting and electrical layouts",
-      "Kitchen and bathroom design",
-      "Furniture and fittings guidance",
-      "Mood boards and design concepts",
-    ],
-  },
   "interior-visualisation": {
     icon: Sofa,
     description:
@@ -103,12 +89,12 @@ const COPY: Record<Slug, { icon: LucideIcon; description: string; bullets: reado
       "Two revision rounds included",
     ],
   },
-  "3d-plan": {
-    icon: PlanIcon,
+  "virtual-staging": {
+    icon: Sofa,
     description:
-      "Virtual staging, 360° views and furnished 3D plans that help properties sell faster.",
+      "Photorealistic virtual staging, styling and renovation that help properties sell faster.",
     bullets: [
-      "Virtual staging",
+      "Virtual staging of empty rooms",
       "Virtual styling",
       "Virtual renovation",
       "Exterior renovation",

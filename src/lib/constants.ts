@@ -79,6 +79,36 @@ export function labelForOption<T extends { value: string; label: string }>(
  */
 export const SERVICES = [
   {
+    slug: "interior-visualisation",
+    label: "Interior Visualisation",
+    short: "Photorealistic interior renders, animations and virtual tours.",
+  },
+  {
+    slug: "drawings",
+    label: "Drawings",
+    short: "Planning, building regulations and technical drawing sets.",
+  },
+  {
+    slug: "exterior-rendering",
+    label: "Exterior Rendering",
+    short: "Photorealistic exterior renders that place projects in real context.",
+  },
+  {
+    slug: "3d-floor-plans",
+    label: "3D Floor Plans",
+    short: "Top-view, angle-view and dollhouse floor plan renders.",
+  },
+  {
+    slug: "3d-visualisation",
+    label: "3D Visualisation",
+    short: "Photorealistic renders for committees and sales.",
+  },
+  {
+    slug: "virtual-staging",
+    label: "Virtual Staging",
+    short: "Virtual staging, styling, renovation and 360° views for property marketing.",
+  },
+  {
     slug: "planning-applications",
     label: "Planning Applications",
     short: "Full planning support from feasibility to approval.",
@@ -92,41 +122,6 @@ export const SERVICES = [
     slug: "feasibility-layouts",
     label: "Feasibility Layouts",
     short: "Capacity studies and constraint mapping before you commit.",
-  },
-  {
-    slug: "interior-design",
-    label: "Interior Design",
-    short: "Layouts, finishes and styling that make the space work.",
-  },
-  {
-    slug: "interior-visualisation",
-    label: "Interior Visualisation",
-    short: "Photorealistic interior renders, animations and virtual tours.",
-  },
-  {
-    slug: "3d-floor-plans",
-    label: "3D Floor Plans",
-    short: "Top-view, angle-view and dollhouse floor plan renders.",
-  },
-  {
-    slug: "3d-plan",
-    label: "3D Plan",
-    short: "Virtual staging, 360° views and furnished 3D plans for property marketing.",
-  },
-  {
-    slug: "drawings",
-    label: "Drawings",
-    short: "Planning, building regulations and technical drawing sets.",
-  },
-  {
-    slug: "exterior-rendering",
-    label: "Exterior Rendering",
-    short: "Photorealistic exterior renders that place projects in real context.",
-  },
-  {
-    slug: "3d-visualisation",
-    label: "3D Visualisation",
-    short: "Photorealistic renders for committees and sales.",
   },
   {
     slug: "development-guidance",

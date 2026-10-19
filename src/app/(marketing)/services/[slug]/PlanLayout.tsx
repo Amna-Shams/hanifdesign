@@ -8,7 +8,7 @@ import { PlanTabs, type PlanTab } from "./PlanTabs";
 import { PlanContactForm } from "./PlanContactForm";
 
 /**
- * Shared layout for the long, tabbed service pages (3D Plan, Drawings).
+ * Shared layout for the long, tabbed service pages (Virtual Staging, Drawings).
  *
  * A light palette with a tan accent and grey bands. The site's colour tokens
  * are re-pointed on the wrapper so the global heading and paragraph colours

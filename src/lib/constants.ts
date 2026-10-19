@@ -104,6 +104,21 @@ export const SERVICES = [
     short: "Layouts, finishes and styling that make the space work.",
   },
   {
+    slug: "interior-visualisation",
+    label: "Interior Visualisation",
+    short: "Photorealistic interior renders, animations and virtual tours.",
+  },
+  {
+    slug: "3d-floor-plans",
+    label: "3D Floor Plans",
+    short: "Top-view, angle-view and dollhouse floor plan renders.",
+  },
+  {
+    slug: "3d-plan",
+    label: "3D Plan",
+    short: "Virtual staging, 360° views and furnished 3D plans for property marketing.",
+  },
+  {
     slug: "3d-visualisation",
     label: "3D Visualisation",
     short: "Photorealistic renders for committees and sales.",

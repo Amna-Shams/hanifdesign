@@ -4,6 +4,9 @@ import { SERVICES } from "@/lib/constants";
 import { canonical } from "@/lib/site";
 import { BreadcrumbSchema } from "@/components/ui/JsonLd";
 import { ServiceDetail } from "./ServiceDetail";
+import { InteriorVisualisation } from "./InteriorVisualisation";
+import { FloorPlans } from "./FloorPlans";
+import { Plan3D } from "./Plan3D";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -43,7 +46,15 @@ export default async function ServicePage({ params }: PageProps) {
           { name: service.label, path: `/services/${service.slug}` },
         ]}
       />
-      <ServiceDetail service={service} />
+      {service.slug === "interior-visualisation" ? (
+        <InteriorVisualisation />
+      ) : service.slug === "3d-floor-plans" ? (
+        <FloorPlans />
+      ) : service.slug === "3d-plan" ? (
+        <Plan3D />
+      ) : (
+        <ServiceDetail service={service} />
+      )}
     </>
   );
 }

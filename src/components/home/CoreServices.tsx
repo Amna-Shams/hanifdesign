@@ -7,6 +7,8 @@ import {
   Ruler,
   LayoutGrid,
   Box,
+  LayoutGrid as PlanIcon,
+  Building,
   Sofa,
   Compass,
   Check,
@@ -85,6 +87,45 @@ const COPY: Record<Slug, { icon: LucideIcon; description: string; bullets: reado
       "Kitchen and bathroom design",
       "Furniture and fittings guidance",
       "Mood boards and design concepts",
+    ],
+  },
+  "interior-visualisation": {
+    icon: Sofa,
+    description:
+      "Photorealistic interior renders, animations and virtual tours that show a room before it is built.",
+    bullets: [
+      "Still renderings",
+      "3D animation",
+      "Virtual tours",
+      "Finish and layout options",
+      "Products modelled to spec",
+      "Two revision rounds included",
+    ],
+  },
+  "3d-floor-plans": {
+    icon: Building,
+    description:
+      "Top-view, angle-view and dollhouse floor plan renders that make layouts easy to understand.",
+    bullets: [
+      "Top-down 3D floor plans",
+      "Angle-view renders",
+      "Dollhouse renders",
+      "Furnished or unfurnished",
+      "Full sets for developments",
+      "Two revision rounds included",
+    ],
+  },
+  "3d-plan": {
+    icon: PlanIcon,
+    description:
+      "Virtual staging, 360° views and furnished 3D plans that help properties sell faster.",
+    bullets: [
+      "Virtual staging",
+      "Virtual styling",
+      "Virtual renovation",
+      "Exterior renovation",
+      "360° views",
+      "Furnished 3D plans",
     ],
   },
   "3d-visualisation": {

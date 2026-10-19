@@ -8,7 +8,7 @@ const field =
   "w-full border border-[#d9d9d9] bg-white px-4 py-3 text-[0.8125rem] text-[#1b1b1b] placeholder:text-[#8a8a8a] focus:border-[#b8865b] focus:outline-none";
 
 /** Short enquiry form that posts to the same endpoint as the main contact page. */
-export function PlanContactForm() {
+export function PlanContactForm({ subject }: { subject: string }) {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -24,7 +24,7 @@ export function PlanContactForm() {
           name: String(data.get("name") ?? ""),
           email: String(data.get("email") ?? ""),
           phone: String(data.get("phone") ?? ""),
-          subject: "3D Plan enquiry",
+          subject,
           message: String(data.get("message") ?? ""),
           [HONEYPOT_FIELD]: readHoneypot(event),
         }),
@@ -38,7 +38,7 @@ export function PlanContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-3" aria-label="3D Plan enquiry">
+    <form onSubmit={onSubmit} className="space-y-3" aria-label={subject}>
       <input {...HONEYPOT_FIELD_PROPS} />
       <input name="name" required minLength={2} placeholder="Name *" aria-label="Name" className={field} />
       <input name="email" type="email" required placeholder="Email *" aria-label="Email" className={field} />

@@ -128,6 +128,19 @@ const COPY: Record<Slug, { icon: LucideIcon; description: string; bullets: reado
       "Furnished 3D plans",
     ],
   },
+  drawings: {
+    icon: Ruler,
+    description:
+      "Planning, building regulations and technical drawing sets that councils and builders can use.",
+    bullets: [
+      "Planning drawings",
+      "Building regulations drawings",
+      "Technical drawings",
+      "Measured building survey",
+      "As-built drawings",
+      "Floor plans and elevations",
+    ],
+  },
   "3d-visualisation": {
     icon: Box,
     description: "Photorealistic renders that bring schemes to life for stakeholders and committees.",

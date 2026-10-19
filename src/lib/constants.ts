@@ -119,6 +119,11 @@ export const SERVICES = [
     short: "Virtual staging, 360° views and furnished 3D plans for property marketing.",
   },
   {
+    slug: "drawings",
+    label: "Drawings",
+    short: "Planning, building regulations and technical drawing sets.",
+  },
+  {
     slug: "3d-visualisation",
     label: "3D Visualisation",
     short: "Photorealistic renders for committees and sales.",

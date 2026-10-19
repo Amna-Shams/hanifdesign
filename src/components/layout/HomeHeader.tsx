@@ -27,6 +27,7 @@ const SERVICE_IMAGES: Record<(typeof SERVICES)[number]["slug"], string> = {
   "interior-visualisation": "/two-storey-side-extension-four-oaks-2.webp",
   "3d-floor-plans": "/hmo-development-selly-oak-1.webp",
   "3d-plan": "/3d.webp",
+  drawings: "/design drawings.webp",
   "3d-visualisation": "/3d.webp",
   "development-guidance": "/development guidance.webp",
 };

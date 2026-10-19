@@ -4,86 +4,29 @@ import { useState, type ChangeEvent } from "react";
 import Image from "next/image";
 import { Hammer, House, LayoutGrid, Palette, Play, Rotate3d, Sofa } from "lucide-react";
 
-type Kind = "slider" | "tour" | "plan";
+export type TabKind = "slider" | "tour" | "plan";
+export type TabIcon = "sofa" | "palette" | "hammer" | "house" | "rotate" | "grid";
 
-interface Tab {
+export interface PlanTab {
   id: string;
   label: string;
-  icon: typeof Sofa;
-  kind: Kind;
+  icon: TabIcon;
+  kind: TabKind;
   title: string;
   text: string;
-  /** Slider: the "after" image. Tour: the panorama. Plan: the 3D plan. */
+  /** Slider: the photo used for both halves. Tour: the panorama. Plan: the render. */
   image: string;
   alt: string;
 }
 
-/**
- * One entry per tab. Image paths are placeholders from `public/` — replace them
- * with the real before/after pairs, the 360° panorama and the 3D plan render.
- */
-const TABS: readonly Tab[] = [
-  {
-    id: "virtual-staging",
-    label: "Virtual Staging",
-    icon: Sofa,
-    kind: "slider",
-    title: "Virtual Staging",
-    text: "We take a vacant property photo and virtually furnish it, adding warmth and style.",
-    image: "/spacious-loft-conversion-harborne-1.webp",
-    alt: "Empty room beside the same room virtually furnished",
-  },
-  {
-    id: "virtual-styling",
-    label: "Virtual Styling",
-    icon: Palette,
-    kind: "slider",
-    title: "Virtual Styling",
-    text: "We restyle a furnished room with new décor, colour and accessories, so it appeals to more buyers.",
-    image: "/new-build-family-home-sutton-coldfield-1.webp",
-    alt: "Furnished room beside the same room restyled",
-  },
-  {
-    id: "virtual-renovation",
-    label: "Virtual Renovation",
-    icon: Hammer,
-    kind: "slider",
-    title: "Virtual Renovation",
-    text: "We show how a tired interior could look with new finishes, floors and fittings before any work begins.",
-    image: "/office-to-residential-conversion-city-centre-1.webp",
-    alt: "Dated interior beside the same interior renovated",
-  },
-  {
-    id: "exterior-renovation",
-    label: "Exterior Renovation",
-    icon: House,
-    kind: "slider",
-    title: "Exterior Renovation",
-    text: "We refresh the outside of a property, from the front elevation to the garden and drive.",
-    image: "/two-storey-side-extension-four-oaks-1.webp",
-    alt: "House exterior beside the same exterior renovated",
-  },
-  {
-    id: "360-view",
-    label: "360° View",
-    icon: Rotate3d,
-    kind: "tour",
-    title: "360° View",
-    text: "Let buyers look around a staged room in every direction.",
-    image: "/hmo-development-selly-oak-2.webp",
-    alt: "Panoramic view of a staged room",
-  },
-  {
-    id: "3d-plan",
-    label: "3D Plan",
-    icon: LayoutGrid,
-    kind: "plan",
-    title: "3D Plan",
-    text: "A furnished 3D floor plan shows the whole layout at a glance, so buyers understand how the home works.",
-    image: "/3d.webp",
-    alt: "Furnished 3D floor plan of a home",
-  },
-] as const;
+const ICONS = {
+  sofa: Sofa,
+  palette: Palette,
+  hammer: Hammer,
+  house: House,
+  rotate: Rotate3d,
+  grid: LayoutGrid,
+} as const;
 
 function BeforeAfter({ image, alt }: { image: string; alt: string }) {
   const [position, setPosition] = useState(50);
@@ -155,17 +98,25 @@ function Tour({ image, alt }: { image: string; alt: string }) {
   );
 }
 
-export function PlanTabs() {
-  const [activeId, setActiveId] = useState("3d-plan");
-  const active = TABS.find((tab) => tab.id === activeId) ?? TABS[TABS.length - 1];
+export function PlanTabs({
+  tabs,
+  defaultId,
+  ariaLabel,
+}: {
+  tabs: readonly PlanTab[];
+  defaultId: string;
+  ariaLabel: string;
+}) {
+  const [activeId, setActiveId] = useState(defaultId);
+  const active = tabs.find((tab) => tab.id === activeId) ?? tabs[tabs.length - 1];
 
   return (
     <div>
       {/* Tab bar */}
       <div className="bg-[#4a4a4a]">
-        <div role="tablist" aria-label="Virtual staging services" className="mx-auto flex max-w-5xl flex-wrap justify-center">
-          {TABS.map((tab) => {
-            const Icon = tab.icon;
+        <div role="tablist" aria-label={ariaLabel} className="mx-auto flex max-w-5xl flex-wrap justify-center">
+          {tabs.map((tab) => {
+            const Icon = ICONS[tab.icon];
             const isActive = tab.id === activeId;
             return (
               <button
@@ -176,7 +127,7 @@ export function PlanTabs() {
                 aria-controls="plan-panel"
                 type="button"
                 onClick={() => setActiveId(tab.id)}
-                className="relative flex min-h-11 w-1/3 flex-col items-center gap-2 px-2 pb-6 pt-7 text-[0.7rem] font-semibold uppercase leading-tight tracking-wide !text-white transition-opacity hover:opacity-80 sm:w-1/6"
+                className="relative flex min-h-11 w-1/3 flex-col items-center gap-2 px-2 pb-6 pt-7 text-[0.7rem] font-semibold uppercase leading-tight tracking-wide !text-white transition-opacity hover:opacity-80 sm:w-auto sm:min-w-[7.5rem] sm:flex-1"
               >
                 <Icon className="h-7 w-7" strokeWidth={1.5} aria-hidden="true" />
                 <span className="text-center">{tab.label}</span>

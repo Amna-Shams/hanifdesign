@@ -22,7 +22,7 @@ export default function ProjectsPage() {
   return (
     <>
       <PageHero
-        image="/projects.webp"
+        image="/projects-hero.webp"
         alt="Narrowboats moored along a canal lined with brick buildings in central Birmingham"
         title="Our projects"
         subtitle="Case studies across residential, commercial, mixed-use, industrial and heritage work in Birmingham and the West Midlands."

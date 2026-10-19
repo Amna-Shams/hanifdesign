@@ -29,7 +29,14 @@ const PAGE_VARS = {
 } as CSSProperties;
 
 const IMG = {
-  hero: "/home-hero.webp",
+  hero: "/exterior-hero.webp",
+  useDev: "/exterior-use-development.webp",
+  usePres: "/exterior-use-presentation.webp",
+  useMkt: "/exterior-use-marketing.webp",
+  typeHouse: "/exterior-type-single-family.webp",
+  typeApt: "/exterior-type-apartments.webp",
+  typeComplex: "/exterior-type-complexes.webp",
+  typeMixed: "/exterior-type-mixed-use.webp",
   e1: "/two-storey-side-extension-four-oaks-1.webp",
   e2: "/rear-home-extension-edgbaston-1.webp",
   e3: "/digbeth-1.webp",
@@ -43,25 +50,18 @@ const IMG = {
   e11: "/new-build-family-home-sutton-coldfield-1.webp",
 } as const;
 
-const STATS = [
-  { value: "30+", label: "Years of Experience" },
-  { value: "500+", label: "Projects Delivered" },
-  { value: "100%", label: "Client Satisfaction" },
-  { value: "Birmingham", label: "Studio Location" },
-] as const;
-
 const USES = [
-  { title: "Project Development", img: IMG.e1, text: "Design Decisions Made Visible. 3D renders put every finish option, cladding choice and window configuration in front of clients before construction begins. Fewer rounds of revisions. Faster sign-offs." },
-  { title: "Design Presentation", img: IMG.e2, text: "3D Does the Talking for You. Exterior renders show your design in a real environment with accurate light and site context. That kind of visual quality is what can separate a yes from a maybe." },
-  { title: "Property Marketing", img: IMG.e3, text: "Sell Off-Plan Before Ground Breaks. 3D visualisation gives marketing teams strong imagery for listings, campaigns and investor decks. Properties move faster when people can picture themselves there." },
+  { title: "Project Development", img: IMG.useDev, text: "Design Decisions Made Visible. 3D renders put every finish option, cladding choice and window configuration in front of clients before construction begins. Fewer rounds of revisions. Faster sign-offs." },
+  { title: "Design Presentation", img: IMG.usePres, text: "3D Does the Talking for You. Exterior renders show your design in a real environment with accurate light and site context. That kind of visual quality is what can separate a yes from a maybe." },
+  { title: "Property Marketing", img: IMG.useMkt, text: "Sell Off-Plan Before Ground Breaks. 3D visualisation gives marketing teams strong imagery for listings, campaigns and investor decks. Properties move faster when people can picture themselves there." },
 ] as const;
 
 const TYPES = [
-  { title: "Single-family Homes", img: IMG.e4, text: "Highlight design, materials and kerb appeal. Present the home as a finished space." },
-  { title: "Apartment Buildings", img: IMG.e8, text: "Emphasise façade rhythm, scale and unit layout. Show how the building fits its context." },
-  { title: "Residential Complexes", img: IMG.e11, text: "Capture layout, shared spaces and circulation. Show how the community works as a whole." },
+  { title: "Single-family Homes", img: IMG.typeHouse, text: "Highlight design, materials and kerb appeal. Present the home as a finished space." },
+  { title: "Apartment Buildings", img: IMG.typeApt, text: "Emphasise façade rhythm, scale and unit layout. Show how the building fits its context." },
+  { title: "Residential Complexes", img: IMG.typeComplex, text: "Capture layout, shared spaces and circulation. Show how the community works as a whole." },
   { title: "Commercial Buildings", img: IMG.e7, text: "Show frontage, signage and entrances in the street scene. Help investors and tenants see the space before it is built." },
-  { title: "Mixed-Use Schemes", img: IMG.e9, text: "Explain how homes, shops and public space sit together, with activity and daylight at street level." },
+  { title: "Mixed-Use Schemes", img: IMG.typeMixed, text: "Explain how homes, shops and public space sit together, with activity and daylight at street level." },
   { title: "Extensions and Conversions", img: IMG.e6, text: "Show the new work against the existing building, so planners and owners can judge the change." },
 ] as const;
 
@@ -148,7 +148,7 @@ export function ExteriorRendering() {
     <article style={PAGE_VARS} className="isolate">
       {/* 1 — Hero */}
       <header className="relative isolate flex min-h-[34rem] items-center justify-center overflow-hidden bg-[#222] lg:min-h-[42rem]">
-        <Image src={IMG.hero} alt="" fill priority sizes="100vw" className="-z-20 object-cover" />
+        <Image src={IMG.hero} alt="" fill priority quality={90} sizes="100vw" className="-z-20 object-cover" />
         <div aria-hidden="true" className="absolute inset-0 -z-10 bg-black/45" />
         <nav
           aria-label="Breadcrumb"
@@ -181,18 +181,6 @@ export function ExteriorRendering() {
           </div>
         </div>
       </header>
-
-      {/* 2 — Stats */}
-      <section aria-label="At a glance" className="bg-white py-14 sm:py-20">
-        <ul className="mx-auto grid max-w-5xl grid-cols-2 gap-8 px-4 text-center sm:px-6 lg:grid-cols-4">
-          {STATS.map((stat) => (
-            <li key={stat.label}>
-              <p className="font-heading text-4xl font-bold sm:text-5xl">{stat.value}</p>
-              <p className="mt-3 text-[0.8125rem] text-[#5b5b5b]">{stat.label}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
 
       {/* 3 — What it is used for */}
       <section className="bg-white pb-14 sm:pb-20">

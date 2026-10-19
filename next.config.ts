@@ -66,6 +66,12 @@ const nextConfig: NextConfig = {
      * support for, so this costs older browsers nothing.
      */
     formats: ["image/avif", "image/webp"],
+    /**
+     * Quality levels `next/image` may request. 75 is the default; 90 is used by
+     * the full-bleed hero photographs, where the default compression visibly
+     * softens edges once the image is shown at full width.
+     */
+    qualities: [75, 90],
   },
 
   /**

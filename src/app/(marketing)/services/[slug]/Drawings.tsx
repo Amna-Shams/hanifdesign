@@ -10,7 +10,7 @@ const CONTENT: PlanContent = {
   hero: {
     title: "Planning & Technical Drawing Services",
     subtitle: "Accurate, Planning-Ready Drawings for Homes, Extensions and Developments",
-    image: "/home-hero.webp",
+    image: "/drawings-hero.webp",
   },
   ways: {
     title: "6 Ways Our Drawings Help Your Project Move Faster",
@@ -68,7 +68,7 @@ const CONTENT: PlanContent = {
     title: "Workflow",
     steps: [
       { title: "1. Set the task", text: "Starting a project is simple. Tell us about the property and what you want to achieve, and we are ready to go.", list: ["send us your plans or photos", "tell us what you want to build", "agree the scope and quote"], image: "/garage-conversion-kings-heath-1.webp" },
-      { title: "2. Communicate", text: "Talk to the team throughout and review each stage of the drawings before they are finalised.", list: ["talk to your project manager", "add corrections", "approve each stage"], image: "/rear-home-extension-edgbaston-1.webp" },
+      { title: "2. Communicate", text: "Talk to the team throughout and review each stage of the drawings before they are finalised.", list: ["talk to your project manager", "add corrections", "approve each stage"], image: "/drawings-workflow-2.webp" },
       { title: "3. Use results", text: "Receive a finished, organised drawing set that you can use straight away for planning, building control and tender.", list: ["for planning applications", "for building control", "for builders to price"], image: "/two-storey-side-extension-four-oaks-1.webp" },
     ],
   },

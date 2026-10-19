@@ -26,6 +26,7 @@ export function PageHero({ image, alt, title, subtitle, children }: PageHeroProp
         alt={alt}
         fill
         priority
+        quality={90}
         sizes="100vw"
         className="-z-20 object-cover"
       />

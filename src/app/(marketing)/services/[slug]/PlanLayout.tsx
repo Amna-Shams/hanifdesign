@@ -87,7 +87,7 @@ export function PlanLayout({ content }: { content: PlanContent }) {
     <article style={PAGE_VARS} className="isolate">
       {/* 1 — Hero */}
       <header className="relative isolate flex min-h-[34rem] items-center justify-center overflow-hidden bg-[#222] lg:min-h-[44rem]">
-        <Image src={hero.image} alt="" fill priority sizes="100vw" className="-z-20 object-cover" />
+        <Image src={hero.image} alt="" fill priority quality={90} sizes="100vw" className="-z-20 object-cover" />
         <div aria-hidden="true" className="absolute inset-0 -z-10 bg-black/55" />
         <div className="px-4 py-24 text-center">
           <h1 className="font-heading text-[2.25rem] font-light uppercase leading-[1.1] tracking-wide !text-white sm:text-6xl lg:text-[4.5rem]">

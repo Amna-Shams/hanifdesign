@@ -203,7 +203,7 @@ export default function AboutPage() {
                 planning system, from a single extension to a multi-unit scheme.
               </p>
               <p>
-                Founded in Quinton, Birmingham, over three decades ago, Hanif Design &amp; Consultancy
+                Based in Quinton, Birmingham, Hanif Design &amp; Consultancy
                 has grown from a small design practice into one of the West
                 Midlands&rsquo; most respected planning consultancies. Our team combines
                 deep local authority knowledge with practical design expertise to

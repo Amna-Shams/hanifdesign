@@ -42,13 +42,6 @@ const IMG = {
   cta: "/interior-vis-cta.webp",
 } as const;
 
-const STATS = [
-  { value: "30+", label: "Years of experience" },
-  { value: "500+", label: "Projects delivered" },
-  { value: "100%", label: "Client satisfaction" },
-  { value: "Birmingham", label: "Based in Quinton" },
-] as const;
-
 const PRODUCT_POINTS = [
   ["Exact items.", "Send product links or spec sheets and we model the furniture and fixtures you chose, not look-alikes."],
   ["Custom pieces.", "Bespoke joinery and furniture are modelled from your drawings or reference photos."],
@@ -194,6 +187,7 @@ export function InteriorVisualisation() {
           alt=""
           fill
           priority
+          quality={90}
           sizes="100vw"
           className="-z-20 object-cover object-center"
         />
@@ -235,20 +229,6 @@ export function InteriorVisualisation() {
           </div>
         </div>
       </header>
-
-      {/* 2 — Stats */}
-      <Band label="At a glance">
-        <ul className="grid grid-cols-2 gap-8 text-center lg:grid-cols-4">
-          {STATS.map((stat) => (
-            <li key={stat.label}>
-              <p className="font-heading text-4xl font-bold text-primary sm:text-5xl">
-                {stat.value}
-              </p>
-              <p className="mt-3 text-sm text-secondary">{stat.label}</p>
-            </li>
-          ))}
-        </ul>
-      </Band>
 
       {/* 3 — Industry leaders (dark band with image mosaic) */}
       <Band tone="dark">

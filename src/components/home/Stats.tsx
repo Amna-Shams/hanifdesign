@@ -5,7 +5,6 @@ import { motion } from "motion/react";
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 const stats = [
-  { value: "30+", label: "Years experience" },
   { value: "500+", label: "Projects completed" },
   { value: "100%", label: "Client satisfaction" },
   { value: "24/7", label: "Support available" },
@@ -19,7 +18,7 @@ export function Stats() {
           Key statistics
         </h2>
 
-        <dl className="grid grid-cols-2 gap-8 text-center lg:grid-cols-4 lg:gap-12">
+        <dl className="grid grid-cols-1 gap-8 text-center sm:grid-cols-3 lg:gap-12">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}

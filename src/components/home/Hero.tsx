@@ -13,6 +13,7 @@ export function Hero() {
         alt="Stone-fronted civic building with arched windows beside a tree-lined public square"
         fill
         priority
+        quality={90}
         sizes="100vw"
         className="-z-20 object-cover"
       />

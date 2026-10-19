@@ -44,8 +44,8 @@ export default function ServicesPage() {
   return (
     <>
       <PageHero
-        image="/services.webp"
-        alt="Red brick university buildings with domed towers beyond a green lawn"
+        image="/services-hero.webp"
+        alt="Birmingham Town Hall and the Chamberlain Memorial in golden evening light"
         title="Our services"
         subtitle="Planning, design and visualisation support for residential projects across Birmingham and the West Midlands."
       />

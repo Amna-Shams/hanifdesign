@@ -46,13 +46,6 @@ const PAGE_VARS = {
   color: "#1b1b1b",
 } as CSSProperties;
 
-const STATS = [
-  { value: "30+", label: "Years of Experience" },
-  { value: "500+", label: "Projects Delivered" },
-  { value: "100%", label: "Client Satisfaction" },
-  { value: "Birmingham", label: "Studio Location" },
-] as const;
-
 const AUDIENCES = ["Developers", "Estate Agents", "Landlords", "Homeowners", "Design Studios"] as const;
 
 const INTRO_COLUMNS = [
@@ -250,18 +243,6 @@ export function FloorPlans() {
           </div>
         </div>
       </header>
-
-      {/* 2 — Stats */}
-      <section aria-label="At a glance" className="bg-white py-12 sm:py-16">
-        <ul className="mx-auto grid max-w-5xl grid-cols-2 gap-8 px-4 text-center sm:px-6 lg:grid-cols-4">
-          {STATS.map((stat) => (
-            <li key={stat.label}>
-              <p className="font-heading text-4xl font-bold sm:text-5xl">{stat.value}</p>
-              <p className="mt-3 text-[0.8125rem] text-[#5b5b5b]">{stat.label}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
 
       {/* 3 — Dark band: audiences */}
       <section className="bg-[#3a3a3a] py-14 sm:py-20">

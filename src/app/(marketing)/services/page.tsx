@@ -22,20 +22,20 @@ export const metadata: Metadata = {
   alternates: { canonical: canonical("/services") },
   title: "Our Services",
   description:
-    "Planning applications, building regulations support, design drawings, feasibility layouts, interior design, interior visualisation, 3D floor plans, 3D plans, drawings, 3D visualisation and development guidance for residential projects in Birmingham and the West Midlands.",
+    "Planning applications, building regulations support, design drawings, feasibility layouts, interior design, interior visualisation, 3D floor plans, 3D plans, drawings, exterior rendering, 3D visualisation and development guidance for residential projects in Birmingham and the West Midlands.",
 };
 
 /** Icon per service slug. Kept beside the list so it stays easy to audit. */
 const ICONS = {
   "planning-applications": FileCheck,
   "building-regulations-support": ShieldCheck,
-  "design-drawings": Ruler,
   "feasibility-layouts": LayoutGrid,
   "interior-design": Sofa,
   "interior-visualisation": Sofa,
   "3d-floor-plans": Building,
   "3d-plan": LayoutGrid,
   drawings: Ruler,
+  "exterior-rendering": Building,
   "3d-visualisation": Box,
   "development-guidance": Compass,
 } as const;

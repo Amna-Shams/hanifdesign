@@ -89,11 +89,6 @@ export const SERVICES = [
     short: "Compliance drawings and submissions for building control.",
   },
   {
-    slug: "design-drawings",
-    label: "Design Drawings",
-    short: "Clear, buildable, planning-ready drawing packages.",
-  },
-  {
     slug: "feasibility-layouts",
     label: "Feasibility Layouts",
     short: "Capacity studies and constraint mapping before you commit.",
@@ -122,6 +117,11 @@ export const SERVICES = [
     slug: "drawings",
     label: "Drawings",
     short: "Planning, building regulations and technical drawing sets.",
+  },
+  {
+    slug: "exterior-rendering",
+    label: "Exterior Rendering",
+    short: "Photorealistic exterior renders that place projects in real context.",
   },
   {
     slug: "3d-visualisation",

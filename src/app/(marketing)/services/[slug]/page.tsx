@@ -8,6 +8,7 @@ import { InteriorVisualisation } from "./InteriorVisualisation";
 import { FloorPlans } from "./FloorPlans";
 import { Plan3D } from "./Plan3D";
 import { Drawings } from "./Drawings";
+import { ExteriorRendering } from "./ExteriorRendering";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -55,6 +56,8 @@ export default async function ServicePage({ params }: PageProps) {
         <Plan3D />
       ) : service.slug === "drawings" ? (
         <Drawings />
+      ) : service.slug === "exterior-rendering" ? (
+        <ExteriorRendering />
       ) : (
         <ServiceDetail service={service} />
       )}

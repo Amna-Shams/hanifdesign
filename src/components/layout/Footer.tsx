@@ -57,9 +57,9 @@ const LEGAL_LINKS = [
 export function Footer() {
   return (
     <footer className="border-t border-subtle bg-surface-translucent">
-      <div className="mx-auto w-full max-w-[100rem] px-4 py-10 sm:px-6 sm:py-14 lg:px-10 lg:py-20 xl:px-12">
-        {/* Brand + contact on the left; Company and Services lists on the right. */}
-        <div className="grid grid-cols-2 gap-x-5 gap-y-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-x-12">
+      <div className="mx-auto w-full max-w-[100rem] px-4 py-5 sm:px-6 sm:py-6 lg:px-10 lg:py-7 xl:px-12">
+        {/* Four columns: brand + contact, Company, then Services across the last two. */}
+        <div className="grid grid-cols-2 gap-x-5 gap-y-5 lg:grid-cols-[minmax(0,1.4fr)_repeat(3,minmax(0,1fr))] lg:gap-x-12">
           {/* Brand, contact, social */}
           <div className="col-span-2 space-y-5 lg:col-span-1">
             <Link
@@ -143,19 +143,19 @@ export function Footer() {
           </div>
 
           {/* Company */}
-          <nav aria-labelledby="footer-company">
+          <nav aria-labelledby="footer-company" className="col-span-2 lg:col-span-1">
             <h2
               id="footer-company"
               className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary sm:mb-4"
             >
               Company
             </h2>
-            <ul className="space-y-0.5">
+            <ul className="space-y-0">
               {QUICK_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="-mx-2 inline-flex min-h-11 items-center rounded-md px-2 py-1.5 text-sm text-secondary transition-colors hover:text-gold"
+                    className="-mx-2 inline-flex min-h-9 items-center rounded-md px-2 py-0.5 text-sm text-secondary transition-colors hover:text-gold lg:min-h-0 lg:py-0.5"
                   >
                     {link.label}
                   </Link>
@@ -164,20 +164,24 @@ export function Footer() {
             </ul>
           </nav>
 
-          {/* Services */}
-          <nav aria-labelledby="footer-services">
+          {/* Services: the heading sits over the third column only; the list runs
+              across the third and fourth, filling left to right. */}
+          <nav
+            aria-labelledby="footer-services"
+            className="col-span-2 grid grid-cols-2 content-start gap-x-5 lg:gap-x-12"
+          >
             <h2
               id="footer-services"
               className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary sm:mb-4"
             >
               Services
             </h2>
-            <ul className="space-y-0.5">
+            <ul className="col-span-2 grid auto-rows-min grid-cols-2 content-start gap-x-5 gap-y-0 lg:gap-x-12">
               {SERVICES.map((service) => (
                 <li key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
-                    className="-mx-2 inline-flex min-h-11 items-center rounded-md px-2 py-1.5 text-sm text-secondary transition-colors hover:text-gold"
+                    className="-mx-2 inline-flex min-h-9 items-center rounded-md px-2 py-0.5 text-sm text-secondary transition-colors hover:text-gold lg:min-h-0 lg:py-0.5"
                   >
                     {service.label}
                   </Link>
@@ -188,7 +192,7 @@ export function Footer() {
         </div>
 
         {/* Colophon */}
-        <div className="mt-10 flex flex-col gap-4 border-t border-subtle pt-6 text-sm sm:pt-8 lg:mt-14 lg:flex-row lg:items-center lg:justify-between">
+        <div className="mt-5 flex flex-col gap-2 border-t border-subtle pt-4 text-sm lg:mt-6 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <p className="text-secondary">
               {/* Literal character: React decodes JSX entities as text, which

@@ -21,13 +21,13 @@ const MENU_LINKS = [
 const SERVICE_IMAGES: Record<(typeof SERVICES)[number]["slug"], string> = {
   "planning-applications": "/planning application.webp",
   "building-regulations-support": "/building regulation support.webp",
-  "design-drawings": "/design drawings.webp",
   "feasibility-layouts": "/feasibility layouts.webp",
   "interior-design": "/spacious-loft-conversion-harborne-1.webp",
   "interior-visualisation": "/two-storey-side-extension-four-oaks-2.webp",
   "3d-floor-plans": "/hmo-development-selly-oak-1.webp",
   "3d-plan": "/3d.webp",
   drawings: "/design drawings.webp",
+  "exterior-rendering": "/two-storey-side-extension-four-oaks-1.webp",
   "3d-visualisation": "/3d.webp",
   "development-guidance": "/development guidance.webp",
 };

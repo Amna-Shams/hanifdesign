@@ -52,18 +52,6 @@ const COPY: Record<Slug, { icon: LucideIcon; description: string; bullets: reado
       "Inspection scheduling",
     ],
   },
-  "design-drawings": {
-    icon: Ruler,
-    description: "Precise, planning-ready drawings that builders and councils can actually use.",
-    bullets: [
-      "Concept design",
-      "Floor plans and elevations",
-      "Site plans and sections",
-      "2D technical drawings",
-      "Planning-ready packs",
-      "Revisions and amendments",
-    ],
-  },
   "feasibility-layouts": {
     icon: LayoutGrid,
     description: "Site-specific analysis to test development viability before committing to design.",
@@ -139,6 +127,19 @@ const COPY: Record<Slug, { icon: LucideIcon; description: string; bullets: reado
       "Measured building survey",
       "As-built drawings",
       "Floor plans and elevations",
+    ],
+  },
+  "exterior-rendering": {
+    icon: Box,
+    description:
+      "Photorealistic exterior renders that show a building in its real surroundings before it is built.",
+    bullets: [
+      "Aerial and site overviews",
+      "Street-level views",
+      "Façade close-ups",
+      "Landscape and context",
+      "Lighting and seasons",
+      "Marketing-ready images",
     ],
   },
   "3d-visualisation": {

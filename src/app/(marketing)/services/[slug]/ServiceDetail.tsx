@@ -4,7 +4,6 @@ import type { LucideIcon } from "lucide-react";
 import {
   FileCheck,
   ShieldCheck,
-  Ruler,
   LayoutGrid,
   Box,
   Sofa,
@@ -124,40 +123,6 @@ const serviceData: Record<
       { src: "/office-to-residential-conversion-city-centre-2.webp", alt: "Building site with a concrete frame and blockwork beside rolled construction drawings and a hard hat" },
       { src: "/single-storey-rear-extension-moseley-1.webp", alt: "Contemporary house under construction with scaffolding, above the same house completed" },
       { src: "/office-to-residential-conversion-city-centre-1.webp", alt: "Split view of a concrete building frame beside the finished contemporary home" },
-    ],
-  },
-  "design-drawings": {
-    icon: Ruler,
-    intro:
-      "Good drawings get approved faster and get built without surprises. We produce a coordinated 2D drawing package that satisfies both the planning officer and the contractor on site.",
-    process: [
-      "Brief, site survey and measured drawings",
-      "Concept options and design development",
-      "Floor plans, elevations and site plans",
-      "Sections and construction details",
-      "Coordination with structural and services engineers",
-      "Revisions through determination and beyond",
-    ],
-    benefits: [
-      "Drawn to the scale and format the council expects",
-      "Coordinated so builders can price from them",
-      "Revisions included until approval",
-      "Issued as an organised PDF pack",
-    ],
-    hero: {
-      src: "/rear-home-extension-edgbaston-1.webp",
-      alt: "Design scale model of a house held up in front of a building site",
-    },
-    aside: {
-      src: "/design drawings.webp",
-      alt: "Isometric line drawing of a framed building with a crane, dimension lines and a hard hat on a dark blueprint",
-    },
-    galleryCaption:
-      "Coordinated plans, elevations and sections that planners can approve and builders can price.",
-    gallery: [
-      { src: "/spacious-loft-conversion-harborne-2.webp", alt: "Concept sheet combining elevation, section, plan and detail drawings of a modern two-storey house" },
-      { src: "/spacious-loft-conversion-harborne-1.webp", alt: "Interior design drawing with floor plan, section and dimensions overlaid on a double-height living space" },
-      { src: "/rear-home-extension-edgbaston-2.webp", alt: "Dimensioned ground floor plan of a family home with courtyard and parking" },
     ],
   },
   "feasibility-layouts": {

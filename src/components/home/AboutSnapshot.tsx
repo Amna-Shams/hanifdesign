@@ -15,7 +15,7 @@ const miniCards = [
   },
   {
     icon: Building2,
-    title: "Design Drawings",
+    title: "Drawings",
     description: "Clear, buildable, planning-ready drawings",
   },
   {

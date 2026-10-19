@@ -8,7 +8,16 @@ const field =
   "w-full border border-[#d9d9d9] bg-white px-4 py-3 text-[0.8125rem] text-[#1b1b1b] placeholder:text-[#8a8a8a] focus:border-[#b8865b] focus:outline-none";
 
 /** Short enquiry form that posts to the same endpoint as the main contact page. */
-export function PlanContactForm({ subject }: { subject: string }) {
+export function PlanContactForm({
+  subject,
+  compact = false,
+  submitLabel = "Send",
+}: {
+  subject: string;
+  /** Name, email and message only, with no phone field or terms checkbox. */
+  compact?: boolean;
+  submitLabel?: string;
+}) {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -42,7 +51,9 @@ export function PlanContactForm({ subject }: { subject: string }) {
       <input {...HONEYPOT_FIELD_PROPS} />
       <input name="name" required minLength={2} placeholder="Name *" aria-label="Name" className={field} />
       <input name="email" type="email" required placeholder="Email *" aria-label="Email" className={field} />
-      <input name="phone" type="tel" placeholder="Phone" aria-label="Phone" className={field} />
+      {!compact && (
+        <input name="phone" type="tel" placeholder="Phone" aria-label="Phone" className={field} />
+      )}
       <textarea
         name="message"
         required
@@ -52,20 +63,22 @@ export function PlanContactForm({ subject }: { subject: string }) {
         aria-label="Message"
         className={`${field} resize-y`}
       />
-      <label className="flex items-start gap-2 text-[0.6875rem] text-[#3b3b3b]">
-        <input type="checkbox" required className="mt-0.5" />
-        <span>
-          I agree with{" "}
-          <Link href="/terms" className="text-[#b8865b] underline">Terms of Service</Link> and{" "}
-          <Link href="/privacy" className="text-[#b8865b] underline">Privacy Policy</Link>
-        </span>
-      </label>
+      {!compact && (
+        <label className="flex items-start gap-2 text-[0.6875rem] text-[#3b3b3b]">
+          <input type="checkbox" required className="mt-0.5" />
+          <span>
+            I agree with{" "}
+            <Link href="/terms" className="text-[#b8865b] underline">Terms of Service</Link> and{" "}
+            <Link href="/privacy" className="text-[#b8865b] underline">Privacy Policy</Link>
+          </span>
+        </label>
+      )}
       <button
         type="submit"
         disabled={status === "sending"}
         className="min-h-11 w-full bg-[#b8865b] px-6 py-3 text-[0.75rem] font-medium uppercase tracking-wider !text-white transition-opacity hover:opacity-90 disabled:opacity-60"
       >
-        {status === "sending" ? "Sending…" : "Send"}
+        {status === "sending" ? "Sending…" : submitLabel}
       </button>
       <p aria-live="polite" className="text-xs">
         {status === "success" && "Thank you. Your message has been sent and we will reply soon."}

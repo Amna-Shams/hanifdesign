@@ -120,10 +120,7 @@ export const PROJECTS: readonly Project[] = [
       "3D visualisation and rendering",
       "Technical drawings",
     ],
-    images: [
-      "/new-build-family-home-sutton-coldfield-1.webp",
-      "/new-build-family-home-sutton-coldfield-2.webp",
-    ],
+    images: ["/new-build-family-home-sutton-coldfield-1.webp", "/oaklands-solihull-2.webp"],
     gradient: "from-gold/10 to-navy/10",
   },
   {
@@ -191,7 +188,7 @@ export const PROJECTS: readonly Project[] = [
       "As-built drawings",
       "3D visualisation and rendering",
     ],
-    images: [],
+    images: ["/colmore-row-1.webp"],
     gradient: "from-gold/10 to-navy/10",
   },
   {
@@ -224,7 +221,7 @@ export const PROJECTS: readonly Project[] = [
       "Floor plans and elevations",
       "Planning drawings",
     ],
-    images: ["/commercial-unit-selly-oak-1.webp"],
+    images: ["/jewellery-quarter-1.webp"],
     gradient: "from-navy/10 to-gold/10",
   },
   {
@@ -258,7 +255,7 @@ export const PROJECTS: readonly Project[] = [
       "BIM modelling services",
       "3D visualisation and rendering",
     ],
-    images: [],
+    images: ["/digbeth-1.webp", "/digbeth-2.webp"],
     gradient: "from-gold/10 to-navy/10",
   },
   {
@@ -289,7 +286,7 @@ export const PROJECTS: readonly Project[] = [
       "Technical drawings",
       "Planning drawings",
     ],
-    images: [],
+    images: ["/selly-oak-student-1.webp"],
     gradient: "from-navy/10 to-gold/10",
   },
   {
@@ -322,7 +319,7 @@ export const PROJECTS: readonly Project[] = [
       "Building regulations drawings",
       "BIM modelling services",
     ],
-    images: [],
+    images: ["/edgbaston-hub-1.webp", "/edgbaston-hub-2.webp"],
     gradient: "from-gold/10 to-navy/10",
   },
   {
@@ -355,7 +352,7 @@ export const PROJECTS: readonly Project[] = [
       "Planning drawings",
       "As-built drawings",
     ],
-    images: [],
+    images: ["/aston-logistics-1.webp", "/aston-logistics-2.webp"],
     gradient: "from-navy/10 to-gold/10",
   },
   {
@@ -390,7 +387,7 @@ export const PROJECTS: readonly Project[] = [
       "3D visualisation and rendering",
       "Concept design services",
     ],
-    images: [],
+    images: ["/heritage-barns-1.webp", "/heritage-barns-2.webp"],
     gradient: "from-gold/10 to-navy/10",
   },
 ];

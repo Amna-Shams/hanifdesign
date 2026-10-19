@@ -210,9 +210,25 @@ export default function AboutPage() {
                 planning system, from a single extension to a multi-unit scheme.
               </p>
               <p>
-                {COMPANY_NAME} is registered in England &amp; Wales (company number{" "}
-                {COMPANY_NUMBER}). You deal with one named consultant who knows your project
-                from the first call.
+                Founded in Quinton, Birmingham, over three decades ago, Hanif Design &amp; Consultancy
+                has grown from a small architectural practice into one of the West
+                Midlands&rsquo; most respected planning consultancies. Our team combines
+                deep local authority knowledge with practical design expertise to
+                guide clients through every stage of the planning process.
+              </p>
+              <p>
+                We understand that securing planning permission is often the biggest
+                hurdle in any development project. That&rsquo;s why we don&rsquo;t just submit
+                applications — we develop comprehensive strategies that anticipate
+                officer concerns, address policy requirements, and present your
+                project in the best possible light.
+              </p>
+              <p>
+                Today, we work with homeowners, developers, architects, and
+                housing associations across Birmingham, Solihull, and the wider
+                West Midlands. Whether it&rsquo;s a householder extension, a complex
+                appeal, or a multi-unit new build, we bring the same rigour and
+                attention to detail to every project.
               </p>
             </div>
           </Reveal>

@@ -82,7 +82,7 @@ const serviceData: Record<
     },
     aside: {
       src: "/planning application.webp",
-      alt: "Planning application form stamped approved, lying on architectural floor plans beside glasses, a pen and a compass",
+      alt: "Planning application form stamped approved, lying on design floor plans beside glasses, a pen and a compass",
     },
     galleryCaption:
       "The kinds of residential schemes we take through planning to a decision.",
@@ -116,7 +116,7 @@ const serviceData: Record<
     },
     aside: {
       src: "/building regulation support.webp",
-      alt: "Consultants around a table reviewing a lit architectural model of a building set on drawings",
+      alt: "Consultants around a table reviewing a lit design model of a building set on drawings",
     },
     galleryCaption:
       "From structure to specification, compliance is documented at every stage of the build.",
@@ -146,7 +146,7 @@ const serviceData: Record<
     ],
     hero: {
       src: "/rear-home-extension-edgbaston-1.webp",
-      alt: "Architectural scale model of a house held up in front of a building site",
+      alt: "Design scale model of a house held up in front of a building site",
     },
     aside: {
       src: "/design drawings.webp",
@@ -190,7 +190,7 @@ const serviceData: Record<
       "Testing what a site can deliver before you commit to design or purchase.",
     gallery: [
       { src: "/hmo-development-selly-oak-1.webp", alt: "Colour floor plan laying out kitchen, dining, lounge, bedrooms and bathrooms" },
-      { src: "/rear-home-extension-edgbaston-1.webp", alt: "Architectural scale model of a house held up in front of a building site" },
+      { src: "/rear-home-extension-edgbaston-1.webp", alt: "Design scale model of a house held up in front of a building site" },
       { src: "/new-build-family-home-sutton-coldfield-2.webp", alt: "Before and after view of a plot, from groundworks and frame to the completed contemporary house" },
     ],
   },
@@ -258,7 +258,7 @@ const serviceData: Record<
     galleryCaption:
       "Photorealistic visuals that show decision-makers exactly what will be built.",
     gallery: [
-      { src: "/single-storey-rear-extension-moseley-2.webp", alt: "Architectural plan dissolving into a photorealistic 3D render of a modern house" },
+      { src: "/single-storey-rear-extension-moseley-2.webp", alt: "Design plan dissolving into a photorealistic 3D render of a modern house" },
       { src: "/hmo-development-selly-oak-2.webp", alt: "Rendered traditional house exterior above an exploded axonometric view of its floors" },
       { src: "/two-storey-side-extension-four-oaks-2.webp", alt: "3D render of a modern single-storey home above a cutaway view of its interior layout" },
     ],
@@ -287,7 +287,7 @@ const serviceData: Record<
     },
     aside: {
       src: "/development guidance.webp",
-      alt: "Architectural model, hard hat, rolled plans and a calculator on a desk with a floor plan",
+      alt: "Design model, hard hat, rolled plans and a calculator on a desk with a floor plan",
       position: "object-top",
     },
     galleryCaption:

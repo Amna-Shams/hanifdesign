@@ -81,7 +81,7 @@ export function AboutSnapshot() {
             <div className="space-y-4 text-textmuted leading-relaxed">
               <p>
                 Hanif Design & Consultancy has been guiding homeowners, developers,
-                and architects through the UK planning system for over three decades.
+                and designers through the UK planning system for over three decades.
                 Based in Quinton, Birmingham, we combine deep local authority knowledge with
                 practical design expertise to guide clients through every stage of
                 the planning process.

@@ -3,7 +3,6 @@ import Link from "next/link";
 import {
   FileCheck,
   ShieldCheck,
-  Ruler,
   LayoutGrid,
   Box,
   Building,
@@ -34,7 +33,6 @@ const ICONS = {
   "interior-visualisation": Sofa,
   "3d-floor-plans": Building,
   "virtual-staging": Sofa,
-  drawings: Ruler,
   "exterior-rendering": Building,
   "3d-visualisation": Box,
   "development-guidance": Compass,

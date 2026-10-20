@@ -84,11 +84,6 @@ export const SERVICES = [
     short: "Photorealistic interior renders, animations and virtual tours.",
   },
   {
-    slug: "drawings",
-    label: "Drawings",
-    short: "Planning, building regulations and technical drawing sets.",
-  },
-  {
     slug: "exterior-rendering",
     label: "Exterior Rendering",
     short: "Photorealistic exterior renders that place projects in real context.",

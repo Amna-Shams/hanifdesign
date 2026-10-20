@@ -75,7 +75,6 @@ const serviceLines: Record<(typeof SERVICES)[number]["slug"], string> = {
   "interior-visualisation": "Photorealistic interior renders that show a room before it is built.",
   "3d-floor-plans": "Furnished 3D floor plans that buyers can read at a glance.",
   "virtual-staging": "Virtual staging that helps vacant and dated properties sell.",
-  drawings: "Planning, building regulations and technical drawing sets.",
   "exterior-rendering": "Exterior renders that show a building in its setting before it is built.",
   "3d-visualisation": "Visuals that help officers and neighbours understand the scheme.",
   "development-guidance": "Policy advice for larger and multi-unit schemes.",

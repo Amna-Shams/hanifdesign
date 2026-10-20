@@ -4,7 +4,6 @@ import type { LucideIcon } from "lucide-react";
 import {
   FileCheck,
   ShieldCheck,
-  Ruler,
   LayoutGrid,
   Box,
   Building,
@@ -100,19 +99,6 @@ const COPY: Record<Slug, { icon: LucideIcon; description: string; bullets: reado
       "Exterior renovation",
       "360° views",
       "Furnished 3D plans",
-    ],
-  },
-  drawings: {
-    icon: Ruler,
-    description:
-      "Planning, building regulations and technical drawing sets that councils and builders can use.",
-    bullets: [
-      "Planning drawings",
-      "Building regulations drawings",
-      "Technical drawings",
-      "Measured building survey",
-      "As-built drawings",
-      "Floor plans and elevations",
     ],
   },
   "exterior-rendering": {

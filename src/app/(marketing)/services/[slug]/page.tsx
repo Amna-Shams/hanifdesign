@@ -7,7 +7,6 @@ import { ServiceDetail } from "./ServiceDetail";
 import { InteriorVisualisation } from "./InteriorVisualisation";
 import { FloorPlans } from "./FloorPlans";
 import { VirtualStaging } from "./VirtualStaging";
-import { Drawings } from "./Drawings";
 import { ExteriorRendering } from "./ExteriorRendering";
 
 interface PageProps {
@@ -54,8 +53,6 @@ export default async function ServicePage({ params }: PageProps) {
         <FloorPlans />
       ) : service.slug === "virtual-staging" ? (
         <VirtualStaging />
-      ) : service.slug === "drawings" ? (
-        <Drawings />
       ) : service.slug === "exterior-rendering" ? (
         <ExteriorRendering />
       ) : (

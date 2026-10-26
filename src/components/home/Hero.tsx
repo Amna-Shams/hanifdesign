@@ -22,7 +22,7 @@ export function Hero() {
         className="absolute inset-0 -z-10 bg-gradient-to-t from-black/65 via-black/10 to-black/55"
       />
 
-      <div className="mx-auto w-full max-w-[100rem] px-4 pb-10 sm:px-6 sm:pb-14 lg:px-10 lg:pb-16 xl:px-12">
+      <div className="mx-auto w-full max-w-7xl px-4 pb-10 sm:px-6 sm:pb-14 lg:px-8 lg:pb-16">
         <h1 className="!font-serif !text-white text-4xl font-normal leading-[1.1] sm:text-5xl lg:text-[3.5rem]">
           Hanif Design &amp; Planning Consultancy
           <br />

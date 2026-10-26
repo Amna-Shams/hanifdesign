@@ -224,11 +224,6 @@ export function PlanLayout({ content }: { content: PlanContent }) {
             <H2>Contacts</H2>
             <ul className="mt-6 space-y-2 text-center text-[0.8125rem]">
               <li>
-                <a href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`} className="hover:underline">
-                  {CONTACT_INFO.phone}
-                </a>
-              </li>
-              <li>
                 <a href={`mailto:${CONTACT_INFO.email}`} className="hover:underline">
                   {CONTACT_INFO.email}
                 </a>

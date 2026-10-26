@@ -269,15 +269,6 @@ export default function PrivacyPage() {
                   {CONTACT_INFO.email}
                 </a>
               </p>
-              <p>
-                Phone:{" "}
-                <a
-                  href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
-                  className="text-gold underline underline-offset-4 hover:text-gold/80"
-                >
-                  {CONTACT_INFO.phone}
-                </a>
-              </p>
             </address>
           </PolicySection>
         </div>

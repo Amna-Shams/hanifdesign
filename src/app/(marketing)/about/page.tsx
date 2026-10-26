@@ -9,7 +9,7 @@ import { Reveal, RevealItem, RevealStagger } from "@/components/ui/Reveal";
 import { BreadcrumbSchema } from "@/components/ui/JsonLd";
 import { COMPANY_NAME, COMPANY_NUMBER, CONTACT_INFO, SERVICES } from "@/lib/constants";
 import { SITE_NAME, SITE_URL, canonical } from "@/lib/site";
-import { toTelHref, toWhatsappHref } from "@/lib/utils";
+import { toWhatsappHref } from "@/lib/utils";
 
 const PAGE_TITLE = "About Us | Planning Consultants in Birmingham | Hanif Design & Consultancy";
 const PAGE_DESCRIPTION =
@@ -191,7 +191,7 @@ export default function AboutPage() {
       {/* 2. Who we are */}
       <section className={`${sectionClass} bg-surface-elevated-translucent`} aria-labelledby="who-we-are">
         <div className={containerClass}>
-          <Reveal className="mx-auto max-w-3xl">
+          <Reveal className="max-w-3xl">
             <h2 id="who-we-are" className={h2Class}>
               Who we are
             </h2>
@@ -230,7 +230,7 @@ export default function AboutPage() {
       {/* 3. Our story */}
       <section className={`${sectionClass} bg-surface-translucent`} aria-labelledby="our-story">
         <div className={containerClass}>
-          <Reveal className="mx-auto max-w-3xl">
+          <Reveal className="max-w-3xl">
             <h2 id="our-story" className={h2Class}>
               Our story
             </h2>
@@ -246,7 +246,7 @@ export default function AboutPage() {
       {/* 4. Our approach */}
       <section className={`${sectionClass} bg-surface-elevated-translucent`} aria-labelledby="our-approach">
         <div className={containerClass}>
-          <div className="mx-auto max-w-3xl">
+          <div className="max-w-3xl">
             <Reveal>
               <h2 id="our-approach" className={h2Class}>
                 Our approach: research-driven design
@@ -277,7 +277,7 @@ export default function AboutPage() {
       {/* 5. Meet the team */}
       <section className={`${sectionClass} bg-surface-translucent`} aria-labelledby="meet-the-team">
         <div className={containerClass}>
-          <Reveal className="mx-auto max-w-3xl">
+          <Reveal className="max-w-3xl">
             <h2 id="meet-the-team" className={h2Class}>
               Meet the team
             </h2>
@@ -294,7 +294,7 @@ export default function AboutPage() {
       {/* 6. Local knowledge */}
       <section className={`${sectionClass} bg-surface-elevated-translucent`} aria-labelledby="local-knowledge">
         <div className={containerClass}>
-          <Reveal className="mx-auto max-w-3xl">
+          <Reveal className="max-w-3xl">
             <h2 id="local-knowledge" className={h2Class}>
               Local knowledge
             </h2>
@@ -314,7 +314,7 @@ export default function AboutPage() {
       {/* 7. Proof */}
       <section className={`${sectionClass} bg-surface-translucent`} aria-labelledby="proof">
         <div className={containerClass}>
-          <div className="mx-auto max-w-5xl">
+          <div className="max-w-5xl">
             <Reveal className="max-w-3xl">
               <h2 id="proof" className={h2Class}>
                 Proof of our work
@@ -360,7 +360,7 @@ export default function AboutPage() {
       {/* 8. Our services */}
       <section className={`${sectionClass} bg-surface-elevated-translucent`} aria-labelledby="our-services">
         <div className={containerClass}>
-          <Reveal className="mx-auto max-w-3xl">
+          <Reveal className="max-w-3xl">
             <h2 id="our-services" className={h2Class}>
               Our planning and design services
             </h2>
@@ -389,7 +389,7 @@ export default function AboutPage() {
       {/* 9. Fees and how we work */}
       <section className={`${sectionClass} bg-surface-translucent`} aria-labelledby="fees">
         <div className={containerClass}>
-          <Reveal className="mx-auto max-w-3xl">
+          <Reveal className="max-w-3xl">
             <h2 id="fees" className={h2Class}>
               Fees and how we work
             </h2>
@@ -418,7 +418,7 @@ export default function AboutPage() {
       {/* 10. Find us */}
       <section className={`${sectionClass} bg-surface-elevated-translucent`} aria-labelledby="find-us">
         <div className={containerClass}>
-          <Reveal className="mx-auto max-w-3xl">
+          <Reveal className="max-w-3xl">
             <h2 id="find-us" className={h2Class}>
               Find us
             </h2>
@@ -440,19 +440,14 @@ export default function AboutPage() {
               <li className="flex items-start gap-3">
                 <Phone className="mt-1 h-5 w-5 shrink-0 text-gold" aria-hidden="true" />
                 <span>
-                  <a href={toTelHref(CONTACT_INFO.phone)} className={linkClass}>
-                    {CONTACT_INFO.phone}
-                  </a>{" "}
-                  (or{" "}
                   <a
                     href={toWhatsappHref(CONTACT_INFO.whatsappPhone)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={linkClass}
                   >
-                    message us on WhatsApp
+                    Message us on WhatsApp
                   </a>
-                  )
                 </span>
               </li>
               <li className="flex items-start gap-3">

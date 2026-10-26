@@ -57,7 +57,7 @@ const LEGAL_LINKS = [
 export function Footer() {
   return (
     <footer className="border-t border-subtle bg-surface-translucent">
-      <div className="mx-auto w-full max-w-[100rem] px-4 py-5 sm:px-6 sm:py-6 lg:px-10 lg:py-7 xl:px-12">
+      <div className="mx-auto w-full max-w-7xl px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
         {/* Four columns on a shared two-row grid. Row 1 holds the logo and the
             COMPANY / SERVICES headings; row 2 holds the description and the first
             row of links. Each column is a subgrid spanning both rows, so the
@@ -67,7 +67,7 @@ export function Footer() {
           <div className="col-span-2 space-y-4 lg:col-span-1 lg:row-span-2 lg:grid lg:grid-rows-subgrid lg:space-y-0">
             <Link
               href="/"
-              className="inline-block self-start"
+              className="inline-block self-start lg:mb-4"
               aria-label="Hanif Design and Consultancy — home"
             >
               {/* Theme-swapped lockups, matching the header. `light:` is a CSS
@@ -162,7 +162,7 @@ export function Footer() {
           >
             <h2
               id="footer-company"
-              className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary sm:mb-4 lg:mb-0"
+              className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary sm:mb-4 lg:mb-3 lg:self-end"
             >
               Company
             </h2>
@@ -188,7 +188,7 @@ export function Footer() {
           >
             <h2
               id="footer-services"
-              className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary sm:mb-4 lg:mb-0"
+              className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary sm:mb-4 lg:mb-3 lg:self-end"
             >
               Services
             </h2>

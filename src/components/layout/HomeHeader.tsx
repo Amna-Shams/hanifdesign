@@ -82,7 +82,7 @@ export function HomeHeader() {
           scrolled ? "bg-background/90 shadow-lg backdrop-blur-md" : "bg-transparent",
         ].join(" ")}
       >
-        <div className="mx-auto flex h-16 w-full max-w-[100rem] items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-10 xl:px-12">
+        <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-8">
           <Link
             href="/"
             aria-label="Hanif Design & Consultancy Ltd — home"

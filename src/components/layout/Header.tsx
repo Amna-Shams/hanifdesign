@@ -66,7 +66,7 @@ export function Header() {
         ].join(" ")}
       />
 
-      <div className="mx-auto w-full max-w-[100rem] px-4 sm:px-6 lg:px-10 xl:px-12">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <nav
           className="flex h-16 items-center justify-between gap-4 sm:h-[4.5rem] lg:h-20 lg:gap-8"
           aria-label="Main"

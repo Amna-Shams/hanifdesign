@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -12,7 +13,6 @@ import { Reveal } from "@/components/ui/Reveal";
 import { HONEYPOT_FIELD, HONEYPOT_FIELD_PROPS, readHoneypot } from "@/lib/spam";
 
 import {
-  CONTACT_INFO,
   QUOTE_BUDGET_RANGES,
   QUOTE_PROJECT_TYPES,
 } from "@/lib/constants";
@@ -195,7 +195,7 @@ export default function QuotePage() {
                     id="phone"
                     type="tel"
                     autoComplete="tel"
-                    placeholder={CONTACT_INFO.phone}
+                    placeholder="Your phone number"
                     aria-invalid={!!errors.phone}
                     aria-describedby={errors.phone ? "phone-error" : undefined}
                     className={fieldClass}
@@ -280,10 +280,10 @@ export default function QuotePage() {
 
               <div className="flex flex-col items-start gap-3 border-t border-subtle pt-5 sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-sm text-muted">
-                  Or call us on{" "}
-                  <a href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`} className="text-secondary transition-colors hover:text-gold">
-                    {CONTACT_INFO.phone}
-                  </a>
+                  Prefer to talk?{" "}
+                  <Link href="/contact" className="text-secondary transition-colors hover:text-gold">
+                    See our contact details
+                  </Link>
                 </p>
                 <Button type="submit" variant="primary" size="lg" disabled={isSubmitting}>
                   {isSubmitting ? (

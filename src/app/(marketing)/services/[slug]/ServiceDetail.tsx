@@ -8,7 +8,6 @@ import {
   Box,
   Compass,
   Check,
-  Phone,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,8 +15,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
-import { CONTACT_INFO } from "@/lib/constants";
-import { InteriorVisualisation } from "./InteriorVisualisation";
+import { VisualisationOverview } from "./VisualisationOverview";
 
 interface ServiceDetailProps {
   service: { slug: string; label: string; short: string };
@@ -233,7 +231,7 @@ const serviceData: Record<
 
 export function ServiceDetail({ service }: ServiceDetailProps) {
   if (service.slug === "3d-visualisation") {
-    return <InteriorVisualisation label={service.label} />;
+    return <VisualisationOverview label={service.label} />;
   }
 
   const data = serviceData[service.slug];
@@ -425,10 +423,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
                       <Link href="/quote">Request a Quote</Link>
                     </Button>
                     <Button variant="secondary" asChild>
-                      <a href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}>
-                        <Phone className="h-4 w-4" aria-hidden="true" />
-                        {CONTACT_INFO.phone}
-                      </a>
+                      <Link href="/contact">Contact Us</Link>
                     </Button>
                   </div>
                 </Card>

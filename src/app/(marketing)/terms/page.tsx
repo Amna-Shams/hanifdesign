@@ -128,7 +128,6 @@ export default function TermsPage() {
               <h2 className="font-heading font-semibold text-xl text-primary mb-4">12. Contact</h2>
               <address className="not-italic mt-2 space-y-1">
                 <p>Email: {CONTACT_INFO.email}</p>
-                <p>Phone: {CONTACT_INFO.phone}</p>
               </address>
             </Reveal>
           </div>

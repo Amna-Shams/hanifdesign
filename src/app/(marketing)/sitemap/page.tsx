@@ -82,7 +82,7 @@ const categories: readonly SitemapCategory[] = [
     links: [
       { label: "Contact form", href: "/contact" },
       { label: "Request a Quote", href: "/quote" },
-      { label: `Call ${CONTACT_INFO.phone}`, href: toTelHref(CONTACT_INFO.phone), external: true },
+      { label: "Call us", href: toTelHref(CONTACT_INFO.phone), external: true },
       { label: "WhatsApp us", href: "https://wa.me/447813706185", external: true },
       { label: "Email us", href: `mailto:${CONTACT_INFO.email}`, external: true },
     ],

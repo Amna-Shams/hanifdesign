@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { X, Phone, Mail } from "lucide-react";
+import { X, Mail } from "lucide-react";
 import { NAV_LINKS, CONTACT_INFO } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 
@@ -138,14 +138,6 @@ export function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () =
 
             <div className="space-y-4 border-t border-subtle px-5 py-5">
               <div className="space-y-2 text-sm">
-                <a
-                  href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
-                  onClick={onClose}
-                  className="flex items-center gap-3 text-secondary transition-colors hover:text-gold"
-                >
-                  <Phone className="h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
-                  {CONTACT_INFO.phone}
-                </a>
                 <a
                   href={`mailto:${CONTACT_INFO.email}`}
                   onClick={onClose}

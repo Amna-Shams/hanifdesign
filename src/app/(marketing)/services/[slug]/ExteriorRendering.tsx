@@ -2,7 +2,6 @@ import type { CSSProperties, ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Plus } from "lucide-react";
-import { CONTACT_INFO } from "@/lib/constants";
 import { PROJECTS } from "@/lib/projects";
 import { ExteriorGallery } from "./ExteriorGallery";
 import { PlanContactForm } from "./PlanContactForm";
@@ -430,12 +429,6 @@ export function ExteriorRendering() {
             <div className="mt-6">
               <PlanContactForm subject="Exterior rendering enquiry" compact submitLabel="Submit form" />
             </div>
-            <p className="mt-4 text-center text-[0.6875rem] text-[#5b5b5b]">
-              Or call{" "}
-              <a href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`} className="underline">
-                {CONTACT_INFO.phone}
-              </a>
-            </p>
           </div>
         </div>
       </section>

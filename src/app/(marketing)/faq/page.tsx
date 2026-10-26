@@ -32,7 +32,7 @@ export default function FAQPage() {
           structured data can never claim a question the page does not show. */}
         <FaqSchema faqs={FAQS.map((f) => ({ q: f.q, a: f.a }))} />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl">
+          <div className="max-w-3xl">
             <Reveal amount={0.1}>
               <FAQAccordion items={FAQS} defaultOpen={0} idPrefix="faq-page" />
             </Reveal>

@@ -233,7 +233,7 @@ export default function ContactPage() {
                         aria-invalid={!!errors.phone}
                         aria-describedby={errors.phone ? "phone-error" : undefined}
                       type="tel"
-                      placeholder={CONTACT_INFO.phone}
+                      placeholder="Your phone number"
                       className="w-full px-4 py-3 rounded-lg border border-subtle bg-surface-elevated focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-colors"
                       disabled={isSubmitting}
                     />

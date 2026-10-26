@@ -35,7 +35,7 @@ export function PageHero({ image, alt, title, subtitle, children }: PageHeroProp
         className="absolute inset-0 -z-10 bg-gradient-to-t from-black/70 via-black/10 to-black/45"
       />
 
-      <div className="mx-auto w-full max-w-[100rem] px-4 pb-10 sm:px-6 sm:pb-14 lg:px-10 lg:pb-16 xl:px-12">
+      <div className="mx-auto w-full max-w-7xl px-4 pb-10 sm:px-6 sm:pb-14 lg:px-8 lg:pb-16">
         <h1 className="max-w-[40rem] text-balance text-4xl font-normal leading-[1.1] !font-serif !text-white sm:text-5xl lg:text-[3.5rem]">
           {title}
         </h1>

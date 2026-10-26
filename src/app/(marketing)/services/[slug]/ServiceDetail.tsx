@@ -17,6 +17,7 @@ import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { CONTACT_INFO } from "@/lib/constants";
+import { InteriorVisualisation } from "./InteriorVisualisation";
 
 interface ServiceDetailProps {
   service: { slug: string; label: string; short: string };
@@ -231,6 +232,10 @@ const serviceData: Record<
 };
 
 export function ServiceDetail({ service }: ServiceDetailProps) {
+  if (service.slug === "3d-visualisation") {
+    return <InteriorVisualisation label={service.label} />;
+  }
+
   const data = serviceData[service.slug];
   if (!data) return null;
 

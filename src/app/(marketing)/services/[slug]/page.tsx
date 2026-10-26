@@ -5,9 +5,9 @@ import { canonical } from "@/lib/site";
 import { BreadcrumbSchema } from "@/components/ui/JsonLd";
 import { ServiceDetail } from "./ServiceDetail";
 import { InteriorVisualisation } from "./InteriorVisualisation";
-import { FloorPlans } from "./FloorPlans";
-import { VirtualStaging } from "./VirtualStaging";
 import { ExteriorRendering } from "./ExteriorRendering";
+import { ServiceSalesPage } from "./ServiceSalesPage";
+import { SALES_CONTENT } from "./serviceSalesContent";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -20,21 +20,52 @@ export function generateStaticParams() {
 /** Search metadata per service, where the generic title and description undersell the page. */
 const SEO: Record<string, { title: string; description: string; keywords: string[] }> = {
   "3d-visualisation": {
-    title: "3D Architectural Visualisation & Rendering Services",
+    title: "3D Visualisation & Rendering Services",
     description:
-      "Photorealistic 3D visualisation and CGI rendering for architects, designers and developers: interior and exterior visuals, property marketing, virtual staging, VR and animation. Based in Birmingham, working across the UK.",
+      "Photorealistic 3D visualisation and CGI rendering for designers, developers and homeowners: 2D plan to 3D image, interior and exterior visuals, property marketing, virtual staging and animation. Based in Birmingham, working across the UK.",
     keywords: [
       "3D visualisation",
-      "3D architectural visualisation",
+      "3D visualisation services",
       "3D rendering services",
       "CGI rendering",
-      "interior visualisation",
-      "exterior visualisation",
+      "2D plan to 3D image",
+      "drawing-based 3D modelling",
+      "investor-ready visuals",
+      "photorealistic CGI",
       "property CGI",
       "photomontage CGI",
-      "virtual staging",
-      "VR and animation",
       "off-plan marketing",
+      "Birmingham",
+    ],
+  },
+  "interior-visualisation": {
+    title: "Interior Visualisation & 3D Interior Rendering",
+    description:
+      "Interior rendering and room design visuals for interior designers, developers and homeowners. Kitchen, bedroom, bathroom and commercial interior CGI, produced from your plans. Birmingham and UK-wide.",
+    keywords: [
+      "interior rendering",
+      "interior visualisation",
+      "room design visuals",
+      "residential interior CGI",
+      "commercial interior visuals",
+      "kitchen CGI",
+      "bedroom interior rendering",
+      "bathroom CGI",
+      "designer pitch imagery",
+      "Birmingham",
+    ],
+  },
+  "virtual-staging": {
+    title: "Virtual Staging for Vacant Properties",
+    description:
+      "Virtual home staging that turns photographs of empty rooms into furnished, market-ready images, with lighting and colour matched to the original photo. Domestic and commercial. Birmingham and UK-wide.",
+    keywords: [
+      "virtual home staging",
+      "vacant property furnishing",
+      "empty room transformation",
+      "photo-matched lighting and colour",
+      "digitally dressed rooms",
+      "domestic and commercial staging",
       "Birmingham",
     ],
   },
@@ -77,12 +108,10 @@ export default async function ServicePage({ params }: PageProps) {
       />
       {service.slug === "interior-visualisation" ? (
         <InteriorVisualisation />
-      ) : service.slug === "3d-floor-plans" ? (
-        <FloorPlans />
-      ) : service.slug === "virtual-staging" ? (
-        <VirtualStaging />
       ) : service.slug === "exterior-rendering" ? (
         <ExteriorRendering />
+      ) : SALES_CONTENT[service.slug] ? (
+        <ServiceSalesPage content={SALES_CONTENT[service.slug]} />
       ) : (
         <ServiceDetail service={service} />
       )}

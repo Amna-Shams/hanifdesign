@@ -2,6 +2,7 @@
 
 import {
   Box,
+  Check,
   Camera,
   Clock,
   Cpu,
@@ -24,7 +25,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CONTACT_INFO } from "@/lib/constants";
 import type { FaqItem } from "@/lib/faqs";
 
-const AUDIENCES = ["Architects", "Designers", "Developers"];
+const AUDIENCES = ["Designers", "Developers", "Homeowners"];
 
 const COVERAGE: { title: string; body: string }[] = [
   { title: "Interior CGI", body: "Kitchens, living spaces, bedrooms and bathrooms rendered to a photographic standard." },
@@ -35,6 +36,13 @@ const COVERAGE: { title: string; body: string }[] = [
   { title: "Photomontage CGI", body: "Proposed buildings composited into real site photography for planning." },
   { title: "VR and animation", body: "Walkthroughs and immersive views for presentations and committees." },
   { title: "Product and furniture visualisation", body: "Clean, consistent CGI of products and furnishings." },
+];
+
+const PLAN_POINTS: string[] = [
+  "Works from basic plans, elevations and specifications, so no drawing is too rough to start from",
+  "Surfaces, textures and materials depicted accurately, not approximated",
+  "Turns an ordinary 2D plan into a polished, investor-ready computer-generated image",
+  "Drawing-based modelling means the render always matches what is proposed",
 ];
 
 const WHY: { icon: LucideIcon; title: string; body: string }[] = [
@@ -59,7 +67,7 @@ const ADVANTAGES: { icon: LucideIcon; title: string; body: string }[] = [
   {
     icon: Users,
     title: "Experienced team",
-    body: "Architectural visualisers who understand construction, so a render never shows something that couldn't be built.",
+    body: "Visualisers who understand construction, so a render never shows something that couldn't be built.",
   },
   {
     icon: Cpu,
@@ -93,10 +101,10 @@ const STEPS: { title: string; body: string }[] = [
   { title: "Proposal", body: "A clear scope covering views, finishes and timeline." },
   { title: "Agreement", body: "A fixed fee confirmed in writing before any work begins." },
   { title: "Details", body: "You send drawings, material references and any mood-board inspiration." },
-  { title: "Build", body: "We model the interior and set up lighting and cameras." },
-  { title: "Review", body: "A draft view for your comments, so changes happen before final rendering." },
+  { title: "Build", body: "We build an accurate clay-form 3D model of the space, so layout and proportions can be checked before any materials are applied." },
+  { title: "Approval", body: "You approve the model, then materials and lighting are applied to every surface, so changes happen before final rendering." },
   { title: "Render", body: "Final high-resolution images are produced." },
-  { title: "Delivery", body: "Files supplied for web, print and planning submission." },
+  { title: "Delivery", body: "Final images supplied as high-resolution JPGs, and any animation as video, ready for web, print and planning submission." },
 ];
 
 const VISUALISATION_FAQS: readonly FaqItem[] = [
@@ -257,6 +265,39 @@ export function VisualisationOverview({ label }: VisualisationOverviewProps) {
         </div>
       </section>
 
+      {/* Plan to 3D */}
+      <section className="bg-surface-translucent py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
+          <Reveal direction="left">
+            <SectionHeading
+              eyebrow="Plan-based 3D visualisation"
+              title="From 2D plan to 3D image"
+              subtitle="We build photorealistic visuals directly from your plans and specifications."
+              align="left"
+              className="mb-6"
+            />
+            <p className="text-secondary">
+              Clients and investors rarely read drawings the way designers do. We take the plans
+              you already have and turn them into clear, convincing imagery, so the scheme can be
+              understood, approved and sold with confidence.
+            </p>
+          </Reveal>
+          <Reveal direction="right" delay={0.15}>
+            <ul className="space-y-3">
+              {PLAN_POINTS.map((point) => (
+                <li
+                  key={point}
+                  className="flex items-start gap-3 rounded-xl border border-subtle bg-surface-elevated p-4"
+                >
+                  <Check className="mt-0.5 h-5 w-5 shrink-0 text-gold" aria-hidden="true" />
+                  <span className="text-primary">{point}</span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Why */}
       <section className="py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -290,7 +331,7 @@ export function VisualisationOverview({ label }: VisualisationOverviewProps) {
             <SectionHeading
               eyebrow="Advantages"
               title="Why choose our interior rendering service"
-              subtitle="Six reasons architects, developers and homeowners come back."
+              subtitle="Six reasons designers, developers and homeowners come back."
             />
           </Reveal>
           <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

@@ -163,7 +163,7 @@ function Band({
   const tones = {
     plain: "bg-background",
     tint: "bg-surface-translucent",
-    dark: "bg-[#1d2024]",
+    dark: "bg-[#1d2024] light:bg-surface-translucent",
   } as const;
   return (
     <section
@@ -232,7 +232,7 @@ export function InteriorVisualisation() {
 
       {/* 3 — Industry leaders (dark band with image mosaic) */}
       <Band tone="dark">
-        <h2 className="mb-10 text-center font-heading text-2xl font-bold !text-white sm:text-4xl">
+        <h2 className="mb-10 text-center font-heading text-2xl font-bold !text-white light:!text-primary sm:text-4xl">
           Interior Visualisation for Industry Leaders
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -316,10 +316,10 @@ export function InteriorVisualisation() {
       </Band>
 
       {/* 7 — Quote band */}
-      <section className="relative isolate overflow-hidden bg-[#1d2024] py-14 sm:py-16">
+      <section className="relative isolate overflow-hidden bg-[#1d2024] light:bg-surface-translucent py-14 sm:py-16">
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
           <div>
-            <h2 className="font-heading text-2xl font-bold !text-white sm:text-3xl">
+            <h2 className="font-heading text-2xl font-bold !text-white light:!text-primary sm:text-3xl">
               Want to learn how much your project will cost?
             </h2>
             <div className="mt-6">
@@ -467,10 +467,10 @@ export function InteriorVisualisation() {
       <Band tone="dark">
         <div className="text-center">
           <Box className="mx-auto mb-4 h-8 w-8 text-gold" aria-hidden="true" />
-          <h2 className="font-heading text-2xl font-bold !text-white sm:text-3xl">
+          <h2 className="font-heading text-2xl font-bold !text-white light:!text-primary sm:text-3xl">
             Ready to see your interior before it is built?
           </h2>
-          <p className="mx-auto mt-3 max-w-xl !text-white/80">
+          <p className="mx-auto mt-3 max-w-xl !text-white/80 light:!text-secondary">
             Send us your plans and a few references. We will come back with a fixed quote and a start date.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -479,7 +479,7 @@ export function InteriorVisualisation() {
             </Button>
             <Link
               href="/contact"
-              className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/40 px-7 py-3.5 text-base font-medium text-white transition-colors hover:bg-white/10"
+              className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/40 px-7 py-3.5 text-base font-medium text-white transition-colors hover:bg-white/10 light:border-subtle light:text-primary light:hover:bg-black/5"
             >
               Book free consultation
             </Link>

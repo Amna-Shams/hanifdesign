@@ -21,6 +21,17 @@ import { canonical } from "@/lib/site";
 export const metadata: Metadata = {
   alternates: { canonical: canonical("/services") },
   title: "Our Services",
+  keywords: [
+    "planning applications",
+    "3D visualisation services",
+    "interior visualisation",
+    "exterior rendering",
+    "3D floor plans",
+    "virtual staging",
+    "CGI rendering",
+    "visual marketing",
+    "Birmingham",
+  ],
   description:
     "Planning applications, building regulations support, design drawings, feasibility layouts, interior design, interior visualisation, 3D floor plans, virtual staging, drawings, exterior rendering, 3D visualisation and development guidance for residential projects in Birmingham and the West Midlands.",
 };

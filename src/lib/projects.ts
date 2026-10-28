@@ -122,15 +122,7 @@ export const PROJECTS: readonly Project[] = [
       "Planning drawings",
       "Building regulations drawings",
     ],
-    images: [
-      "/uk-detached-brick-house-gravel-drive.webp",
-      "/garage-conversion-kings-heath-1.webp",
-      "/two-storey-side-extension-four-oaks-1.webp",
-      "/garage-conversion-kings-heath-2.webp",
-      "/garden-office-studio-bournville-2.webp",
-      "/rear-home-extension-edgbaston-2.webp",
-      "/two-storey-side-extension-four-oaks-2.webp",
-    ],
+    images: ["/uk-detached-brick-house-gravel-drive.webp"],
     gradient: "from-navy/10 to-gold/10",
   },
   {

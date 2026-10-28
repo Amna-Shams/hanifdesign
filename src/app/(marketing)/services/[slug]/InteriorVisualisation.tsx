@@ -168,7 +168,7 @@ function Band({
   return (
     <section
       aria-label={label}
-      className={`${tones[tone]} py-16 sm:py-20 lg:py-24 ${className}`}
+      className={`${tones[tone]} py-12 sm:py-14 lg:py-16 ${className}`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">{children}</div>
     </section>
@@ -205,10 +205,10 @@ export function InteriorVisualisation() {
               <li aria-current="page" className="font-semibold text-white">Interior Visualisation</li>
             </ol>
           </nav>
-          <h1 className="max-w-3xl !text-white font-heading text-4xl font-bold leading-tight sm:text-5xl">
+          <h1 className="max-w-6xl !text-white font-heading text-4xl font-bold leading-tight sm:text-5xl">
             3D Interior Visualisation &amp; Interior Rendering Services
           </h1>
-          <p className="mt-5 max-w-2xl !text-white/90 text-base leading-relaxed sm:text-lg">
+          <p className="mt-5 max-w-3xl !text-white/90 text-base leading-relaxed sm:text-lg">
             Photorealistic 3D interior rendering for presentations, design sign-off and marketing,
             across residential, commercial and hospitality spaces. A quick start and clear
             delivery dates agreed upfront.
@@ -260,11 +260,11 @@ export function InteriorVisualisation() {
           </figure>
         </div>
 
-        <div className="mt-12 max-w-3xl">
+        <div className="mt-10">
           <h3 className="mb-4 font-heading text-lg font-semibold text-primary">
             Working with your products
           </h3>
-          <ul className="list-disc space-y-2 pl-5 text-sm text-secondary marker:text-gold">
+          <ul className="list-disc space-y-2 pl-5 text-justify text-sm text-secondary marker:text-gold">
             {PRODUCT_POINTS.map(([lead, rest]) => (
               <li key={lead}>
                 <strong className="text-primary">{lead}</strong> {rest}
@@ -350,7 +350,7 @@ export function InteriorVisualisation() {
               </div>
               <div className={index % 2 === 1 ? "md:order-1" : ""}>
                 <h3 className="mb-4 font-heading text-2xl font-bold text-primary">{type.title}</h3>
-                <p className="leading-relaxed text-secondary">{type.text}</p>
+                <p className="text-justify leading-relaxed text-secondary">{type.text}</p>
               </div>
             </div>
           ))}
@@ -387,7 +387,7 @@ export function InteriorVisualisation() {
           {WORKFLOW.map(([title, text]) => (
             <li key={title}>
               <h3 className="mb-2 font-heading text-lg font-semibold text-primary">{title}</h3>
-              <p className="text-sm leading-relaxed text-secondary">{text}</p>
+              <p className="text-justify text-sm leading-relaxed text-secondary">{text}</p>
             </li>
           ))}
         </ol>
@@ -456,7 +456,7 @@ export function InteriorVisualisation() {
                     aria-hidden="true"
                   />
                 </summary>
-                <p className="pt-2 text-sm leading-relaxed text-secondary">{answer}</p>
+                <p className="pt-2 text-justify text-sm leading-relaxed text-secondary">{answer}</p>
               </details>
             ))}
           </div>

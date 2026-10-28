@@ -190,11 +190,11 @@ export default function AboutPage() {
       {/* 2. Who we are */}
       <section className={`${sectionClass} bg-surface-elevated-translucent`} aria-labelledby="who-we-are">
         <div className={containerClass}>
-          <Reveal className="max-w-3xl">
+          <Reveal className="max-w-5xl">
             <h2 id="who-we-are" className={h2Class}>
               Who we are
             </h2>
-            <div className="space-y-4 text-textmuted leading-relaxed">
+            <div className="space-y-4 text-justify text-textmuted leading-relaxed">
               <p>
                 We are a planning consultancy working across England. We help
                 homeowners, landlords and developers get residential projects through the
@@ -228,7 +228,7 @@ export default function AboutPage() {
       {/* 3. Our story */}
       <section className={`${sectionClass} bg-surface-translucent`} aria-labelledby="our-story">
         <div className={containerClass}>
-          <Reveal className="max-w-3xl">
+          <Reveal className="max-w-5xl">
             <h2 id="our-story" className={h2Class}>
               Our story
             </h2>
@@ -244,12 +244,12 @@ export default function AboutPage() {
       {/* 4. Our approach */}
       <section className={`${sectionClass} bg-surface-elevated-translucent`} aria-labelledby="our-approach">
         <div className={containerClass}>
-          <div className="max-w-3xl">
+          <div className="max-w-5xl">
             <Reveal>
               <h2 id="our-approach" className={h2Class}>
                 Our approach: research-driven design
               </h2>
-              <p className="text-textmuted leading-relaxed">
+              <p className="text-justify text-textmuted leading-relaxed">
                 Getting permission is often the hardest part of a project. So we start with
                 the site and the policy, then design to suit. Every project follows the same
                 four steps.
@@ -263,7 +263,7 @@ export default function AboutPage() {
                       <span className="annotation text-gold mr-3">Step {index + 1}</span>
                       {step.title}
                     </h3>
-                    <p className="text-textmuted leading-relaxed">{step.body}</p>
+                    <p className="text-justify text-textmuted leading-relaxed">{step.body}</p>
                   </Card>
                 </RevealItem>
               ))}
@@ -275,7 +275,7 @@ export default function AboutPage() {
       {/* 5. Meet the team */}
       <section className={`${sectionClass} bg-surface-translucent`} aria-labelledby="meet-the-team">
         <div className={containerClass}>
-          <Reveal className="max-w-3xl">
+          <Reveal className="max-w-5xl">
             <h2 id="meet-the-team" className={h2Class}>
               Meet the team
             </h2>
@@ -292,11 +292,11 @@ export default function AboutPage() {
       {/* 6. Local knowledge */}
       <section className={`${sectionClass} bg-surface-elevated-translucent`} aria-labelledby="local-knowledge">
         <div className={containerClass}>
-          <Reveal className="max-w-3xl">
+          <Reveal className="max-w-5xl">
             <h2 id="local-knowledge" className={h2Class}>
               Local knowledge
             </h2>
-            <p className="text-textmuted leading-relaxed mb-4">
+            <p className="text-justify text-textmuted leading-relaxed mb-4">
               We work across England, so we are used to dealing with a wide range of councils
               and site constraints.
             </p>
@@ -313,7 +313,7 @@ export default function AboutPage() {
       <section className={`${sectionClass} bg-surface-translucent`} aria-labelledby="proof">
         <div className={containerClass}>
           <div className="max-w-5xl">
-            <Reveal className="max-w-3xl">
+            <Reveal className="max-w-5xl">
               <h2 id="proof" className={h2Class}>
                 Proof of our work
               </h2>
@@ -358,7 +358,7 @@ export default function AboutPage() {
       {/* 8. Our services */}
       <section className={`${sectionClass} bg-surface-elevated-translucent`} aria-labelledby="our-services">
         <div className={containerClass}>
-          <Reveal className="max-w-3xl">
+          <Reveal className="max-w-5xl">
             <h2 id="our-services" className={h2Class}>
               Our planning and design services
             </h2>
@@ -387,11 +387,11 @@ export default function AboutPage() {
       {/* 9. Fees and how we work */}
       <section className={`${sectionClass} bg-surface-translucent`} aria-labelledby="fees">
         <div className={containerClass}>
-          <Reveal className="max-w-3xl">
+          <Reveal className="max-w-5xl">
             <h2 id="fees" className={h2Class}>
               Fees and how we work
             </h2>
-            <div className="space-y-4 text-textmuted leading-relaxed">
+            <div className="space-y-4 text-justify text-textmuted leading-relaxed">
               <p>
                 We offer fixed-fee planning support. You get a written quote before any work
                 begins, so you know the cost up front.
@@ -416,7 +416,7 @@ export default function AboutPage() {
       {/* 10. Find us */}
       <section className={`${sectionClass} bg-surface-elevated-translucent`} aria-labelledby="find-us">
         <div className={containerClass}>
-          <Reveal className="max-w-3xl">
+          <Reveal className="max-w-5xl">
             <h2 id="find-us" className={h2Class}>
               Find us
             </h2>

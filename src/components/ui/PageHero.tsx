@@ -36,11 +36,11 @@ export function PageHero({ image, alt, title, subtitle, children }: PageHeroProp
       />
 
       <div className="mx-auto w-full max-w-7xl px-4 pb-10 sm:px-6 sm:pb-14 lg:px-8 lg:pb-16">
-        <h1 className="max-w-[40rem] text-balance text-4xl font-normal leading-[1.1] !font-serif !text-white sm:text-5xl lg:text-[3.5rem]">
+        <h1 className="max-w-5xl text-4xl font-normal leading-[1.1] !font-serif !text-white sm:text-5xl lg:text-[3.5rem]">
           {title}
         </h1>
         {subtitle ? (
-          <p className="mt-4 max-w-xl text-base leading-relaxed !text-white/90 sm:text-lg">
+          <p className="mt-4 max-w-3xl text-base leading-relaxed !text-white/90 sm:text-lg">
             {subtitle}
           </p>
         ) : null}

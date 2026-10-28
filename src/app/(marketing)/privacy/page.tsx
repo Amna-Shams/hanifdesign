@@ -52,7 +52,7 @@ function PolicySection({
         </span>
         <div className="min-w-0">
           <h2 className="font-heading text-2xl font-semibold text-primary sm:text-3xl">{title}</h2>
-          <div className="mt-4 space-y-4 text-textmuted leading-relaxed">{children}</div>
+          <div className="mt-4 space-y-4 text-justify text-textmuted leading-relaxed">{children}</div>
         </div>
       </div>
     </Reveal>

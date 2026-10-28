@@ -78,7 +78,7 @@ export function AboutSnapshot() {
               align="left"
             />
 
-            <div className="space-y-4 text-textmuted leading-relaxed">
+            <div className="space-y-4 text-justify text-textmuted leading-relaxed">
               <p>
                 Hanif Design & Consultancy has been guiding homeowners, developers,
                 and designers through the UK planning system.

@@ -82,7 +82,7 @@ export function FAQAccordion({
             </summary>
 
             <div id={panelId} role="region" aria-labelledby={buttonId} className="px-5 pb-5 sm:px-6">
-              <p className="max-w-3xl text-sm leading-relaxed text-secondary sm:text-base">{item.a}</p>
+              <p className="max-w-4xl text-justify text-sm leading-relaxed text-secondary sm:text-base">{item.a}</p>
             </div>
           </details>
         );

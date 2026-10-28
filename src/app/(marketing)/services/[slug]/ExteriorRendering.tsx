@@ -104,7 +104,7 @@ const FAQS = [
 function H2({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
     <h2
-      className={`mx-auto max-w-3xl text-center font-heading text-[1.75rem] font-bold leading-tight sm:text-[2.25rem] ${className}`}
+      className={`mx-auto max-w-6xl text-center font-heading text-[1.75rem] font-bold leading-tight sm:text-[2.25rem] ${className}`}
     >
       {children}
     </h2>

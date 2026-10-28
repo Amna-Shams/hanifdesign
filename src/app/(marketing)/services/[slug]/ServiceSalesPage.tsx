@@ -52,7 +52,7 @@ function Band({
     dark: "bg-[#1d2024] light:bg-surface-translucent",
   } as const;
   return (
-    <section aria-label={label} className={`${tones[tone]} py-16 sm:py-20 lg:py-24`}>
+    <section aria-label={label} className={`${tones[tone]} py-12 sm:py-14 lg:py-16`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">{children}</div>
     </section>
   );
@@ -85,8 +85,8 @@ export function ServiceSalesPage({ content: c }: { content: SalesContent }) {
               <li aria-current="page" className="font-semibold text-white">{c.label}</li>
             </ol>
           </nav>
-          <h1 className="max-w-3xl !text-white font-heading text-4xl font-bold leading-tight sm:text-5xl">{c.title}</h1>
-          <p className="mt-5 max-w-2xl !text-white/90 text-base leading-relaxed sm:text-lg">{c.intro}</p>
+          <h1 className="max-w-6xl !text-white font-heading text-4xl font-bold leading-tight sm:text-5xl">{c.title}</h1>
+          <p className="mt-5 max-w-3xl !text-white/90 text-base leading-relaxed sm:text-lg">{c.intro}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/quote"
@@ -122,9 +122,9 @@ export function ServiceSalesPage({ content: c }: { content: SalesContent }) {
       {/* 2b — Optional explainer */}
       {c.explainer ? (
         <Band>
-          <div className="max-w-3xl">
+          <div>
             <h2 className="font-heading text-3xl font-bold text-primary sm:text-4xl">{c.explainer.title}</h2>
-            <div className="mt-6 space-y-4 leading-relaxed text-secondary">
+            <div className="mt-5 space-y-4 text-justify leading-relaxed text-secondary">
               {c.explainer.paragraphs.map((p) => (
                 <p key={p.slice(0, 30)}>{p}</p>
               ))}
@@ -144,9 +144,9 @@ export function ServiceSalesPage({ content: c }: { content: SalesContent }) {
             </figure>
           ))}
         </div>
-        <div className="mt-12 max-w-3xl">
+        <div className="mt-10">
           <h3 className="mb-4 font-heading text-lg font-semibold text-primary">{c.compare.pointsTitle}</h3>
-          <ul className="list-disc space-y-2 pl-5 text-sm text-secondary marker:text-gold">
+          <ul className="list-disc space-y-2 pl-5 text-justify text-sm text-secondary marker:text-gold">
             {c.compare.points.map(([lead, rest]) => (
               <li key={lead}>
                 <strong className="text-primary">{lead}</strong> {rest}
@@ -210,7 +210,7 @@ export function ServiceSalesPage({ content: c }: { content: SalesContent }) {
               </div>
               <div className={index % 2 === 1 ? "md:order-1" : ""}>
                 <h3 className="mb-4 font-heading text-2xl font-bold text-primary">{item.title}</h3>
-                <p className="leading-relaxed text-secondary">{item.text}</p>
+                <p className="text-justify leading-relaxed text-secondary">{item.text}</p>
               </div>
             </div>
           ))}
@@ -224,7 +224,7 @@ export function ServiceSalesPage({ content: c }: { content: SalesContent }) {
           {c.workflow.steps.map(([title, text]) => (
             <li key={title}>
               <h3 className="mb-2 font-heading text-lg font-semibold text-primary">{title}</h3>
-              <p className="text-sm leading-relaxed text-secondary">{text}</p>
+              <p className="text-justify text-sm leading-relaxed text-secondary">{text}</p>
             </li>
           ))}
         </ol>
@@ -239,7 +239,7 @@ export function ServiceSalesPage({ content: c }: { content: SalesContent }) {
               <Icon className="mt-1 h-7 w-7 shrink-0 text-gold" aria-hidden="true" />
               <div>
                 <h3 className="font-heading text-base font-semibold text-primary">{title}</h3>
-                <p className="mt-1 text-sm leading-relaxed text-secondary">{text}</p>
+                <p className="mt-1 text-justify text-sm leading-relaxed text-secondary">{text}</p>
               </div>
             </li>
           ))}
@@ -288,7 +288,7 @@ export function ServiceSalesPage({ content: c }: { content: SalesContent }) {
                   {question}
                   <Plus className="h-4 w-4 shrink-0 text-gold transition-transform group-open:rotate-45" aria-hidden="true" />
                 </summary>
-                <p className="pt-2 text-sm leading-relaxed text-secondary">{answer}</p>
+                <p className="pt-2 text-justify text-sm leading-relaxed text-secondary">{answer}</p>
               </details>
             ))}
           </div>

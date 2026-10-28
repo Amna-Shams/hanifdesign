@@ -29,7 +29,7 @@ export default function TermsPage() {
             align="center"
           />
 
-          <div className="mt-12 max-w-3xl mx-auto space-y-10 text-textmuted leading-relaxed">
+          <div className="mt-12 max-w-5xl mx-auto space-y-10 text-justify text-textmuted leading-relaxed">
             <Reveal>
               <h2 className="font-heading font-semibold text-xl text-primary mb-4">1. Acceptance of Terms</h2>
               <p>

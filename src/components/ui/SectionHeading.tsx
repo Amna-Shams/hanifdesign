@@ -25,7 +25,7 @@ export function SectionHeading({
   return (
     <div
       className={[
-        isCentered ? "mx-auto max-w-3xl text-center" : "max-w-3xl text-left",
+        isCentered ? "mx-auto max-w-6xl text-center" : "max-w-6xl text-left",
         className,
       ]
         .filter(Boolean)
@@ -53,7 +53,6 @@ export function SectionHeading({
         className={[
           "font-heading font-bold text-primary",
           "text-3xl sm:text-4xl lg:text-[2.75rem] leading-[1.15]",
-          "text-balance",
           eyebrow ? "mb-4" : "mb-0",
         ].join(" ")}
       >
@@ -64,7 +63,7 @@ export function SectionHeading({
         <p
           className={[
             "text-base sm:text-lg leading-relaxed text-secondary",
-            isCentered ? "mx-auto max-w-2xl" : "max-w-2xl",
+            isCentered ? "mx-auto max-w-4xl" : "max-w-4xl",
           ].join(" ")}
         >
           {subtitle}

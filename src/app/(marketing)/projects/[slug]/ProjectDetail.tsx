@@ -95,12 +95,12 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
                 </Reveal>
               </div>
 
-              {/* Services & Drawings Delivered */}
+              {/* Services & Deliverables */}
               <div>
                 <Reveal>
                   <SectionHeading
                     eyebrow="What we did"
-                    title="Services & Drawings Delivered"
+                    title="Services & Deliverables"
                     align="left"
                   />
                 </Reveal>
@@ -132,7 +132,8 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
                 </Reveal>
               </div>
 
-              {project.images.length > 1 && (
+              {/* One extra image sits in the text column, as it always has. */}
+              {project.images.length === 2 && (
                 <Reveal>
                   <figure>
                     <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-subtle">
@@ -198,6 +199,32 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
               </div>
             </Reveal>
           </div>
+
+          {/* Gallery for projects with several images: full width, below the text
+              and the summary card, so nothing is left empty beside it. */}
+          {project.images.length > 2 && (
+            <Reveal>
+              <div className="mt-16">
+                <SectionHeading eyebrow="Gallery" title="Project Gallery" align="left" />
+                <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {project.images.slice(1).map((src, index) => (
+                    <li
+                      key={src}
+                      className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-subtle bg-surface-elevated"
+                    >
+                      <Image
+                        src={src}
+                        alt={`${project.title}, view ${index + 2} — ${project.location}`}
+                        fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        className="object-cover"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          )}
         </div>
       </section>
 

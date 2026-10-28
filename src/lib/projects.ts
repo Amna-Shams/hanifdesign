@@ -11,7 +11,7 @@ export interface Project {
   location: string;
   /** "The Brief" — one paragraph per entry. */
   brief: readonly string[];
-  /** "Services & Drawings Delivered" — one deliverable per entry. */
+  /** "Services & Deliverables" — one deliverable per entry. */
   services: readonly string[];
   /** "The Outcome" — one paragraph per entry. */
   outcome: readonly string[];
@@ -45,6 +45,51 @@ export type ProjectCategory = (typeof PROJECT_CATEGORIES)[number];
  * and the XML sitemap, so a project can never be listed without a page existing.
  */
 export const PROJECTS: readonly Project[] = [
+  {
+    slug: "kitchen-dining-interior-design",
+    title: "Kitchen & Dining Interior Design",
+    category: "Residential",
+    sector: "Residential — Interior Design & 3D Visualisation",
+    summary:
+      "Interior design and photorealistic 3D renders of two open-plan kitchen and dining spaces, one classic and one contemporary.",
+    location: "England",
+    brief: [
+      "Two open-plan kitchen and dining interiors were developed as design concepts and visualised in 3D, so that layouts, finishes and lighting could be judged properly before anything was ordered or built.",
+      "The first is a classic scheme: painted, panelled cabinetry with brass detailing, a marble island with a stone breakfast bar, and a roof lantern that fills the space with daylight. The second is contemporary: fluted oak, a waterfall marble island and a sculptural gold pendant.",
+    ],
+    services: [
+      "Interior design concepts for two kitchen and dining schemes, including layout and space planning",
+      "Selection of cabinetry, stone, flooring, lighting and furniture, coordinated into one palette per scheme",
+      "Photorealistic 3D interior renders from several viewpoints: wide views, island views and an aerial view",
+      "Lighting scenarios, from daylight through the roof lantern to under-cabinet accent lighting",
+      "Close-up views of cabinetry, appliances and finishes to check detail and materials",
+    ],
+    outcome: [
+      "Each space can be seen as it would look finished, with cabinetry, stone, lighting and furniture shown together from several angles, giving a clear basis for decisions on layout and finishes.",
+      "The same renders work as presentation images for the client and as marketing images for the design work, from a single 3D model of each scheme.",
+    ],
+    tags: [
+      "Interior design",
+      "Interior visualisation",
+      "3D visualisation and rendering",
+      "Kitchen design",
+      "Dining room design",
+      "Interior CGI",
+    ],
+    images: [
+      "/interior-classic-kitchen-diner-wide.webp",
+      "/interior-classic-kitchen-island-front.webp",
+      "/interior-classic-kitchen-island-angle.webp",
+      "/interior-classic-kitchen-dining-table.webp",
+      "/interior-classic-dining-room.webp",
+      "/interior-classic-breakfast-bar.webp",
+      "/interior-classic-kitchen-cabinetry.webp",
+      "/interior-kitchen-render-wide.webp",
+      "/interior-kitchen-render-island.webp",
+      "/interior-kitchen-render-aerial.webp",
+    ],
+    gradient: "from-gold/10 to-navy/10",
+  },
   {
     slug: "highfield-road-residence",
     title: "Highfield Road Residence",

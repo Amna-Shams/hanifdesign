@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     default: "Hanif Design & Consultancy Ltd — Design Consultancy across England",
     template: "%s | Hanif Design & Consultancy",
   },
-  description: "Planning consultancy and 3D visualisation across England: planning applications, building regulations, interior and exterior rendering, 3D floor plans and virtual staging for homeowners, designers and developers.",
+  description: "Planning consultancy and 3D visualisation across England: planning applications, building regulations, interior and exterior rendering, 3D floor plans and virtual staging for homeowners, designers and developers, backed by 40 years of professional experience at Director level.",
   keywords: ["planning consultant", "England", "planning applications", "permitted development", "planning appeals", "residential planning", "building regulations", "3D visualisation", "3D visualisation services", "interior visualisation", "exterior rendering", "3D floor plans", "virtual staging", "CGI rendering", "property marketing"],
   authors: [{ name: COMPANY_NAME }],
   creator: COMPANY_NAME,

@@ -174,7 +174,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       title: "Why Choose Us for 3D Visualisation",
       items: [
         { icon: BadgeCheck, title: "Accurate to the plans", text: "Every image is modelled from your plans, so what you approve is what is proposed." },
-        { icon: Ruler, title: "From a planning and design practice", text: "We understand plans, planning and construction, so renders never show something that could not be built." },
+        { icon: Ruler, title: "40 years at Director level", text: "With 40 years of professional experience, we understand plans, planning and construction, so renders never show something that could not be built." },
         { icon: MessageSquare, title: "Clear approvals", text: "Angles, materials and lighting are agreed step by step, with no surprises at the end." },
         { icon: Repeat, title: "Consistent style", text: "Interior and exterior views of one scheme come out in a matching style, ready to use together." },
         { icon: Users, title: "Premium-quality CGI", text: "Good customer service and premium-quality CGI sit at the core of what we do." },
@@ -474,7 +474,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       title: "Why Choose Us for Planning Applications",
       items: [
         { icon: FileCheck, title: "Packages built to validate", text: "Complete submissions reduce avoidable delay." },
-        { icon: Users, title: "A named consultant", text: "A single point of contact handles your file end to end." },
+        { icon: Users, title: "A named consultant", text: "A single point of contact, backed by 40 years of professional experience at Director level, handles your file end to end." },
         { icon: BadgeCheck, title: "Fees agreed first", text: "Fees are agreed before work starts." },
         { icon: Compass, title: "Nationwide reach", text: "Working with clients across England, wherever your site is." },
       ],

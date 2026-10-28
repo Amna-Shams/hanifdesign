@@ -6,8 +6,8 @@ import { motion } from "motion/react";
 const credentials = [
   {
     icon: Calendar,
-    title: "Established 2010",
-    description: "Over a decade of planning expertise",
+    title: "40 Years' Experience",
+    description: "At Director level",
   },
   {
     icon: MapPin,

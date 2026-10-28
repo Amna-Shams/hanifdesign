@@ -203,7 +203,8 @@ export default function AboutPage() {
               <p>
                 Hanif Design &amp; Consultancy Ltd
                 has grown from a small design practice into a respected planning
-                consultancy working across England. Our team combines
+                consultancy working across England, with 40 years of professional
+                experience at Director level. Our team combines
                 deep local authority knowledge with practical design expertise to
                 guide clients through every stage of the planning process.
               </p>

@@ -74,24 +74,35 @@ export function AboutSnapshot() {
           >
             <SectionHeading
               eyebrow="About Us"
-              title="Empowering Residential Projects Through Expert Planning Support"
+              title="Bringing Your Design Ideas to Life"
+              subtitle="Professional Planning, Design & Visualisation Services"
               align="left"
             />
 
             <div className="space-y-4 text-justify text-textmuted leading-relaxed">
               <p>
-                Hanif Design & Consultancy has been guiding homeowners, developers,
-                and designers through the UK planning system.
-                Working across England, we combine deep local authority knowledge with
-                practical design expertise to guide clients through every stage of
-                the planning process.
+                At Hanif Design &amp; Consultancy Ltd, we specialise in providing
+                professional planning consultancy, creative design solutions, interior
+                design concepts and high-quality 2D and 3D visualisation services for
+                residential and commercial projects.
               </p>
               <p>
-                We understand that securing planning permission is often the biggest
-                hurdle in any development project. That&apos;s why we don&apos;t just submit
-                applications — we develop comprehensive strategies that anticipate
-                officer concerns, address policy requirements, and present your
-                project in the best possible light.
+                Serving clients across England, we combine practical property design
+                knowledge with creative expertise to transform ideas into clear,
+                functional and visually appealing design proposals.
+              </p>
+              <p>
+                With 40 years of professional experience at Director level, our team
+                provides personalised guidance throughout the design process, from
+                initial concepts and space planning to detailed presentation drawings,
+                realistic interior and exterior renderings, and supporting project
+                documentation.
+              </p>
+              <p>
+                Whether you are a homeowner planning property improvements, a developer
+                exploring new opportunities or a business looking to enhance its
+                premises, we are committed to delivering professional, practical and
+                visually engaging solutions.
               </p>
             </div>
 

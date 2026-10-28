@@ -149,13 +149,12 @@ const services = SERVICES.map((service, index) => ({
 export function CoreServices() {
   return (
     <section
-      className="overflow-hidden bg-surface-translucent py-16 sm:py-20 lg:py-28"
+      className="overflow-hidden bg-surface-translucent pb-16 pt-8 sm:pb-20 sm:pt-10 lg:pb-28 lg:pt-10"
       aria-labelledby="core-services-heading"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           id="core-services-heading"
-          eyebrow="Core services"
           title="What we do"
           subtitle="Comprehensive planning and design support tailored to your project."
           align="center"

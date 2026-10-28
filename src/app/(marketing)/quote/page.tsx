@@ -28,7 +28,7 @@ const quoteSchema = z.object({
   email: z.string().trim().email("Please enter a valid email address"),
   phone: z.string().trim().min(10, "Please enter a valid phone number"),
   projectType: z.string().min(1, "Please select a project type"),
-  budget: z.string().min(1, "Please select a budget range"),
+  budget: z.string().min(1, "Please select a project scale"),
   message: z.string().trim().min(20, "Please tell us a little more (20 characters minimum)"),
 });
 
@@ -235,7 +235,7 @@ export default function QuotePage() {
 
               <div>
                 <label htmlFor="budget" className={labelClass}>
-                  Budget *
+                  Project scale *
                 </label>
                 <select
                   {...register("budget")}
@@ -244,7 +244,7 @@ export default function QuotePage() {
                   aria-describedby={errors.budget ? "budget-error" : undefined}
                   className={fieldClass}
                 >
-                  <option value="">Select a budget range</option>
+                  <option value="">Select a project scale</option>
                   {QUOTE_BUDGET_RANGES.map((range) => (
                     <option key={range.value} value={range.value}>
                       {range.label}

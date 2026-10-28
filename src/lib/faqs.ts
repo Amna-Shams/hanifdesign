@@ -21,8 +21,8 @@ export const FAQS: readonly FaqItem[] = [
     a: "Planning permission controls land use and appearance. Building regulations ensure structural safety, fire safety, energy efficiency, and accessibility. Most projects need both — they're separate applications to different council departments.",
   },
   {
-    q: "How much does a planning application cost?",
-    a: "Council fees are set nationally: £206 for householder and £462 for full planning. Our professional fees vary by project complexity — typically £1,500–£5,000 for householder, more for complex schemes. We provide fixed-fee quotes after an initial consultation.",
+    q: "How are planning application fees worked out?",
+    a: "Council application fees are set nationally. Our professional fees vary with the complexity of the project. We provide fixed-fee quotes after an initial consultation.",
   },
   {
     q: "What happens if my application is refused?",

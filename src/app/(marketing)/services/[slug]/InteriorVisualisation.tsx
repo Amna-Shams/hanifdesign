@@ -59,7 +59,7 @@ const SPACES = [
 const STUDIO_FEATURES = [
   { icon: Layers, title: "Finish and layout options", text: "The same room rendered with alternative materials, colours or furniture layouts, so the client chooses from images instead of samples." },
   { icon: Sofa, title: "Products, modelled to spec", text: "Custom joinery, specified fixtures and branded fabrics are built from your plans or product links." },
-  { icon: MessageSquare, title: "Review in one place", text: "Comments go straight onto the images. Two revision rounds are included in the price." },
+  { icon: MessageSquare, title: "Review in one place", text: "Comments go straight onto the images. Two revision rounds are included." },
   { icon: Clock, title: "Predictable timing", text: "A fixed quote within a working day, work starting the next business day, and an agreed delivery date for the first view." },
 ] as const;
 
@@ -93,7 +93,7 @@ const STYLES = [
 const WORKFLOW = [
   ["1. Brief and quote", "Tell us the rooms, the number of views and the deadline. We send a fixed quote and a start date."],
   ["2. Information and references", "Send plans, layouts, photos, sketches, a mood board or a specification list. If there are no plans yet, we start from what exists."],
-  ["3. 3D scene and camera angles", "We build the room in 3D: geometry, furniture and finishes. You approve the camera angles on grey-model previews, when changing them costs nothing."],
+  ["3. 3D scene and camera angles", "We build the room in 3D: geometry, furniture and finishes. You approve the camera angles on grey-model previews, when changes are quickest to make."],
   ["4. Materials and lighting", "We add textures, décor and lighting scenarios: daylight, evening, accent lighting. You see draft renders and comment on colours, finishes and mood."],
   ["5. Revisions", "You leave comments on the images and we correct them. Two rounds of revisions are included. Corrections inside the agreed scope are not an extra charge."],
   ["6. Final renders", "You receive final high-resolution images, plus any extra formats you need: vertical crops for social media, 360 views or an animation from the same 3D scene."],
@@ -320,7 +320,7 @@ export function InteriorVisualisation() {
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
           <div>
             <h2 className="font-heading text-2xl font-bold !text-white light:!text-primary sm:text-3xl">
-              Want to learn how much your project will cost?
+              Want to talk through your project?
             </h2>
             <div className="mt-6">
               <Button variant="gold" asChild>

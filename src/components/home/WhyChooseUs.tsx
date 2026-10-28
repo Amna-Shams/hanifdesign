@@ -40,8 +40,8 @@ const reasons = [
   },
   {
     icon: Tag,
-    title: "Transparent Pricing",
-    description: "Clear, fixed quotes with no hidden fees or surprise costs.",
+    title: "Transparent Quotes",
+    description: "Clear, fixed quotes agreed before work starts.",
   },
 ] as const;
 

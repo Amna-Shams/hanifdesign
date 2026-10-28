@@ -394,7 +394,7 @@ export default function AboutPage() {
             <div className="space-y-4 text-justify text-textmuted leading-relaxed">
               <p>
                 We offer fixed-fee planning support. You get a written quote before any work
-                begins, so you know the cost up front.
+                begins, so you know what to expect up front.
               </p>
               <p>
                 We stay with you from the first feasibility call through to approval and

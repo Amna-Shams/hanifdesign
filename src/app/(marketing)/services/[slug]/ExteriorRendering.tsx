@@ -95,7 +95,7 @@ const FAQS = [
   ["What information is needed to start an exterior rendering project?", "Your drawings (CAD, PDF, Revit or SketchUp models), the views you want, the materials and finishes, and any site photographs or references."],
   ["What is exterior rendering?", "Exterior rendering turns design drawings into photorealistic images of a building in its setting, before it is built."],
   ["How long does exterior rendering take?", "The time depends on the number of views and the complexity of the scene. We agree the schedule in the quote."],
-  ["How much does exterior rendering cost?", "The price depends on the scope and level of detail, the number of views and the image resolution. Send us your drawings and we will give you a fixed quote."],
+  ["How is an exterior rendering quote worked out?", "The quote depends on the scope and level of detail, the number of views and the image resolution. Send us your drawings and we will give you a fixed quote."],
   ["Can exterior rendering be used for planning approvals?", "Yes. Accurate visuals help planning officers and neighbours understand a proposal, and they are often submitted alongside the planning drawings."],
   ["What resolution do exterior renderings have?", "We supply high-resolution images suitable for print and the web. Larger formats can be agreed in the quote."],
   ["What’s the difference between exterior rendering and exterior visualisation?", "Rendering is the process of producing the final image. Visualisation is the wider service: building the 3D model, setting up materials, light and context, and presenting the result."],
@@ -172,7 +172,7 @@ export function ExteriorRendering() {
               href="/quote"
               className="inline-flex min-h-11 items-center justify-center bg-white px-6 py-3 text-[0.6875rem] font-medium uppercase tracking-wider !text-[#b8865b] transition-opacity hover:opacity-90"
             >
-              See our pricing
+              Request a quote
             </Link>
             <Link href="/contact" className={tan}>
               Get your free consultation
@@ -229,9 +229,9 @@ export function ExteriorRendering() {
       {/* 5 — Dark CTA band */}
       <section className="bg-[#3a3a3a] py-14 text-center sm:py-20">
         <h2 className="font-heading text-3xl font-bold !text-white sm:text-4xl">Starting a CGI project?</h2>
-        <p className="mt-6 text-sm !text-white">See the full range of CGI solutions and their costs.</p>
+        <p className="mt-6 text-sm !text-white">See the full range of our CGI solutions.</p>
         <Link href="/quote" className={`${tan} mt-8`}>
-          See 3D rendering prices
+          Request a quote
         </Link>
       </section>
 
@@ -330,17 +330,17 @@ export function ExteriorRendering() {
         <ExteriorGallery images={GALLERY} />
       </section>
 
-      {/* 11 — Pricing */}
+      {/* 11 — Quote factors */}
       <section className="bg-white pb-14 sm:pb-20">
-        <H2>Pricing for Exterior Rendering Services</H2>
+        <H2>What Shapes Your Exterior Rendering Quote</H2>
         <div className="mx-auto mt-12 grid max-w-5xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2">
           <div className="space-y-4 text-xs leading-relaxed text-[#444]">
             <p>
-              The price depends on the <strong>scope</strong> and <strong>level of detail</strong>.
+              The quote depends on the <strong>scope</strong> and <strong>level of detail</strong>.
               Complex building design, detailed landscapes and high-end lighting increase production time.
             </p>
             <p>
-              Key pricing factors also include <strong>image resolution</strong>,{" "}
+              Other key factors include <strong>image resolution</strong>,{" "}
               <strong>the number of views</strong>, and <strong>the overall complexity of the scene</strong>.
               Larger buildings, rich environments and advanced materials require more work to model and
               refine.
@@ -348,22 +348,22 @@ export function ExteriorRendering() {
             <p>
               Another factor is <strong>the number of revisions</strong> and{" "}
               <strong>the delivery timeline</strong>. Tight deadlines and multiple feedback rounds
-              typically add to the final price.
+              typically add to the production time and scope.
             </p>
           </div>
           <Pic src={IMG.e8} alt="Exterior render of a residential building" className="aspect-[3/4]" />
         </div>
       </section>
 
-      {/* 12 — Dark price band */}
+      {/* 12 — Dark quote band */}
       <section className="bg-[#3a3a3a] py-14 sm:py-16">
         <div className="mx-auto grid max-w-5xl items-center gap-8 px-4 sm:px-6 md:grid-cols-2">
           <div>
             <h2 className="font-heading text-xl font-bold leading-snug !text-white sm:text-2xl">
-              Want to learn how much your project costs? See how we evaluate 3D rendering projects
+              Want to talk through your project? See how we evaluate 3D rendering projects
             </h2>
             <Link href="/quote" className={`${tan} mt-6`}>
-              See our pricing
+              Request a quote
             </Link>
           </div>
           <Pic src={IMG.hero} alt="" className="aspect-[16/9]" />

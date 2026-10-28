@@ -58,7 +58,7 @@ const COPY: Record<Slug, { icon: LucideIcon; description: string; bullets: reado
       "Development capacity studies",
       "Layout options",
       "Constraint mapping",
-      "Cost-benefit snapshots",
+      "Feasibility snapshots",
       "Recommendation reports",
     ],
   },

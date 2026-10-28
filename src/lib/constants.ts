@@ -53,11 +53,11 @@ export const QUOTE_PROJECT_TYPES = [
 ] as const;
 
 export const QUOTE_BUDGET_RANGES = [
-  { value: "under-50k", label: "Under £50,000" },
-  { value: "50k-100k", label: "£50,000 – £100,000" },
-  { value: "100k-250k", label: "£100,000 – £250,000" },
-  { value: "250k-500k", label: "£250,000 – £500,000" },
-  { value: "500k-plus", label: "£500,000+" },
+  { value: "under-50k", label: "Smaller project" },
+  { value: "50k-100k", label: "Medium project" },
+  { value: "100k-250k", label: "Larger project" },
+  { value: "250k-500k", label: "Substantial project" },
+  { value: "500k-plus", label: "Major development" },
   { value: "unsure", label: "Not sure yet" },
 ] as const;
 

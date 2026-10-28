@@ -69,7 +69,7 @@ export const PROJECTS: readonly Project[] = [
     ],
     outcome: [
       "The three elements were submitted together and read as one considered proposal, which made the case officer's job easier and kept the process moving.",
-      "The family now has an open kitchen and dining room that connects to the garden, a main bedroom suite in the roof and a garden room that works as a home office, while the front of the house keeps its original character. Because the building regulations drawings were prepared alongside the planning set, the builder could price and start from a single coordinated package.",
+      "The family now has an open kitchen and dining room that connects to the garden, a main bedroom suite in the roof and a garden room that works as a home office, while the front of the house keeps its original character. Because the building regulations drawings were prepared alongside the planning set, the builder could plan and start from a single coordinated package.",
     ],
     tags: [
       "Residential extension projects",
@@ -108,7 +108,7 @@ export const PROJECTS: readonly Project[] = [
     ],
     outcome: [
       "The renders gave the family confidence in the design before they committed to it, and gave the planning officer a clear picture of how the house would sit on the plot and relate to its neighbours.",
-      "With planning secured, the technical drawings gave the builder what they needed to price and start. The project shows how new build housing design works best when the survey, design, visuals and construction information are handled by one team that knows the whole story.",
+      "With planning secured, the technical drawings gave the builder what they needed to plan and start. The project shows how new build housing design works best when the survey, design, visuals and construction information are handled by one team that knows the whole story.",
     ],
     tags: [
       "New build housing design",

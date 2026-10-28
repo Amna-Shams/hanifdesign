@@ -99,12 +99,12 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       paragraphs: [
         "3D visualisation is the process of turning plans, layouts and early design ideas into something you can see and understand in three dimensions. What matters is the outcome: a visual representation that makes complex ideas easier to grasp.",
         "Instead of interpreting plans and schedules, clients, buyers and planning officers can look at a building or room and quickly understand its shape, scale and how it fits together. That removes a lot of guesswork.",
-        "It also changes how decisions get made. When everyone is looking at the same image, conversations become more grounded, and disagreements surface earlier, when they are easier and cheaper to fix.",
+        "It also changes how decisions get made. When everyone is looking at the same image, conversations become more grounded, and disagreements surface earlier, when they are easier to fix.",
       ],
     },
     mosaic: {
       title: "Experts in CGI, 3D Visualisation and 3D Design",
-      text: "We produce 3D visualisation, CGI and animation for marketing property, commercial and consumer products, for both interior and exterior designs. Customer service and premium-quality CGI at a competitive price are at the core of what we do.",
+      text: "We produce 3D visualisation, CGI and animation for marketing property, commercial and consumer products, for both interior and exterior designs. Customer service and premium-quality CGI are at the core of what we do.",
       large: { src: "/interior-kitchen-render-wide.webp", alt: "Photorealistic render of a modern kitchen with a fluted oak and marble island" },
       a: { src: "/interior-kitchen-render-island.webp", alt: "Kitchen render looking towards the island and roof lantern" },
       b: { src: "/interior-kitchen-render-aerial.webp", alt: "Aerial render of a marble kitchen island with bar stools" },
@@ -144,7 +144,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       ],
     },
     quote: {
-      title: "Want to learn how much your visuals will cost?",
+      title: "Ready to talk through your visuals?",
       img: { src: "/interior-kitchen-render-aerial.webp", alt: "" },
     },
     types: {
@@ -165,7 +165,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
         ["1. Brief and quote", "Tell us what you need the images for and how many views. We send a clear proposal and quote."],
         ["2. Plans and references", "You send plans, elevations, photos and material references. We confirm what we have and what is missing."],
         ["3. Clay-form model", "We build an accurate, untextured 3D model so layout, proportions and camera angles can be checked before any materials are applied."],
-        ["4. Your approval", "You approve the model and views. Changes at this stage cost the least."],
+        ["4. Your approval", "You approve the model and views. Changes at this stage are the easiest to make."],
         ["5. Materials, lighting and rendering", "Materials and lighting are applied to every surface, then final rendering begins."],
         ["6. Delivery", "Final images are supplied as high-resolution files for web, print and planning submission."],
       ],
@@ -177,7 +177,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
         { icon: Ruler, title: "From a planning and design practice", text: "We understand plans, planning and construction, so renders never show something that could not be built." },
         { icon: MessageSquare, title: "Clear approvals", text: "Angles, materials and lighting are agreed step by step, with no surprises at the end." },
         { icon: Repeat, title: "Consistent style", text: "Interior and exterior views of one scheme come out in a matching style, ready to use together." },
-        { icon: Users, title: "Premium CGI, fairly priced", text: "Good customer service and premium-quality CGI at a competitive price sit at the core of what we do." },
+        { icon: Users, title: "Premium-quality CGI", text: "Good customer service and premium-quality CGI sit at the core of what we do." },
         { icon: Layers, title: "Interior and exterior in one place", text: "Property marketing, commercial and consumer products, inside and out, from one team." },
       ],
     },
@@ -189,7 +189,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
         ["Do you do interiors and exteriors?", "Yes. We produce interior, exterior and aerial views, in a consistent style for the same scheme."],
         ["Can the images be used for planning?", "Yes. Our visuals are produced to be accurate to the plans and are suitable to accompany a submission."],
         ["What do I receive at the end?", "Final high-resolution images for web and print, and any animation or additional views agreed in the quote."],
-        ["How is the price worked out?", "It depends on the number of views, the detail of the scene and the deadline. Send your plans and we will quote."],
+        ["How is the quote worked out?", "It depends on the number of views, the detail of the scene and the deadline. Send your plans and we will quote."],
       ],
     },
     closing: { title: "Ready to see your project before it is built?", text: CLOSING_TEXT },
@@ -248,7 +248,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       ],
     },
     quote: {
-      title: "Want to learn how much your floor plans will cost?",
+      title: "Ready to talk through your floor plans?",
       img: { src: "/hmo-development-selly-oak-1.webp", alt: "" },
     },
     types: {
@@ -289,7 +289,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
         ["What do I need to send?", "Your drawings in any format, plus any style references. If you do not have drawings yet, tell us what exists and we will advise."],
         ["What properties do you cover?", "Houses, flats, apartment buildings, offices, shops and mixed-use schemes, from a single dwelling to a full development."],
         ["What format are the files?", "High-resolution images ready for print and web. Extra formats such as vertical crops for social media are available on request."],
-        ["How much does a 3D floor plan cost?", "It depends on the size of the plan, the level of furnishing and the number of units. Send your drawings for a quote."],
+        ["How is a 3D floor plan quote worked out?", "It depends on the size of the plan, the level of furnishing and the number of units. Send your drawings for a quote."],
       ],
     },
     closing: { title: "Ready to show your layout properly?", text: CLOSING_TEXT },
@@ -332,7 +332,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       items: [
         { title: "Estate agents", text: "Vacant listings that photograph well and attract viewings.", img: { src: "/garage-conversion-kings-heath-1.webp", alt: "Brick family home" } },
         { title: "Developers", text: "Show completed homes before they are fitted out.", img: { src: "/new-build-family-home-sutton-coldfield-2.webp", alt: "New-build family home" } },
-        { title: "Landlords and investors", text: "Make lets and sales more appealing without the cost of furnishing.", img: { src: "/office-to-residential-conversion-city-centre-1.webp", alt: "Converted building" } },
+        { title: "Landlords and investors", text: "Make lets and sales more appealing without furnishing the property.", img: { src: "/office-to-residential-conversion-city-centre-1.webp", alt: "Converted building" } },
         { title: "Commercial owners", text: "Demonstrate how an office or unit could be laid out.", img: { src: "/commercial-unit-selly-oak-1.webp", alt: "Commercial unit" } },
       ],
     },
@@ -347,7 +347,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       ],
     },
     quote: {
-      title: "Want to learn how much virtual staging will cost?",
+      title: "Ready to talk through your virtual staging?",
       img: { src: "/spacious-loft-conversion-harborne-2.webp", alt: "" },
     },
     types: {
@@ -365,7 +365,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       steps: [
         ["1. Send photos", "A photograph of each room you would like staged."],
         ["2. Choose a style", "Pick a style, and any furniture you would like used."],
-        ["3. Quote and schedule", "We agree the number of images, the price and a delivery date."],
+        ["3. Quote and schedule", "We agree the number of images, the scope and a delivery date."],
         ["4. Staging", "We furnish and light each image to match the original photograph."],
         ["5. Revisions", "Comment on the images and we make the changes agreed in the quote."],
         ["6. Delivery", "Staged images ready for listings, your website and social media."],
@@ -383,7 +383,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
     faq: {
       title: "Virtual Staging FAQ",
       items: [
-        ["How much does virtual staging cost?", "It depends on the number of images and the level of work. Send your photos for a quote."],
+        ["How is a virtual staging quote worked out?", "It depends on the number of images and the level of work. Send your photos for a quote."],
         ["Do you stage exteriors too?", "Yes. We can refresh the outside of a property, from the front elevation to the garden and drive."],
         ["What do I need to send to start?", "A photo of each room, the style you want, and any furniture you would like us to use."],
         ["Can you stage occupied homes?", "Yes. We can restyle a furnished room, or remove existing items and stage it afresh."],
@@ -445,7 +445,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       ],
     },
     quote: {
-      title: "Want to learn how much your application will cost?",
+      title: "Ready to talk through your application?",
       img: { src: "/two-storey-side-extension-four-oaks-2.webp", alt: "" },
     },
     types: {
@@ -486,7 +486,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
         ["How long does a planning application take?", "Householder applications typically take 8 weeks and full applications 13 weeks. Complex schemes can take longer."],
         ["What is pre-application advice?", "A chance to test a scheme with the council before submitting. It adds a few weeks but can avoid delays later."],
         ["What happens if my application is refused?", "We review the reasons and advise on revising the scheme, resubmitting or appealing."],
-        ["What does a planning application cost?", "Our fees are agreed before we start. The council also charges its own application fee."],
+        ["How are your fees structured?", "Our fees are agreed before we start. The council also charges its own application fee, which is set nationally."],
         ["Do you handle conditions after approval?", "Yes. We support condition discharge so work can begin."],
       ],
     },
@@ -544,7 +544,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       ],
     },
     quote: {
-      title: "Want to learn how much building regulations support will cost?",
+      title: "Ready to talk through your building regulations?",
       img: { src: "/two-storey-side-extension-four-oaks-2.webp", alt: "" },
     },
     types: {
@@ -642,7 +642,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       ],
     },
     quote: {
-      title: "Want to learn how much a feasibility study will cost?",
+      title: "Ready to talk through your feasibility study?",
       img: { src: "/new-build-family-home-sutton-coldfield-2.webp", alt: "" },
     },
     types: {
@@ -662,7 +662,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
         ["2. Site and policy analysis", "Constraints and policy are reviewed against the site."],
         ["3. Capacity study", "We test what the site can realistically deliver."],
         ["4. Layout options", "Two or three layouts are tested."],
-        ["5. Indicative snapshot", "An indicative cost and programme view."],
+        ["5. Indicative snapshot", "An indicative programme view."],
         ["6. Recommendation report", "A written go or no-go recommendation."],
       ],
     },
@@ -740,7 +740,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       ],
     },
     quote: {
-      title: "Want to learn how much guidance will cost?",
+      title: "Ready to talk through your project?",
       img: { src: "/two-storey-side-extension-four-oaks-2.webp", alt: "" },
     },
     types: {

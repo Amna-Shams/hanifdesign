@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import type { FaqItem } from "@/lib/faqs";
 
@@ -18,8 +18,9 @@ interface FAQAccordionProps {
  * Progressive enhancement is the whole point here:
  *  - With JavaScript disabled every question is still a native disclosure and
  *    every answer is reachable, so the content is never trapped.
- *  - When JS is available we layer on single-open behaviour ("only one answer
- *    at a time") scoped to *this* instance, plus a small rotate animation.
+ *  - Hover-to-open, single-open and the height animation are layered on by
+ *    `HoverDisclosure` (mounted once in the marketing layout), so every
+ *    accordion on the site behaves the same way.
  */
 export function FAQAccordion({
   items,
@@ -28,27 +29,6 @@ export function FAQAccordion({
   idPrefix = "faq",
 }: FAQAccordionProps) {
   const rootRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const root = rootRef.current;
-    if (!root) return;
-
-    const panels = Array.from(
-      root.querySelectorAll<HTMLDetailsElement>("details[data-accordion-item]"),
-    );
-
-    const onToggle = (event: Event) => {
-      const current = event.currentTarget as HTMLDetailsElement;
-      if (!current.open) return;
-      // Single-open enhancement, scoped to this accordion only.
-      for (const panel of panels) {
-        if (panel !== current) panel.open = false;
-      }
-    };
-
-    panels.forEach((panel) => panel.addEventListener("toggle", onToggle));
-    return () => panels.forEach((panel) => panel.removeEventListener("toggle", onToggle));
-  }, [items]);
 
   return (
     <div
@@ -64,7 +44,6 @@ export function FAQAccordion({
             key={item.q}
             id={buttonId}
             data-accordion-item
-            name={`${idPrefix}-group`}
             open={defaultOpen === index}
             className="group"
           >

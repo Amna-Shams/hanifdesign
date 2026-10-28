@@ -9,8 +9,8 @@ export function Hero() {
   return (
     <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-[#0b0d12]">
       <Image
-        src="/home-hero-contemporary-house.webp"
-        alt="Photorealistic render of a contemporary timber-clad house with glazed gables and a terrace, set on a grassy bank"
+        src="/home-hero.webp"
+        alt="Stone-fronted civic building with arched windows beside a tree-lined public square"
         fill
         priority
         quality={90}

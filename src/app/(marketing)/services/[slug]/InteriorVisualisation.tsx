@@ -44,7 +44,7 @@ const IMG = {
 
 const PRODUCT_POINTS = [
   ["Exact items.", "Send product links or spec sheets and we model the furniture and fixtures you chose, not look-alikes."],
-  ["Custom pieces.", "Bespoke joinery and furniture are modelled from your drawings or reference photos."],
+  ["Custom pieces.", "Bespoke joinery and furniture are modelled from your plans or reference photos."],
   ["No exact model available.", "We propose the closest match and show it to you before the final render."],
   ["Design still in progress.", "We start with what is confirmed and mark open items, so nothing is guessed silently."],
 ] as const;
@@ -58,7 +58,7 @@ const SPACES = [
 
 const STUDIO_FEATURES = [
   { icon: Layers, title: "Finish and layout options", text: "The same room rendered with alternative materials, colours or furniture layouts, so the client chooses from images instead of samples." },
-  { icon: Sofa, title: "Products, modelled to spec", text: "Custom joinery, specified fixtures and branded fabrics are built from your drawings or product links." },
+  { icon: Sofa, title: "Products, modelled to spec", text: "Custom joinery, specified fixtures and branded fabrics are built from your plans or product links." },
   { icon: MessageSquare, title: "Review in one place", text: "Comments go straight onto the images. Two revision rounds are included in the price." },
   { icon: Clock, title: "Predictable timing", text: "A fixed quote within a working day, work starting the next business day, and an agreed delivery date for the first view." },
 ] as const;
@@ -92,7 +92,7 @@ const STYLES = [
 
 const WORKFLOW = [
   ["1. Brief and quote", "Tell us the rooms, the number of views and the deadline. We send a fixed quote and a start date."],
-  ["2. Information and references", "Send drawings, plans, photos, sketches, a mood board or a specification list. If there are no drawings yet, we start from what exists."],
+  ["2. Information and references", "Send plans, layouts, photos, sketches, a mood board or a specification list. If there are no plans yet, we start from what exists."],
   ["3. 3D scene and camera angles", "We build the room in 3D: geometry, furniture and finishes. You approve the camera angles on grey-model previews, when changing them costs nothing."],
   ["4. Materials and lighting", "We add textures, décor and lighting scenarios: daylight, evening, accent lighting. You see draft renders and comment on colours, finishes and mood."],
   ["5. Revisions", "You leave comments on the images and we correct them. Two rounds of revisions are included. Corrections inside the agreed scope are not an extra charge."],
@@ -108,7 +108,7 @@ const WHY = [
 
 const FAQS = [
   ["What is interior visualisation?", "Interior visualisation turns plans, sketches and specifications into photorealistic images or films of a room before it is built or fitted out, so clients can judge layouts, materials and lighting with confidence."],
-  ["How is interior visualisation done?", "We build a 3D model of the space from your drawings, add furniture, materials and lighting, agree camera angles with you, then produce draft and final renders. You review at each stage."],
+  ["How is interior visualisation done?", "We build a 3D model of the space from your plans, add furniture, materials and lighting, agree camera angles with you, then produce draft and final renders. You review at each stage."],
   ["What software is used for 3D interior design rendering services?", "We use industry-standard 3D modelling and rendering software, chosen to suit the project. You do not need to use or own any of it; we deliver finished images, animations or tours."],
   ["What is the difference between 3D rendering and 3D visualisation?", "Rendering is the process of producing the final image from a 3D model. Visualisation is the wider service: modelling the space, setting up materials and lighting, and presenting the result in the form you need."],
   ["Do you work with interior design firms and studios?", "Yes. Many of our clients are designers who send plans, a mood board and a product list so we can show their client the finished room before anything is ordered."],

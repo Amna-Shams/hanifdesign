@@ -78,7 +78,7 @@ export interface SalesContent {
 }
 
 const QUOTE_NOTE =
-  "Send us your drawings and a short brief. We will come back with a clear quote and a start date.";
+  "Send us your plans and a short brief. We will come back with a clear quote and a start date.";
 
 const CLOSING_TEXT = QUOTE_NOTE;
 
@@ -97,8 +97,8 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
     explainer: {
       title: "What Is 3D Visualisation?",
       paragraphs: [
-        "3D visualisation is the process of turning plans, drawings and early design ideas into something you can see and understand in three dimensions. What matters is the outcome: a visual representation that makes complex ideas easier to grasp.",
-        "Instead of interpreting drawings and schedules, clients, buyers and planning officers can look at a building or room and quickly understand its shape, scale and how it fits together. That removes a lot of guesswork.",
+        "3D visualisation is the process of turning plans, layouts and early design ideas into something you can see and understand in three dimensions. What matters is the outcome: a visual representation that makes complex ideas easier to grasp.",
+        "Instead of interpreting plans and schedules, clients, buyers and planning officers can look at a building or room and quickly understand its shape, scale and how it fits together. That removes a lot of guesswork.",
         "It also changes how decisions get made. When everyone is looking at the same image, conversations become more grounded, and disagreements surface earlier, when they are easier and cheaper to fix.",
       ],
     },
@@ -112,12 +112,12 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
     compare: {
       title: "From 2D Plan to 3D Image",
       subtitle:
-        "We build photorealistic visuals directly from your plans and specifications. The render always matches what is proposed, because it is modelled from the drawings, not drawn freehand.",
+        "We build photorealistic visuals directly from your plans and specifications. The render always matches what is proposed, because it is modelled from the plans, not drawn freehand.",
       left: { src: "/rear-home-extension-edgbaston-2.webp", alt: "Dimensioned ground floor plan of a family home", caption: "Plans" },
       right: { src: "/3d.webp", alt: "Exploded 3D render of a modern house", caption: "3D image" },
       pointsTitle: "Working from what you have",
       points: [
-        ["Basic plans are enough.", "Floor plans, elevations and a specification list are a good starting point. No drawing is too rough to start from."],
+        ["Basic plans are enough.", "Floor plans, elevations and a specification list are a good starting point. No plan is too rough to start from."],
         ["Materials and textures.", "Surfaces are depicted accurately from your references, not approximated."],
         ["Sketch-stage designs.", "We build from what is confirmed and flag open items, so nothing is guessed silently."],
         ["Investor-ready finish.", "An ordinary 2D plan becomes a polished, computer-generated image that people can understand at a glance."],
@@ -127,7 +127,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       title: "3D Visualisation for Every Stage of a Project",
       subtitle: "Planning, sales, design sign-off and marketing all need images. We produce them in one consistent style.",
       items: [
-        { title: "Design professionals", text: "Bring your vision to life. Our design knowledge, technical expertise and 3D visualisation skills help you showcase your work to clients and committees.", img: { src: "/feasibility layouts.webp", alt: "Translucent 3D model of a multi-storey building over site drawings" } },
+        { title: "Design professionals", text: "Bring your vision to life. Our design knowledge, technical expertise and 3D visualisation skills help you showcase your work to clients and committees.", img: { src: "/feasibility layouts.webp", alt: "Translucent 3D model of a multi-storey building over site plans" } },
         { title: "Developers", text: "Give buyers and funders something concrete to commit to, before ground is broken.", img: { src: "/hmo-development-selly-oak-2.webp", alt: "Rendered house exterior above an exploded view of its floors" } },
         { title: "Interior designers", text: "Present finishes, joinery and layouts as finished rooms, not mood boards.", img: { src: "/interior-kitchen-render-island.webp", alt: "Interior render of a kitchen island" } },
         { title: "Homeowners", text: "See an extension or conversion properly before you spend on it.", img: { src: "/two-storey-side-extension-four-oaks-2.webp", alt: "3D render of a modern home above a cutaway of its interior" } },
@@ -135,7 +135,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
     },
     highlights: {
       title: "CGI, Rendering and 3D Design",
-      subtitle: "The visual services we produce from your drawings.",
+      subtitle: "The visual services we produce from your plans.",
       items: [
         { icon: Sofa, title: "Interior CGI", text: "Kitchens, living spaces, bedrooms and bathrooms rendered to a photographic standard." },
         { icon: Layers, title: "Exterior visuals", text: "Street-level and aerial views that place the scheme in its surroundings." },
@@ -155,7 +155,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
         { title: "Verified Views", text: "Data-rich images and accurate visual representations prepared to support planning submissions and appeals. We confirm what the council requires before we start, so the images fit the submission.", img: { src: "/exterior-type-single-family.webp", alt: "Verified view of a proposed building in its setting" } },
         { title: "Interior Visualisation", text: "Photorealistic views of rooms before they are built or fitted out, with accurate materials, joinery and lighting so clients can decide with confidence.", img: { src: "/interior-kitchen-render-island.webp", alt: "Interior visualisation example" } },
         { title: "Exterior and Aerial Visualisation", text: "Eye-level and aerial views that show how a building sits in its landscape, helping planning officers, neighbours and buyers read the scheme.", img: { src: "/exterior-use-marketing.webp", alt: "Exterior visualisation example" } },
-        { title: "Plan-Based 3D Visualisation", text: "A drawing-led approach: we model directly from your plans and specifications, so every image is accurate to the proposal and ready for submissions and sales.", img: { src: "/feasibility layouts.webp", alt: "3D model rising from site drawings" } },
+        { title: "Plan-Based 3D Visualisation", text: "A plan-led approach: we model directly from your plans and specifications, so every image is accurate to the proposal and ready for submissions and sales.", img: { src: "/feasibility layouts.webp", alt: "3D model rising from site plans" } },
       ],
     },
     workflow: {
@@ -163,7 +163,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       subtitle: "Six steps from brief to final images, with your approval at the points that matter.",
       steps: [
         ["1. Brief and quote", "Tell us what you need the images for and how many views. We send a clear proposal and quote."],
-        ["2. Drawings and references", "You send plans, elevations, photos and material references. We confirm what we have and what is missing."],
+        ["2. Plans and references", "You send plans, elevations, photos and material references. We confirm what we have and what is missing."],
         ["3. Clay-form model", "We build an accurate, untextured 3D model so layout, proportions and camera angles can be checked before any materials are applied."],
         ["4. Your approval", "You approve the model and views. Changes at this stage cost the least."],
         ["5. Materials, lighting and rendering", "Materials and lighting are applied to every surface, then final rendering begins."],
@@ -173,8 +173,8 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
     why: {
       title: "Why Choose Us for 3D Visualisation",
       items: [
-        { icon: BadgeCheck, title: "Accurate to the drawings", text: "Every image is modelled from your plans, so what you approve is what is proposed." },
-        { icon: Ruler, title: "From a planning and design practice", text: "We understand drawings, planning and construction, so renders never show something that could not be built." },
+        { icon: BadgeCheck, title: "Accurate to the plans", text: "Every image is modelled from your plans, so what you approve is what is proposed." },
+        { icon: Ruler, title: "From a planning and design practice", text: "We understand plans, planning and construction, so renders never show something that could not be built." },
         { icon: MessageSquare, title: "Clear approvals", text: "Angles, materials and lighting are agreed step by step, with no surprises at the end." },
         { icon: Repeat, title: "Consistent style", text: "Interior and exterior views of one scheme come out in a matching style, ready to use together." },
         { icon: Users, title: "Premium CGI, fairly priced", text: "Good customer service and premium-quality CGI at a competitive price sit at the core of what we do." },
@@ -187,9 +187,9 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
         ["What is 3D visualisation?", "3D visualisation turns plans and specifications into photorealistic images or films of a building or interior before it is built, so people can judge it properly."],
         ["Can you work from basic 2D plans?", "Yes. Plans, elevations and a specification are enough to start. If anything is unclear we ask before we model it."],
         ["Do you do interiors and exteriors?", "Yes. We produce interior, exterior and aerial views, in a consistent style for the same scheme."],
-        ["Can the images be used for planning?", "Yes. Our visuals are produced to be accurate to the drawings and are suitable to accompany a submission."],
+        ["Can the images be used for planning?", "Yes. Our visuals are produced to be accurate to the plans and are suitable to accompany a submission."],
         ["What do I receive at the end?", "Final high-resolution images for web and print, and any animation or additional views agreed in the quote."],
-        ["How is the price worked out?", "It depends on the number of views, the detail of the scene and the deadline. Send your drawings and we will quote."],
+        ["How is the price worked out?", "It depends on the number of views, the detail of the scene and the deadline. Send your plans and we will quote."],
       ],
     },
     closing: { title: "Ready to see your project before it is built?", text: CLOSING_TEXT },

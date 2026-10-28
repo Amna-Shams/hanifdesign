@@ -29,7 +29,7 @@ const SEO: Record<string, { title: string; description: string; keywords: string
       "3D rendering services",
       "CGI rendering",
       "2D plan to 3D image",
-      "drawing-based 3D modelling",
+      "plan-based 3D modelling",
       "investor-ready visuals",
       "photorealistic CGI",
       "property CGI",

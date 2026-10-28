@@ -1,59 +1,55 @@
 "use client";
 
-import { Search, Pencil, FileText, CheckCircle } from "lucide-react";
 import { motion } from "motion/react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 const steps = [
   {
     number: "01",
-    icon: Search,
     title: "Discovery & Consultation",
     description: "We listen, assess feasibility, and outline options.",
   },
   {
     number: "02",
-    icon: Pencil,
     title: "Design & Drawings",
     description: "We prepare drawings and documentation aligned to policy.",
   },
   {
     number: "03",
-    icon: FileText,
     title: "Planning Submission",
     description: "We submit and manage the application with the council.",
   },
   {
     number: "04",
-    icon: CheckCircle,
     title: "Approval & Support",
     description: "We deliver the approved plans and guide your next steps.",
   },
 ] as const;
 
+/**
+ * Four numbered stages laid out like a drawing schedule: a hairline rule across
+ * the top of each column with a short gold tick that runs out to full width on
+ * hover, a mono "Step" reference and plain type underneath. No icons — the step
+ * titles carry the meaning, and the section reads as part of the site's
+ * drafting language rather than a row of feature cards.
+ */
 export function ProcessSection() {
   return (
-    <section className="relative py-16 sm:py-20 lg:py-28 bg-surface-translucent overflow-hidden" aria-labelledby="process-heading">
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `radial-gradient(ellipse at center, gold 0%, transparent 70%)`,
-        }}
-        aria-hidden="true"
-      />
-
-      <motion.div
-        className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
-      >
+    <section
+      className="relative overflow-hidden bg-surface-translucent py-16 sm:py-20 lg:py-24"
+      aria-labelledby="process-heading"
+    >
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: EASE }}
         >
           <SectionHeading
+            id="process-heading"
             eyebrow="Our Process"
             title="How We Work"
             subtitle="A clear, structured path from concept to approved plans."
@@ -61,57 +57,29 @@ export function ProcessSection() {
           />
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
-          className="mt-12 lg:mt-20 relative"
-        >
-          {/* Connecting line */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-            className="hidden lg:absolute top-[60px] left-[84px] right-[84px] h-[2px] bg-gradient-to-r from-transparent via-gold/50 to-transparent transform origin-left"
-            style={{ transformOrigin: "left" }}
-          />
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            {steps.map((step, index) => (
-              <motion.article
-                key={step.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="relative text-center lg:text-left"
-              >
-                {/* Number badge */}
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.5, delay: 0.2 + index * 0.1, type: "spring", stiffness: 200 }}
-                  className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gold/20 text-gold font-heading font-bold text-2xl mb-6"
-                >
-                  {step.number}
-                </motion.div>
-
-                {/* Connecting dot on mobile */}
-                <div className="lg:hidden absolute left-1/2 top-[60px] w-3 h-3 rounded-full bg-gold transform -translate-x-1/2" />
-
-                <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mx-auto lg:mx-0 mb-4 text-gold">
-                  <step.icon className="w-6 h-6" aria-hidden="true" />
-                </div>
-
-                <h3 className="font-heading font-semibold text-xl text-primary mb-3">{step.title}</h3>
-                <p className="text-secondary leading-relaxed">{step.description}</p>
-              </motion.article>
-            ))}
-          </div>
-        </motion.div>
-      </motion.div>
+        <ol className="mt-12 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
+          {steps.map((step, index) => (
+            <motion.li
+              key={step.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.12, ease: EASE }}
+              className="group relative border-t border-subtle pt-6"
+            >
+              <span
+                aria-hidden="true"
+                className="absolute -top-px left-0 h-px w-14 bg-gold transition-[width] duration-500 ease-out group-hover:w-full motion-reduce:transition-none"
+              />
+              <span className="annotation block text-gold">Step {step.number}</span>
+              <h3 className="mt-4 font-heading text-xl font-semibold leading-snug text-primary">
+                {step.title}
+              </h3>
+              <p className="mt-3 leading-relaxed text-secondary">{step.description}</p>
+            </motion.li>
+          ))}
+        </ol>
+      </div>
     </section>
   );
 }

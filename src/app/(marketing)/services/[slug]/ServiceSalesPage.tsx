@@ -59,7 +59,7 @@ function Band({
 }
 
 export function ServiceSalesPage({ content: c }: { content: SalesContent }) {
-  const caseStudies = PROJECTS.filter((project) => project.images.length > 0).slice(0, 3);
+  const caseStudies = PROJECTS.filter((project) => project.images.length > 0).slice(c.projectOffset ?? 3, (c.projectOffset ?? 3) + 3);
 
   return (
     <article>

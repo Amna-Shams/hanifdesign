@@ -40,6 +40,8 @@ export interface SalesContent {
   intro: string;
   hero: SalesImage & { position?: string };
   /** Optional plain-language explainer shown straight after the mosaic. */
+  /** Which projects to feature (index into PROJECTS), so sibling pages do not show the same trio. */
+  projectOffset?: number;
   explainer?: { title: string; paragraphs: readonly string[] };
   mosaic: { title: string; text?: string; large: SalesImage; a: SalesImage; b: SalesImage };
   compare: {
@@ -84,12 +86,13 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
   /* ------------------------------------------------------------------ */
   "3d-visualisation": {
     label: "3D Visualisation",
+    projectOffset: 3,
     title: "3D Visualisation & Rendering Services",
     intro:
       "Experts in CGI, 3D visualisation and 3D design for designers, developers and homeowners. We turn plans into photorealistic images that win approvals, sell schemes and settle design decisions before anything is built.",
     hero: {
-      src: "/interior-kitchen-render-wide.webp",
-      alt: "Photorealistic render of a modern kitchen with a fluted oak and marble island",
+      src: "/exterior-hero.webp",
+      alt: "Photorealistic exterior render of a contemporary home and pool at dusk",
     },
     explainer: {
       title: "What Is 3D Visualisation?",
@@ -102,7 +105,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
     mosaic: {
       title: "Experts in CGI, 3D Visualisation and 3D Design",
       text: "We produce 3D visualisation, CGI and animation for marketing property, commercial and consumer products, for both interior and exterior designs. Customer service and premium-quality CGI at a competitive price are at the core of what we do.",
-      large: { src: "/exterior-hero.webp", alt: "Photorealistic exterior render of a contemporary home at dusk" },
+      large: { src: "/interior-kitchen-render-wide.webp", alt: "Photorealistic render of a modern kitchen with a fluted oak and marble island" },
       a: { src: "/interior-kitchen-render-island.webp", alt: "Kitchen render looking towards the island and roof lantern" },
       b: { src: "/interior-kitchen-render-aerial.webp", alt: "Aerial render of a marble kitchen island with bar stools" },
     },
@@ -110,7 +113,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       title: "From 2D Plan to 3D Image",
       subtitle:
         "We build photorealistic visuals directly from your plans and specifications. The render always matches what is proposed, because it is modelled from the drawings, not drawn freehand.",
-      left: { src: "/design drawings.webp", alt: "Isometric line drawing of a framed building", caption: "Plans" },
+      left: { src: "/rear-home-extension-edgbaston-2.webp", alt: "Dimensioned ground floor plan of a family home", caption: "Plans" },
       right: { src: "/3d.webp", alt: "Exploded 3D render of a modern house", caption: "3D image" },
       pointsTitle: "Working from what you have",
       points: [
@@ -124,7 +127,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       title: "3D Visualisation for Every Stage of a Project",
       subtitle: "Planning, sales, design sign-off and marketing all need images. We produce them in one consistent style.",
       items: [
-        { title: "Design professionals", text: "Bring your vision to life. Our design knowledge, technical expertise and 3D visualisation skills help you showcase your work to clients and committees.", img: { src: "/rear-home-extension-edgbaston-1.webp", alt: "Design model of a house held in front of a building site" } },
+        { title: "Design professionals", text: "Bring your vision to life. Our design knowledge, technical expertise and 3D visualisation skills help you showcase your work to clients and committees.", img: { src: "/feasibility layouts.webp", alt: "Translucent 3D model of a multi-storey building over site drawings" } },
         { title: "Developers", text: "Give buyers and funders something concrete to commit to, before ground is broken.", img: { src: "/hmo-development-selly-oak-2.webp", alt: "Rendered house exterior above an exploded view of its floors" } },
         { title: "Interior designers", text: "Present finishes, joinery and layouts as finished rooms, not mood boards.", img: { src: "/interior-kitchen-render-island.webp", alt: "Interior render of a kitchen island" } },
         { title: "Homeowners", text: "See an extension or conversion properly before you spend on it.", img: { src: "/two-storey-side-extension-four-oaks-2.webp", alt: "3D render of a modern home above a cutaway of its interior" } },
@@ -149,7 +152,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       subtitle: "Choose the views that suit the job, or ask us to recommend a set.",
       items: [
         { title: "3D Imaging", text: "Photorealistic external and internal CGI for planning applications, design development and marketing. High-quality images for detail, accuracy and impact.", img: { src: "/interior-kitchen-render-wide.webp", alt: "3D imaging example showing a photorealistic kitchen" } },
-        { title: "Verified Views", text: "Data-rich images and accurate visual representations prepared to support planning submissions and appeals. We confirm what the council requires before we start, so the images fit the submission.", img: { src: "/exterior-hero.webp", alt: "Verified view of a proposed building in its setting" } },
+        { title: "Verified Views", text: "Data-rich images and accurate visual representations prepared to support planning submissions and appeals. We confirm what the council requires before we start, so the images fit the submission.", img: { src: "/exterior-type-single-family.webp", alt: "Verified view of a proposed building in its setting" } },
         { title: "Interior Visualisation", text: "Photorealistic views of rooms before they are built or fitted out, with accurate materials, joinery and lighting so clients can decide with confidence.", img: { src: "/interior-kitchen-render-island.webp", alt: "Interior visualisation example" } },
         { title: "Exterior and Aerial Visualisation", text: "Eye-level and aerial views that show how a building sits in its landscape, helping planning officers, neighbours and buyers read the scheme.", img: { src: "/exterior-use-marketing.webp", alt: "Exterior visualisation example" } },
         { title: "Plan-Based 3D Visualisation", text: "A drawing-led approach: we model directly from your plans and specifications, so every image is accurate to the proposal and ready for submissions and sales.", img: { src: "/feasibility layouts.webp", alt: "3D model rising from site drawings" } },
@@ -195,6 +198,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
   /* ------------------------------------------------------------------ */
   "3d-floor-plans": {
     label: "3D Floor Plans",
+    projectOffset: 6,
     title: "3D Floor Plan Rendering Services",
     intro:
       "Top-view, angle-view and dollhouse floor plan renders that buyers read at a glance. Furnished or empty, one unit or a whole development, in a consistent style.",
@@ -230,7 +234,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
         { title: "Developers", text: "Every unit type in one consistent style, so buyers can compare layouts side by side.", img: { src: "/hmo-development-selly-oak-2.webp", alt: "Rendered development exterior" } },
         { title: "Estate agents", text: "Listings that hold attention and explain a property before the viewing.", img: { src: "/new-build-family-home-sutton-coldfield-2.webp", alt: "Before and after view of a plot" } },
         { title: "Landlords", text: "Clear plans for lettings and refurbishment proposals.", img: { src: "/garage-conversion-kings-heath-2.webp", alt: "Converted family home" } },
-        { title: "Design studios", text: "Layout options shown to clients as finished plans, not line drawings.", img: { src: "/interior-vis-warm-modern.webp", alt: "Furnished interior in a warm modern style" } },
+        { title: "Design studios", text: "Layout options shown to clients as finished plans, not line drawings.", img: { src: "/interior-classic-kitchen-island-angle.webp", alt: "Furnished kitchen and dining area in a classic style" } },
       ],
     },
     highlights: {
@@ -304,7 +308,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
     },
     mosaic: {
       title: "Virtual Staging for Property Marketing",
-      large: { src: "/spacious-loft-conversion-harborne-1.webp", alt: "Staged double-height living space" },
+      large: { src: "/interior-classic-dining-room.webp", alt: "Virtually staged dining room with table, chairs and artwork" },
       a: { src: "/new-build-family-home-sutton-coldfield-2.webp", alt: "Before and after view of a plot" },
       b: { src: "/hmo-development-selly-oak-2.webp", alt: "Staged home exterior and interior views" },
     },
@@ -350,7 +354,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       title: "Types of Virtual Staging Services",
       subtitle: "Pick one service or combine several for the same property.",
       items: [
-        { title: "Virtual Staging", text: "We take a photograph of a vacant room and furnish it digitally, adding warmth and style so buyers can imagine living there.", img: { src: "/spacious-loft-conversion-harborne-1.webp", alt: "Virtually staged living space" } },
+        { title: "Virtual Staging", text: "We take a photograph of a vacant room and furnish it digitally, adding warmth and style so buyers can imagine living there.", img: { src: "/interior-classic-breakfast-bar.webp", alt: "Virtually staged breakfast bar with stools" } },
         { title: "Virtual Renovation", text: "We show how a dated interior could look with new finishes, floors and fittings, so buyers and investors can judge the potential before any work starts.", img: { src: "/office-to-residential-conversion-city-centre-2.webp", alt: "Building site and finished conversion" } },
         { title: "3D Plan", text: "A furnished 3D floor plan shows the whole layout at a glance, so buyers understand how the home works.", img: { src: "/floorplan-hero.webp", alt: "Furnished 3D floor plan" } },
       ],

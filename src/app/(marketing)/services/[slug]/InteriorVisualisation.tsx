@@ -26,20 +26,20 @@ import { PROJECTS } from "@/lib/projects";
  * a slot with no file falls back to a tinted tile.
  */
 const IMG = {
-  hero: "/interior-vis-hero.webp",
-  mosaicLarge: "/interior-vis-suite.webp",
-  mosaicA: "/interior-vis-mosaic-a.webp",
-  mosaicB: "/interior-vis-mosaic-b.webp",
-  drawing: "/design drawings.webp",
-  render: "/interior-vis-render.webp",
-  residential: "/interior-vis-residential.webp",
+  hero: "/interior-classic-kitchen-diner-wide.webp",
+  mosaicLarge: "/interior-classic-dining-room.webp",
+  mosaicA: "/interior-classic-kitchen-island-front.webp",
+  mosaicB: "/interior-classic-kitchen-island-angle.webp",
+  finishes: "/interior-classic-kitchen-cabinetry.webp",
+  room: "/interior-classic-kitchen-island-angle.webp",
+  residential: "/interior-classic-kitchen-dining-table.webp",
   commercial: "/interior-vis-commercial.webp",
   retail: "/interior-vis-retail.webp",
   hospitality: "/interior-vis-hospitality.webp",
-  still: "/interior-vis-still.webp",
+  still: "/interior-classic-kitchen-cabinetry.webp",
   animation: "/interior-vis-animation.webp",
   tour: "/interior-vis-tour.webp",
-  cta: "/interior-vis-cta.webp",
+  cta: "/interior-classic-breakfast-bar.webp",
 } as const;
 
 const PRODUCT_POINTS = [
@@ -236,27 +236,27 @@ export function InteriorVisualisation() {
           Interior Visualisation for Industry Leaders
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">
-          <Pic src={IMG.mosaicLarge} alt="3D interior render of a living and dining space" sizes="(min-width: 1280px) 1200px, 100vw" className="aspect-[16/9] rounded-sm sm:col-span-2" />
-          <Pic src={IMG.mosaicA} alt="Finished living room visualised in 3D" sizes="(min-width: 640px) 50vw, 100vw" className="aspect-[4/3] rounded-sm" />
-          <Pic src={IMG.mosaicB} alt="Interior layout drawing overlaid on a living space" sizes="(min-width: 640px) 50vw, 100vw" className="aspect-[4/3] rounded-sm" />
+          <Pic src={IMG.mosaicLarge} alt="3D interior render of a classic dining room with statement artwork" sizes="(min-width: 1280px) 1200px, 100vw" className="aspect-[16/9] rounded-sm sm:col-span-2" />
+          <Pic src={IMG.mosaicA} alt="Classic kitchen island and skylight visualised in 3D" sizes="(min-width: 640px) 50vw, 100vw" className="aspect-[4/3] rounded-sm" />
+          <Pic src={IMG.mosaicB} alt="Angled 3D view of a classic kitchen, island and dining area" sizes="(min-width: 640px) 50vw, 100vw" className="aspect-[4/3] rounded-sm" />
         </div>
       </Band>
 
-      {/* 4 — Drawings vs renders */}
+      {/* 4 — Finishes vs finished room */}
       <Band>
         <SectionHeading
           title="Your Design, Accurately Visualised"
-          subtitle="The easiest way to judge accuracy is on one real project. We take the designer's drawings, build one 3D model and produce both the dimensioned drawings and the renders from it, so what the client approves is exactly what gets built."
+          subtitle="The easiest way to judge accuracy is on one real project. We take the designer's plans, build one 3D model and produce both the close-up finish views and the full-room renders from it, so what the client approves is exactly what gets built."
           className="mb-10"
         />
         <div className="grid gap-6 sm:grid-cols-[1fr_1fr]">
           <figure>
-            <figcaption className="mb-2 text-xs font-semibold uppercase tracking-widest text-gold">Drawings</figcaption>
-            <Pic src={IMG.drawing} alt="Dimensioned interior drawing" sizes="(min-width: 640px) 50vw, 100vw" className="aspect-[4/3] rounded-sm" />
+            <figcaption className="mb-2 text-xs font-semibold uppercase tracking-widest text-gold">Materials &amp; finishes</figcaption>
+            <Pic src={IMG.finishes} alt="Close-up 3D view of classic kitchen cabinetry, marble splashback and appliances" sizes="(min-width: 640px) 50vw, 100vw" className="aspect-[4/3] rounded-sm" />
           </figure>
           <figure>
-            <figcaption className="mb-2 text-xs font-semibold uppercase tracking-widest text-gold">Renders</figcaption>
-            <Pic src={IMG.render} alt="3D render produced from the same model" sizes="(min-width: 640px) 50vw, 100vw" className="aspect-[4/3] rounded-sm" />
+            <figcaption className="mb-2 text-xs font-semibold uppercase tracking-widest text-gold">The finished room</figcaption>
+            <Pic src={IMG.room} alt="Full-room 3D render produced from the same model" sizes="(min-width: 640px) 50vw, 100vw" className="aspect-[4/3] rounded-sm" />
           </figure>
         </div>
 

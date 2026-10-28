@@ -39,6 +39,7 @@ export function HomeHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const closeRef = useRef<HTMLButtonElement>(null);
   const openRef = useRef<HTMLButtonElement>(null);
 
@@ -201,7 +202,12 @@ export function HomeHeader() {
                 const active =
                   link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
                 return (
-                  <li key={link.href}>
+                  <li
+                    key={link.href}
+                    onMouseEnter={link.href === "/services" ? () => setServicesOpen(true) : undefined}
+                    onMouseLeave={link.href === "/services" ? () => setServicesOpen(false) : undefined}
+                    onFocus={link.href === "/services" ? () => setServicesOpen(true) : undefined}
+                  >
                     <Link
                       href={link.href}
                       aria-current={active ? "page" : undefined}
@@ -223,6 +229,20 @@ export function HomeHeader() {
                       </span>
                       {link.label}
                     </Link>
+                    {link.href === "/services" && servicesOpen ? (
+                      <ul className="mb-2 ml-8 mt-1 grid gap-x-6 gap-y-1 text-sm sm:grid-cols-2">
+                        {SERVICES.map((service) => (
+                          <li key={service.slug}>
+                            <Link
+                              href={`/services/${service.slug}`}
+                              className="block py-1 font-medium text-on-accent/80 transition-colors hover:text-on-accent hover:underline"
+                            >
+                              {service.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
                   </li>
                 );
               })}

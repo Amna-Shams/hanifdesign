@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Header } from "@/components/layout/Header";
+import { HoverDisclosure } from "@/components/layout/HoverDisclosure";
 import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { FloatingActions } from "@/components/layout/FloatingActions";
@@ -66,6 +67,7 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
        comes from the body background, which propagates to the canvas. */
     <div className="flex flex-col min-h-screen">
       <ScrollToTop />
+      <HoverDisclosure />
       {/* Emitted once here rather than per page: every route shares the same
           business identity, and repeating identical markup on 26 URLs is
           noise. */}

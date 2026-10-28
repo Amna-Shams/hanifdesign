@@ -9,6 +9,7 @@ import { NAV_LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { MobileMenu } from "./MobileMenu";
 import { HomeHeader } from "./HomeHeader";
+import { ServicesDropdown } from "./ServicesDropdown";
 
 /** Pages that open with a full-bleed photo hero and use the floating header. */
 const HERO_PATHS = new Set(["/", "/about", "/services", "/projects", "/faq", "/contact"]);
@@ -116,6 +117,9 @@ export function Header() {
           <div className="hidden min-w-0 items-center gap-1 lg:flex xl:gap-2">
             {NAV_LINKS.map((link) => {
               const active = isActive(link.href);
+              if (link.href === "/services") {
+                return <ServicesDropdown key={link.href} label={link.label} active={active} />;
+              }
               return (
                 <Link
                   key={link.href}

@@ -111,7 +111,7 @@ export const SERVICES = [
   {
     slug: "building-regulations-support",
     label: "Building Regulations Support",
-    short: "Compliance drawings and submissions for building control.",
+    short: "Compliance plans and submissions for building control.",
   },
   {
     slug: "feasibility-layouts",

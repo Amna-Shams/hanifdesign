@@ -5,7 +5,7 @@ import { canonical } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Request a Quote",
   description:
-    "Request a no-obligation quote for planning applications, design drawings or feasibility layouts. Tell us about your project and get a clear, itemised quote.",
+    "Request a no-obligation quote for planning applications, design plans or feasibility layouts. Tell us about your project and get a clear, itemised quote.",
   alternates: { canonical: canonical("/quote") },
 };
 

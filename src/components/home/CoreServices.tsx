@@ -33,7 +33,7 @@ const COPY: Record<Slug, { icon: LucideIcon; description: string; bullets: reado
       "Full application preparation",
       "Pre-application advice",
       "Planning statements",
-      "Drawings submission",
+      "Plans submission",
       "Council liaison",
       "Appeal support",
     ],
@@ -44,7 +44,7 @@ const COPY: Record<Slug, { icon: LucideIcon; description: string; bullets: reado
     bullets: [
       "Full plans submission",
       "Building notice support",
-      "Compliance drawings",
+      "Compliance plans",
       "Structural calculations coordination",
       "Specification writing",
       "Inspection scheduling",

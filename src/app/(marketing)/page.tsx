@@ -17,7 +17,7 @@ import { canonical } from "@/lib/site";
 export const metadata: Metadata = {
   alternates: { canonical: canonical("/") },
   title: "Hanif Design & Consultancy Ltd — Design Consultancy across England",
-  description: "Trusted planning and design support for residential projects across England. Planning applications, building regulations support, design drawings, and development guidance.",
+  description: "Trusted planning and design support for residential projects across England. Planning applications, building regulations support, design plans, and development guidance.",
   openGraph: {
     title: "Hanif Design & Consultancy Ltd — Design Consultancy across England",
     description: "Trusted planning and design support for residential projects across England.",

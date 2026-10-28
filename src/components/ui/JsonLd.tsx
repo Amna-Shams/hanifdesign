@@ -33,7 +33,7 @@ function organisation(): Json {
       "Permitted development",
       "Planning appeals",
       "Building regulations",
-      "Design drawings",
+      "Design plans",
       "3D visualisation",
     ],
     sameAs: [

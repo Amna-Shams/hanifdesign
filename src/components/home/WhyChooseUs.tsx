@@ -20,8 +20,8 @@ const reasons = [
   },
   {
     icon: FileText,
-    title: "Clear Drawings",
-    description: "Drawings that builders and councils can actually use — precise and buildable.",
+    title: "Clear Plans",
+    description: "Plans that builders and councils can actually use — precise and buildable.",
   },
   {
     icon: Package,

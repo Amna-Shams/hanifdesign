@@ -36,7 +36,7 @@ const industries = [
   {
     icon: Hammer,
     title: "Builders & Contractors",
-    description: "Design drawings and planning packs.",
+    description: "Design plans and planning packs.",
   },
   {
     icon: BriefcaseBusiness,

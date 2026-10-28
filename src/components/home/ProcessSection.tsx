@@ -13,8 +13,8 @@ const steps = [
   },
   {
     number: "02",
-    title: "Design & Drawings",
-    description: "We prepare drawings and documentation aligned to policy.",
+    title: "Design & Visualisation",
+    description: "We prepare designs, visuals and documentation aligned to policy.",
   },
   {
     number: "03",

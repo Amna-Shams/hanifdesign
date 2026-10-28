@@ -128,55 +128,90 @@ export function HoverDisclosure() {
       else openIt(d, true);
     };
 
-    const onOver = (event: MouseEvent) => {
-      const d = detailsFrom(event.target);
-      if (!d) return;
-      const pendingClose = closeTimers.get(d);
-      if (pendingClose) {
-        clearTimeout(pendingClose);
-        closeTimers.delete(d);
-      }
+    // Hover is driven by real pointer movement, not by mouseover/mouseout. An
+    // accordion changes height as it opens and closes, so the element under a
+    // stationary pointer keeps changing; mouseover/mouseout fire for that too,
+    // which made neighbouring answers open and shut in a loop. Pointer
+    // coordinates only change when the user actually moves, so we re-read what
+    // is under them on movement only, and re-check it again when a timer fires.
+    let pointerX = -1;
+    let pointerY = -1;
+    let hovered: HTMLDetailsElement | null = null;
+    let frame = 0;
+
+    const detailsAtPointer = () =>
+      pointerX < 0 ? null : detailsFrom(document.elementFromPoint(pointerX, pointerY));
+
+    const scheduleOpen = (d: HTMLDetailsElement) => {
       if (isOpen(d) || openTimers.has(d)) return;
       openTimers.set(
         d,
         setTimeout(() => {
           openTimers.delete(d);
-          openIt(d, false);
+          if (detailsAtPointer() === d) openIt(d, false);
         }, OPEN_DELAY),
       );
     };
 
-    const onOut = (event: MouseEvent) => {
-      const d = detailsFrom(event.target);
-      if (!d) return;
-      const next = event.relatedTarget as Node | null;
-      if (next && d.contains(next)) return;
-
-      const pendingOpen = openTimers.get(d);
-      if (pendingOpen) {
-        clearTimeout(pendingOpen);
-        openTimers.delete(d);
-      }
+    const scheduleClose = (d: HTMLDetailsElement) => {
       // Pinned (clicked) or initially-open panels stay put; only hover-opened ones close.
-      if (!isOpen(d) || d.dataset.hover !== "1") return;
+      if (!isOpen(d) || d.dataset.hover !== "1" || closeTimers.has(d)) return;
       closeTimers.set(
         d,
         setTimeout(() => {
           closeTimers.delete(d);
-          closeIt(d);
+          if (detailsAtPointer() !== d) closeIt(d);
         }, CLOSE_DELAY),
       );
     };
 
+    const evaluate = () => {
+      frame = 0;
+      const next = detailsAtPointer();
+      if (next === hovered) return;
+      const previous = hovered;
+      hovered = next;
+
+      if (previous) {
+        const pendingOpen = openTimers.get(previous);
+        if (pendingOpen) {
+          clearTimeout(pendingOpen);
+          openTimers.delete(previous);
+        }
+        scheduleClose(previous);
+      }
+      if (next) {
+        const pendingClose = closeTimers.get(next);
+        if (pendingClose) {
+          clearTimeout(pendingClose);
+          closeTimers.delete(next);
+        }
+        scheduleOpen(next);
+      }
+    };
+
+    const onMove = (event: MouseEvent) => {
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+      if (!frame) frame = requestAnimationFrame(evaluate);
+    };
+
+    const onLeavePage = () => {
+      pointerX = -1;
+      pointerY = -1;
+      evaluate();
+    };
+
     document.addEventListener("click", onClick);
     if (canHover) {
-      document.addEventListener("mouseover", onOver);
-      document.addEventListener("mouseout", onOut);
+      document.addEventListener("mousemove", onMove, { passive: true });
+      document.documentElement.addEventListener("mouseleave", onLeavePage);
     }
     return () => {
       document.removeEventListener("click", onClick);
-      document.removeEventListener("mouseover", onOver);
-      document.removeEventListener("mouseout", onOut);
+      document.removeEventListener("mousemove", onMove);
+      document.documentElement.removeEventListener("mouseleave", onLeavePage);
+      cancelAnimationFrame(frame);
     };
   }, []);
 

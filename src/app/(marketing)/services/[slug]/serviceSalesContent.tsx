@@ -452,7 +452,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       title: "Types of Planning Application",
       subtitle: "The right route depends on the property and the scheme.",
       items: [
-        { title: "Householder Applications", text: "For extensions and alterations to a single dwelling. Householder applications are usually the quickest route to a decision.", img: { src: "/rear-home-extension-edgbaston-1.webp", alt: "Rear home extension" } },
+        { title: "Householder Applications", text: "For extensions and alterations to a single dwelling. Householder applications are usually the quickest route to a decision.", img: { src: "/garden-office-studio-bournville-2.webp", alt: "Modern glazed rear extension to a brick family home" } },
         { title: "Full Planning Applications", text: "For new homes, conversions and changes of use, with the full set of drawings and supporting documents.", img: { src: "/office-to-residential-conversion-city-centre-1.webp", alt: "Office to residential conversion" } },
         { title: "Verified Views for Planning Submissions and Appeals", text: "Accurate visual representations prepared to support a planning submission or an appeal, showing the proposal in its real setting. We confirm what the council expects first, so the images fit what is being asked for.", img: { src: "/exterior-hero.webp", alt: "Visual representation of a proposed building in its setting" } },
         { title: "Permitted Development and Lawful Development Certificates", text: "Some works do not need full permission. We confirm the route and obtain a certificate where it helps.", img: { src: "/spacious-loft-conversion-harborne-1.webp", alt: "Loft conversion" } },
@@ -605,7 +605,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       title: "Feasibility Studies for Sites and Buildings",
       large: { src: "/feasibility layouts.webp", alt: "3D model rising from site drawings" },
       a: { src: "/hmo-development-selly-oak-1.webp", alt: "Colour floor plan of a scheme" },
-      b: { src: "/rear-home-extension-edgbaston-1.webp", alt: "Design model in front of a building site" },
+      b: { src: "/garage-conversion-kings-heath-1.webp", alt: "Brick family home with a dark pitched roof and paved approach" },
     },
     compare: {
       title: "Know Before You Commit",

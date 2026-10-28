@@ -14,7 +14,7 @@ import { toWhatsappHref } from "@/lib/utils";
 const PAGE_TITLE = "About Us | Planning Consultants across England | Hanif Design & Consultancy";
 const PAGE_DESCRIPTION =
   "Hanif Design & Consultancy is a planning consultancy helping homeowners and developers across England win planning approval.";
-const OG_IMAGE = "/rear-home-extension-edgbaston-1.webp";
+const OG_IMAGE = "/uk-detached-brick-house-gravel-drive.webp";
 
 export const metadata: Metadata = {
   // `absolute` skips the "%s | Hanif Design & Consultancy" template: the brand
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: `${SITE_URL}${OG_IMAGE}`,
-        width: 736,
-        height: 1201,
-        alt: "Rear home extension in Edgbaston, Birmingham, designed by Hanif Design & Consultancy",
+        width: 735,
+        height: 490,
+        alt: "Detached brick and render family home with a gravel drive, designed by Hanif Design & Consultancy",
       },
     ],
   },
@@ -83,11 +83,11 @@ const serviceLines: Record<(typeof SERVICES)[number]["slug"], string> = {
 const caseStudies = [
   {
     href: "/projects/highfield-road-residence",
-    src: "/rear-home-extension-edgbaston-1.webp",
-    width: 736,
-    height: 1201,
-    alt: "Rear extension to a Victorian house in Edgbaston, Birmingham",
-    title: "Highfield Road Residence",
+    src: "/uk-detached-brick-house-gravel-drive.webp",
+    width: 735,
+    height: 490,
+    alt: "Detached brick and render family home with a double garage and gravel drive",
+    title: "Highfield Road Family Home",
     place: "Edgbaston, Birmingham",
   },
   {

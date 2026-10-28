@@ -153,7 +153,7 @@ const serviceData: Record<
       "Testing what a site can deliver before you commit to design or purchase.",
     gallery: [
       { src: "/hmo-development-selly-oak-1.webp", alt: "Colour floor plan laying out kitchen, dining, lounge, bedrooms and bathrooms" },
-      { src: "/rear-home-extension-edgbaston-1.webp", alt: "Design scale model of a house held up in front of a building site" },
+      { src: "/garage-conversion-kings-heath-1.webp", alt: "Brick family home with a dark pitched roof and paved approach" },
       { src: "/new-build-family-home-sutton-coldfield-2.webp", alt: "Before and after view of a plot, from groundworks and frame to the completed contemporary house" },
     ],
   },

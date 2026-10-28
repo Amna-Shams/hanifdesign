@@ -68,7 +68,7 @@ const CONTENT: PlanContent = {
     title: "Workflow",
     steps: [
       { title: "1. Set the task", text: "Starting a project is a piece of cake. All you need is to specify a few details and we are ready to go.", list: ["send us a photo", "choose a style", "select furniture"], image: "/garage-conversion-kings-heath-1.webp" },
-      { title: "2. Communicate", text: "Communicate easily with the team and track your ongoing tasks using our online platform.", list: ["talk to your project manager", "add corrections", "store results"], image: "/rear-home-extension-edgbaston-1.webp" },
+      { title: "2. Communicate", text: "Communicate easily with the team and track your ongoing tasks using our online platform.", list: ["talk to your project manager", "add corrections", "store results"], image: "/garage-conversion-kings-heath-2.webp" },
       { title: "3. Use results", text: "Finally, get your show-stopping visuals, which you can use for all your marketing and sales assets.", list: ["on property listings", "on your website", "on social media"], image: "/two-storey-side-extension-four-oaks-1.webp" },
     ],
   },

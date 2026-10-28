@@ -37,7 +37,7 @@ const IMG = {
   typeComplex: "/exterior-type-complexes.webp",
   typeMixed: "/exterior-type-mixed-use.webp",
   e1: "/two-storey-side-extension-four-oaks-1.webp",
-  e2: "/rear-home-extension-edgbaston-1.webp",
+  e2: "/single-storey-rear-extension-moseley-2.webp",
   e3: "/digbeth-1.webp",
   e4: "/garage-conversion-kings-heath-1.webp",
   e5: "/garden-office-studio-bournville-1.webp",

@@ -158,40 +158,6 @@ export const PROJECTS: readonly Project[] = [
     gradient: "from-navy/10 to-gold/10",
   },
   {
-    slug: "colmore-row-corporate-suite",
-    title: "Colmore Row Corporate Suite",
-    category: "Commercial & Retail",
-    sector: "Commercial — Office & Commercial Interiors",
-    summary:
-      "A full-floor office fit-out in Birmingham's business district, designed around how the team actually works.",
-    location: "Colmore Row, Birmingham",
-    brief: [
-      "A professional services firm was taking a full floor of an office building on Colmore Row. The space was an empty shell with an outdated layout, and the firm wanted a workplace that supported client meetings, focused work and collaboration, with a finish that reflected the standing of the business.",
-      "The brief was commercial fit-out design with a tight programme: lease terms meant the firm needed to move in on a fixed date, so accurate information and decisions made early were essential.",
-    ],
-    services: [
-      "Measured building survey of the floor, with as-built drawings recording the existing structure, services and risers",
-      "Office design and planning: workspace studies based on the firm's headcount, meeting needs and growth plans",
-      "Commercial design consultants' coordination of layouts, ceilings, lighting and finishes",
-      "3D visualisation and rendering of reception, meeting suites and open-plan areas for sign-off",
-      "Technical drawings and specifications for the fit-out contractor",
-    ],
-    outcome: [
-      "The visuals allowed the partners to agree the design quickly and without second guesses, and the as-built drawings meant the contractor started from accurate information rather than assumptions about the shell.",
-      "The result is a workplace with a welcoming reception, a suite of client meeting rooms and open work areas arranged around how the teams operate day to day. The fit-out was ready for the firm's move-in date.",
-    ],
-    tags: [
-      "Commercial fit-out design",
-      "Office design and planning",
-      "Commercial design consultants",
-      "Measured building survey",
-      "As-built drawings",
-      "3D visualisation and rendering",
-    ],
-    images: ["/colmore-row-1.webp"],
-    gradient: "from-gold/10 to-navy/10",
-  },
-  {
     slug: "jewellery-quarter-boutique-retail-hub",
     title: "Jewellery Quarter Boutique Retail Hub",
     category: "Commercial & Retail",

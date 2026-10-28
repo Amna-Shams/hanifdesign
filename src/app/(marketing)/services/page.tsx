@@ -53,8 +53,8 @@ export default function ServicesPage() {
   return (
     <>
       <PageHero
-        image="/services-hero.webp"
-        alt="Birmingham Town Hall and the Chamberlain Memorial in golden evening light"
+        image="/services-hero-dark-timber-house.webp"
+        alt="Photorealistic render of a contemporary house with a dark metal roof, brick and black timber cladding, set in a landscaped garden"
         title="Our services"
         subtitle="Planning, design and visualisation support for residential projects across England."
       />

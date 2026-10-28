@@ -5,6 +5,7 @@ import { AboutSnapshot } from "@/components/home/AboutSnapshot";
 import { CoreServices } from "@/components/home/CoreServices";
 import { ProcessSection } from "@/components/home/ProcessSection";
 import { FeaturedProjects } from "@/components/home/FeaturedProjects";
+import { WorkShowcase } from "@/components/home/WorkShowcase";
 import { Stats } from "@/components/home/Stats";
 import { IndustriesSection } from "@/components/home/IndustriesSection";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
@@ -41,6 +42,7 @@ export default function HomePage() {
       <CoreServices />
       <ProcessSection />
       <FeaturedProjects />
+      <WorkShowcase />
       <Stats />
       <IndustriesSection />
       <WhyChooseUs />

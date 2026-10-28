@@ -1,11 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Sofa, FileText, Compass } from "lucide-react";
 import { motion } from "motion/react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Button } from "@/components/ui/Button";
 
 const miniCards = [
   {
@@ -27,7 +25,7 @@ const miniCards = [
 
 export function AboutSnapshot() {
   return (
-    <section className="py-16 sm:py-20 lg:py-28 bg-surface-elevated-translucent overflow-hidden" aria-labelledby="about-heading">
+    <section className="pb-8 pt-16 sm:pb-10 sm:pt-20 lg:pb-12 lg:pt-28 bg-surface-elevated-translucent overflow-hidden" aria-labelledby="about-heading">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0 }}
@@ -112,17 +110,6 @@ export function AboutSnapshot() {
                 </motion.div>
               ))}
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-            >
-              <Button variant="primary" size="lg" asChild>
-                <Link href="/contact">Book a free consultation</Link>
-              </Button>
-            </motion.div>
           </motion.div>
         </motion.div>
       </div>

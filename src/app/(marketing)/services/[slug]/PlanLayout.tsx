@@ -89,7 +89,7 @@ export function PlanLayout({ content }: { content: PlanContent }) {
       <header className="relative isolate flex min-h-[34rem] items-center justify-center overflow-hidden bg-[#222] lg:min-h-[44rem]">
         <Image src={hero.image} alt="" fill priority quality={90} sizes="100vw" className="-z-20 object-cover" />
         <div aria-hidden="true" className="absolute inset-0 -z-10 bg-black/55" />
-        <div className="px-4 py-24 text-center">
+        <div className="px-4 py-14 text-center">
           <h1 className="font-heading text-[2.25rem] font-light uppercase leading-[1.1] tracking-wide !text-white sm:text-6xl lg:text-[4.5rem]">
             {hero.title}
           </h1>
@@ -108,7 +108,7 @@ export function PlanLayout({ content }: { content: PlanContent }) {
       </header>
 
       {/* 2 — Ways */}
-      <section id="ways" className="bg-white py-16 sm:py-20">
+      <section id="ways" className="bg-white py-10 sm:py-12">
         <H2>{ways.title}</H2>
         <Sub>{ways.sub}</Sub>
         <ul className="mx-auto mt-14 grid max-w-5xl gap-10 px-4 text-center sm:px-6 md:grid-cols-3">
@@ -126,7 +126,7 @@ export function PlanLayout({ content }: { content: PlanContent }) {
       <PlanTabs tabs={tabs.items} defaultId={tabs.defaultId} ariaLabel={tabs.ariaLabel} />
 
       {/* 4 — Solutions */}
-      <section className="border-t border-[#eee] bg-white py-14 sm:py-20">
+      <section className="border-t border-[#eee] bg-white py-10 sm:py-12">
         <H2>{solutions.title}</H2>
         <Sub>{solutions.sub}</Sub>
         <ul className="mx-auto mt-10 grid max-w-4xl grid-cols-3 gap-3 px-4 sm:px-6">
@@ -144,7 +144,7 @@ export function PlanLayout({ content }: { content: PlanContent }) {
       </section>
 
       {/* 5 — Reasons */}
-      <section id="features" className="bg-[#f6f6f6] py-16 sm:py-20">
+      <section id="features" className="bg-[#f6f6f6] py-10 sm:py-12">
         <H2>{reasons.title}</H2>
         <Sub>{reasons.sub}</Sub>
         <ul className="mx-auto mt-12 grid max-w-4xl gap-x-10 gap-y-10 px-4 sm:px-6 md:grid-cols-2">
@@ -161,7 +161,7 @@ export function PlanLayout({ content }: { content: PlanContent }) {
       </section>
 
       {/* 6 — Workflow */}
-      <section id="workflow" className="bg-white py-16 sm:py-20">
+      <section id="workflow" className="bg-white py-10 sm:py-12">
         <H2>{workflow.title}</H2>
         <ul className="mx-auto mt-12 grid max-w-4xl gap-10 px-4 sm:px-6 md:grid-cols-3">
           {workflow.steps.map((step) => (
@@ -180,7 +180,7 @@ export function PlanLayout({ content }: { content: PlanContent }) {
       </section>
 
       {/* 7 — Impressed */}
-      <section className="bg-[#f6f6f6] py-16 sm:py-20">
+      <section className="bg-[#f6f6f6] py-10 sm:py-12">
         <H2>{impressed.title}</H2>
         <Sub>{impressed.sub}</Sub>
         <ul className="mx-auto mt-12 grid max-w-4xl gap-8 px-4 text-[0.8125rem] sm:px-6 md:grid-cols-3">
@@ -199,7 +199,7 @@ export function PlanLayout({ content }: { content: PlanContent }) {
       </section>
 
       {/* 8 — FAQ */}
-      <section id="faq" className="bg-white py-16 sm:py-20">
+      <section id="faq" className="bg-white py-10 sm:py-12">
         <H2>{faq.title}</H2>
         <Sub>{faq.sub}</Sub>
         <div className="mx-auto mt-12 grid max-w-4xl items-start gap-3 px-4 sm:px-6 md:grid-cols-2">
@@ -218,7 +218,7 @@ export function PlanLayout({ content }: { content: PlanContent }) {
       </section>
 
       {/* 9 — Contact */}
-      <section id="contacts" className="bg-white pb-16 sm:pb-24">
+      <section id="contacts" className="bg-white pb-10 sm:pb-12">
         <div className="mx-auto grid max-w-4xl gap-10 px-4 sm:px-6 md:grid-cols-2">
           <div>
             <H2>Contacts</H2>

@@ -16,7 +16,7 @@ interface ProjectDetailProps {
 export function ProjectDetail({ project }: ProjectDetailProps) {
   return (
     <div className="min-h-screen bg-surface-elevated-translucent">
-      <section className="bg-surface-translucent py-16 sm:py-20 lg:py-28">
+      <section className="bg-surface-translucent py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal amount={0.3}>
             <Link
@@ -77,7 +77,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
         </div>
       </section>
 
-      <section className="bg-surface-elevated-translucent py-16 sm:py-20 lg:py-28">
+      <section className="bg-surface-elevated-translucent py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-3 lg:gap-12">
             <div className="space-y-12 lg:col-span-2">
@@ -228,7 +228,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
         </div>
       </section>
 
-      <section className="bg-surface-translucent py-16 sm:py-20 lg:py-28">
+      <section className="bg-surface-translucent py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <Reveal>
             <h2 className="mb-6 font-heading text-3xl font-bold text-primary sm:text-4xl">

@@ -15,7 +15,7 @@ export default function CookiesPage() {
   return (
     <>
       {/* HERO / BREADCRUMB */}
-      <section className="relative py-16 lg:py-20 bg-surface-translucent overflow-hidden" aria-labelledby="cookies-heading">
+      <section className="relative py-10 lg:py-14 bg-surface-translucent overflow-hidden" aria-labelledby="cookies-heading">
         {/* Blueprint pattern background */}
         <div
           className="absolute inset-0 opacity-[0.04]"
@@ -68,7 +68,7 @@ export default function CookiesPage() {
       </section>
 
       {/* CONTENT */}
-      <section className="py-16 lg:py-20 bg-surface-elevated-translucent">
+      <section className="py-10 lg:py-14 bg-surface-elevated-translucent">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 prose prose-lg max-w-none text-primary">
           <Reveal>
             <p className="text-textmuted text-sm mb-12"><strong>Last updated:</strong> 29 September 2025</p>

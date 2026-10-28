@@ -245,7 +245,7 @@ export function FloorPlans() {
       </header>
 
       {/* 3 — Dark band: audiences */}
-      <section className="bg-[#3a3a3a] py-14 sm:py-20">
+      <section className="bg-[#3a3a3a] py-10 sm:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-center font-heading text-xl font-bold !text-white sm:text-[1.75rem]">
             3D Floor Plans Trusted by Industry Leaders
@@ -264,7 +264,7 @@ export function FloorPlans() {
       </section>
 
       {/* 4 — Intro columns */}
-      <section className="bg-white py-14 sm:py-20">
+      <section className="bg-white py-10 sm:py-12">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
           {INTRO_COLUMNS.map((column) => (
             <div key={column.title}>
@@ -287,7 +287,7 @@ export function FloorPlans() {
       </section>
 
       {/* 5 — Types */}
-      <section className="bg-white pb-14 sm:pb-20">
+      <section className="bg-white pb-10 sm:pb-12">
         <H2>Types of 3D Floor Plans We Render</H2>
         <div className="mx-auto mt-8 max-w-3xl px-4 sm:px-6">
           <ul className="list-disc space-y-2 pl-5 text-[0.8125rem] leading-relaxed marker:text-[#1b1b1b]">
@@ -301,7 +301,7 @@ export function FloorPlans() {
       </section>
 
       {/* 6 — Benefits */}
-      <section className="bg-white pb-14 sm:pb-20">
+      <section className="bg-white pb-10 sm:pb-12">
         <H2>Benefits of Our 3D Floor Plan Rendering Services</H2>
         <Lead>The use of floor plan renders broadens your marketing possibilities, allowing you to achieve greater success in your presale campaigns.</Lead>
         <ul className="mx-auto mt-12 grid max-w-6xl gap-x-12 gap-y-14 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
@@ -322,7 +322,7 @@ export function FloorPlans() {
       </section>
 
       {/* 7 — Close the deal */}
-      <section className="bg-white pb-14 sm:pb-20">
+      <section className="bg-white pb-10 sm:pb-12">
         <H2>3D Floor Plans That Close the Deal</H2>
         <Lead>A well-made 3D floor plan does the explaining so you do not have to. Clients see the layout, get the space and move forward faster. These are built to work in proposals, listings and presentations.</Lead>
         <ul className="mx-auto mt-10 grid max-w-5xl grid-cols-3 gap-4 px-4 sm:px-6">
@@ -340,7 +340,7 @@ export function FloorPlans() {
       </section>
 
       {/* 8 — Brief (dark band) */}
-      <section className="bg-[#3a3a3a] py-14 sm:py-20">
+      <section className="bg-[#3a3a3a] py-10 sm:py-12">
         <div className="mx-auto grid max-w-5xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2">
           <div>
             <h2 className="font-heading text-2xl font-bold !text-white sm:text-[2rem]">
@@ -372,7 +372,7 @@ export function FloorPlans() {
       </section>
 
       {/* 9 — Cost saving */}
-      <section className="bg-white py-14 sm:py-20">
+      <section className="bg-white py-10 sm:py-12">
         <H2>Our Cost-Saving Practices in 3D Floor Plan Rendering</H2>
         <Lead>We offer you ways to significantly reduce your project costs. By choosing our studio, you get the best deal on the market.</Lead>
         <div className="mx-auto mt-8 max-w-3xl px-4 sm:px-6">
@@ -387,7 +387,7 @@ export function FloorPlans() {
       </section>
 
       {/* 10 — Case studies */}
-      <section className="bg-white pb-14 sm:pb-20">
+      <section className="bg-white pb-10 sm:pb-12">
         <H2>3D Floor Plan Rendering Case Studies</H2>
         <ul className="mx-auto mt-10 grid max-w-6xl gap-6 px-4 sm:grid-cols-3 sm:px-6 lg:px-8">
           {caseStudies.map((project) => (
@@ -404,7 +404,7 @@ export function FloorPlans() {
       </section>
 
       {/* 11 — FAQ */}
-      <section className="bg-white pb-14 sm:pb-20">
+      <section className="bg-white pb-10 sm:pb-12">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1.3fr] lg:px-8">
           <h2 className="font-heading text-[2rem] font-bold leading-tight sm:text-[2.5rem]">
             Frequently Asked Questions
@@ -427,7 +427,7 @@ export function FloorPlans() {
       </section>
 
       {/* 12 — Learn more */}
-      <section className="bg-white pb-16 sm:pb-24">
+      <section className="bg-white pb-10 sm:pb-12">
         <H2>Learn More About Our Visualisation Services</H2>
         <ul className="mx-auto mt-10 grid max-w-6xl gap-6 px-4 sm:grid-cols-3 sm:px-6 lg:px-8">
           {RELATED.map((item) => (

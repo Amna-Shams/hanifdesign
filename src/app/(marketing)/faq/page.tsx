@@ -25,7 +25,7 @@ export default function FAQPage() {
         subtitle="Common questions about planning applications, timelines, fees, and our services."
       />
       <section
-        className="bg-surface-translucent py-16 sm:py-20 lg:py-28"
+        className="bg-surface-translucent py-10 sm:py-12 lg:py-14"
         aria-label="Questions and answers"
       >
         {/* Sourced from the same FAQS array the accordion renders, so the

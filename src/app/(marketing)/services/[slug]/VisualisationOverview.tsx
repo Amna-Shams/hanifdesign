@@ -245,7 +245,7 @@ export function VisualisationOverview({ label }: VisualisationOverviewProps) {
       </section>
 
       {/* Coverage */}
-      <section className="py-16 sm:py-20 lg:py-24">
+      <section className="py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <SectionHeading
@@ -266,7 +266,7 @@ export function VisualisationOverview({ label }: VisualisationOverviewProps) {
       </section>
 
       {/* Plan to 3D */}
-      <section className="bg-surface-translucent py-16 sm:py-20 lg:py-24">
+      <section className="bg-surface-translucent py-10 sm:py-12 lg:py-14">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
           <Reveal direction="left">
             <SectionHeading
@@ -299,7 +299,7 @@ export function VisualisationOverview({ label }: VisualisationOverviewProps) {
       </section>
 
       {/* Why */}
-      <section className="py-16 sm:py-20 lg:py-24">
+      <section className="py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <SectionHeading
@@ -325,7 +325,7 @@ export function VisualisationOverview({ label }: VisualisationOverviewProps) {
       </section>
 
       {/* Advantages */}
-      <section className="bg-surface-translucent py-16 sm:py-20 lg:py-24">
+      <section className="bg-surface-translucent py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <SectionHeading
@@ -350,7 +350,7 @@ export function VisualisationOverview({ label }: VisualisationOverviewProps) {
       </section>
 
       {/* Process */}
-      <section className="py-16 sm:py-20 lg:py-24">
+      <section className="py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <SectionHeading
@@ -381,7 +381,7 @@ export function VisualisationOverview({ label }: VisualisationOverviewProps) {
       </section>
 
       {/* CTA */}
-      <section className="bg-surface-translucent py-16 sm:py-20">
+      <section className="bg-surface-translucent py-10 sm:py-12">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <SectionHeading
@@ -420,7 +420,7 @@ export function VisualisationOverview({ label }: VisualisationOverviewProps) {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 sm:py-20 lg:py-24">
+      <section className="py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <SectionHeading

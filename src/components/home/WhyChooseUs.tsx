@@ -47,7 +47,7 @@ const reasons = [
 
 export function WhyChooseUs() {
   return (
-    <section className="py-16 sm:py-20 lg:py-28 bg-surface-elevated-translucent overflow-hidden" aria-labelledby="why-heading">
+    <section className="py-10 sm:py-12 lg:py-14 bg-surface-elevated-translucent overflow-hidden" aria-labelledby="why-heading">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0 }}

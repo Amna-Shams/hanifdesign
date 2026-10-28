@@ -52,7 +52,7 @@ function Band({
     dark: "bg-[#1d2024] light:bg-surface-translucent",
   } as const;
   return (
-    <section aria-label={label} className={`${tones[tone]} py-12 sm:py-14 lg:py-16`}>
+    <section aria-label={label} className={`${tones[tone]} py-8 sm:py-10 lg:py-12`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">{children}</div>
     </section>
   );
@@ -185,7 +185,7 @@ export function ServiceSalesPage({ content: c }: { content: SalesContent }) {
       </Band>
 
       {/* 6 — Quote band */}
-      <section className="relative isolate overflow-hidden bg-[#1d2024] light:bg-surface-translucent py-14 sm:py-16">
+      <section className="relative isolate overflow-hidden bg-[#1d2024] light:bg-surface-translucent py-10 sm:py-12">
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
           <div>
             <h2 className="font-heading text-2xl font-bold !text-white light:!text-primary sm:text-3xl">{c.quote.title}</h2>

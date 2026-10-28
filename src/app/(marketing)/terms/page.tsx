@@ -16,7 +16,7 @@ const lastUpdated = "25 September 2025";
 export default function TermsPage() {
   return (
     <div className="min-h-screen bg-surface-elevated-translucent">
-      <section className="py-16 sm:py-20 lg:py-28 bg-surface-translucent">
+      <section className="py-10 sm:py-12 lg:py-14 bg-surface-translucent">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* The title block is deliberately static: it is the first viewport and
               the h1 is the LCP element, so a `whileInView` reveal would ship

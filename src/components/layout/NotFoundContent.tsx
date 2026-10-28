@@ -11,7 +11,7 @@ import { Reveal } from "@/components/ui/Reveal";
 export function NotFoundContent() {
   return (
     <section
-      className="flex min-h-[80vh] items-center bg-surface-translucent py-20 sm:py-24 lg:py-28"
+      className="flex min-h-[80vh] items-center bg-surface-translucent py-10 sm:py-12 lg:py-14"
       aria-labelledby="not-found-heading"
     >
       <div className="mx-auto w-full max-w-3xl px-4 sm:px-6">

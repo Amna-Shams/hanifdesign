@@ -93,7 +93,7 @@ export default function QuotePage() {
 
   return (
     <div className="min-h-screen bg-surface-elevated">
-      <section className="bg-lightgray py-16 sm:py-20 lg:py-24">
+      <section className="bg-lightgray py-10 sm:py-12 lg:py-14">
         <div className="mx-auto w-full max-w-3xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             as="h1"

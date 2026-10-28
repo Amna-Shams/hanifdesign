@@ -113,7 +113,7 @@ const caseStudies = [
 const linkClass =
   "text-gold underline underline-offset-4 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2";
 
-const sectionClass = "py-14 sm:py-16 lg:py-20";
+const sectionClass = "py-10 sm:py-12 lg:py-14";
 const containerClass = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8";
 const h2Class =
   "font-heading font-bold text-primary text-balance text-2xl sm:text-3xl leading-[1.2] mb-6";

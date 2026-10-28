@@ -25,7 +25,7 @@ const miniCards = [
 
 export function AboutSnapshot() {
   return (
-    <section className="pb-6 pt-16 sm:pb-8 sm:pt-20 lg:pb-8 lg:pt-28 bg-surface-elevated-translucent overflow-hidden" aria-labelledby="about-heading">
+    <section className="pb-6 pt-10 sm:pb-8 sm:pt-12 lg:pb-8 lg:pt-14 bg-surface-elevated-translucent overflow-hidden" aria-labelledby="about-heading">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0 }}

@@ -161,7 +161,7 @@ export function ExteriorRendering() {
             <li aria-current="page" className="font-semibold text-white">3D Exterior Rendering Services</li>
           </ol>
         </nav>
-        <div className="px-4 py-24 text-center">
+        <div className="px-4 py-14 text-center">
           <h1 className="font-heading text-4xl font-bold !text-white sm:text-5xl">3D Exterior Rendering</h1>
           <p className="mx-auto mt-5 max-w-2xl text-sm font-semibold !text-white sm:text-base">
             High-end imagery for residential, commercial, hospitality and mixed-use projects.
@@ -182,7 +182,7 @@ export function ExteriorRendering() {
       </header>
 
       {/* 3 — What it is used for */}
-      <section className="bg-white pb-14 sm:pb-20">
+      <section className="bg-white pb-10 sm:pb-12">
         <H2>What 3D Exterior Rendering Is Used For</H2>
         <Lead>
           3D exterior rendering turns design drawings into photorealistic CGI images of a building
@@ -206,7 +206,7 @@ export function ExteriorRendering() {
       </section>
 
       {/* 4 — Project types */}
-      <section className="bg-white pb-14 sm:pb-20">
+      <section className="bg-white pb-10 sm:pb-12">
         <H2>Exterior Visualisation for Different Project Types</H2>
         <Lead>
           3D rendering brings designs into their real-world context. From private homes and residential
@@ -236,7 +236,7 @@ export function ExteriorRendering() {
       </section>
 
       {/* 6 — Views */}
-      <section className="bg-white py-14 sm:py-20">
+      <section className="bg-white py-10 sm:py-12">
         <H2>Choose the Views Your Project Needs</H2>
         <Lead>
           One development, three views, three different jobs. For a townhouse scheme, the client sent
@@ -263,7 +263,7 @@ export function ExteriorRendering() {
       </section>
 
       {/* 7 — Real context */}
-      <section className="bg-white pb-14 sm:pb-20">
+      <section className="bg-white pb-10 sm:pb-12">
         <H2>Renderings That Place Projects in Real Context</H2>
         <Lead>
           Exterior renderings present your project in its real context. We visualise{" "}
@@ -295,7 +295,7 @@ export function ExteriorRendering() {
       </section>
 
       {/* 8 — Production process */}
-      <section className="bg-white pb-14 sm:pb-20">
+      <section className="bg-white pb-10 sm:pb-12">
         <H2>Our Exterior Rendering Production Process</H2>
         <ol className="mx-auto mt-12 grid max-w-6xl gap-10 px-4 text-center sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
           {PROCESS.map((step) => (
@@ -308,7 +308,7 @@ export function ExteriorRendering() {
       </section>
 
       {/* 9 — Brief (dark band with form) */}
-      <section className="bg-[#3a3a3a] py-14 sm:py-20">
+      <section className="bg-[#3a3a3a] py-10 sm:py-12">
         <div className="mx-auto grid max-w-5xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2">
           <div>
             <h2 className="font-heading text-2xl font-bold !text-white sm:text-[2rem]">
@@ -325,13 +325,13 @@ export function ExteriorRendering() {
       </section>
 
       {/* 10 — Gallery */}
-      <section className="bg-white py-14 sm:py-20">
+      <section className="bg-white py-10 sm:py-12">
         <H2 className="mb-10">Photorealistic Exterior Renderings That Tell a Story</H2>
         <ExteriorGallery images={GALLERY} />
       </section>
 
       {/* 11 — Quote factors */}
-      <section className="bg-white pb-14 sm:pb-20">
+      <section className="bg-white pb-10 sm:pb-12">
         <H2>What Shapes Your Exterior Rendering Quote</H2>
         <div className="mx-auto mt-12 grid max-w-5xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2">
           <div className="space-y-4 text-xs leading-relaxed text-[#444]">
@@ -356,7 +356,7 @@ export function ExteriorRendering() {
       </section>
 
       {/* 12 — Dark quote band */}
-      <section className="bg-[#3a3a3a] py-14 sm:py-16">
+      <section className="bg-[#3a3a3a] py-10 sm:py-12">
         <div className="mx-auto grid max-w-5xl items-center gap-8 px-4 sm:px-6 md:grid-cols-2">
           <div>
             <h2 className="font-heading text-xl font-bold leading-snug !text-white sm:text-2xl">
@@ -371,7 +371,7 @@ export function ExteriorRendering() {
       </section>
 
       {/* 13 — Why choose us */}
-      <section className="bg-white py-14 sm:py-20">
+      <section className="bg-white py-10 sm:py-12">
         <H2>Why Clients Choose Us for Exterior Renderings</H2>
         <Lead>
           Clients choose us for our experience, project portfolio and consistent quality. Advanced
@@ -394,7 +394,7 @@ export function ExteriorRendering() {
       </section>
 
       {/* 14 — FAQ */}
-      <section className="bg-white pb-14 sm:pb-20">
+      <section className="bg-white pb-10 sm:pb-12">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1.3fr] lg:px-8">
           <h2 className="font-heading text-[2rem] font-bold leading-tight sm:text-[2.5rem]">
             Frequently asked questions
@@ -417,7 +417,7 @@ export function ExteriorRendering() {
       </section>
 
       {/* 15 — Contact */}
-      <section className="bg-white pb-16 sm:pb-24">
+      <section className="bg-white pb-10 sm:pb-12">
         <div className="mx-auto grid max-w-5xl overflow-hidden bg-[#f1f1f1] md:grid-cols-[1fr_1.1fr]">
           <Pic src={IMG.e2} alt="" className="min-h-64" sizes="(min-width: 768px) 40vw, 100vw" />
           <div className="p-6 sm:p-10">

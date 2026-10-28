@@ -28,7 +28,7 @@ export default function ProjectsPage() {
         subtitle="Case studies across residential, commercial, mixed-use, industrial and heritage work across England."
       />
 
-      <section className="bg-surface-translucent py-16 sm:py-20 lg:py-28">
+      <section className="bg-surface-translucent py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* ProjectsClient reads the URL for the active filter, so it needs a
               Suspense boundary. The boundary is scoped to the interactive
@@ -44,7 +44,7 @@ export default function ProjectsPage() {
           which would leave this block invisible for exactly the visitors who
           need it. */}
       <noscript>
-        <section className="bg-surface-translucent py-16 sm:py-20">
+        <section className="bg-surface-translucent py-10 sm:py-12">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 className="mb-6 font-heading text-2xl font-semibold text-primary">
               All projects ({PROJECTS.length})

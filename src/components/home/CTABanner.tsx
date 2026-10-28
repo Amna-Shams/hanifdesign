@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function CTABanner() {
   return (
-    <section className="relative py-16 sm:py-20 lg:py-28 bg-surface-translucent overflow-hidden">
+    <section className="relative py-10 sm:py-12 lg:py-14 bg-surface-translucent overflow-hidden">
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{

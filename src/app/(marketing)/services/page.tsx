@@ -59,7 +59,7 @@ export default function ServicesPage() {
         subtitle="Planning, design and visualisation support for residential projects across England."
       />
 
-      <section className="bg-surface-translucent py-16 sm:py-20 lg:py-28" aria-labelledby="services-heading">
+      <section className="bg-surface-translucent py-10 sm:py-12 lg:py-14" aria-labelledby="services-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* The h1 sits in the first viewport, so it stays static: a
               `whileInView` fade would put `opacity: 0` into the server HTML and
@@ -108,7 +108,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-surface-translucent py-16 sm:py-20 lg:py-24">
+      <section className="bg-surface-translucent py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <Reveal>
             <h2 className="mb-6 font-heading text-3xl font-bold text-primary sm:text-4xl">

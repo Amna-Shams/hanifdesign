@@ -68,7 +68,7 @@ export default function PrivacyPage() {
           animation would ship `opacity: 0` in the server HTML and hold the
           LCP paint back until hydration. Every section below animates.
           ---------------------------------------------------------------- */}
-      <section className="bg-surface-translucent py-16 sm:py-20 lg:py-24">
+      <section className="bg-surface-translucent py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em]">
@@ -103,7 +103,7 @@ export default function PrivacyPage() {
         </div>
       </section>
 
-      <section className="py-20 sm:py-24 lg:py-28">
+      <section className="py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <PolicySection number="01" title="Information We Collect">
             <p>

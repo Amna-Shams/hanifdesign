@@ -72,7 +72,7 @@ export default function ContactPage() {
         title="Get in touch"
         subtitle="Have a project in mind? We'd love to hear from you. Fill out the form or use the details below."
       />
-      <section className="py-16 sm:py-20 lg:py-28 bg-surface-translucent">
+      <section className="py-10 sm:py-12 lg:py-14 bg-surface-translucent">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Grid items stretch to the tallest of the two, so the shorter
               column must fill that height rather than leaving a hole: the

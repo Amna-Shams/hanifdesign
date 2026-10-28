@@ -93,7 +93,7 @@ export default function SitemapPage() {
   return (
     <>
       {/* Hero / breadcrumb */}
-      <section className="relative overflow-hidden bg-surface-translucent py-16 sm:py-20 lg:py-24">
+      <section className="relative overflow-hidden bg-surface-translucent py-10 sm:py-12 lg:py-14">
         <div
           aria-hidden="true"
           className="absolute inset-0 opacity-[0.04]"
@@ -134,7 +134,7 @@ export default function SitemapPage() {
       </section>
 
       {/* Link index */}
-      <section className="bg-surface-translucent py-16 sm:py-20 lg:py-24">
+      <section className="bg-surface-translucent py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="sr-only">All pages</h2>
 

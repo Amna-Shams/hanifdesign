@@ -12,7 +12,7 @@ const stats = [
 
 export function Stats() {
   return (
-    <section className="bg-surface-translucent py-16 sm:py-20 lg:py-24" aria-labelledby="stats-heading">
+    <section className="bg-surface-translucent py-10 sm:py-12 lg:py-14" aria-labelledby="stats-heading">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 id="stats-heading" className="sr-only">
           Key statistics

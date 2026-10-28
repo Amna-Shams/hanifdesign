@@ -244,7 +244,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
       {/* Hero — deliberately static. It is the first viewport, so a `whileInView`
           reveal would ship `opacity: 0` in the server HTML and hold the h1 back
           until hydration, which is the cost PageTransition was removed to avoid. */}
-      <header className="relative overflow-hidden bg-surface-translucent py-16 sm:py-20 lg:py-28">
+      <header className="relative overflow-hidden bg-surface-translucent py-10 sm:py-12 lg:py-14">
         <div
           aria-hidden="true"
           className="absolute inset-0 opacity-[0.04]"
@@ -345,7 +345,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
       </section>
 
       {/* Process + benefits */}
-      <section className="py-16 sm:py-20 lg:py-24">
+      <section className="py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <Reveal direction="left" duration={0.7}>

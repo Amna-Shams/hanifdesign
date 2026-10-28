@@ -34,11 +34,11 @@ const serviceData: Record<
       src: string;
       alt: string;
       /**
-       * Set when the source artwork sits on a white drawing sheet rather than
+       * Set when the source artwork sits on a white plan sheet rather than
        * being a full-bleed photo. Those are mounted on a white plate and fitted
        * with `contain` — a white crop of a sheet reads as a sheet, where
        * `cover` on the dark hero would just glare, and `contain` keeps the
-       * drawing whole instead of clipping it.
+       * plan whole instead of clipping it.
        */
       sheet?: boolean;
     };
@@ -58,11 +58,11 @@ const serviceData: Record<
   "planning-applications": {
     icon: FileCheck,
     intro:
-      "We prepare and submit complete planning applications — drawings, statements and supporting evidence — then manage the process through to a decision. Our packages are built to validate first time, which is the single biggest factor in avoiding delay.",
+      "We prepare and submit complete planning applications — plans, statements and supporting evidence — then manage the process through to a decision. Our packages are built to validate first time, which is the single biggest factor in avoiding delay.",
     process: [
       "Free feasibility call and site review",
       "Pre-application advice where it adds value",
-      "Preparation of drawings and supporting documents",
+      "Preparation of plans and supporting documents",
       "Validation check and submission to the council",
       "Case-officer liaison and responding to queries",
       "Decision, conditions and condition discharge",
@@ -113,12 +113,12 @@ const serviceData: Record<
     },
     aside: {
       src: "/building regulation support.webp",
-      alt: "Consultants around a table reviewing a lit design model of a building set on drawings",
+      alt: "Consultants around a table reviewing a lit design model of a building set on plans",
     },
     galleryCaption:
       "From structure to specification, compliance is documented at every stage of the build.",
     gallery: [
-      { src: "/office-to-residential-conversion-city-centre-2.webp", alt: "Building site with a concrete frame and blockwork beside rolled construction drawings and a hard hat" },
+      { src: "/office-to-residential-conversion-city-centre-2.webp", alt: "Building site with a concrete frame and blockwork beside rolled construction plans and a hard hat" },
       { src: "/single-storey-rear-extension-moseley-1.webp", alt: "Contemporary house under construction with scaffolding, above the same house completed" },
       { src: "/office-to-residential-conversion-city-centre-1.webp", alt: "Split view of a concrete building frame beside the finished contemporary home" },
     ],
@@ -162,7 +162,7 @@ const serviceData: Record<
     intro:
       "A strong image resolves objections faster than any report. We produce photorealistic visuals that show decision-makers exactly what will be built and how it sits in its surroundings.",
     process: [
-      "3D model built from the approved drawings",
+      "3D model built from the approved plans",
       "Material and landscaping specification",
       "Exterior, interior and contextual views",
       "Aerial and street-level perspectives",
@@ -172,17 +172,17 @@ const serviceData: Record<
     benefits: [
       "Significantly reduces officer and neighbour objection",
       "Useful for sales and off-plan marketing",
-      "Accurate to the drawings, not aspirational",
+      "Accurate to the plans, not aspirational",
       "Suitable for planning committee submission",
     ],
     hero: {
         src: "/3d.webp",
-        alt: "Exploded axonometric 3D render of a modern house, with each floor separated vertically to reveal the interior layout, surrounded by faint elevation and section line drawings",
+        alt: "Exploded axonometric 3D render of a modern house, with each floor separated vertically to reveal the interior layout, surrounded by faint elevation and section line illustrations",
         sheet: true,
       },
     aside: {
       src: "/feasibility layouts.webp",
-      alt: "Translucent 3D model of a multi-storey building rising from technical site drawings",
+      alt: "Translucent 3D model of a multi-storey building rising from technical site plans",
     },
     galleryCaption:
       "Photorealistic visuals that show decision-makers exactly what will be built.",
@@ -212,7 +212,7 @@ const serviceData: Record<
     ],
     hero: {
       src: "/spacious-loft-conversion-harborne-1.webp",
-      alt: "Interior design drawing with floor plan, section and dimensions overlaid on a double-height living space",
+      alt: "Interior design plan with floor plan, section and dimensions overlaid on a double-height living space",
     },
     aside: {
       src: "/development guidance.webp",
@@ -294,7 +294,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
             {/* Lead image for this service. Static and `priority` because it sits in
                 the first viewport alongside the h1, for the same LCP reason as the
                 heading above. It holds a fixed 4:5 box either way, so the layout can
-                never shift while it loads. `crop` adds the drawing-sheet corner marks
+                never shift while it loads. `crop` adds the plan-sheet corner marks
                 used on the other figures. White sheet artwork gets a white plate and
                 `contain` — the same treatment the logo gets in the header — so it
                 reads as a mounted sheet instead of a white glare on the dark hero. */}

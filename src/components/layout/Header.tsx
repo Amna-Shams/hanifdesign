@@ -56,7 +56,7 @@ export function Header() {
           : "border-b border-transparent bg-background/55",
       ].join(" ")}
     >
-      {/* Accent rule: reads as the sheet edge of a drawing, and only appears
+      {/* Accent rule: reads as the sheet edge of a plan, and only appears
           once the page has moved so the header does not shout on first paint. */}
       <div
         aria-hidden="true"

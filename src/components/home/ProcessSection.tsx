@@ -29,7 +29,7 @@ const steps = [
 ] as const;
 
 /**
- * Four numbered stages laid out like a drawing schedule: a hairline rule across
+ * Four numbered stages laid out like a plan schedule: a hairline rule across
  * the top of each column with a short gold tick that runs out to full width on
  * hover, a mono "Step" reference and plain type underneath. No icons — the step
  * titles carry the meaning, and the section reads as part of the site's

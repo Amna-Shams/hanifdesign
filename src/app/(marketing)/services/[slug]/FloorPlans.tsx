@@ -51,7 +51,7 @@ const AUDIENCES = ["Developers", "Estate Agents", "Landlords", "Homeowners", "De
 const INTRO_COLUMNS = [
   {
     title: "Realistic 3D Floor Plan Renders",
-    text: "Unlike flat 2D drawings, 3D floor plans show a layout the way buyers read it, so they see at once whether the rooms suit them. When the whole lot matters more than one interior, a rendered site plan shows the full context.",
+    text: "Unlike flat 2D plans, 3D floor plans show a layout the way buyers read it, so they see at once whether the rooms suit them. When the whole lot matters more than one interior, a rendered site plan shows the full context.",
   },
   {
     title: "3D Floor Plans Buyers Read at a Glance",
@@ -95,13 +95,13 @@ const BENEFITS = [
 ] as const;
 
 const PROCESS = [
-  "Send us your requirements, the drawings and your style references. A CAD file works best if you have one, but a PDF, a scan or even a hand sketch is enough to start. Tell us which levels you need and whether the rooms should be furnished.",
+  "Send us your requirements, the plans and your style references. A CAD file works best if you have one, but a PDF, a scan or even a hand sketch is enough to start. Tell us which levels you need and whether the rooms should be furnished.",
   "Check the intermediate results on the image, so nothing gets lost in email threads. Two rounds of revisions are included in the price, and we agree the corrections before the final render starts.",
   "You get the finished 3D floor plans in high resolution, ready for listings, brochures, presentations and adverts. The same files work for print and for the web, so one set covers every marketing channel you use.",
 ] as const;
 
 const BRIEF_POINTS = [
-  "Drawings: CAD, PDF, scans or hand sketches",
+  "Plans: CAD, PDF, scans or hand sketches",
   "Levels and units to be rendered",
   "Furnished or unfurnished, and the style you want",
   "Material and finish references, if you have them",
@@ -118,13 +118,13 @@ const SAVINGS = [
 const FAQS = [
   ["What is a 3D floor plan?", "A 3D floor plan is a computer-generated image that shows a property layout in a realistic way. These visuals can be top-down or from an angle. In most cases, floor plan renders show virtually staged rooms."],
   ["Why should I use 3D floor plan rendering services?", "If you want to make your listings and marketing materials more eye-catching and informative, 3D floor plan visuals attract prospects' attention and give a comprehensive understanding of a property's layout and dimensions."],
-  ["How accurate are 3D floor plans in representing actual dimensions?", "We build every plan from your drawings, so room sizes and proportions follow the measurements you give us. If anything in the drawings is unclear, we ask before we model it."],
+  ["How accurate are 3D floor plans in representing actual dimensions?", "We build every plan from your plans, so room sizes and proportions follow the measurements you give us. If anything in the plans is unclear, we ask before we model it."],
   ["How long does it take to create a 3D floor plan design?", "The time depends on the number of plans, their size and the level of detail. We agree the schedule in the quote, and sets for whole developments are produced in parallel."],
   ["How can 3D floor plans help in pre-selling a property?", "Buyers can understand a layout before anything is built. Furnished 3D plans make it easier to picture living in the space, which helps marketing and early sales."],
-  ["How much does a 3D floor plan cost?", "The price depends on the size of the plan, the level of furnishing and the number of units. Send us your drawings and we will give you a fixed quote."],
-  ["What is the difference between a 2D and a 3D floor plan?", "A 2D floor plan is a flat, top-down line drawing. A 3D floor plan adds depth, furniture and finishes, so people who do not read technical drawings can still understand the layout."],
+  ["How much does a 3D floor plan cost?", "The price depends on the size of the plan, the level of furnishing and the number of units. Send us your plans and we will give you a fixed quote."],
+  ["What is the difference between a 2D and a 3D floor plan?", "A 2D floor plan is a flat, top-down line illustration. A 3D floor plan adds depth, furniture and finishes, so people who do not read technical documentation can still understand the layout."],
   ["What types of properties do you make 3D floor plans for?", "Houses, flats, whole apartment buildings, offices, shops and mixed-use schemes, from a single dwelling to a full development."],
-  ["What do I need to send to get a 3D floor plan?", "Your drawings, in any format, and any style references. If you do not have drawings yet, tell us what exists and we will advise on the best starting point."],
+  ["What do I need to send to get a 3D floor plan?", "Your plans, in any format, and any style references. If you do not have plans yet, tell us what exists and we will advise on the best starting point."],
   ["What do I get at the end, and in what format?", "Finished high-resolution images, ready for print and web. We can supply extra formats such as vertical crops for social media on request."],
   ["Who owns the rights to the finished 3D floor plans?", "Once the project is complete and paid for, you can use the finished images for your own marketing and presentations. Any special usage terms are agreed in the quote."],
 ] as const;
@@ -218,7 +218,7 @@ export function FloorPlans() {
               </h1>
               <p className="mt-6 text-[0.8125rem] leading-relaxed sm:text-sm">
                 Photorealistic 3D floor plan rendering services for property developers, estate
-                agents and homeowners. We turn your 2D drawings into detailed top-view, angle-view
+                agents and homeowners. We turn your 2D plans into detailed top-view, angle-view
                 and dollhouse renders. Floor plans are one of the{" "}
                 <Link href="/services/3d-visualisation" className="underline underline-offset-2">
                   3D visualisation services
@@ -348,7 +348,7 @@ export function FloorPlans() {
             </h2>
             <p className="mt-4 text-[0.8125rem] leading-relaxed !text-white/85">
               To get a 3D floor plan project started, send us a set of materials such as
-              drawings, style references and material specifications. These are the points that
+              plans, style references and material specifications. These are the points that
               help us quote accurately and start quickly.
             </p>
           </div>

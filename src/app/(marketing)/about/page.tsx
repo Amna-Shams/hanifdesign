@@ -56,11 +56,11 @@ const approachSteps = [
   },
   {
     title: "Feasibility layouts",
-    body: "We test two or three layouts against those findings, so you can see what fits the plot before you commit to full drawings.",
+    body: "We test two or three layouts against those findings, so you can see what fits the plot before you commit to full designs.",
   },
   {
-    title: "Planning-ready drawings and visuals",
-    body: "We prepare planning drawings, a design and access statement and, where it helps, 3D visuals that show the proposal in its setting.",
+    title: "Planning-ready documents and visuals",
+    body: "We prepare planning documents, a design and access statement and, where it helps, 3D visuals that show the proposal in its setting.",
   },
   {
     title: "Submission and officer liaison",
@@ -70,7 +70,7 @@ const approachSteps = [
 
 const serviceLines: Record<(typeof SERVICES)[number]["slug"], string> = {
   "planning-applications": "Householder and larger applications, from first advice to decision.",
-  "building-regulations-support": "Drawings and information for building control.",
+  "building-regulations-support": "Plans and information for building control.",
   "feasibility-layouts": "Layout studies that show what the site can take.",
   "interior-visualisation": "Photorealistic interior renders that show a room before it is built.",
   "3d-floor-plans": "Furnished 3D floor plans that buyers can read at a glance.",
@@ -405,7 +405,7 @@ export default function AboutPage() {
             </div>
             <div className="mt-4">
               <Todo>
-                [CONFIRM: what the fixed fee includes (for example drawings, design and
+                [CONFIRM: what the fixed fee includes (for example plans, design and
                 access statement, submission, one round of officer changes) and what costs
                 extra, such as council application fees and appeals.]
               </Todo>

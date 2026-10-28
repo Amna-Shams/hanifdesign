@@ -77,8 +77,8 @@ const CONTEXT = [
 ] as const;
 
 const PROCESS = [
-  { title: "Brief and Quote", text: "We agree the views you need, the files you send (drawings, CAD, Revit or SketchUp models), the timeline and the quote before production starts." },
-  { title: "Geometry and Camera Approval", text: "The 3D model is built from your drawings, and you approve the geometry and camera angles on draft views before any detailing." },
+  { title: "Brief and Quote", text: "We agree the views you need, the files you send (plans, CAD, Revit or SketchUp models), the timeline and the quote before production starts." },
+  { title: "Geometry and Camera Approval", text: "The 3D model is built from your plans, and you approve the geometry and camera angles on draft views before any detailing." },
   { title: "Materials, Lighting and Context", text: "Finishes, landscaping and lighting are added and shown to you as a preview. Your comments are collected in one consolidated list on our platform." },
   { title: "Final Renders", text: "Final images are rendered only after your approval, in the agreed resolution and formats, within the revision rounds set in the quote." },
 ] as const;
@@ -92,11 +92,11 @@ const GALLERY = [
 ] as const;
 
 const FAQS = [
-  ["What information is needed to start an exterior rendering project?", "Your drawings (CAD, PDF, Revit or SketchUp models), the views you want, the materials and finishes, and any site photographs or references."],
-  ["What is exterior rendering?", "Exterior rendering turns design drawings into photorealistic images of a building in its setting, before it is built."],
+  ["What information is needed to start an exterior rendering project?", "Your plans (CAD, PDF, Revit or SketchUp models), the views you want, the materials and finishes, and any site photographs or references."],
+  ["What is exterior rendering?", "Exterior rendering turns design plans into photorealistic images of a building in its setting, before it is built."],
   ["How long does exterior rendering take?", "The time depends on the number of views and the complexity of the scene. We agree the schedule in the quote."],
-  ["How is an exterior rendering quote worked out?", "The quote depends on the scope and level of detail, the number of views and the image resolution. Send us your drawings and we will give you a fixed quote."],
-  ["Can exterior rendering be used for planning approvals?", "Yes. Accurate visuals help planning officers and neighbours understand a proposal, and they are often submitted alongside the planning drawings."],
+  ["How is an exterior rendering quote worked out?", "The quote depends on the scope and level of detail, the number of views and the image resolution. Send us your plans and we will give you a fixed quote."],
+  ["Can exterior rendering be used for planning approvals?", "Yes. Accurate visuals help planning officers and neighbours understand a proposal, and they are often submitted alongside the planning documents."],
   ["What resolution do exterior renderings have?", "We supply high-resolution images suitable for print and the web. Larger formats can be agreed in the quote."],
   ["What’s the difference between exterior rendering and exterior visualisation?", "Rendering is the process of producing the final image. Visualisation is the wider service: building the 3D model, setting up materials, light and context, and presenting the result."],
 ] as const;
@@ -185,7 +185,7 @@ export function ExteriorRendering() {
       <section className="bg-white pb-10 sm:pb-12">
         <H2>What 3D Exterior Rendering Is Used For</H2>
         <Lead>
-          3D exterior rendering turns design drawings into photorealistic CGI images of a building
+          3D exterior rendering turns design plans into photorealistic CGI images of a building
           before it exists. Designers bring it into design reviews, developers use it to sell units
           off-plan, builders rely on it for investor presentations, and marketing teams use it to make
           listings actually stop people mid-scroll. It is one of the core{" "}
@@ -240,7 +240,7 @@ export function ExteriorRendering() {
         <H2>Choose the Views Your Project Needs</H2>
         <Lead>
           One development, three views, three different jobs. For a townhouse scheme, the client sent
-          drawings and a finish scheme for each building. We delivered a set of exterior views, each
+          plans and a finish scheme for each building. We delivered a set of exterior views, each
           answering a different buyer question.
         </Lead>
         <ul className="mx-auto mt-10 grid max-w-5xl gap-8 px-4 sm:px-6 md:grid-cols-3">
@@ -315,7 +315,7 @@ export function ExteriorRendering() {
               What does a brief include?
             </h2>
             <p className="mt-4 text-[0.8125rem] leading-relaxed !text-white/85">
-              To start an exterior rendering project, send the drawings or 3D model, the views you
+              To start an exterior rendering project, send the plans or 3D model, the views you
               need, the materials and finishes, site photographs and references, and the deadline.
               That is enough for an accurate quote.
             </p>

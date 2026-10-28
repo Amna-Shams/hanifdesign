@@ -48,7 +48,7 @@ export default function TermsPage() {
                 <li>Planning applications and appeals</li>
                 <li>Permitted development assessments and lawful development certificates</li>
                 <li>Pre-application advice and design & access statements</li>
-                <li>Planning drawings, visualisations, and supporting documents</li>
+                <li>Planning submissions, visualisations, and supporting documents</li>
                 <li>Condition discharge and post-approval support</li>
               </ul>
               <p className="mt-2">The scope of services is defined in the written proposal. Additional services require a separate agreement.</p>
@@ -78,7 +78,7 @@ export default function TermsPage() {
 
             <Reveal>
               <h2 className="font-heading font-semibold text-xl text-primary mb-4">5. Intellectual Property</h2>
-              <p>All drawings, reports, and documents produced by us remain our copyright until full payment is received. Upon full payment, the Client receives a licence to use the documents for the specific project only. We retain the right to use anonymised project examples for marketing.</p>
+              <p>All plans, reports, and documents produced by us remain our copyright until full payment is received. Upon full payment, the Client receives a licence to use the documents for the specific project only. We retain the right to use anonymised project examples for marketing.</p>
             </Reveal>
 
             <Reveal>

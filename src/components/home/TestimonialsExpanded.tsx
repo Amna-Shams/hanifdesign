@@ -32,7 +32,7 @@ const testimonials = [
   },
   {
     quote:
-      "Clear, professional, and fast. The drawings were exactly what the council needed and the whole process was smooth.",
+      "Clear, professional, and fast. The plans were exactly what the council needed and the whole process was smooth.",
     name: "James Patel",
     role: "Loft Conversion, Wolverhampton",
     initial: "J",

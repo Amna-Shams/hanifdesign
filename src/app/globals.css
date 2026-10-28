@@ -59,7 +59,7 @@
   --brand-gold: #f5a623;
 
   /* Drafting grid — two scales, so the fine module reads as graph paper and
-     the major module as a drawing sheet's setting-out grid. */
+     the major module as a plan sheet's setting-out grid. */
   --grid-line: rgba(141, 146, 153, 0.055);
   --grid-line-major: rgba(141, 146, 153, 0.13);
 
@@ -211,7 +211,7 @@
   /* ------------------------------------------------------------------
    * RADII
    * Tightened from Tailwind's defaults. Rounded corners read as friendly
-   * consumer software; square-ish corners read as a drawing office, which
+   * consumer software; square-ish corners read as a plan office, which
    * is the point of the identity.
    * ---------------------------------------------------------------- */
   --radius-xs: 0.125rem;
@@ -319,7 +319,7 @@ p {
    primitives carry it, and everything else is built from them.
 
      .blueprint  the setting-out grid behind a section
-     .crop       drawing crop marks on a container's corners
+     .crop       plan crop marks on a container's corners
      .annotation the mono label used for sheet references and section kickers
    ========================================================================== */
 
@@ -368,7 +368,7 @@ p {
   }
 }
 
-/* Corner crop marks, as on a drawing sheet. Painted with eight 1px
+/* Corner crop marks, as on a plan sheet. Painted with eight 1px
    gradients on a single pseudo-element so no extra markup is needed. */
 .crop {
   position: relative;

@@ -39,7 +39,7 @@ export function AboutSnapshot() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7 }}
           >
-            {/* Mounted with drawing-sheet crop marks in the corners. */}
+            {/* Mounted with plan-sheet crop marks in the corners. */}
             <figure className="crop relative aspect-[4/5] overflow-hidden rounded-2xl border border-subtle bg-gradient-to-br from-primary/25 via-surface-elevated to-black">
               <Image
                 src="/interior-classic-kitchen-island-portrait.webp"
@@ -80,7 +80,7 @@ export function AboutSnapshot() {
               <p>
                 With 40 years of professional experience at Director level, our team
                 provides personalised guidance throughout the design process, from
-                initial concepts and space planning to detailed presentation drawings,
+                initial concepts and space planning to detailed presentation visuals,
                 realistic interior and exterior renderings, and supporting project
                 documentation.
               </p>

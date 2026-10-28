@@ -216,7 +216,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
     compare: {
       title: "A Layout Buyers Can Understand",
       subtitle:
-        "Unlike flat 2D drawings, 3D floor plans show a layout the way buyers read it, so they see at once whether the rooms suit them.",
+        "Unlike flat 2D plans, 3D floor plans show a layout the way buyers read it, so they see at once whether the rooms suit them.",
       left: { src: "/rear-home-extension-edgbaston-2.webp", alt: "2D dimensioned floor plan", caption: "2D plan" },
       right: { src: "/hmo-development-selly-oak-1.webp", alt: "Furnished 3D floor plan", caption: "3D floor plan" },
       pointsTitle: "Floor plan formats",
@@ -234,14 +234,14 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
         { title: "Developers", text: "Every unit type in one consistent style, so buyers can compare layouts side by side.", img: { src: "/hmo-development-selly-oak-2.webp", alt: "Rendered development exterior" } },
         { title: "Estate agents", text: "Listings that hold attention and explain a property before the viewing.", img: { src: "/new-build-family-home-sutton-coldfield-2.webp", alt: "Before and after view of a plot" } },
         { title: "Landlords", text: "Clear plans for lettings and refurbishment proposals.", img: { src: "/garage-conversion-kings-heath-2.webp", alt: "Converted family home" } },
-        { title: "Design studios", text: "Layout options shown to clients as finished plans, not line drawings.", img: { src: "/interior-classic-kitchen-island-angle.webp", alt: "Furnished kitchen and dining area in a classic style" } },
+        { title: "Design studios", text: "Layout options shown to clients as finished plans, not line plans.", img: { src: "/interior-classic-kitchen-island-angle.webp", alt: "Furnished kitchen and dining area in a classic style" } },
       ],
     },
     highlights: {
       title: "What Makes a Good 3D Floor Plan",
       subtitle: "The details that make plans useful for sales and design.",
       items: [
-        { icon: LayoutGrid, title: "Accurate proportions", text: "Rooms and furniture are scaled to the measurements in your drawings." },
+        { icon: LayoutGrid, title: "Accurate proportions", text: "Rooms and furniture are scaled to the measurements in your plans." },
         { icon: Sofa, title: "Furnished in any style", text: "Choose furnishings that appeal to your target buyer or tenant." },
         { icon: Layers, title: "Distinct unit types", text: "Give each unit in a block its own look so prospects can tell them apart." },
         { icon: BadgeCheck, title: "Print and web ready", text: "The same files work for brochures, listings, adverts and social media." },
@@ -264,7 +264,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       title: "3D Floor Plan Workflow",
       subtitle: "Three clear stages, with revisions agreed before the final render.",
       steps: [
-        ["1. Send your drawings", "A CAD file works best, but a PDF, a scan or even a hand sketch is enough to start. Tell us which levels you need."],
+        ["1. Send your plans", "A CAD file works best, but a PDF, a scan or even a hand sketch is enough to start. Tell us which levels you need."],
         ["2. Style and furnishing", "Choose furnished or empty, and share any material or style references."],
         ["3. Layout approved", "We build the plan and you confirm the layout before rendering."],
         ["4. Check the draft", "Review the draft image and send corrections. We agree changes before the final render starts."],
@@ -275,7 +275,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
     why: {
       title: "Why Choose Us for 3D Floor Plans",
       items: [
-        { icon: BadgeCheck, title: "Built from your drawings", text: "Room sizes and proportions follow your measurements. If a drawing is unclear, we ask before we model it." },
+        { icon: BadgeCheck, title: "Built from your plans", text: "Room sizes and proportions follow your measurements. If a plan is unclear, we ask before we model it." },
         { icon: Repeat, title: "Consistent sets", text: "Whole developments are rendered in one style, so unit types read as a family." },
         { icon: Sofa, title: "Furnishing included", text: "We stage plans with ready-made 3D furniture models for most needs." },
         { icon: MessageSquare, title: "Clear revisions", text: "Corrections are agreed before the final render, so there are no surprises." },
@@ -285,11 +285,11 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       title: "Frequently Asked Questions About 3D Floor Plans",
       items: [
         ["What is a 3D floor plan?", "A computer-generated image that shows a property layout realistically, either top-down or at an angle, usually with furnished rooms."],
-        ["What is the difference between a 2D and a 3D floor plan?", "A 2D plan is a flat line drawing. A 3D plan adds depth, furniture and finishes so people who do not read technical drawings can still understand the layout."],
-        ["What do I need to send?", "Your drawings in any format, plus any style references. If you do not have drawings yet, tell us what exists and we will advise."],
+        ["What is the difference between a 2D and a 3D floor plan?", "A 2D plan is a flat, top-down line illustration. A 3D plan adds depth, furniture and finishes so people who do not read technical documentation can still understand the layout."],
+        ["What do I need to send?", "Your plans in any format, plus any style references. If you do not have plans yet, tell us what exists and we will advise."],
         ["What properties do you cover?", "Houses, flats, apartment buildings, offices, shops and mixed-use schemes, from a single dwelling to a full development."],
         ["What format are the files?", "High-resolution images ready for print and web. Extra formats such as vertical crops for social media are available on request."],
-        ["How is a 3D floor plan quote worked out?", "It depends on the size of the plan, the level of furnishing and the number of units. Send your drawings for a quote."],
+        ["How is a 3D floor plan quote worked out?", "It depends on the size of the plan, the level of furnishing and the number of units. Send your plans for a quote."],
       ],
     },
     closing: { title: "Ready to show your layout properly?", text: CLOSING_TEXT },
@@ -399,7 +399,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
     label: "Planning Applications",
     title: "Planning Application Services across England",
     intro:
-      "We prepare and submit complete planning applications, with drawings, statements and evidence, then manage the process through to a decision. Built to validate first time.",
+      "We prepare and submit complete planning applications, with plans, statements and evidence, then manage the process through to a decision. Built to validate first time.",
     hero: {
       src: "/contact.webp",
       alt: "Birmingham Council House at dusk",
@@ -413,12 +413,12 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
     compare: {
       title: "A Clear Route to a Decision",
       subtitle:
-        "A planning application is only as strong as its drawings and supporting documents. We prepare both, check them against validation requirements and deal with the council on your behalf.",
-      left: { src: "/design drawings.webp", alt: "Isometric line drawing of a framed building", caption: "Drawings" },
+        "A planning application is only as strong as its plans and supporting documents. We prepare both, check them against validation requirements and deal with the council on your behalf.",
+      left: { src: "/design-plans.webp", alt: "Isometric line illustration of a framed building", caption: "Plans" },
       right: { src: "/planning application.webp", alt: "Planning application form stamped approved", caption: "Application" },
       pointsTitle: "What a package includes",
       points: [
-        ["Existing and proposed drawings.", "Plans, elevations and site plans to the scale and format the council expects."],
+        ["Existing and proposed layouts.", "Plans, elevations and site plans to the scale and format the council expects."],
         ["Supporting statements.", "Design and access statements and other documents the scheme needs."],
         ["Validation check.", "We check the package against the council's requirements before submitting."],
         ["Case-officer liaison.", "We respond to queries and negotiate changes through to a decision."],
@@ -428,7 +428,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       title: "Planning Support for Every Kind of Scheme",
       subtitle: "From a single extension to a multi-unit development.",
       items: [
-        { title: "Homeowners", text: "Extensions, loft conversions and garage conversions.", img: { src: "/spacious-loft-conversion-harborne-2.webp", alt: "Loft conversion drawings" } },
+        { title: "Homeowners", text: "Extensions, loft conversions and garage conversions.", img: { src: "/spacious-loft-conversion-harborne-2.webp", alt: "Loft conversion plans" } },
         { title: "Landlords", text: "Changes of use and HMO schemes.", img: { src: "/hmo-development-selly-oak-1.webp", alt: "HMO floor plan" } },
         { title: "Developers", text: "New-build homes and multi-unit schemes.", img: { src: "/new-build-family-home-sutton-coldfield-2.webp", alt: "New-build family home" } },
         { title: "Commercial owners", text: "Conversions and changes of use for offices, shops and units.", img: { src: "/commercial-conversion-city-centre-1.webp", alt: "Commercial conversion" } },
@@ -453,7 +453,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       subtitle: "The right route depends on the property and the scheme.",
       items: [
         { title: "Householder Applications", text: "For extensions and alterations to a single dwelling. Householder applications are usually the quickest route to a decision.", img: { src: "/garden-office-studio-bournville-2.webp", alt: "Modern glazed rear extension to a brick family home" } },
-        { title: "Full Planning Applications", text: "For new homes, conversions and changes of use, with the full set of drawings and supporting documents.", img: { src: "/office-to-residential-conversion-city-centre-1.webp", alt: "Office to residential conversion" } },
+        { title: "Full Planning Applications", text: "For new homes, conversions and changes of use, with the full set of plans and supporting documents.", img: { src: "/office-to-residential-conversion-city-centre-1.webp", alt: "Office to residential conversion" } },
         { title: "Verified Views for Planning Submissions and Appeals", text: "Accurate visual representations prepared to support a planning submission or an appeal, showing the proposal in its real setting. We confirm what the council expects first, so the images fit what is being asked for.", img: { src: "/exterior-hero.webp", alt: "Visual representation of a proposed building in its setting" } },
         { title: "Permitted Development and Lawful Development Certificates", text: "Some works do not need full permission. We confirm the route and obtain a certificate where it helps.", img: { src: "/spacious-loft-conversion-harborne-1.webp", alt: "Loft conversion" } },
       ],
@@ -464,7 +464,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       steps: [
         ["1. Feasibility call", "A free call and site review to confirm the best route."],
         ["2. Pre-application advice", "Where it adds value, we test the scheme with the council first."],
-        ["3. Drawings and documents", "We prepare the drawings and supporting documents."],
+        ["3. Plans and documents", "We prepare the plans and supporting documents."],
         ["4. Validation and submission", "We check the package and submit to the council."],
         ["5. Case-officer liaison", "We respond to queries and agree changes with the officer."],
         ["6. Decision and conditions", "We take you through the decision and condition discharge."],
@@ -505,16 +505,16 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
     },
     mosaic: {
       title: "Building Regulations for Extensions, Conversions and New Builds",
-      large: { src: "/office-to-residential-conversion-city-centre-2.webp", alt: "Concrete frame and blockwork beside rolled drawings" },
+      large: { src: "/office-to-residential-conversion-city-centre-2.webp", alt: "Concrete frame and blockwork beside rolled plans" },
       a: { src: "/single-storey-rear-extension-moseley-1.webp", alt: "House under construction with scaffolding" },
       b: { src: "/office-to-residential-conversion-city-centre-1.webp", alt: "Concrete building frame beside the finished home" },
     },
     compare: {
       title: "From Structure to Specification",
       subtitle:
-        "Compliance is documented at every stage of the build. We coordinate the drawings, calculations and specifications building control needs.",
+        "Compliance is documented at every stage of the build. We coordinate the plans, calculations and specifications building control needs.",
       left: { src: "/building regulation support.webp", alt: "Consultants reviewing a design model", caption: "Review" },
-      right: { src: "/design drawings.webp", alt: "Isometric line drawing with dimensions", caption: "Drawings" },
+      right: { src: "/design-plans.webp", alt: "Isometric line illustration with dimensions", caption: "Plans" },
       pointsTitle: "What the package covers",
       points: [
         ["Full plans submission.", "Construction details and the information building control requires."],
@@ -551,7 +551,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       title: "How We Support Building Control",
       subtitle: "Choose the route that suits the project.",
       items: [
-        { title: "Full Plans Submission", text: "A complete set of drawings and specification submitted for approval before work starts, giving certainty ahead of construction.", img: { src: "/design drawings.webp", alt: "Detailed drawings" } },
+        { title: "Full Plans Submission", text: "A complete set of plans and specification submitted for approval before work starts, giving certainty ahead of construction.", img: { src: "/design-plans.webp", alt: "Detailed plans" } },
         { title: "Building Notice Coordination", text: "Where a building notice is suitable, we coordinate the process with building control and your builder.", img: { src: "/single-storey-rear-extension-moseley-1.webp", alt: "Rear extension under construction" } },
         { title: "Structural and Specification Support", text: "We coordinate structural calculations and prepare the specification and materials documentation the inspector will check.", img: { src: "/building regulation support.webp", alt: "Consultants reviewing a design model" } },
       ],
@@ -561,7 +561,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       subtitle: "From regulatory review to completion certificate.",
       steps: [
         ["1. Regulatory review", "We review the proposed scheme against the regulations."],
-        ["2. Drawings and details", "Full plans and construction details are prepared."],
+        ["2. Plans and details", "Full plans and construction details are prepared."],
         ["3. Structural coordination", "We coordinate calculations with your structural engineer."],
         ["4. Specification", "Specification and materials documentation is completed."],
         ["5. Submission", "We submit and liaise with building control."],
@@ -582,7 +582,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
       items: [
         ["What is the difference between planning permission and building regulations?", "Planning looks at what is built and how it affects its surroundings. Building regulations look at how it is built, including structure, fire safety and energy performance."],
         ["Do I need building regulations approval for an extension?", "Almost always, yes, even where planning permission is not required."],
-        ["What is a full plans application?", "A complete set of drawings and specification submitted for approval before work starts."],
+        ["What is a full plans application?", "A complete set of plans and specification submitted for approval before work starts."],
         ["What is a building notice?", "A shorter route where work can start after notice is given, with inspections during the build. It is not suitable for every project."],
         ["Do you coordinate with structural engineers?", "Yes. We coordinate calculations and details with your engineer."],
         ["Will I get a completion certificate?", "Yes. We guide the project through inspections to the certificate."],
@@ -603,7 +603,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
     },
     mosaic: {
       title: "Feasibility Studies for Sites and Buildings",
-      large: { src: "/feasibility layouts.webp", alt: "3D model rising from site drawings" },
+      large: { src: "/feasibility layouts.webp", alt: "3D model rising from site plans" },
       a: { src: "/hmo-development-selly-oak-1.webp", alt: "Colour floor plan of a scheme" },
       b: { src: "/garage-conversion-kings-heath-1.webp", alt: "Brick family home with a dark pitched roof and paved approach" },
     },

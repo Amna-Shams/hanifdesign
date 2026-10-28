@@ -39,10 +39,10 @@ const COVERAGE: { title: string; body: string }[] = [
 ];
 
 const PLAN_POINTS: string[] = [
-  "Works from basic plans, elevations and specifications, so no drawing is too rough to start from",
+  "Works from basic plans, elevations and specifications, so no plan is too rough to start from",
   "Surfaces, textures and materials depicted accurately, not approximated",
   "Turns an ordinary 2D plan into a polished, investor-ready computer-generated image",
-  "Drawing-based modelling means the render always matches what is proposed",
+  "Plan-based modelling means the render always matches what is proposed",
 ];
 
 const WHY: { icon: LucideIcon; title: string; body: string }[] = [
@@ -82,7 +82,7 @@ const ADVANTAGES: { icon: LucideIcon; title: string; body: string }[] = [
   {
     icon: Layers,
     title: "Clear, detailed modelling",
-    body: "Every room is modelled from your drawings, down to joinery profiles and fixtures.",
+    body: "Every room is modelled from your plans, down to joinery profiles and fixtures.",
   },
   {
     icon: Camera,
@@ -100,7 +100,7 @@ const STEPS: { title: string; body: string }[] = [
   { title: "Discuss", body: "A call to understand the space, the audience and what the images need to achieve." },
   { title: "Proposal", body: "A clear scope covering views, finishes and timeline." },
   { title: "Agreement", body: "A fixed fee confirmed in writing before any work begins." },
-  { title: "Details", body: "You send drawings, material references and any mood-board inspiration." },
+  { title: "Details", body: "You send plans, material references and any mood-board inspiration." },
   { title: "Build", body: "We build an accurate clay-form 3D model of the space, so layout and proportions can be checked before any materials are applied." },
   { title: "Approval", body: "You approve the model, then materials and lighting are applied to every surface, so changes happen before final rendering." },
   { title: "Render", body: "Final high-resolution images are produced." },
@@ -188,7 +188,7 @@ export function VisualisationOverview({ label }: VisualisationOverviewProps) {
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-secondary">
               Interior visualisation lets clients, buyers and planning committees see the
-              potential of a proposed space before a single wall is built. We turn your drawings
+              potential of a proposed space before a single wall is built. We turn your plans
               into photorealistic images that sell the design and settle the details.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -277,7 +277,7 @@ export function VisualisationOverview({ label }: VisualisationOverviewProps) {
               className="mb-6"
             />
             <p className="text-secondary">
-              Clients and investors rarely read drawings the way designers do. We take the plans
+              Clients and investors rarely read plans the way designers do. We take the plans
               you already have and turn them into clear, convincing imagery, so the scheme can be
               understood, approved and sold with confidence.
             </p>
@@ -305,7 +305,7 @@ export function VisualisationOverview({ label }: VisualisationOverviewProps) {
             <SectionHeading
               eyebrow="Why visualise"
               title="Why you need 3D interior rendering"
-              subtitle="A strong image resolves doubts faster than a drawing set ever will."
+              subtitle="A strong image resolves doubts faster than a plan set ever will."
             />
           </Reveal>
           <div className="mt-12 grid gap-6 md:grid-cols-3">

@@ -251,7 +251,7 @@ export function VisualisationOverview({ label }: VisualisationOverviewProps) {
             <SectionHeading
               eyebrow="3D visualisation specialists"
               title="CGI, rendering and 3D design for every stage"
-              subtitle={`Trusted by ${AUDIENCES.join(", ").toLowerCase()} across Birmingham and the UK.`}
+              subtitle={`Trusted by ${AUDIENCES.join(", ").toLowerCase()} across England.`}
             />
           </Reveal>
           <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

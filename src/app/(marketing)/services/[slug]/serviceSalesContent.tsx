@@ -393,7 +393,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
   /* ------------------------------------------------------------------ */
   "planning-applications": {
     label: "Planning Applications",
-    title: "Planning Application Services in Birmingham",
+    title: "Planning Application Services across England",
     intro:
       "We prepare and submit complete planning applications, with drawings, statements and evidence, then manage the process through to a decision. Built to validate first time.",
     hero: {
@@ -472,7 +472,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
         { icon: FileCheck, title: "Packages built to validate", text: "Complete submissions reduce avoidable delay." },
         { icon: Users, title: "A named consultant", text: "A single point of contact handles your file end to end." },
         { icon: BadgeCheck, title: "Fees agreed first", text: "Fees are agreed before work starts." },
-        { icon: Compass, title: "Local knowledge", text: "Based in Birmingham and working across the West Midlands." },
+        { icon: Compass, title: "Nationwide reach", text: "Working with clients across England, wherever your site is." },
       ],
     },
     faq: {
@@ -492,7 +492,7 @@ export const SALES_CONTENT: Record<string, SalesContent> = {
   /* ------------------------------------------------------------------ */
   "building-regulations-support": {
     label: "Building Regulations Support",
-    title: "Building Regulations Support in Birmingham",
+    title: "Building Regulations Support across England",
     intro:
       "Building control approval sits alongside planning and is assessed on a different basis. We prepare the compliance package and liaise with building control through to completion.",
     hero: {

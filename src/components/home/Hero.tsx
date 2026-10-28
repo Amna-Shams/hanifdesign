@@ -24,9 +24,9 @@ export function Hero() {
 
       <div className="mx-auto w-full max-w-7xl px-4 pb-10 sm:px-6 sm:pb-14 lg:px-8 lg:pb-16">
         <h1 className="!font-serif !text-white text-4xl font-normal leading-[1.1] sm:text-5xl lg:text-[3.5rem]">
-          Hanif Design &amp; Planning Consultancy
+          Hanif Design &amp; Consultancy Ltd
           <br />
-          across Birmingham
+          across England
         </h1>
       </div>
     </section>

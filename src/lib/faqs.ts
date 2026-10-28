@@ -46,6 +46,6 @@ export const FAQS: readonly FaqItem[] = [
   },
   {
     q: "What areas do you cover?",
-    a: "Primarily Birmingham, Solihull, Sandwell, Dudley, Walsall, and Wolverhampton. We also work across the wider West Midlands and occasionally nationally for repeat clients. Local knowledge is our strength.",
+    a: "We work with clients across England. Wherever your property or site is, we can prepare and submit your application to the relevant local planning authority.",
   },
 ];

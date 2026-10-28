@@ -11,8 +11,8 @@ const credentials = [
   },
   {
     icon: MapPin,
-    title: "Quinton-Based",
-    description: "Serving the West Midlands",
+    title: "Across England",
+    description: "Serving clients nationwide",
   },
   {
     icon: Award,

@@ -30,10 +30,10 @@ export const metadata: Metadata = {
     "virtual staging",
     "CGI rendering",
     "visual marketing",
-    "Birmingham",
+    "England",
   ],
   description:
-    "Planning applications, building regulations support, design drawings, feasibility layouts, interior design, interior visualisation, 3D floor plans, virtual staging, drawings, exterior rendering, 3D visualisation and development guidance for residential projects in Birmingham and the West Midlands.",
+    "Planning applications, building regulations support, design drawings, feasibility layouts, interior design, interior visualisation, 3D floor plans, virtual staging, drawings, exterior rendering, 3D visualisation and development guidance for residential projects across England.",
 };
 
 /** Icon per service slug. Kept beside the list so it stays easy to audit. */
@@ -56,7 +56,7 @@ export default function ServicesPage() {
         image="/services-hero.webp"
         alt="Birmingham Town Hall and the Chamberlain Memorial in golden evening light"
         title="Our services"
-        subtitle="Planning, design and visualisation support for residential projects across Birmingham and the West Midlands."
+        subtitle="Planning, design and visualisation support for residential projects across England."
       />
 
       <section className="bg-surface-translucent py-16 sm:py-20 lg:py-28" aria-labelledby="services-heading">

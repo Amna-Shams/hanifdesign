@@ -44,7 +44,7 @@ export const viewport: Viewport = {
  */
 export const metadata: Metadata = {
   title: {
-    default: "Hanif Design & Consultancy — Design Consultancy in Birmingham",
+    default: "Hanif Design & Consultancy Ltd — Design Consultancy across England",
     template: "%s | Hanif Design & Consultancy",
   },
 };

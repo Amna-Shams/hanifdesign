@@ -22,7 +22,7 @@ const SEO: Record<string, { title: string; description: string; keywords: string
   "3d-visualisation": {
     title: "3D Visualisation & Rendering Services",
     description:
-      "Photorealistic 3D visualisation and CGI rendering for designers, developers and homeowners: 2D plan to 3D image, interior and exterior visuals, property marketing, virtual staging and animation. Based in Birmingham, working across the UK.",
+      "Photorealistic 3D visualisation and CGI rendering for designers, developers and homeowners: 2D plan to 3D image, interior and exterior visuals, property marketing, virtual staging and animation. Working with clients across England.",
     keywords: [
       "3D visualisation",
       "3D visualisation services",
@@ -35,13 +35,13 @@ const SEO: Record<string, { title: string; description: string; keywords: string
       "property CGI",
       "photomontage CGI",
       "off-plan marketing",
-      "Birmingham",
+      "England",
     ],
   },
   "interior-visualisation": {
     title: "Interior Visualisation & 3D Interior Rendering",
     description:
-      "Interior rendering and room design visuals for interior designers, developers and homeowners. Kitchen, bedroom, bathroom and commercial interior CGI, produced from your plans. Birmingham and UK-wide.",
+      "Interior rendering and room design visuals for interior designers, developers and homeowners. Kitchen, bedroom, bathroom and commercial interior CGI, produced from your plans. Working across England.",
     keywords: [
       "interior rendering",
       "interior visualisation",
@@ -52,13 +52,13 @@ const SEO: Record<string, { title: string; description: string; keywords: string
       "bedroom interior rendering",
       "bathroom CGI",
       "designer pitch imagery",
-      "Birmingham",
+      "England",
     ],
   },
   "virtual-staging": {
     title: "Virtual Staging for Vacant Properties",
     description:
-      "Virtual home staging that turns photographs of empty rooms into furnished, market-ready images, with lighting and colour matched to the original photo. Domestic and commercial. Birmingham and UK-wide.",
+      "Virtual home staging that turns photographs of empty rooms into furnished, market-ready images, with lighting and colour matched to the original photo. Domestic and commercial. Working across England.",
     keywords: [
       "virtual home staging",
       "vacant property furnishing",
@@ -66,7 +66,7 @@ const SEO: Record<string, { title: string; description: string; keywords: string
       "photo-matched lighting and colour",
       "digitally dressed rooms",
       "domestic and commercial staging",
-      "Birmingham",
+      "England",
     ],
   },
 };
@@ -85,7 +85,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: seo?.title ?? service.label,
     description:
       seo?.description ??
-      `${service.short} Based in Birmingham and working across the West Midlands.`,
+      `${service.short} Working with clients across England.`,
     ...(seo ? { keywords: seo.keywords } : {}),
     alternates: { canonical: canonical(`/services/${service.slug}`) },
   };

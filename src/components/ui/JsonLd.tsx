@@ -24,10 +24,9 @@ function organisation(): Json {
     telephone: CONTACT_INFO.phone,
     email: CONTACT_INFO.email,
     description:
-      "Planning consultancy and design support for residential projects across Birmingham and the West Midlands.",
+      "Planning consultancy and design support for residential projects across England.",
     areaServed: [
-      { "@type": "City", name: "Birmingham" },
-      { "@type": "AdministrativeArea", name: "West Midlands" },
+      { "@type": "Country", name: "England" },
     ],
     knowsAbout: [
       "Planning applications",

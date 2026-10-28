@@ -11,9 +11,9 @@ import { COMPANY_NAME, COMPANY_NUMBER, CONTACT_INFO, SERVICES } from "@/lib/cons
 import { SITE_NAME, SITE_URL, canonical } from "@/lib/site";
 import { toWhatsappHref } from "@/lib/utils";
 
-const PAGE_TITLE = "About Us | Planning Consultants in Birmingham | Hanif Design & Consultancy";
+const PAGE_TITLE = "About Us | Planning Consultants across England | Hanif Design & Consultancy";
 const PAGE_DESCRIPTION =
-  "Hanif Design & Consultancy is a planning consultancy in Birmingham helping homeowners and developers across the West Midlands win planning approval.";
+  "Hanif Design & Consultancy is a planning consultancy helping homeowners and developers across England win planning approval.";
 const OG_IMAGE = "/rear-home-extension-edgbaston-1.webp";
 
 export const metadata: Metadata = {
@@ -147,8 +147,7 @@ function organisationSchema() {
     telephone: CONTACT_INFO.phone,
     email: CONTACT_INFO.email,
     areaServed: [
-      { "@type": "City", name: "Birmingham" },
-      { "@type": "AdministrativeArea", name: "West Midlands" },
+      { "@type": "Country", name: "England" },
     ],
     // Matches the hours already published on the contact page.
     openingHours: "Mo-Fr 09:00-17:30",
@@ -181,7 +180,7 @@ export default function AboutPage() {
         image="/about.webp"
         alt="The Birmingham sign on the front of a brick and steel stadium on a sunny day"
         title="About Hanif Design & Consultancy"
-        subtitle="A multidisciplinary planning and design practice in Birmingham, supporting homeowners and developers across the West Midlands."
+        subtitle="A multidisciplinary planning and design practice supporting homeowners and developers across England."
       >
         <Button variant="gold" size="lg" asChild>
           <Link href="/contact">Book a free consultation</Link>
@@ -197,14 +196,14 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-4 text-textmuted leading-relaxed">
               <p>
-                We are a planning consultancy in Birmingham, based in Quinton. We help
+                We are a planning consultancy working across England. We help
                 homeowners, landlords and developers get residential projects through the
                 planning system, from a single extension to a multi-unit scheme.
               </p>
               <p>
-                Based in Quinton, Birmingham, Hanif Design &amp; Consultancy
-                has grown from a small design practice into one of the West
-                Midlands&rsquo; most respected planning consultancies. Our team combines
+                Hanif Design &amp; Consultancy Ltd
+                has grown from a small design practice into a respected planning
+                consultancy working across England. Our team combines
                 deep local authority knowledge with practical design expertise to
                 guide clients through every stage of the planning process.
               </p>
@@ -217,8 +216,7 @@ export default function AboutPage() {
               </p>
               <p>
                 Today, we work with homeowners, developers, designers, and
-                housing associations across Birmingham, Solihull, and the wider
-                West Midlands. Whether it&rsquo;s a householder extension, a complex
+                housing associations across England. Whether it&rsquo;s a householder extension, a complex
                 appeal, or a multi-unit new build, we bring the same rigour and
                 attention to detail to every project.
               </p>
@@ -299,12 +297,12 @@ export default function AboutPage() {
               Local knowledge
             </h2>
             <p className="text-textmuted leading-relaxed mb-4">
-              We work in Birmingham and the wider region, so we deal with the same councils
-              and the same site constraints again and again.
+              We work across England, so we are used to dealing with a wide range of councils
+              and site constraints.
             </p>
             <Todo>
-              [CONFIRM: which councils you have submitted to (for example Birmingham, Solihull,
-              Sandwell), and which constraints you handle most, such as conservation areas,
+              [CONFIRM: which councils you have submitted to (for example the councils behind
+              your recent projects), and which constraints you handle most, such as conservation areas,
               Article 4 directions or green belt. List only those you can back up.]
             </Todo>
           </Reveal>
@@ -325,7 +323,7 @@ export default function AboutPage() {
                 permission to publish. Leave this block out if you have neither.]
               </Todo>
               <p className="mt-6 text-textmuted leading-relaxed">
-                See how we handled some Birmingham projects:
+                See how we handled some of our projects:
               </p>
             </Reveal>
             <RevealStagger className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3" stagger={0.1}>

@@ -30,7 +30,7 @@ export function FeaturedProjects() {
               id="featured-projects-heading"
               eyebrow="Our work"
               title="Recent projects"
-              subtitle="A selection of planning and design projects across the West Midlands."
+              subtitle="A selection of planning and design projects across England."
               align="left"
               className="mb-0"
             />

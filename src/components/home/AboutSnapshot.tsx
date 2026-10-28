@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Building2, FileText, Compass } from "lucide-react";
+import { Sofa, FileText, Compass } from "lucide-react";
 import { motion } from "motion/react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
@@ -14,9 +14,9 @@ const miniCards = [
     description: "Full support from concept to approval",
   },
   {
-    icon: Building2,
-    title: "Drawings",
-    description: "Clear, buildable, planning-ready drawings",
+    icon: Sofa,
+    title: "Interior Design & Rendering",
+    description: "Interior design and photorealistic 3D renders",
   },
   {
     icon: Compass,
@@ -60,7 +60,7 @@ export function AboutSnapshot() {
                   mobile and hide the short one until there is room. */}
               <figcaption className="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 sm:flex-row sm:items-end sm:justify-between sm:gap-4 sm:p-5">
                 <span className="annotation min-w-0 text-gold">Sheet A-01 &middot; Residential</span>
-                <span className="annotation hidden min-w-0 text-muted sm:inline">Birmingham</span>
+                <span className="annotation hidden min-w-0 text-muted sm:inline">England</span>
               </figcaption>
             </figure>
           </motion.div>
@@ -82,7 +82,7 @@ export function AboutSnapshot() {
               <p>
                 Hanif Design & Consultancy has been guiding homeowners, developers,
                 and designers through the UK planning system.
-                Based in Quinton, Birmingham, we combine deep local authority knowledge with
+                Working across England, we combine deep local authority knowledge with
                 practical design expertise to guide clients through every stage of
                 the planning process.
               </p>

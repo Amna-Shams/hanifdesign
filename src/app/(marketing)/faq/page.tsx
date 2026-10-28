@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   alternates: { canonical: canonical("/faq") },
   title: "Frequently Asked Questions",
   description:
-    "Answers to common questions about planning applications, permitted development, timelines, fees, appeals and our services in Birmingham and the West Midlands.",
+    "Answers to common questions about planning applications, permitted development, timelines, fees, appeals and our services across England.",
 };
 
 export default function FAQPage() {

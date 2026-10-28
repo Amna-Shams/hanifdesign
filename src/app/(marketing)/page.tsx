@@ -16,11 +16,11 @@ import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
   alternates: { canonical: canonical("/") },
-  title: "Hanif Design & Consultancy — Design Consultancy in Birmingham",
-  description: "Trusted planning and design support for residential projects in Birmingham. Planning applications, building regulations support, design drawings, and development guidance.",
+  title: "Hanif Design & Consultancy Ltd — Design Consultancy across England",
+  description: "Trusted planning and design support for residential projects across England. Planning applications, building regulations support, design drawings, and development guidance.",
   openGraph: {
-    title: "Hanif Design & Consultancy — Design Consultancy in Birmingham",
-    description: "Trusted planning and design support for residential projects in Birmingham.",
+    title: "Hanif Design & Consultancy Ltd — Design Consultancy across England",
+    description: "Trusted planning and design support for residential projects across England.",
     images: [
       {
         url: "/og-image.jpg",

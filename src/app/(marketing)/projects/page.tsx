@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: canonical("/projects") },
   title: "Our Projects",
   description:
-    "Case studies from a multi-disciplinary design and planning consultancy in Birmingham: residential extensions and new builds, HMOs, commercial fit-outs, mixed-use regeneration, education and healthcare buildings, industrial schemes and heritage conversions.",
+    "Case studies from a multi-disciplinary design and planning consultancy across England: residential extensions and new builds, HMOs, commercial fit-outs, mixed-use regeneration, education and healthcare buildings, industrial schemes and heritage conversions.",
 };
 
 /** Links matching the in-page filter, so the full list is reachable without JS. */
@@ -25,7 +25,7 @@ export default function ProjectsPage() {
         image="/projects-hero.webp"
         alt="Narrowboats moored along a canal lined with brick buildings in central Birmingham"
         title="Our projects"
-        subtitle="Case studies across residential, commercial, mixed-use, industrial and heritage work in Birmingham and the West Midlands."
+        subtitle="Case studies across residential, commercial, mixed-use, industrial and heritage work across England."
       />
 
       <section className="bg-surface-translucent py-16 sm:py-20 lg:py-28">

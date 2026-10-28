@@ -22,11 +22,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Hanif Design & Consultancy — Design Consultancy in Birmingham",
+    default: "Hanif Design & Consultancy Ltd — Design Consultancy across England",
     template: "%s | Hanif Design & Consultancy",
   },
-  description: "Planning consultancy and 3D visualisation in Birmingham: planning applications, building regulations, interior and exterior rendering, 3D floor plans and virtual staging for homeowners, designers and developers.",
-  keywords: ["planning consultant", "Birmingham", "planning applications", "permitted development", "planning appeals", "residential planning", "building regulations", "3D visualisation", "3D visualisation services", "interior visualisation", "exterior rendering", "3D floor plans", "virtual staging", "CGI rendering", "property marketing"],
+  description: "Planning consultancy and 3D visualisation across England: planning applications, building regulations, interior and exterior rendering, 3D floor plans and virtual staging for homeowners, designers and developers.",
+  keywords: ["planning consultant", "England", "planning applications", "permitted development", "planning appeals", "residential planning", "building regulations", "3D visualisation", "3D visualisation services", "interior visualisation", "exterior rendering", "3D floor plans", "virtual staging", "CGI rendering", "property marketing"],
   authors: [{ name: COMPANY_NAME }],
   creator: COMPANY_NAME,
   publisher: COMPANY_NAME,
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: SITE_URL,
     siteName: "Hanif Design & Consultancy",
-    title: "Hanif Design & Consultancy — Design Consultancy in Birmingham",
-    description: "Expert planning consultancy for residential projects in Birmingham.",
+    title: "Hanif Design & Consultancy Ltd — Design Consultancy across England",
+    description: "Expert planning consultancy for residential projects across England.",
     images: [
       {
         url: "/og-image.jpg",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Hanif Design & Consultancy",
-    description: "Expert planning consultancy for residential projects in Birmingham.",
+    description: "Expert planning consultancy for residential projects across England.",
     images: ["/og-image.jpg"],
   },
   // `icons` and `manifest` are intentionally absent: they are declared as raw

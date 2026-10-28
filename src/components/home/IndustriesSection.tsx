@@ -57,7 +57,7 @@ export function IndustriesSection() {
           <SectionHeading
             eyebrow="Who We Work With"
             title="Industries & Client Types"
-            subtitle="We support a diverse range of clients across the West Midlands."
+            subtitle="We support a diverse range of clients across England."
             align="center"
           />
 

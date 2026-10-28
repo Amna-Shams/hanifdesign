@@ -16,7 +16,7 @@ const reasons = [
   {
     icon: MapPin,
     title: "Local Knowledge",
-    description: "Deep understanding of Birmingham planning policy and council processes.",
+    description: "Deep understanding of planning policy and council processes across England.",
   },
   {
     icon: FileText,

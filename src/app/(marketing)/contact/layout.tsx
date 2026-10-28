@@ -14,7 +14,7 @@ import { canonical } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact us",
   description:
-    "Speak to Hanif Design & Consultancy about your project. Call 07813 706185, send an enquiry, or request a free consultation for residential planning in Birmingham.",
+    "Speak to Hanif Design & Consultancy about your project. Send an enquiry or request a free consultation for residential planning across England.",
   alternates: { canonical: canonical("/contact") },
 };
 

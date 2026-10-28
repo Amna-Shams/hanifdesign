@@ -94,8 +94,8 @@ export function Footer() {
             <div className="space-y-4">
               <p className="max-w-sm text-sm leading-relaxed text-secondary lg:pt-0.5">
                 Planning, design and visualisation for residential projects,
-                with interior design and graphics support, based in Birmingham
-                and serving the West Midlands.
+                with interior design and graphics support, serving clients
+                across England.
               </p>
 
               <address className="not-italic">

@@ -41,27 +41,15 @@ export function AboutSnapshot() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7 }}
           >
-            {/* The photograph is mounted like a sheet on a drawing: crop marks
-                in the corners, a sheet reference in the margin. */}
+            {/* Mounted with drawing-sheet crop marks in the corners. */}
             <figure className="crop relative aspect-[4/5] overflow-hidden rounded-2xl border border-subtle bg-gradient-to-br from-primary/25 via-surface-elevated to-black">
               <Image
-                src="/spacious-loft-conversion-harborne-2.webp"
-                alt="Residential project photography by Hanif Design & Consultancy"
+                src="/interior-classic-kitchen-island-portrait.webp"
+                alt="Interior render of a classic kitchen with a marble island, gold-framed bar stools and a skylight"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 className="object-cover"
               />
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent"
-              />
-              {/* The mono labels are unbreakable at ~8.8px per character, so the
-                  two of them side by side overrun a 288px figure. Stack them on
-                  mobile and hide the short one until there is room. */}
-              <figcaption className="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 sm:flex-row sm:items-end sm:justify-between sm:gap-4 sm:p-5">
-                <span className="annotation min-w-0 text-gold">Sheet A-01 &middot; Residential</span>
-                <span className="annotation hidden min-w-0 text-muted sm:inline">England</span>
-              </figcaption>
             </figure>
           </motion.div>
 
